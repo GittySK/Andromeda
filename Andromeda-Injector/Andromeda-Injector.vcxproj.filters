@@ -30,4 +30,8 @@
       <Filter>Andromeda-Injector\Common</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.gitattributes" />
+    <None Include="..\.gitignore" />
+  </ItemGroup>
 </Project>

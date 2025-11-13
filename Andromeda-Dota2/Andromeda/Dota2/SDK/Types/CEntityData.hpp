@@ -13,6 +13,7 @@
 #include "CStrongHandle.hpp"
 #include "CUtlStringToken.hpp"
 
+#include <Dota2/SDK/Math/Math.hpp>
 #include <Dota2/SDK/Update/Offsets.hpp>
 #include <Dota2/SDK/CSchemaOffset.hpp>
 #include <Dota2/SDK/Interface/CShemaSystemSDK.hpp>
@@ -60,6 +61,7 @@ public:
 	SCHEMA_OFFSET( "C_BaseEntity" , "m_iTeamNum" , m_iTeamNum , uint8 );
 };
 
+
 class C_BaseModelEntity : public C_BaseEntity
 {
 public:
@@ -86,4 +88,11 @@ class C_DOTAPlayerController : public CBasePlayerController
 {
 public:
 	SCHEMA_OFFSET( "C_DOTAPlayerController" , "m_hAssignedHero" , m_hAssignedHero , CHandle ); // C_DOTA_BaseNPC_Hero
+};
+
+class C_DOTACameraBounds : public C_BaseEntity
+{
+public:
+	SCHEMA_OFFSET( "C_DOTACameraBounds" , "m_vecBoundsMin" , m_vecBoundsMin , Vector3 );
+	SCHEMA_OFFSET( "C_DOTACameraBounds" , "m_vecBoundsMax" , m_vecBoundsMax , Vector3 );
 };
