@@ -27,7 +27,7 @@ static constexpr ::_pbi::MigrationSchema* schemas = nullptr;
 static constexpr ::_pb::Message* const* file_default_instances = nullptr;
 
 const char descriptor_table_protodef_dota_5fgcmessages_5fmsgid_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\033dota_gcmessages_msgid.proto*\202\324\002\n\nEDOTA"
+  "\n\033dota_gcmessages_msgid.proto*\216\326\002\n\nEDOTA"
   "GCMsg\022\025\n\020k_EMsgGCDOTABase\020\3306\022\035\n\030k_EMsgGC"
   "GameMatchSignOut\020\3346\022%\n k_EMsgGCGameMatch"
   "SignOutResponse\020\3356\022\034\n\027k_EMsgGCJoinChatCh"
@@ -1115,11 +1115,18 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fmsgid_2eproto[] PROTOBU
   "lientToGCGetEventRanking\020\223G\022,\n\'k_EMsgCli"
   "entToGCGetEventRankingResponse\020\224G\022#\n\036k_E"
   "MsgClientToGCGetEventCoupon\020\225G\022+\n&k_EMsg"
-  "ClientToGCGetEventCouponResponse\020\226G"
+  "ClientToGCGetEventCouponResponse\020\226G\022\'\n\"k"
+  "_EMsgClientToGCConvertEventPoints\020\227G\022/\n*"
+  "k_EMsgClientToGCConvertEventPointsRespon"
+  "se\020\230G\022.\n)k_EMsgServerToGCWarningLowServe"
+  "rFramerate\020\231G\0222\n-k_EMsgServerToGCWarning"
+  "InvalidBotAbilityUsage\020\232G\022%\n k_EMsgClien"
+  "tToGCInviteToDemoMode\020\233G\022%\n k_EMsgGCToCl"
+  "ientInviteToDemoMode\020\234G"
   ;
 static ::_pbi::once_flag descriptor_table_dota_5fgcmessages_5fmsgid_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fgcmessages_5fmsgid_2eproto = {
-    false, false, 43555, descriptor_table_protodef_dota_5fgcmessages_5fmsgid_2eproto,
+    false, false, 43823, descriptor_table_protodef_dota_5fgcmessages_5fmsgid_2eproto,
     "dota_gcmessages_msgid.proto",
     &descriptor_table_dota_5fgcmessages_5fmsgid_2eproto_once, nullptr, 0, 0,
     schemas, file_default_instances, TableStruct_dota_5fgcmessages_5fmsgid_2eproto::offsets,
@@ -2131,6 +2138,12 @@ bool EDOTAGCMsg_IsValid(int value) {
     case 9108:
     case 9109:
     case 9110:
+    case 9111:
+    case 9112:
+    case 9113:
+    case 9114:
+    case 9115:
+    case 9116:
       return true;
     default:
       return false;

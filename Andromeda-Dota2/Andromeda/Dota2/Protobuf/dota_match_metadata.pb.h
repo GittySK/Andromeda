@@ -8183,6 +8183,7 @@ class CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget final :
     kHeroIdFieldNumber = 1,
     kElapsedDurationFieldNumber = 2,
     kIsHiddenFieldNumber = 3,
+    kInstanceCountFieldNumber = 4,
   };
   // optional int32 hero_id = 1;
   bool has_hero_id() const;
@@ -8223,6 +8224,19 @@ class CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget final :
   void _internal_set_is_hidden(bool value);
   public:
 
+  // optional int32 instance_count = 4;
+  bool has_instance_count() const;
+  private:
+  bool _internal_has_instance_count() const;
+  public:
+  void clear_instance_count();
+  int32_t instance_count() const;
+  void set_instance_count(int32_t value);
+  private:
+  int32_t _internal_instance_count() const;
+  void _internal_set_instance_count(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:CDOTAMatchPrivateMetadata.Team.Player.BuffRecord.ByHeroTarget)
  private:
   class _Internal;
@@ -8236,6 +8250,7 @@ class CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget final :
     int32_t hero_id_;
     float elapsed_duration_;
     bool is_hidden_;
+    int32_t instance_count_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fmatch_5fmetadata_2eproto;
@@ -17094,6 +17109,34 @@ inline void CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::_inte
 inline void CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::set_is_hidden(bool value) {
   _internal_set_is_hidden(value);
   // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.Team.Player.BuffRecord.ByHeroTarget.is_hidden)
+}
+
+// optional int32 instance_count = 4;
+inline bool CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::_internal_has_instance_count() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::has_instance_count() const {
+  return _internal_has_instance_count();
+}
+inline void CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::clear_instance_count() {
+  _impl_.instance_count_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::_internal_instance_count() const {
+  return _impl_.instance_count_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::instance_count() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.Team.Player.BuffRecord.ByHeroTarget.instance_count)
+  return _internal_instance_count();
+}
+inline void CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::_internal_set_instance_count(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.instance_count_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::set_instance_count(int32_t value) {
+  _internal_set_instance_count(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.Team.Player.BuffRecord.ByHeroTarget.instance_count)
 }
 
 // -------------------------------------------------------------------

@@ -274,6 +274,9 @@ extern CDOTAUserMsg_ItemPurchasedDefaultTypeInternal _CDOTAUserMsg_ItemPurchased
 class CDOTAUserMsg_ItemSold;
 struct CDOTAUserMsg_ItemSoldDefaultTypeInternal;
 extern CDOTAUserMsg_ItemSoldDefaultTypeInternal _CDOTAUserMsg_ItemSold_default_instance_;
+class CDOTAUserMsg_KillEffect;
+struct CDOTAUserMsg_KillEffectDefaultTypeInternal;
+extern CDOTAUserMsg_KillEffectDefaultTypeInternal _CDOTAUserMsg_KillEffect_default_instance_;
 class CDOTAUserMsg_KillcamDamageTaken;
 struct CDOTAUserMsg_KillcamDamageTakenDefaultTypeInternal;
 extern CDOTAUserMsg_KillcamDamageTakenDefaultTypeInternal _CDOTAUserMsg_KillcamDamageTaken_default_instance_;
@@ -523,6 +526,9 @@ extern CDOTAUserMsg_TimerAlertDefaultTypeInternal _CDOTAUserMsg_TimerAlert_defau
 class CDOTAUserMsg_TipAlert;
 struct CDOTAUserMsg_TipAlertDefaultTypeInternal;
 extern CDOTAUserMsg_TipAlertDefaultTypeInternal _CDOTAUserMsg_TipAlert_default_instance_;
+class CDOTAUserMsg_TormentorTimer;
+struct CDOTAUserMsg_TormentorTimerDefaultTypeInternal;
+extern CDOTAUserMsg_TormentorTimerDefaultTypeInternal _CDOTAUserMsg_TormentorTimer_default_instance_;
 class CDOTAUserMsg_TutorialFade;
 struct CDOTAUserMsg_TutorialFadeDefaultTypeInternal;
 extern CDOTAUserMsg_TutorialFadeDefaultTypeInternal _CDOTAUserMsg_TutorialFade_default_instance_;
@@ -689,6 +695,7 @@ template<> ::CDOTAUserMsg_ItemAlert* Arena::CreateMaybeMessage<::CDOTAUserMsg_It
 template<> ::CDOTAUserMsg_ItemFound* Arena::CreateMaybeMessage<::CDOTAUserMsg_ItemFound>(Arena*);
 template<> ::CDOTAUserMsg_ItemPurchased* Arena::CreateMaybeMessage<::CDOTAUserMsg_ItemPurchased>(Arena*);
 template<> ::CDOTAUserMsg_ItemSold* Arena::CreateMaybeMessage<::CDOTAUserMsg_ItemSold>(Arena*);
+template<> ::CDOTAUserMsg_KillEffect* Arena::CreateMaybeMessage<::CDOTAUserMsg_KillEffect>(Arena*);
 template<> ::CDOTAUserMsg_KillcamDamageTaken* Arena::CreateMaybeMessage<::CDOTAUserMsg_KillcamDamageTaken>(Arena*);
 template<> ::CDOTAUserMsg_LocationPing* Arena::CreateMaybeMessage<::CDOTAUserMsg_LocationPing>(Arena*);
 template<> ::CDOTAUserMsg_MadstoneAlert* Arena::CreateMaybeMessage<::CDOTAUserMsg_MadstoneAlert>(Arena*);
@@ -772,6 +779,7 @@ template<> ::CDOTAUserMsg_TE_UnitAnimationEnd* Arena::CreateMaybeMessage<::CDOTA
 template<> ::CDOTAUserMsg_TalentTreeAlert* Arena::CreateMaybeMessage<::CDOTAUserMsg_TalentTreeAlert>(Arena*);
 template<> ::CDOTAUserMsg_TimerAlert* Arena::CreateMaybeMessage<::CDOTAUserMsg_TimerAlert>(Arena*);
 template<> ::CDOTAUserMsg_TipAlert* Arena::CreateMaybeMessage<::CDOTAUserMsg_TipAlert>(Arena*);
+template<> ::CDOTAUserMsg_TormentorTimer* Arena::CreateMaybeMessage<::CDOTAUserMsg_TormentorTimer>(Arena*);
 template<> ::CDOTAUserMsg_TutorialFade* Arena::CreateMaybeMessage<::CDOTAUserMsg_TutorialFade>(Arena*);
 template<> ::CDOTAUserMsg_TutorialFinish* Arena::CreateMaybeMessage<::CDOTAUserMsg_TutorialFinish>(Arena*);
 template<> ::CDOTAUserMsg_TutorialMinimapPosition* Arena::CreateMaybeMessage<::CDOTAUserMsg_TutorialMinimapPosition>(Arena*);
@@ -1095,11 +1103,13 @@ enum EDotaUserMessages : int {
   DOTA_UM_CourierLeftFountainAlert = 630,
   DOTA_UM_MonsterHunter_InvestigationsAvailable = 631,
   DOTA_UM_MonsterHunter_InvestigationGameState = 632,
-  DOTA_UM_MonsterHunter_HuntAlert = 633
+  DOTA_UM_MonsterHunter_HuntAlert = 633,
+  DOTA_UM_TormentorTimer = 634,
+  DOTA_UM_KillEffect = 635
 };
 bool EDotaUserMessages_IsValid(int value);
 constexpr EDotaUserMessages EDotaUserMessages_MIN = DOTA_UM_AddUnitToSelection;
-constexpr EDotaUserMessages EDotaUserMessages_MAX = DOTA_UM_MonsterHunter_HuntAlert;
+constexpr EDotaUserMessages EDotaUserMessages_MAX = DOTA_UM_KillEffect;
 constexpr int EDotaUserMessages_ARRAYSIZE = EDotaUserMessages_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EDotaUserMessages_descriptor();
@@ -1419,11 +1429,12 @@ enum DOTA_OVERHEAD_ALERT : int {
   OVERHEAD_ALERT_SHARD = 23,
   OVERHEAD_ALERT_DEADLY_BLOW = 24,
   OVERHEAD_ALERT_FORCE_MISS = 25,
-  OVERHEAD_ALERT_AEGIS = 26
+  OVERHEAD_ALERT_AEGIS = 26,
+  OVERHEAD_ALERT_DISPEL = 27
 };
 bool DOTA_OVERHEAD_ALERT_IsValid(int value);
 constexpr DOTA_OVERHEAD_ALERT DOTA_OVERHEAD_ALERT_MIN = OVERHEAD_ALERT_GOLD;
-constexpr DOTA_OVERHEAD_ALERT DOTA_OVERHEAD_ALERT_MAX = OVERHEAD_ALERT_AEGIS;
+constexpr DOTA_OVERHEAD_ALERT DOTA_OVERHEAD_ALERT_MAX = OVERHEAD_ALERT_DISPEL;
 constexpr int DOTA_OVERHEAD_ALERT_ARRAYSIZE = DOTA_OVERHEAD_ALERT_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* DOTA_OVERHEAD_ALERT_descriptor();
@@ -6425,6 +6436,181 @@ class CDOTAUserMsg_RoshanTimer final :
 };
 // -------------------------------------------------------------------
 
+class CDOTAUserMsg_TormentorTimer final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDOTAUserMsg_TormentorTimer) */ {
+ public:
+  inline CDOTAUserMsg_TormentorTimer() : CDOTAUserMsg_TormentorTimer(nullptr) {}
+  ~CDOTAUserMsg_TormentorTimer() override;
+  explicit PROTOBUF_CONSTEXPR CDOTAUserMsg_TormentorTimer(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDOTAUserMsg_TormentorTimer(const CDOTAUserMsg_TormentorTimer& from);
+  CDOTAUserMsg_TormentorTimer(CDOTAUserMsg_TormentorTimer&& from) noexcept
+    : CDOTAUserMsg_TormentorTimer() {
+    *this = ::std::move(from);
+  }
+
+  inline CDOTAUserMsg_TormentorTimer& operator=(const CDOTAUserMsg_TormentorTimer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDOTAUserMsg_TormentorTimer& operator=(CDOTAUserMsg_TormentorTimer&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDOTAUserMsg_TormentorTimer& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDOTAUserMsg_TormentorTimer* internal_default_instance() {
+    return reinterpret_cast<const CDOTAUserMsg_TormentorTimer*>(
+               &_CDOTAUserMsg_TormentorTimer_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  friend void swap(CDOTAUserMsg_TormentorTimer& a, CDOTAUserMsg_TormentorTimer& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDOTAUserMsg_TormentorTimer* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDOTAUserMsg_TormentorTimer* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDOTAUserMsg_TormentorTimer* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDOTAUserMsg_TormentorTimer>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CDOTAUserMsg_TormentorTimer& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CDOTAUserMsg_TormentorTimer& from) {
+    CDOTAUserMsg_TormentorTimer::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CDOTAUserMsg_TormentorTimer* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDOTAUserMsg_TormentorTimer";
+  }
+  protected:
+  explicit CDOTAUserMsg_TormentorTimer(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNegativeFieldNumber = 2,
+    kPlayerIdFieldNumber = 1,
+  };
+  // optional bool negative = 2;
+  bool has_negative() const;
+  private:
+  bool _internal_has_negative() const;
+  public:
+  void clear_negative();
+  bool negative() const;
+  void set_negative(bool value);
+  private:
+  bool _internal_negative() const;
+  void _internal_set_negative(bool value);
+  public:
+
+  // optional int32 player_id = 1 [default = -1];
+  bool has_player_id() const;
+  private:
+  bool _internal_has_player_id() const;
+  public:
+  void clear_player_id();
+  int32_t player_id() const;
+  void set_player_id(int32_t value);
+  private:
+  int32_t _internal_player_id() const;
+  void _internal_set_player_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CDOTAUserMsg_TormentorTimer)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    bool negative_;
+    int32_t player_id_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fusermessages_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CDOTAUserMsg_WillPurchaseAlert final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDOTAUserMsg_WillPurchaseAlert) */ {
  public:
@@ -6480,7 +6666,7 @@ class CDOTAUserMsg_WillPurchaseAlert final :
                &_CDOTAUserMsg_WillPurchaseAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   friend void swap(CDOTAUserMsg_WillPurchaseAlert& a, CDOTAUserMsg_WillPurchaseAlert& b) {
     a.Swap(&b);
@@ -6685,7 +6871,7 @@ class CDOTAUserMsg_EmptyTeleportAlert final :
                &_CDOTAUserMsg_EmptyTeleportAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(CDOTAUserMsg_EmptyTeleportAlert& a, CDOTAUserMsg_EmptyTeleportAlert& b) {
     a.Swap(&b);
@@ -6875,7 +7061,7 @@ class CDOTAUserMsg_MarsArenaOfBloodAttack final :
                &_CDOTAUserMsg_MarsArenaOfBloodAttack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(CDOTAUserMsg_MarsArenaOfBloodAttack& a, CDOTAUserMsg_MarsArenaOfBloodAttack& b) {
     a.Swap(&b);
@@ -7065,7 +7251,7 @@ class CDOTAUserMsg_BuyBackStateAlert final :
                &_CDOTAUserMsg_BuyBackStateAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   friend void swap(CDOTAUserMsg_BuyBackStateAlert& a, CDOTAUserMsg_BuyBackStateAlert& b) {
     a.Swap(&b);
@@ -7225,7 +7411,7 @@ class CDOTAUserMsg_QuickBuyAlert final :
                &_CDOTAUserMsg_QuickBuyAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   friend void swap(CDOTAUserMsg_QuickBuyAlert& a, CDOTAUserMsg_QuickBuyAlert& b) {
     a.Swap(&b);
@@ -7445,7 +7631,7 @@ class CDOTAUserMsg_CourierKilledAlert_LostItem final :
                &_CDOTAUserMsg_CourierKilledAlert_LostItem_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   friend void swap(CDOTAUserMsg_CourierKilledAlert_LostItem& a, CDOTAUserMsg_CourierKilledAlert_LostItem& b) {
     a.Swap(&b);
@@ -7620,7 +7806,7 @@ class CDOTAUserMsg_CourierKilledAlert final :
                &_CDOTAUserMsg_CourierKilledAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    31;
 
   friend void swap(CDOTAUserMsg_CourierKilledAlert& a, CDOTAUserMsg_CourierKilledAlert& b) {
     a.Swap(&b);
@@ -7877,7 +8063,7 @@ class CDOTAUserMsg_MinimapEvent final :
                &_CDOTAUserMsg_MinimapEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   friend void swap(CDOTAUserMsg_MinimapEvent& a, CDOTAUserMsg_MinimapEvent& b) {
     a.Swap(&b);
@@ -8112,7 +8298,7 @@ class CDOTAUserMsg_MapLine final :
                &_CDOTAUserMsg_MapLine_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    33;
 
   friend void swap(CDOTAUserMsg_MapLine& a, CDOTAUserMsg_MapLine& b) {
     a.Swap(&b);
@@ -8292,7 +8478,7 @@ class CDOTAUserMsg_MinimapDebugPoint final :
                &_CDOTAUserMsg_MinimapDebugPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    34;
 
   friend void swap(CDOTAUserMsg_MinimapDebugPoint& a, CDOTAUserMsg_MinimapDebugPoint& b) {
     a.Swap(&b);
@@ -8517,7 +8703,7 @@ class CDOTAUserMsg_CreateLinearProjectile final :
                &_CDOTAUserMsg_CreateLinearProjectile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    35;
 
   friend void swap(CDOTAUserMsg_CreateLinearProjectile& a, CDOTAUserMsg_CreateLinearProjectile& b) {
     a.Swap(&b);
@@ -8862,7 +9048,7 @@ class CDOTAUserMsg_DestroyLinearProjectile final :
                &_CDOTAUserMsg_DestroyLinearProjectile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    36;
 
   friend void swap(CDOTAUserMsg_DestroyLinearProjectile& a, CDOTAUserMsg_DestroyLinearProjectile& b) {
     a.Swap(&b);
@@ -9022,7 +9208,7 @@ class CDOTAUserMsg_DodgeTrackingProjectiles final :
                &_CDOTAUserMsg_DodgeTrackingProjectiles_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    37;
 
   friend void swap(CDOTAUserMsg_DodgeTrackingProjectiles& a, CDOTAUserMsg_DodgeTrackingProjectiles& b) {
     a.Swap(&b);
@@ -9197,7 +9383,7 @@ class CDOTAUserMsg_SpectatorPlayerClick final :
                &_CDOTAUserMsg_SpectatorPlayerClick_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    38;
 
   friend void swap(CDOTAUserMsg_SpectatorPlayerClick& a, CDOTAUserMsg_SpectatorPlayerClick& b) {
     a.Swap(&b);
@@ -9387,7 +9573,7 @@ class CDOTAUserMsg_SpectatorPlayerUnitOrders final :
                &_CDOTAUserMsg_SpectatorPlayerUnitOrders_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    39;
 
   friend void swap(CDOTAUserMsg_SpectatorPlayerUnitOrders& a, CDOTAUserMsg_SpectatorPlayerUnitOrders& b) {
     a.Swap(&b);
@@ -9711,7 +9897,7 @@ class CDOTAUserMsg_NevermoreRequiem final :
                &_CDOTAUserMsg_NevermoreRequiem_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    40;
 
   friend void swap(CDOTAUserMsg_NevermoreRequiem& a, CDOTAUserMsg_NevermoreRequiem& b) {
     a.Swap(&b);
@@ -9921,7 +10107,7 @@ class CDOTAUserMsg_InvalidCommand final :
                &_CDOTAUserMsg_InvalidCommand_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    41;
 
   friend void swap(CDOTAUserMsg_InvalidCommand& a, CDOTAUserMsg_InvalidCommand& b) {
     a.Swap(&b);
@@ -10101,7 +10287,7 @@ class CDOTAUserMsg_HudError final :
                &_CDOTAUserMsg_HudError_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    42;
 
   friend void swap(CDOTAUserMsg_HudError& a, CDOTAUserMsg_HudError& b) {
     a.Swap(&b);
@@ -10276,7 +10462,7 @@ class CDOTAUserMsg_SharedCooldown final :
                &_CDOTAUserMsg_SharedCooldown_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    43;
 
   friend void swap(CDOTAUserMsg_SharedCooldown& a, CDOTAUserMsg_SharedCooldown& b) {
     a.Swap(&b);
@@ -10486,7 +10672,7 @@ class CDOTAUserMsg_SetNextAutobuyItem final :
                &_CDOTAUserMsg_SetNextAutobuyItem_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    44;
 
   friend void swap(CDOTAUserMsg_SetNextAutobuyItem& a, CDOTAUserMsg_SetNextAutobuyItem& b) {
     a.Swap(&b);
@@ -10651,7 +10837,7 @@ class CDOTAUserMsg_HalloweenDrops final :
                &_CDOTAUserMsg_HalloweenDrops_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    45;
 
   friend void swap(CDOTAUserMsg_HalloweenDrops& a, CDOTAUserMsg_HalloweenDrops& b) {
     a.Swap(&b);
@@ -10859,7 +11045,7 @@ class CDOTAUserMsg_CourierLeftFountainAlert final :
                &_CDOTAUserMsg_CourierLeftFountainAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    46;
 
   friend void swap(CDOTAUserMsg_CourierLeftFountainAlert& a, CDOTAUserMsg_CourierLeftFountainAlert& b) {
     a.Swap(&b);
@@ -11019,7 +11205,7 @@ class CDOTAResponseQuerySerialized_Fact final :
                &_CDOTAResponseQuerySerialized_Fact_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    47;
 
   friend void swap(CDOTAResponseQuerySerialized_Fact& a, CDOTAResponseQuerySerialized_Fact& b) {
     a.Swap(&b);
@@ -11296,7 +11482,7 @@ class CDOTAResponseQuerySerialized final :
                &_CDOTAResponseQuerySerialized_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    48;
 
   friend void swap(CDOTAResponseQuerySerialized& a, CDOTAResponseQuerySerialized& b) {
     a.Swap(&b);
@@ -11462,7 +11648,7 @@ class CDOTASpeechMatchOnClient final :
                &_CDOTASpeechMatchOnClient_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    49;
 
   friend void swap(CDOTASpeechMatchOnClient& a, CDOTASpeechMatchOnClient& b) {
     a.Swap(&b);
@@ -11672,7 +11858,7 @@ class CDOTAUserMsg_UnitEvent_Interval final :
                &_CDOTAUserMsg_UnitEvent_Interval_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    50;
 
   friend void swap(CDOTAUserMsg_UnitEvent_Interval& a, CDOTAUserMsg_UnitEvent_Interval& b) {
     a.Swap(&b);
@@ -11847,7 +12033,7 @@ class CDOTAUserMsg_UnitEvent_Speech final :
                &_CDOTAUserMsg_UnitEvent_Speech_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    51;
 
   friend void swap(CDOTAUserMsg_UnitEvent_Speech& a, CDOTAUserMsg_UnitEvent_Speech& b) {
     a.Swap(&b);
@@ -12107,7 +12293,7 @@ class CDOTAUserMsg_UnitEvent_SpeechMute final :
                &_CDOTAUserMsg_UnitEvent_SpeechMute_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    52;
 
   friend void swap(CDOTAUserMsg_UnitEvent_SpeechMute& a, CDOTAUserMsg_UnitEvent_SpeechMute& b) {
     a.Swap(&b);
@@ -12267,7 +12453,7 @@ class CDOTAUserMsg_UnitEvent_AddGesture final :
                &_CDOTAUserMsg_UnitEvent_AddGesture_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    53;
 
   friend void swap(CDOTAUserMsg_UnitEvent_AddGesture& a, CDOTAUserMsg_UnitEvent_AddGesture& b) {
     a.Swap(&b);
@@ -12502,7 +12688,7 @@ class CDOTAUserMsg_UnitEvent_RemoveGesture final :
                &_CDOTAUserMsg_UnitEvent_RemoveGesture_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    54;
 
   friend void swap(CDOTAUserMsg_UnitEvent_RemoveGesture& a, CDOTAUserMsg_UnitEvent_RemoveGesture& b) {
     a.Swap(&b);
@@ -12662,7 +12848,7 @@ class CDOTAUserMsg_UnitEvent_BloodImpact final :
                &_CDOTAUserMsg_UnitEvent_BloodImpact_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    55;
 
   friend void swap(CDOTAUserMsg_UnitEvent_BloodImpact& a, CDOTAUserMsg_UnitEvent_BloodImpact& b) {
     a.Swap(&b);
@@ -12852,7 +13038,7 @@ class CDOTAUserMsg_UnitEvent_FadeGesture final :
                &_CDOTAUserMsg_UnitEvent_FadeGesture_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    56;
 
   friend void swap(CDOTAUserMsg_UnitEvent_FadeGesture& a, CDOTAUserMsg_UnitEvent_FadeGesture& b) {
     a.Swap(&b);
@@ -13012,7 +13198,7 @@ class CDOTAUserMsg_UnitEvent final :
                &_CDOTAUserMsg_UnitEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    57;
 
   friend void swap(CDOTAUserMsg_UnitEvent& a, CDOTAUserMsg_UnitEvent& b) {
     a.Swap(&b);
@@ -13338,7 +13524,7 @@ class CDOTAUserMsg_ItemPurchased final :
                &_CDOTAUserMsg_ItemPurchased_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    58;
 
   friend void swap(CDOTAUserMsg_ItemPurchased& a, CDOTAUserMsg_ItemPurchased& b) {
     a.Swap(&b);
@@ -13513,7 +13699,7 @@ class CDOTAUserMsg_ItemSold final :
                &_CDOTAUserMsg_ItemSold_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    59;
 
   friend void swap(CDOTAUserMsg_ItemSold& a, CDOTAUserMsg_ItemSold& b) {
     a.Swap(&b);
@@ -13673,7 +13859,7 @@ class CDOTAUserMsg_ItemFound final :
                &_CDOTAUserMsg_ItemFound_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    60;
 
   friend void swap(CDOTAUserMsg_ItemFound& a, CDOTAUserMsg_ItemFound& b) {
     a.Swap(&b);
@@ -13893,7 +14079,7 @@ class CDOTAUserMsg_OverheadEvent final :
                &_CDOTAUserMsg_OverheadEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    61;
 
   friend void swap(CDOTAUserMsg_OverheadEvent& a, CDOTAUserMsg_OverheadEvent& b) {
     a.Swap(&b);
@@ -14113,7 +14299,7 @@ class CDOTAUserMsg_TutorialTipInfo final :
                &_CDOTAUserMsg_TutorialTipInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    62;
 
   friend void swap(CDOTAUserMsg_TutorialTipInfo& a, CDOTAUserMsg_TutorialTipInfo& b) {
     a.Swap(&b);
@@ -14293,7 +14479,7 @@ class CDOTAUserMsg_TutorialFinish final :
                &_CDOTAUserMsg_TutorialFinish_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    63;
 
   friend void swap(CDOTAUserMsg_TutorialFinish& a, CDOTAUserMsg_TutorialFinish& b) {
     a.Swap(&b);
@@ -14512,7 +14698,7 @@ class CDOTAUserMsg_TutorialMinimapPosition final :
                &_CDOTAUserMsg_TutorialMinimapPosition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    64;
 
   friend void swap(CDOTAUserMsg_TutorialMinimapPosition& a, CDOTAUserMsg_TutorialMinimapPosition& b) {
     a.Swap(&b);
@@ -14638,7 +14824,7 @@ class CDOTAUserMsg_SendGenericToolTip final :
                &_CDOTAUserMsg_SendGenericToolTip_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    65;
 
   friend void swap(CDOTAUserMsg_SendGenericToolTip& a, CDOTAUserMsg_SendGenericToolTip& b) {
     a.Swap(&b);
@@ -14853,7 +15039,7 @@ class CDOTAUserMsg_WorldLine final :
                &_CDOTAUserMsg_WorldLine_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    66;
 
   friend void swap(CDOTAUserMsg_WorldLine& a, CDOTAUserMsg_WorldLine& b) {
     a.Swap(&b);
@@ -15033,7 +15219,7 @@ class CDOTAUserMsg_ChatWheel final :
                &_CDOTAUserMsg_ChatWheel_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    67;
 
   friend void swap(CDOTAUserMsg_ChatWheel& a, CDOTAUserMsg_ChatWheel& b) {
     a.Swap(&b);
@@ -15253,7 +15439,7 @@ class CDOTAUserMsg_ReceivedXmasGift final :
                &_CDOTAUserMsg_ReceivedXmasGift_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    68;
 
   friend void swap(CDOTAUserMsg_ReceivedXmasGift& a, CDOTAUserMsg_ReceivedXmasGift& b) {
     a.Swap(&b);
@@ -15448,7 +15634,7 @@ class CDOTAUserMsg_ShowSurvey final :
                &_CDOTAUserMsg_ShowSurvey_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    69;
 
   friend void swap(CDOTAUserMsg_ShowSurvey& a, CDOTAUserMsg_ShowSurvey& b) {
     a.Swap(&b);
@@ -15693,7 +15879,7 @@ class CDOTAUserMsg_UpdateSharedContent final :
                &_CDOTAUserMsg_UpdateSharedContent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    70;
 
   friend void swap(CDOTAUserMsg_UpdateSharedContent& a, CDOTAUserMsg_UpdateSharedContent& b) {
     a.Swap(&b);
@@ -15852,7 +16038,7 @@ class CDOTAUserMsg_TutorialRequestExp final :
                &_CDOTAUserMsg_TutorialRequestExp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    71;
 
   friend void swap(CDOTAUserMsg_TutorialRequestExp& a, CDOTAUserMsg_TutorialRequestExp& b) {
     a.Swap(&b);
@@ -15978,7 +16164,7 @@ class CDOTAUserMsg_TutorialFade final :
                &_CDOTAUserMsg_TutorialFade_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    72;
 
   friend void swap(CDOTAUserMsg_TutorialFade& a, CDOTAUserMsg_TutorialFade& b) {
     a.Swap(&b);
@@ -16138,7 +16324,7 @@ class CDOTAUserMsg_TutorialPingMinimap final :
                &_CDOTAUserMsg_TutorialPingMinimap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    73;
 
   friend void swap(CDOTAUserMsg_TutorialPingMinimap& a, CDOTAUserMsg_TutorialPingMinimap& b) {
     a.Swap(&b);
@@ -16358,7 +16544,7 @@ class CDOTAUserMsg_GamerulesStateChanged final :
                &_CDOTAUserMsg_GamerulesStateChanged_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    74;
 
   friend void swap(CDOTAUserMsg_GamerulesStateChanged& a, CDOTAUserMsg_GamerulesStateChanged& b) {
     a.Swap(&b);
@@ -16518,7 +16704,7 @@ class CDOTAUserMsg_AddQuestLogEntry final :
                &_CDOTAUserMsg_AddQuestLogEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    75;
 
   friend void swap(CDOTAUserMsg_AddQuestLogEntry& a, CDOTAUserMsg_AddQuestLogEntry& b) {
     a.Swap(&b);
@@ -16703,7 +16889,7 @@ class CDOTAUserMsg_SendStatPopup final :
                &_CDOTAUserMsg_SendStatPopup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    76;
 
   friend void swap(CDOTAUserMsg_SendStatPopup& a, CDOTAUserMsg_SendStatPopup& b) {
     a.Swap(&b);
@@ -16883,7 +17069,7 @@ class CDOTAUserMsg_DismissAllStatPopups final :
                &_CDOTAUserMsg_DismissAllStatPopups_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    77;
 
   friend void swap(CDOTAUserMsg_DismissAllStatPopups& a, CDOTAUserMsg_DismissAllStatPopups& b) {
     a.Swap(&b);
@@ -17048,7 +17234,7 @@ class CDOTAUserMsg_SendRoshanSpectatorPhase final :
                &_CDOTAUserMsg_SendRoshanSpectatorPhase_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    78;
 
   friend void swap(CDOTAUserMsg_SendRoshanSpectatorPhase& a, CDOTAUserMsg_SendRoshanSpectatorPhase& b) {
     a.Swap(&b);
@@ -17238,7 +17424,7 @@ class CDOTAUserMsg_SendRoshanPopup final :
                &_CDOTAUserMsg_SendRoshanPopup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    79;
 
   friend void swap(CDOTAUserMsg_SendRoshanPopup& a, CDOTAUserMsg_SendRoshanPopup& b) {
     a.Swap(&b);
@@ -17413,7 +17599,7 @@ class CDOTAUserMsg_SendFinalGold final :
                &_CDOTAUserMsg_SendFinalGold_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    80;
 
   friend void swap(CDOTAUserMsg_SendFinalGold& a, CDOTAUserMsg_SendFinalGold& b) {
     a.Swap(&b);
@@ -17605,7 +17791,7 @@ class CDOTAUserMsg_CustomMsg final :
                &_CDOTAUserMsg_CustomMsg_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    81;
 
   friend void swap(CDOTAUserMsg_CustomMsg& a, CDOTAUserMsg_CustomMsg& b) {
     a.Swap(&b);
@@ -17800,7 +17986,7 @@ class CDOTAUserMsg_CoachHUDPing final :
                &_CDOTAUserMsg_CoachHUDPing_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    82;
 
   friend void swap(CDOTAUserMsg_CoachHUDPing& a, CDOTAUserMsg_CoachHUDPing& b) {
     a.Swap(&b);
@@ -17979,7 +18165,7 @@ class CDOTAUserMsg_ClientLoadGridNav final :
                &_CDOTAUserMsg_ClientLoadGridNav_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    83;
 
   friend void swap(CDOTAUserMsg_ClientLoadGridNav& a, CDOTAUserMsg_ClientLoadGridNav& b) {
     a.Swap(&b);
@@ -18105,7 +18291,7 @@ class CDOTAUserMsg_TE_Projectile final :
                &_CDOTAUserMsg_TE_Projectile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    84;
 
   friend void swap(CDOTAUserMsg_TE_Projectile& a, CDOTAUserMsg_TE_Projectile& b) {
     a.Swap(&b);
@@ -18192,6 +18378,7 @@ class CDOTAUserMsg_TE_Projectile final :
     kHandleFieldNumber = 13,
     kAdditionalParticleSystemHandleFieldNumber = 16,
     kOriginalMoveSpeedFieldNumber = 17,
+    kTargetProjectileHandleFieldNumber = 19,
     kAbilityFieldNumber = 18,
     kSourceFieldNumber = 1,
     kTargetFieldNumber = 2,
@@ -18388,6 +18575,19 @@ class CDOTAUserMsg_TE_Projectile final :
   void _internal_set_original_move_speed(int32_t value);
   public:
 
+  // optional int32 target_projectile_handle = 19;
+  bool has_target_projectile_handle() const;
+  private:
+  bool _internal_has_target_projectile_handle() const;
+  public:
+  void clear_target_projectile_handle();
+  int32_t target_projectile_handle() const;
+  void set_target_projectile_handle(int32_t value);
+  private:
+  int32_t _internal_target_projectile_handle() const;
+  void _internal_set_target_projectile_handle(int32_t value);
+  public:
+
   // optional uint32 ability = 18 [default = 16777215];
   bool has_ability() const;
   private:
@@ -18451,6 +18651,7 @@ class CDOTAUserMsg_TE_Projectile final :
     int32_t handle_;
     int64_t additional_particle_system_handle_;
     int32_t original_move_speed_;
+    int32_t target_projectile_handle_;
     uint32_t ability_;
     uint32_t source_;
     uint32_t target_;
@@ -18515,7 +18716,7 @@ class CDOTAUserMsg_TE_ProjectileLoc final :
                &_CDOTAUserMsg_TE_ProjectileLoc_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    85;
 
   friend void swap(CDOTAUserMsg_TE_ProjectileLoc& a, CDOTAUserMsg_TE_ProjectileLoc& b) {
     a.Swap(&b);
@@ -18915,7 +19116,7 @@ class CDOTAUserMsg_TE_DestroyProjectile final :
                &_CDOTAUserMsg_TE_DestroyProjectile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    86;
 
   friend void swap(CDOTAUserMsg_TE_DestroyProjectile& a, CDOTAUserMsg_TE_DestroyProjectile& b) {
     a.Swap(&b);
@@ -19075,7 +19276,7 @@ class CDOTAUserMsg_TE_DotaBloodImpact final :
                &_CDOTAUserMsg_TE_DotaBloodImpact_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    87;
 
   friend void swap(CDOTAUserMsg_TE_DotaBloodImpact& a, CDOTAUserMsg_TE_DotaBloodImpact& b) {
     a.Swap(&b);
@@ -19280,7 +19481,7 @@ class CDOTAUserMsg_AbilityPing final :
                &_CDOTAUserMsg_AbilityPing_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    88;
 
   friend void swap(CDOTAUserMsg_AbilityPing& a, CDOTAUserMsg_AbilityPing& b) {
     a.Swap(&b);
@@ -19620,7 +19821,7 @@ class CDOTAUserMsg_TE_UnitAnimation final :
                &_CDOTAUserMsg_TE_UnitAnimation_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    89;
 
   friend void swap(CDOTAUserMsg_TE_UnitAnimation& a, CDOTAUserMsg_TE_UnitAnimation& b) {
     a.Swap(&b);
@@ -19870,7 +20071,7 @@ class CDOTAUserMsg_TE_UnitAnimationEnd final :
                &_CDOTAUserMsg_TE_UnitAnimationEnd_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    89;
+    90;
 
   friend void swap(CDOTAUserMsg_TE_UnitAnimationEnd& a, CDOTAUserMsg_TE_UnitAnimationEnd& b) {
     a.Swap(&b);
@@ -20045,7 +20246,7 @@ class CDOTAUserMsg_ShowGenericPopup final :
                &_CDOTAUserMsg_ShowGenericPopup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    90;
+    91;
 
   friend void swap(CDOTAUserMsg_ShowGenericPopup& a, CDOTAUserMsg_ShowGenericPopup& b) {
     a.Swap(&b);
@@ -20303,7 +20504,7 @@ class CDOTAUserMsg_VoteStart final :
                &_CDOTAUserMsg_VoteStart_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    91;
+    92;
 
   friend void swap(CDOTAUserMsg_VoteStart& a, CDOTAUserMsg_VoteStart& b) {
     a.Swap(&b);
@@ -20524,7 +20725,7 @@ class CDOTAUserMsg_VoteUpdate final :
                &_CDOTAUserMsg_VoteUpdate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    92;
+    93;
 
   friend void swap(CDOTAUserMsg_VoteUpdate& a, CDOTAUserMsg_VoteUpdate& b) {
     a.Swap(&b);
@@ -20692,7 +20893,7 @@ class CDOTAUserMsg_VoteEnd final :
                &_CDOTAUserMsg_VoteEnd_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    93;
+    94;
 
   friend void swap(CDOTAUserMsg_VoteEnd& a, CDOTAUserMsg_VoteEnd& b) {
     a.Swap(&b);
@@ -20852,7 +21053,7 @@ class CDOTAUserMsg_BoosterStatePlayer final :
                &_CDOTAUserMsg_BoosterStatePlayer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    94;
+    95;
 
   friend void swap(CDOTAUserMsg_BoosterStatePlayer& a, CDOTAUserMsg_BoosterStatePlayer& b) {
     a.Swap(&b);
@@ -21072,7 +21273,7 @@ class CDOTAUserMsg_BoosterState final :
                &_CDOTAUserMsg_BoosterState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    95;
+    96;
 
   friend void swap(CDOTAUserMsg_BoosterState& a, CDOTAUserMsg_BoosterState& b) {
     a.Swap(&b);
@@ -21236,7 +21437,7 @@ class CDOTAUserMsg_AbilitySteal final :
                &_CDOTAUserMsg_AbilitySteal_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    96;
+    97;
 
   friend void swap(CDOTAUserMsg_AbilitySteal& a, CDOTAUserMsg_AbilitySteal& b) {
     a.Swap(&b);
@@ -21426,7 +21627,7 @@ class CDOTAUserMsg_StatsHeroLookup final :
                &_CDOTAUserMsg_StatsHeroLookup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    97;
+    98;
 
   friend void swap(CDOTAUserMsg_StatsHeroLookup& a, CDOTAUserMsg_StatsHeroLookup& b) {
     a.Swap(&b);
@@ -21641,7 +21842,7 @@ class CDOTAUserMsg_StatsHeroPositionInfo_PositionPair final :
                &_CDOTAUserMsg_StatsHeroPositionInfo_PositionPair_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    98;
+    99;
 
   friend void swap(CDOTAUserMsg_StatsHeroPositionInfo_PositionPair& a, CDOTAUserMsg_StatsHeroPositionInfo_PositionPair& b) {
     a.Swap(&b);
@@ -21816,7 +22017,7 @@ class CDOTAUserMsg_StatsHeroPositionInfo final :
                &_CDOTAUserMsg_StatsHeroPositionInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    99;
+    100;
 
   friend void swap(CDOTAUserMsg_StatsHeroPositionInfo& a, CDOTAUserMsg_StatsHeroPositionInfo& b) {
     a.Swap(&b);
@@ -21998,7 +22199,7 @@ class CDOTAUserMsg_StatsHeroMinuteDetails final :
                &_CDOTAUserMsg_StatsHeroMinuteDetails_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    100;
+    101;
 
   friend void swap(CDOTAUserMsg_StatsHeroMinuteDetails& a, CDOTAUserMsg_StatsHeroMinuteDetails& b) {
     a.Swap(&b);
@@ -22400,7 +22601,7 @@ class CDOTAUserMsg_StatsTeamMinuteDetails_LocationPerformance final :
                &_CDOTAUserMsg_StatsTeamMinuteDetails_LocationPerformance_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    101;
+    102;
 
   friend void swap(CDOTAUserMsg_StatsTeamMinuteDetails_LocationPerformance& a, CDOTAUserMsg_StatsTeamMinuteDetails_LocationPerformance& b) {
     a.Swap(&b);
@@ -22590,7 +22791,7 @@ class CDOTAUserMsg_StatsTeamMinuteDetails final :
                &_CDOTAUserMsg_StatsTeamMinuteDetails_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    102;
+    103;
 
   friend void swap(CDOTAUserMsg_StatsTeamMinuteDetails& a, CDOTAUserMsg_StatsTeamMinuteDetails& b) {
     a.Swap(&b);
@@ -22897,7 +23098,7 @@ class CDOTAUserMsg_StatsPlayerKillShare final :
                &_CDOTAUserMsg_StatsPlayerKillShare_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    103;
+    104;
 
   friend void swap(CDOTAUserMsg_StatsPlayerKillShare& a, CDOTAUserMsg_StatsPlayerKillShare& b) {
     a.Swap(&b);
@@ -23132,7 +23333,7 @@ class CDOTAUserMsg_StatsKillDetails final :
                &_CDOTAUserMsg_StatsKillDetails_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    104;
+    105;
 
   friend void swap(CDOTAUserMsg_StatsKillDetails& a, CDOTAUserMsg_StatsKillDetails& b) {
     a.Swap(&b);
@@ -23372,7 +23573,7 @@ class CDOTAUserMsg_StatsMatchDetails_CDOTAUserMsg_StatsFightTeamDetails final :
                &_CDOTAUserMsg_StatsMatchDetails_CDOTAUserMsg_StatsFightTeamDetails_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    105;
+    106;
 
   friend void swap(CDOTAUserMsg_StatsMatchDetails_CDOTAUserMsg_StatsFightTeamDetails& a, CDOTAUserMsg_StatsMatchDetails_CDOTAUserMsg_StatsFightTeamDetails& b) {
     a.Swap(&b);
@@ -23595,7 +23796,7 @@ class CDOTAUserMsg_StatsMatchDetails_CDOTAUserMsg_StatsFightDetails final :
                &_CDOTAUserMsg_StatsMatchDetails_CDOTAUserMsg_StatsFightDetails_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    106;
+    107;
 
   friend void swap(CDOTAUserMsg_StatsMatchDetails_CDOTAUserMsg_StatsFightDetails& a, CDOTAUserMsg_StatsMatchDetails_CDOTAUserMsg_StatsFightDetails& b) {
     a.Swap(&b);
@@ -23810,7 +24011,7 @@ class CDOTAUserMsg_StatsMatchDetails final :
                &_CDOTAUserMsg_StatsMatchDetails_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    107;
+    108;
 
   friend void swap(CDOTAUserMsg_StatsMatchDetails& a, CDOTAUserMsg_StatsMatchDetails& b) {
     a.Swap(&b);
@@ -24077,7 +24278,7 @@ class CDOTAUserMsg_MiniTaunt final :
                &_CDOTAUserMsg_MiniTaunt_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    108;
+    109;
 
   friend void swap(CDOTAUserMsg_MiniTaunt& a, CDOTAUserMsg_MiniTaunt& b) {
     a.Swap(&b);
@@ -24237,7 +24438,7 @@ class CDOTAUserMsg_SpeechBubble final :
                &_CDOTAUserMsg_SpeechBubble_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    109;
+    110;
 
   friend void swap(CDOTAUserMsg_SpeechBubble& a, CDOTAUserMsg_SpeechBubble& b) {
     a.Swap(&b);
@@ -24397,7 +24598,7 @@ class CDOTAUserMsg_CustomHeaderMessage final :
                &_CDOTAUserMsg_CustomHeaderMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    110;
+    111;
 
   friend void swap(CDOTAUserMsg_CustomHeaderMessage& a, CDOTAUserMsg_CustomHeaderMessage& b) {
     a.Swap(&b);
@@ -24607,7 +24808,7 @@ class CMsgHeroAbilityStat final :
                &_CMsgHeroAbilityStat_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    111;
+    112;
 
   friend void swap(CMsgHeroAbilityStat& a, CMsgHeroAbilityStat& b) {
     a.Swap(&b);
@@ -24797,7 +24998,7 @@ class CMsgCombatAnalyzerPlayerStat final :
                &_CMsgCombatAnalyzerPlayerStat_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    112;
+    113;
 
   friend void swap(CMsgCombatAnalyzerPlayerStat& a, CMsgCombatAnalyzerPlayerStat& b) {
     a.Swap(&b);
@@ -24977,7 +25178,7 @@ class CMsgCombatAnalyzerStats final :
                &_CMsgCombatAnalyzerStats_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    113;
+    114;
 
   friend void swap(CMsgCombatAnalyzerStats& a, CMsgCombatAnalyzerStats& b) {
     a.Swap(&b);
@@ -25157,7 +25358,7 @@ class CDOTAUserMsg_BeastChat final :
                &_CDOTAUserMsg_BeastChat_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    114;
+    115;
 
   friend void swap(CDOTAUserMsg_BeastChat& a, CDOTAUserMsg_BeastChat& b) {
     a.Swap(&b);
@@ -25377,7 +25578,7 @@ class CDOTAUserMsg_CustomHudElement_Create final :
                &_CDOTAUserMsg_CustomHudElement_Create_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    115;
+    116;
 
   friend void swap(CDOTAUserMsg_CustomHudElement_Create& a, CDOTAUserMsg_CustomHudElement_Create& b) {
     a.Swap(&b);
@@ -25582,7 +25783,7 @@ class CDOTAUserMsg_CustomHudElement_Modify final :
                &_CDOTAUserMsg_CustomHudElement_Modify_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    116;
+    117;
 
   friend void swap(CDOTAUserMsg_CustomHudElement_Modify& a, CDOTAUserMsg_CustomHudElement_Modify& b) {
     a.Swap(&b);
@@ -25782,7 +25983,7 @@ class CDOTAUserMsg_CustomHudElement_Destroy final :
                &_CDOTAUserMsg_CustomHudElement_Destroy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    117;
+    118;
 
   friend void swap(CDOTAUserMsg_CustomHudElement_Destroy& a, CDOTAUserMsg_CustomHudElement_Destroy& b) {
     a.Swap(&b);
@@ -25947,7 +26148,7 @@ class CDOTAUserMsg_CompendiumStatePlayer final :
                &_CDOTAUserMsg_CompendiumStatePlayer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    118;
+    119;
 
   friend void swap(CDOTAUserMsg_CompendiumStatePlayer& a, CDOTAUserMsg_CompendiumStatePlayer& b) {
     a.Swap(&b);
@@ -26122,7 +26323,7 @@ class CDOTAUserMsg_CompendiumState final :
                &_CDOTAUserMsg_CompendiumState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    119;
+    120;
 
   friend void swap(CDOTAUserMsg_CompendiumState& a, CDOTAUserMsg_CompendiumState& b) {
     a.Swap(&b);
@@ -26286,7 +26487,7 @@ class CDOTAUserMsg_ProjectionAbility final :
                &_CDOTAUserMsg_ProjectionAbility_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    120;
+    121;
 
   friend void swap(CDOTAUserMsg_ProjectionAbility& a, CDOTAUserMsg_ProjectionAbility& b) {
     a.Swap(&b);
@@ -26556,7 +26757,7 @@ class CDOTAUserMsg_ProjectionEvent final :
                &_CDOTAUserMsg_ProjectionEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    121;
+    122;
 
   friend void swap(CDOTAUserMsg_ProjectionEvent& a, CDOTAUserMsg_ProjectionEvent& b) {
     a.Swap(&b);
@@ -26731,7 +26932,7 @@ class CDOTAUserMsg_XPAlert final :
                &_CDOTAUserMsg_XPAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    122;
+    123;
 
   friend void swap(CDOTAUserMsg_XPAlert& a, CDOTAUserMsg_XPAlert& b) {
     a.Swap(&b);
@@ -26906,7 +27107,7 @@ class CDOTAUserMsg_TalentTreeAlert final :
                &_CDOTAUserMsg_TalentTreeAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    123;
+    124;
 
   friend void swap(CDOTAUserMsg_TalentTreeAlert& a, CDOTAUserMsg_TalentTreeAlert& b) {
     a.Swap(&b);
@@ -27125,7 +27326,7 @@ class CDOTAUserMsg_UpdateQuestProgress final :
                &_CDOTAUserMsg_UpdateQuestProgress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    124;
+    125;
 
   friend void swap(CDOTAUserMsg_UpdateQuestProgress& a, CDOTAUserMsg_UpdateQuestProgress& b) {
     a.Swap(&b);
@@ -27251,7 +27452,7 @@ class CDOTAUserMsg_QuestStatus final :
                &_CDOTAUserMsg_QuestStatus_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    125;
+    126;
 
   friend void swap(CDOTAUserMsg_QuestStatus& a, CDOTAUserMsg_QuestStatus& b) {
     a.Swap(&b);
@@ -27516,7 +27717,7 @@ class CDOTAUserMsg_SuggestHeroPick final :
                &_CDOTAUserMsg_SuggestHeroPick_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    126;
+    127;
 
   friend void swap(CDOTAUserMsg_SuggestHeroPick& a, CDOTAUserMsg_SuggestHeroPick& b) {
     a.Swap(&b);
@@ -27721,7 +27922,7 @@ class CDOTAUserMsg_SuggestHeroRole final :
                &_CDOTAUserMsg_SuggestHeroRole_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    127;
+    128;
 
   friend void swap(CDOTAUserMsg_SuggestHeroRole& a, CDOTAUserMsg_SuggestHeroRole& b) {
     a.Swap(&b);
@@ -27901,7 +28102,7 @@ class CDOTAUserMsg_KillcamDamageTaken final :
                &_CDOTAUserMsg_KillcamDamageTaken_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    128;
+    129;
 
   friend void swap(CDOTAUserMsg_KillcamDamageTaken& a, CDOTAUserMsg_KillcamDamageTaken& b) {
     a.Swap(&b);
@@ -28146,7 +28347,7 @@ class CDOTAUserMsg_SelectPenaltyGold final :
                &_CDOTAUserMsg_SelectPenaltyGold_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    129;
+    130;
 
   friend void swap(CDOTAUserMsg_SelectPenaltyGold& a, CDOTAUserMsg_SelectPenaltyGold& b) {
     a.Swap(&b);
@@ -28321,7 +28522,7 @@ class CDOTAUserMsg_RollDiceResult final :
                &_CDOTAUserMsg_RollDiceResult_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    130;
+    131;
 
   friend void swap(CDOTAUserMsg_RollDiceResult& a, CDOTAUserMsg_RollDiceResult& b) {
     a.Swap(&b);
@@ -28541,7 +28742,7 @@ class CDOTAUserMsg_FlipCoinResult final :
                &_CDOTAUserMsg_FlipCoinResult_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    131;
+    132;
 
   friend void swap(CDOTAUserMsg_FlipCoinResult& a, CDOTAUserMsg_FlipCoinResult& b) {
     a.Swap(&b);
@@ -28731,7 +28932,7 @@ class CDOTAUserMessage_RequestItemSuggestions final :
                &_CDOTAUserMessage_RequestItemSuggestions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    132;
+    133;
 
   friend void swap(CDOTAUserMessage_RequestItemSuggestions& a, CDOTAUserMessage_RequestItemSuggestions& b) {
     a.Swap(&b);
@@ -28891,7 +29092,7 @@ class CDOTAUserMessage_TeamCaptainChanged final :
                &_CDOTAUserMessage_TeamCaptainChanged_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    133;
+    134;
 
   friend void swap(CDOTAUserMessage_TeamCaptainChanged& a, CDOTAUserMessage_TeamCaptainChanged& b) {
     a.Swap(&b);
@@ -29066,7 +29267,7 @@ class CDOTAUserMsg_ChatWheelCooldown final :
                &_CDOTAUserMsg_ChatWheelCooldown_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    134;
+    135;
 
   friend void swap(CDOTAUserMsg_ChatWheelCooldown& a, CDOTAUserMsg_ChatWheelCooldown& b) {
     a.Swap(&b);
@@ -29241,7 +29442,7 @@ class CDOTAUserMsg_HeroRelicProgress final :
                &_CDOTAUserMsg_HeroRelicProgress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    135;
+    136;
 
   friend void swap(CDOTAUserMsg_HeroRelicProgress& a, CDOTAUserMsg_HeroRelicProgress& b) {
     a.Swap(&b);
@@ -29461,7 +29662,7 @@ class CDOTAUserMsg_AbilityDraftRequestAbility final :
                &_CDOTAUserMsg_AbilityDraftRequestAbility_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    136;
+    137;
 
   friend void swap(CDOTAUserMsg_AbilityDraftRequestAbility& a, CDOTAUserMsg_AbilityDraftRequestAbility& b) {
     a.Swap(&b);
@@ -29681,7 +29882,7 @@ class CDOTAUserMsg_DamageReport final :
                &_CDOTAUserMsg_DamageReport_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    137;
+    138;
 
   friend void swap(CDOTAUserMsg_DamageReport& a, CDOTAUserMsg_DamageReport& b) {
     a.Swap(&b);
@@ -29901,7 +30102,7 @@ class CDOTAUserMsg_SalutePlayer final :
                &_CDOTAUserMsg_SalutePlayer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    138;
+    139;
 
   friend void swap(CDOTAUserMsg_SalutePlayer& a, CDOTAUserMsg_SalutePlayer& b) {
     a.Swap(&b);
@@ -30141,7 +30342,7 @@ class CDOTAUserMsg_GiftPlayer final :
                &_CDOTAUserMsg_GiftPlayer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    139;
+    140;
 
   friend void swap(CDOTAUserMsg_GiftPlayer& a, CDOTAUserMsg_GiftPlayer& b) {
     a.Swap(&b);
@@ -30331,7 +30532,7 @@ class CDOTAUserMsg_TipAlert final :
                &_CDOTAUserMsg_TipAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    140;
+    141;
 
   friend void swap(CDOTAUserMsg_TipAlert& a, CDOTAUserMsg_TipAlert& b) {
     a.Swap(&b);
@@ -30511,7 +30712,7 @@ class CDOTAUserMsg_ReplaceQueryUnit final :
                &_CDOTAUserMsg_ReplaceQueryUnit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    141;
+    142;
 
   friend void swap(CDOTAUserMsg_ReplaceQueryUnit& a, CDOTAUserMsg_ReplaceQueryUnit& b) {
     a.Swap(&b);
@@ -30701,7 +30902,7 @@ class CDOTAUserMsg_ESArcanaCombo final :
                &_CDOTAUserMsg_ESArcanaCombo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    142;
+    143;
 
   friend void swap(CDOTAUserMsg_ESArcanaCombo& a, CDOTAUserMsg_ESArcanaCombo& b) {
     a.Swap(&b);
@@ -30891,7 +31092,7 @@ class CDOTAUserMsg_ESArcanaComboSummary final :
                &_CDOTAUserMsg_ESArcanaComboSummary_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    143;
+    144;
 
   friend void swap(CDOTAUserMsg_ESArcanaComboSummary& a, CDOTAUserMsg_ESArcanaComboSummary& b) {
     a.Swap(&b);
@@ -31081,7 +31282,7 @@ class CDOTAUserMsg_OMArcanaCombo final :
                &_CDOTAUserMsg_OMArcanaCombo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    144;
+    145;
 
   friend void swap(CDOTAUserMsg_OMArcanaCombo& a, CDOTAUserMsg_OMArcanaCombo& b) {
     a.Swap(&b);
@@ -31286,7 +31487,7 @@ class CDOTAUserMsg_HighFiveCompleted final :
                &_CDOTAUserMsg_HighFiveCompleted_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    145;
+    146;
 
   friend void swap(CDOTAUserMsg_HighFiveCompleted& a, CDOTAUserMsg_HighFiveCompleted& b) {
     a.Swap(&b);
@@ -31491,7 +31692,7 @@ class CDOTAUserMsg_HighFiveLeftHanging final :
                &_CDOTAUserMsg_HighFiveLeftHanging_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    146;
+    147;
 
   friend void swap(CDOTAUserMsg_HighFiveLeftHanging& a, CDOTAUserMsg_HighFiveLeftHanging& b) {
     a.Swap(&b);
@@ -31651,7 +31852,7 @@ class CDOTAUserMsg_ShovelUnearth final :
                &_CDOTAUserMsg_ShovelUnearth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    147;
+    148;
 
   friend void swap(CDOTAUserMsg_ShovelUnearth& a, CDOTAUserMsg_ShovelUnearth& b) {
     a.Swap(&b);
@@ -31861,7 +32062,7 @@ class CDOTAUserMsg_AllStarEvent_PlayerScore final :
                &_CDOTAUserMsg_AllStarEvent_PlayerScore_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    148;
+    149;
 
   friend void swap(CDOTAUserMsg_AllStarEvent_PlayerScore& a, CDOTAUserMsg_AllStarEvent_PlayerScore& b) {
     a.Swap(&b);
@@ -32036,7 +32237,7 @@ class CDOTAUserMsg_AllStarEvent final :
                &_CDOTAUserMsg_AllStarEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    149;
+    150;
 
   friend void swap(CDOTAUserMsg_AllStarEvent& a, CDOTAUserMsg_AllStarEvent& b) {
     a.Swap(&b);
@@ -32263,7 +32464,7 @@ class CDOTAUserMsg_QueuedOrderRemoved final :
                &_CDOTAUserMsg_QueuedOrderRemoved_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    150;
+    151;
 
   friend void swap(CDOTAUserMsg_QueuedOrderRemoved& a, CDOTAUserMsg_QueuedOrderRemoved& b) {
     a.Swap(&b);
@@ -32431,7 +32632,7 @@ class CDOTAUserMsg_DebugChallenge final :
                &_CDOTAUserMsg_DebugChallenge_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    151;
+    152;
 
   friend void swap(CDOTAUserMsg_DebugChallenge& a, CDOTAUserMsg_DebugChallenge& b) {
     a.Swap(&b);
@@ -32684,7 +32885,7 @@ class CDOTAUserMsg_FoundNeutralItem final :
                &_CDOTAUserMsg_FoundNeutralItem_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    152;
+    153;
 
   friend void swap(CDOTAUserMsg_FoundNeutralItem& a, CDOTAUserMsg_FoundNeutralItem& b) {
     a.Swap(&b);
@@ -32934,7 +33135,7 @@ class CDOTAUserMsg_OutpostCaptured final :
                &_CDOTAUserMsg_OutpostCaptured_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    153;
+    154;
 
   friend void swap(CDOTAUserMsg_OutpostCaptured& a, CDOTAUserMsg_OutpostCaptured& b) {
     a.Swap(&b);
@@ -33109,7 +33310,7 @@ class CDOTAUserMsg_OutpostGrantedXP final :
                &_CDOTAUserMsg_OutpostGrantedXP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    154;
+    155;
 
   friend void swap(CDOTAUserMsg_OutpostGrantedXP& a, CDOTAUserMsg_OutpostGrantedXP& b) {
     a.Swap(&b);
@@ -33284,7 +33485,7 @@ class CDOTAUserMsg_MoveCameraToUnit final :
                &_CDOTAUserMsg_MoveCameraToUnit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    155;
+    156;
 
   friend void swap(CDOTAUserMsg_MoveCameraToUnit& a, CDOTAUserMsg_MoveCameraToUnit& b) {
     a.Swap(&b);
@@ -33444,7 +33645,7 @@ class CDOTAUserMsg_PauseMinigameData_DataBit final :
                &_CDOTAUserMsg_PauseMinigameData_DataBit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    156;
+    157;
 
   friend void swap(CDOTAUserMsg_PauseMinigameData_DataBit& a, CDOTAUserMsg_PauseMinigameData_DataBit& b) {
     a.Swap(&b);
@@ -33634,7 +33835,7 @@ class CDOTAUserMsg_PauseMinigameData final :
                &_CDOTAUserMsg_PauseMinigameData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    157;
+    158;
 
   friend void swap(CDOTAUserMsg_PauseMinigameData& a, CDOTAUserMsg_PauseMinigameData& b) {
     a.Swap(&b);
@@ -33800,7 +34001,7 @@ class CDOTAUserMsg_VersusScene_PlayerBehavior final :
                &_CDOTAUserMsg_VersusScene_PlayerBehavior_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    158;
+    159;
 
   friend void swap(CDOTAUserMsg_VersusScene_PlayerBehavior& a, CDOTAUserMsg_VersusScene_PlayerBehavior& b) {
     a.Swap(&b);
@@ -34035,7 +34236,7 @@ class CDOTAUserMsg_QoP_ArcanaSummary final :
                &_CDOTAUserMsg_QoP_ArcanaSummary_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    159;
+    160;
 
   friend void swap(CDOTAUserMsg_QoP_ArcanaSummary& a, CDOTAUserMsg_QoP_ArcanaSummary& b) {
     a.Swap(&b);
@@ -34240,7 +34441,7 @@ class CDOTAUserMsg_HotPotato_Created final :
                &_CDOTAUserMsg_HotPotato_Created_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    160;
+    161;
 
   friend void swap(CDOTAUserMsg_HotPotato_Created& a, CDOTAUserMsg_HotPotato_Created& b) {
     a.Swap(&b);
@@ -34415,7 +34616,7 @@ class CDOTAUserMsg_HotPotato_Exploded final :
                &_CDOTAUserMsg_HotPotato_Exploded_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    161;
+    162;
 
   friend void swap(CDOTAUserMsg_HotPotato_Exploded& a, CDOTAUserMsg_HotPotato_Exploded& b) {
     a.Swap(&b);
@@ -34575,7 +34776,7 @@ class CDOTAUserMsg_WK_Arcana_Progress final :
                &_CDOTAUserMsg_WK_Arcana_Progress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    162;
+    163;
 
   friend void swap(CDOTAUserMsg_WK_Arcana_Progress& a, CDOTAUserMsg_WK_Arcana_Progress& b) {
     a.Swap(&b);
@@ -34765,7 +34966,7 @@ class CDOTAUserMsg_GuildChallenge_Progress_PlayerProgress final :
                &_CDOTAUserMsg_GuildChallenge_Progress_PlayerProgress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    163;
+    164;
 
   friend void swap(CDOTAUserMsg_GuildChallenge_Progress_PlayerProgress& a, CDOTAUserMsg_GuildChallenge_Progress_PlayerProgress& b) {
     a.Swap(&b);
@@ -34940,7 +35141,7 @@ class CDOTAUserMsg_GuildChallenge_Progress final :
                &_CDOTAUserMsg_GuildChallenge_Progress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    164;
+    165;
 
   friend void swap(CDOTAUserMsg_GuildChallenge_Progress& a, CDOTAUserMsg_GuildChallenge_Progress& b) {
     a.Swap(&b);
@@ -35229,7 +35430,7 @@ class CDOTAUserMsg_WRArcanaProgress final :
                &_CDOTAUserMsg_WRArcanaProgress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    165;
+    166;
 
   friend void swap(CDOTAUserMsg_WRArcanaProgress& a, CDOTAUserMsg_WRArcanaProgress& b) {
     a.Swap(&b);
@@ -35479,7 +35680,7 @@ class CDOTAUserMsg_WRArcanaSummary final :
                &_CDOTAUserMsg_WRArcanaSummary_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    166;
+    167;
 
   friend void swap(CDOTAUserMsg_WRArcanaSummary& a, CDOTAUserMsg_WRArcanaSummary& b) {
     a.Swap(&b);
@@ -35744,7 +35945,7 @@ class CDOTAUserMsg_EmptyItemSlotAlert final :
                &_CDOTAUserMsg_EmptyItemSlotAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    167;
+    168;
 
   friend void swap(CDOTAUserMsg_EmptyItemSlotAlert& a, CDOTAUserMsg_EmptyItemSlotAlert& b) {
     a.Swap(&b);
@@ -35949,7 +36150,7 @@ class CDOTAUserMsg_AghsStatusAlert final :
                &_CDOTAUserMsg_AghsStatusAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    168;
+    169;
 
   friend void swap(CDOTAUserMsg_AghsStatusAlert& a, CDOTAUserMsg_AghsStatusAlert& b) {
     a.Swap(&b);
@@ -36184,7 +36385,7 @@ class CDOTAUserMsg_MutedPlayers final :
                &_CDOTAUserMsg_MutedPlayers_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    169;
+    170;
 
   friend void swap(CDOTAUserMsg_MutedPlayers& a, CDOTAUserMsg_MutedPlayers& b) {
     a.Swap(&b);
@@ -36376,7 +36577,7 @@ class CDOTAUserMsg_ContextualTip final :
                &_CDOTAUserMsg_ContextualTip_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    170;
+    171;
 
   friend void swap(CDOTAUserMsg_ContextualTip& a, CDOTAUserMsg_ContextualTip& b) {
     a.Swap(&b);
@@ -36804,7 +37005,7 @@ class CDOTAUserMsg_ChatMessage final :
                &_CDOTAUserMsg_ChatMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    171;
+    172;
 
   friend void swap(CDOTAUserMsg_ChatMessage& a, CDOTAUserMsg_ChatMessage& b) {
     a.Swap(&b);
@@ -36999,7 +37200,7 @@ class CDOTAUserMsg_RockPaperScissorsStarted final :
                &_CDOTAUserMsg_RockPaperScissorsStarted_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    172;
+    173;
 
   friend void swap(CDOTAUserMsg_RockPaperScissorsStarted& a, CDOTAUserMsg_RockPaperScissorsStarted& b) {
     a.Swap(&b);
@@ -37174,7 +37375,7 @@ class CDOTAUserMsg_RockPaperScissorsFinished final :
                &_CDOTAUserMsg_RockPaperScissorsFinished_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    173;
+    174;
 
   friend void swap(CDOTAUserMsg_RockPaperScissorsFinished& a, CDOTAUserMsg_RockPaperScissorsFinished& b) {
     a.Swap(&b);
@@ -37379,7 +37580,7 @@ class CDOTAUserMsg_DuelOpponentKilled final :
                &_CDOTAUserMsg_DuelOpponentKilled_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    174;
+    175;
 
   friend void swap(CDOTAUserMsg_DuelOpponentKilled& a, CDOTAUserMsg_DuelOpponentKilled& b) {
     a.Swap(&b);
@@ -37554,7 +37755,7 @@ class CDOTAUserMsg_DuelAccepted final :
                &_CDOTAUserMsg_DuelAccepted_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    175;
+    176;
 
   friend void swap(CDOTAUserMsg_DuelAccepted& a, CDOTAUserMsg_DuelAccepted& b) {
     a.Swap(&b);
@@ -37729,7 +37930,7 @@ class CDOTAUserMsg_DuelRequested final :
                &_CDOTAUserMsg_DuelRequested_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    176;
+    177;
 
   friend void swap(CDOTAUserMsg_DuelRequested& a, CDOTAUserMsg_DuelRequested& b) {
     a.Swap(&b);
@@ -37889,7 +38090,7 @@ class CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled final :
                &_CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    177;
+    178;
 
   friend void swap(CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled& a, CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled& b) {
     a.Swap(&b);
@@ -38112,7 +38313,7 @@ class CDOTAUserMsg_PlayerDraftSuggestPick final :
                &_CDOTAUserMsg_PlayerDraftSuggestPick_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    178;
+    179;
 
   friend void swap(CDOTAUserMsg_PlayerDraftSuggestPick& a, CDOTAUserMsg_PlayerDraftSuggestPick& b) {
     a.Swap(&b);
@@ -38287,7 +38488,7 @@ class CDOTAUserMsg_PlayerDraftPick final :
                &_CDOTAUserMsg_PlayerDraftPick_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    179;
+    180;
 
   friend void swap(CDOTAUserMsg_PlayerDraftPick& a, CDOTAUserMsg_PlayerDraftPick& b) {
     a.Swap(&b);
@@ -38477,7 +38678,7 @@ class CDOTAUserMsg_FacetPing final :
                &_CDOTAUserMsg_FacetPing_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    180;
+    181;
 
   friend void swap(CDOTAUserMsg_FacetPing& a, CDOTAUserMsg_FacetPing& b) {
     a.Swap(&b);
@@ -38682,7 +38883,7 @@ class CDOTAUserMsg_InnatePing final :
                &_CDOTAUserMsg_InnatePing_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    181;
+    182;
 
   friend void swap(CDOTAUserMsg_InnatePing& a, CDOTAUserMsg_InnatePing& b) {
     a.Swap(&b);
@@ -38871,7 +39072,7 @@ class CDOTAUserMsg_NeutralCraftAvailable final :
                &_CDOTAUserMsg_NeutralCraftAvailable_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    182;
+    183;
 
   friend void swap(CDOTAUserMsg_NeutralCraftAvailable& a, CDOTAUserMsg_NeutralCraftAvailable& b) {
     a.Swap(&b);
@@ -38997,7 +39198,7 @@ class CDOTAUserMsg_TimerAlert final :
                &_CDOTAUserMsg_TimerAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    183;
+    184;
 
   friend void swap(CDOTAUserMsg_TimerAlert& a, CDOTAUserMsg_TimerAlert& b) {
     a.Swap(&b);
@@ -39172,7 +39373,7 @@ class CDOTAUserMsg_MadstoneAlert final :
                &_CDOTAUserMsg_MadstoneAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    184;
+    185;
 
   friend void swap(CDOTAUserMsg_MadstoneAlert& a, CDOTAUserMsg_MadstoneAlert& b) {
     a.Swap(&b);
@@ -39424,7 +39625,7 @@ class CDOTAUserMsg_MonsterHunter_InvestigationsAvailable final :
                &_CDOTAUserMsg_MonsterHunter_InvestigationsAvailable_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    185;
+    186;
 
   friend void swap(CDOTAUserMsg_MonsterHunter_InvestigationsAvailable& a, CDOTAUserMsg_MonsterHunter_InvestigationsAvailable& b) {
     a.Swap(&b);
@@ -39588,7 +39789,7 @@ class CDOTAUserMsg_MonsterHunter_InvestigationGameState final :
                &_CDOTAUserMsg_MonsterHunter_InvestigationGameState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    186;
+    187;
 
   friend void swap(CDOTAUserMsg_MonsterHunter_InvestigationGameState& a, CDOTAUserMsg_MonsterHunter_InvestigationGameState& b) {
     a.Swap(&b);
@@ -39768,7 +39969,7 @@ class CDOTAUserMsg_MonsterHunter_HuntAlert final :
                &_CDOTAUserMsg_MonsterHunter_HuntAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    187;
+    188;
 
   friend void swap(CDOTAUserMsg_MonsterHunter_HuntAlert& a, CDOTAUserMsg_MonsterHunter_HuntAlert& b) {
     a.Swap(&b);
@@ -39999,6 +40200,181 @@ class CDOTAUserMsg_MonsterHunter_HuntAlert final :
     int hunt_status_type_;
     int32_t index_;
     int32_t player_id_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fusermessages_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CDOTAUserMsg_KillEffect final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDOTAUserMsg_KillEffect) */ {
+ public:
+  inline CDOTAUserMsg_KillEffect() : CDOTAUserMsg_KillEffect(nullptr) {}
+  ~CDOTAUserMsg_KillEffect() override;
+  explicit PROTOBUF_CONSTEXPR CDOTAUserMsg_KillEffect(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDOTAUserMsg_KillEffect(const CDOTAUserMsg_KillEffect& from);
+  CDOTAUserMsg_KillEffect(CDOTAUserMsg_KillEffect&& from) noexcept
+    : CDOTAUserMsg_KillEffect() {
+    *this = ::std::move(from);
+  }
+
+  inline CDOTAUserMsg_KillEffect& operator=(const CDOTAUserMsg_KillEffect& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDOTAUserMsg_KillEffect& operator=(CDOTAUserMsg_KillEffect&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDOTAUserMsg_KillEffect& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDOTAUserMsg_KillEffect* internal_default_instance() {
+    return reinterpret_cast<const CDOTAUserMsg_KillEffect*>(
+               &_CDOTAUserMsg_KillEffect_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    189;
+
+  friend void swap(CDOTAUserMsg_KillEffect& a, CDOTAUserMsg_KillEffect& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDOTAUserMsg_KillEffect* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDOTAUserMsg_KillEffect* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDOTAUserMsg_KillEffect* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDOTAUserMsg_KillEffect>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CDOTAUserMsg_KillEffect& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CDOTAUserMsg_KillEffect& from) {
+    CDOTAUserMsg_KillEffect::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CDOTAUserMsg_KillEffect* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDOTAUserMsg_KillEffect";
+  }
+  protected:
+  explicit CDOTAUserMsg_KillEffect(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kVictimEntIndexFieldNumber = 1,
+    kKillerPlayerIdFieldNumber = 2,
+  };
+  // optional int32 victim_ent_index = 1 [default = -1];
+  bool has_victim_ent_index() const;
+  private:
+  bool _internal_has_victim_ent_index() const;
+  public:
+  void clear_victim_ent_index();
+  int32_t victim_ent_index() const;
+  void set_victim_ent_index(int32_t value);
+  private:
+  int32_t _internal_victim_ent_index() const;
+  void _internal_set_victim_ent_index(int32_t value);
+  public:
+
+  // optional int32 killer_player_id = 2 [default = -1];
+  bool has_killer_player_id() const;
+  private:
+  bool _internal_has_killer_player_id() const;
+  public:
+  void clear_killer_player_id();
+  int32_t killer_player_id() const;
+  void set_killer_player_id(int32_t value);
+  private:
+  int32_t _internal_killer_player_id() const;
+  void _internal_set_killer_player_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CDOTAUserMsg_KillEffect)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    int32_t victim_ent_index_;
+    int32_t killer_player_id_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fusermessages_2eproto;
@@ -43047,6 +43423,66 @@ inline void CDOTAUserMsg_RoshanTimer::_internal_set_negative(bool value) {
 inline void CDOTAUserMsg_RoshanTimer::set_negative(bool value) {
   _internal_set_negative(value);
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_RoshanTimer.negative)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAUserMsg_TormentorTimer
+
+// optional int32 player_id = 1 [default = -1];
+inline bool CDOTAUserMsg_TormentorTimer::_internal_has_player_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CDOTAUserMsg_TormentorTimer::has_player_id() const {
+  return _internal_has_player_id();
+}
+inline void CDOTAUserMsg_TormentorTimer::clear_player_id() {
+  _impl_.player_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline int32_t CDOTAUserMsg_TormentorTimer::_internal_player_id() const {
+  return _impl_.player_id_;
+}
+inline int32_t CDOTAUserMsg_TormentorTimer::player_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAUserMsg_TormentorTimer.player_id)
+  return _internal_player_id();
+}
+inline void CDOTAUserMsg_TormentorTimer::_internal_set_player_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.player_id_ = value;
+}
+inline void CDOTAUserMsg_TormentorTimer::set_player_id(int32_t value) {
+  _internal_set_player_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAUserMsg_TormentorTimer.player_id)
+}
+
+// optional bool negative = 2;
+inline bool CDOTAUserMsg_TormentorTimer::_internal_has_negative() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CDOTAUserMsg_TormentorTimer::has_negative() const {
+  return _internal_has_negative();
+}
+inline void CDOTAUserMsg_TormentorTimer::clear_negative() {
+  _impl_.negative_ = false;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline bool CDOTAUserMsg_TormentorTimer::_internal_negative() const {
+  return _impl_.negative_;
+}
+inline bool CDOTAUserMsg_TormentorTimer::negative() const {
+  // @@protoc_insertion_point(field_get:CDOTAUserMsg_TormentorTimer.negative)
+  return _internal_negative();
+}
+inline void CDOTAUserMsg_TormentorTimer::_internal_set_negative(bool value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.negative_ = value;
+}
+inline void CDOTAUserMsg_TormentorTimer::set_negative(bool value) {
+  _internal_set_negative(value);
+  // @@protoc_insertion_point(field_set:CDOTAUserMsg_TormentorTimer.negative)
 }
 
 // -------------------------------------------------------------------
@@ -50605,7 +51041,7 @@ inline void CDOTAUserMsg_CoachHUDPing::set_allocated_hud_ping(::CDOTAMsg_CoachHU
 
 // optional uint32 source = 1 [default = 16777215];
 inline bool CDOTAUserMsg_TE_Projectile::_internal_has_source() const {
-  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
   return value;
 }
 inline bool CDOTAUserMsg_TE_Projectile::has_source() const {
@@ -50613,7 +51049,7 @@ inline bool CDOTAUserMsg_TE_Projectile::has_source() const {
 }
 inline void CDOTAUserMsg_TE_Projectile::clear_source() {
   _impl_.source_ = 16777215u;
-  _impl_._has_bits_[0] &= ~0x00004000u;
+  _impl_._has_bits_[0] &= ~0x00008000u;
 }
 inline uint32_t CDOTAUserMsg_TE_Projectile::_internal_source() const {
   return _impl_.source_;
@@ -50623,7 +51059,7 @@ inline uint32_t CDOTAUserMsg_TE_Projectile::source() const {
   return _internal_source();
 }
 inline void CDOTAUserMsg_TE_Projectile::_internal_set_source(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00004000u;
+  _impl_._has_bits_[0] |= 0x00008000u;
   _impl_.source_ = value;
 }
 inline void CDOTAUserMsg_TE_Projectile::set_source(uint32_t value) {
@@ -50633,7 +51069,7 @@ inline void CDOTAUserMsg_TE_Projectile::set_source(uint32_t value) {
 
 // optional uint32 target = 2 [default = 16777215];
 inline bool CDOTAUserMsg_TE_Projectile::_internal_has_target() const {
-  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
   return value;
 }
 inline bool CDOTAUserMsg_TE_Projectile::has_target() const {
@@ -50641,7 +51077,7 @@ inline bool CDOTAUserMsg_TE_Projectile::has_target() const {
 }
 inline void CDOTAUserMsg_TE_Projectile::clear_target() {
   _impl_.target_ = 16777215u;
-  _impl_._has_bits_[0] &= ~0x00008000u;
+  _impl_._has_bits_[0] &= ~0x00010000u;
 }
 inline uint32_t CDOTAUserMsg_TE_Projectile::_internal_target() const {
   return _impl_.target_;
@@ -50651,7 +51087,7 @@ inline uint32_t CDOTAUserMsg_TE_Projectile::target() const {
   return _internal_target();
 }
 inline void CDOTAUserMsg_TE_Projectile::_internal_set_target(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00008000u;
+  _impl_._has_bits_[0] |= 0x00010000u;
   _impl_.target_ = value;
 }
 inline void CDOTAUserMsg_TE_Projectile::set_target(uint32_t value) {
@@ -51124,7 +51560,7 @@ inline void CDOTAUserMsg_TE_Projectile::set_original_move_speed(int32_t value) {
 
 // optional uint32 ability = 18 [default = 16777215];
 inline bool CDOTAUserMsg_TE_Projectile::_internal_has_ability() const {
-  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
   return value;
 }
 inline bool CDOTAUserMsg_TE_Projectile::has_ability() const {
@@ -51132,7 +51568,7 @@ inline bool CDOTAUserMsg_TE_Projectile::has_ability() const {
 }
 inline void CDOTAUserMsg_TE_Projectile::clear_ability() {
   _impl_.ability_ = 16777215u;
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00004000u;
 }
 inline uint32_t CDOTAUserMsg_TE_Projectile::_internal_ability() const {
   return _impl_.ability_;
@@ -51142,12 +51578,40 @@ inline uint32_t CDOTAUserMsg_TE_Projectile::ability() const {
   return _internal_ability();
 }
 inline void CDOTAUserMsg_TE_Projectile::_internal_set_ability(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_._has_bits_[0] |= 0x00004000u;
   _impl_.ability_ = value;
 }
 inline void CDOTAUserMsg_TE_Projectile::set_ability(uint32_t value) {
   _internal_set_ability(value);
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_TE_Projectile.ability)
+}
+
+// optional int32 target_projectile_handle = 19;
+inline bool CDOTAUserMsg_TE_Projectile::_internal_has_target_projectile_handle() const {
+  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  return value;
+}
+inline bool CDOTAUserMsg_TE_Projectile::has_target_projectile_handle() const {
+  return _internal_has_target_projectile_handle();
+}
+inline void CDOTAUserMsg_TE_Projectile::clear_target_projectile_handle() {
+  _impl_.target_projectile_handle_ = 0;
+  _impl_._has_bits_[0] &= ~0x00002000u;
+}
+inline int32_t CDOTAUserMsg_TE_Projectile::_internal_target_projectile_handle() const {
+  return _impl_.target_projectile_handle_;
+}
+inline int32_t CDOTAUserMsg_TE_Projectile::target_projectile_handle() const {
+  // @@protoc_insertion_point(field_get:CDOTAUserMsg_TE_Projectile.target_projectile_handle)
+  return _internal_target_projectile_handle();
+}
+inline void CDOTAUserMsg_TE_Projectile::_internal_set_target_projectile_handle(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_.target_projectile_handle_ = value;
+}
+inline void CDOTAUserMsg_TE_Projectile::set_target_projectile_handle(int32_t value) {
+  _internal_set_target_projectile_handle(value);
+  // @@protoc_insertion_point(field_set:CDOTAUserMsg_TE_Projectile.target_projectile_handle)
 }
 
 // -------------------------------------------------------------------
@@ -65007,9 +65471,73 @@ inline void CDOTAUserMsg_MonsterHunter_HuntAlert::set_index(int32_t value) {
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_MonsterHunter_HuntAlert.index)
 }
 
+// -------------------------------------------------------------------
+
+// CDOTAUserMsg_KillEffect
+
+// optional int32 victim_ent_index = 1 [default = -1];
+inline bool CDOTAUserMsg_KillEffect::_internal_has_victim_ent_index() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CDOTAUserMsg_KillEffect::has_victim_ent_index() const {
+  return _internal_has_victim_ent_index();
+}
+inline void CDOTAUserMsg_KillEffect::clear_victim_ent_index() {
+  _impl_.victim_ent_index_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline int32_t CDOTAUserMsg_KillEffect::_internal_victim_ent_index() const {
+  return _impl_.victim_ent_index_;
+}
+inline int32_t CDOTAUserMsg_KillEffect::victim_ent_index() const {
+  // @@protoc_insertion_point(field_get:CDOTAUserMsg_KillEffect.victim_ent_index)
+  return _internal_victim_ent_index();
+}
+inline void CDOTAUserMsg_KillEffect::_internal_set_victim_ent_index(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.victim_ent_index_ = value;
+}
+inline void CDOTAUserMsg_KillEffect::set_victim_ent_index(int32_t value) {
+  _internal_set_victim_ent_index(value);
+  // @@protoc_insertion_point(field_set:CDOTAUserMsg_KillEffect.victim_ent_index)
+}
+
+// optional int32 killer_player_id = 2 [default = -1];
+inline bool CDOTAUserMsg_KillEffect::_internal_has_killer_player_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CDOTAUserMsg_KillEffect::has_killer_player_id() const {
+  return _internal_has_killer_player_id();
+}
+inline void CDOTAUserMsg_KillEffect::clear_killer_player_id() {
+  _impl_.killer_player_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline int32_t CDOTAUserMsg_KillEffect::_internal_killer_player_id() const {
+  return _impl_.killer_player_id_;
+}
+inline int32_t CDOTAUserMsg_KillEffect::killer_player_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAUserMsg_KillEffect.killer_player_id)
+  return _internal_killer_player_id();
+}
+inline void CDOTAUserMsg_KillEffect::_internal_set_killer_player_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.killer_player_id_ = value;
+}
+inline void CDOTAUserMsg_KillEffect::set_killer_player_id(int32_t value) {
+  _internal_set_killer_player_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAUserMsg_KillEffect.killer_player_id)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

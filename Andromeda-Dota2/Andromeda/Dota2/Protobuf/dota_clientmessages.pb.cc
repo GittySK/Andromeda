@@ -1629,6 +1629,20 @@ struct CDOTAClientMsg_RoshanTimerDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CDOTAClientMsg_RoshanTimerDefaultTypeInternal _CDOTAClientMsg_RoshanTimer_default_instance_;
+PROTOBUF_CONSTEXPR CDOTAClientMsg_TormentorTimer::CDOTAClientMsg_TormentorTimer(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.negative_)*/false} {}
+struct CDOTAClientMsg_TormentorTimerDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CDOTAClientMsg_TormentorTimerDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CDOTAClientMsg_TormentorTimerDefaultTypeInternal() {}
+  union {
+    CDOTAClientMsg_TormentorTimer _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CDOTAClientMsg_TormentorTimerDefaultTypeInternal _CDOTAClientMsg_TormentorTimer_default_instance_;
 PROTOBUF_CONSTEXPR CDOTAClientMsg_CraftNeutralItem::CDOTAClientMsg_CraftNeutralItem(
     ::_pbi::ConstantInitialized) {}
 struct CDOTAClientMsg_CraftNeutralItemDefaultTypeInternal {
@@ -1742,7 +1756,7 @@ struct CDOTAClientMsg_MonsterHunter_HuntAlertDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CDOTAClientMsg_MonsterHunter_HuntAlertDefaultTypeInternal _CDOTAClientMsg_MonsterHunter_HuntAlert_default_instance_;
-static ::_pb::Metadata file_level_metadata_dota_5fclientmessages_2eproto[115];
+static ::_pb::Metadata file_level_metadata_dota_5fclientmessages_2eproto[116];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_dota_5fclientmessages_2eproto[4];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_dota_5fclientmessages_2eproto = nullptr;
 
@@ -2848,6 +2862,14 @@ const uint32_t TableStruct_dota_5fclientmessages_2eproto::offsets[] PROTOBUF_SEC
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::CDOTAClientMsg_RoshanTimer, _impl_.negative_),
   0,
+  PROTOBUF_FIELD_OFFSET(::CDOTAClientMsg_TormentorTimer, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CDOTAClientMsg_TormentorTimer, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CDOTAClientMsg_TormentorTimer, _impl_.negative_),
+  0,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::CDOTAClientMsg_CraftNeutralItem, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -3027,14 +3049,15 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 1075, 1083, -1, sizeof(::CDOTAClientMsg_InnateAlert)},
   { 1085, 1092, -1, sizeof(::CDOTAClientMsg_SelectOverworldID)},
   { 1093, 1100, -1, sizeof(::CDOTAClientMsg_RoshanTimer)},
-  { 1101, -1, -1, sizeof(::CDOTAClientMsg_CraftNeutralItem)},
-  { 1107, 1116, -1, sizeof(::CDOTAClientMsg_ChooseCraftedNeutralItem)},
-  { 1119, 1126, -1, sizeof(::CDOTAClientMsg_TimerAlert)},
-  { 1127, 1134, -1, sizeof(::CDOTAClientMsg_MadstoneAlert)},
-  { 1135, 1142, -1, sizeof(::CDOTAClientMsg_UpdateAutoCourierSettings)},
-  { 1143, 1151, -1, sizeof(::CDOTAClientMsg_AutoCourierExecute)},
-  { 1153, 1160, -1, sizeof(::CDOTAClientMsg_MonsterHunter_SelectInvestigation)},
-  { 1161, 1169, -1, sizeof(::CDOTAClientMsg_MonsterHunter_HuntAlert)},
+  { 1101, 1108, -1, sizeof(::CDOTAClientMsg_TormentorTimer)},
+  { 1109, -1, -1, sizeof(::CDOTAClientMsg_CraftNeutralItem)},
+  { 1115, 1124, -1, sizeof(::CDOTAClientMsg_ChooseCraftedNeutralItem)},
+  { 1127, 1134, -1, sizeof(::CDOTAClientMsg_TimerAlert)},
+  { 1135, 1142, -1, sizeof(::CDOTAClientMsg_MadstoneAlert)},
+  { 1143, 1150, -1, sizeof(::CDOTAClientMsg_UpdateAutoCourierSettings)},
+  { 1151, 1159, -1, sizeof(::CDOTAClientMsg_AutoCourierExecute)},
+  { 1161, 1168, -1, sizeof(::CDOTAClientMsg_MonsterHunter_SelectInvestigation)},
+  { 1169, 1177, -1, sizeof(::CDOTAClientMsg_MonsterHunter_HuntAlert)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -3145,6 +3168,7 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::_CDOTAClientMsg_InnateAlert_default_instance_._instance,
   &::_CDOTAClientMsg_SelectOverworldID_default_instance_._instance,
   &::_CDOTAClientMsg_RoshanTimer_default_instance_._instance,
+  &::_CDOTAClientMsg_TormentorTimer_default_instance_._instance,
   &::_CDOTAClientMsg_CraftNeutralItem_default_instance_._instance,
   &::_CDOTAClientMsg_ChooseCraftedNeutralItem_default_instance_._instance,
   &::_CDOTAClientMsg_TimerAlert_default_instance_._instance,
@@ -3419,120 +3443,122 @@ const char descriptor_table_protodef_dota_5fclientmessages_2eproto[] PROTOBUF_SE
   "\r:\01016777215\022\021\n\tctrl_held\030\002 \001(\010\"8\n CDOTAC"
   "lientMsg_SelectOverworldID\022\024\n\014overworld_"
   "id\030\001 \001(\r\".\n\032CDOTAClientMsg_RoshanTimer\022\020"
-  "\n\010negative\030\001 \001(\010\"!\n\037CDOTAClientMsg_Craft"
-  "NeutralItem\"s\n\'CDOTAClientMsg_ChooseCraf"
-  "tedNeutralItem\022\032\n\022neutral_item_index\030\001 \001"
-  "(\005\022\021\n\titem_tier\030\002 \001(\005\022\031\n\021enhancement_ind"
-  "ex\030\003 \001(\005\"c\n\031CDOTAClientMsg_TimerAlert\022F\n"
-  "\020timer_alert_type\030\001 \001(\0162\020.ETimerAlertTyp"
-  "e:\032k_TimerAlertType_PowerRune\";\n\034CDOTACl"
-  "ientMsg_MadstoneAlert\022\033\n\017target_entindex"
-  "\030\001 \001(\005:\002-1\"@\n(CDOTAClientMsg_UpdateAutoC"
-  "ourierSettings\022\024\n\014auto_deliver\030\001 \001(\010\"Y\n!"
-  "CDOTAClientMsg_AutoCourierExecute\022\033\n\017tar"
-  "get_entindex\030\001 \001(\005:\002-1\022\027\n\017is_auto_delive"
-  "r\030\002 \001(\010\"O\n0CDOTAClientMsg_MonsterHunter_"
-  "SelectInvestigation\022\033\n\023investigation_ind"
-  "ex\030\001 \001(\r\"a\n&CDOTAClientMsg_MonsterHunter"
-  "_HuntAlert\022!\n\031investigation_state_index\030"
-  "\001 \001(\r\022\024\n\014ctrl_pressed\030\002 \001(\010*\214\036\n\023EDotaCli"
-  "entMessages\022\024\n\017DOTA_CM_MapLine\020\255\002\022\030\n\023DOT"
-  "A_CM_AspectRatio\020\256\002\022\024\n\017DOTA_CM_MapPing\020\257"
-  "\002\022\034\n\027DOTA_CM_UnitsAutoAttack\020\260\002\022\031\n\024DOTA_"
-  "CM_SearchString\020\263\002\022\022\n\rDOTA_CM_Pause\020\264\002\022\031"
-  "\n\024DOTA_CM_ShopViewMode\020\265\002\022\035\n\030DOTA_CM_Set"
-  "UnitShareFlag\020\266\002\022\030\n\023DOTA_CM_SwapRequest\020"
-  "\267\002\022\027\n\022DOTA_CM_SwapAccept\020\270\002\022\026\n\021DOTA_CM_W"
-  "orldLine\020\271\002\022\037\n\032DOTA_CM_RequestGraphUpdat"
-  "e\020\272\002\022\026\n\021DOTA_CM_ItemAlert\020\273\002\022\026\n\021DOTA_CM_"
-  "ChatWheel\020\274\002\022\032\n\025DOTA_CM_SendStatPopup\020\275\002"
-  "\022\"\n\035DOTA_CM_BeginLastHitChallenge\020\276\002\022\033\n\026"
-  "DOTA_CM_UpdateQuickBuy\020\277\002\022\036\n\031DOTA_CM_Upd"
-  "ateCoachListen\020\300\002\022\031\n\024DOTA_CM_CoachHUDPin"
-  "g\020\301\002\022\027\n\022DOTA_CM_RecordVote\020\302\002\022&\n!DOTA_CM"
-  "_UnitsAutoAttackAfterSpell\020\303\002\022\036\n\031DOTA_CM"
-  "_WillPurchaseAlert\020\304\002\022\033\n\026DOTA_CM_PlayerS"
-  "howCase\020\305\002\022!\n\034DOTA_CM_TeleportRequiresHa"
-  "lt\020\306\002\022\035\n\030DOTA_CM_CameraZoomAmount\020\307\002\022%\n "
-  "DOTA_CM_BroadcasterUsingCamerman\020\310\002\0223\n.D"
-  "OTA_CM_BroadcasterUsingAssistedCameraOpe"
-  "rator\020\311\002\022\033\n\026DOTA_CM_EnemyItemAlert\020\312\002\022\032\n"
-  "\025DOTA_CM_FreeInventory\020\313\002\022\036\n\031DOTA_CM_Buy"
-  "BackStateAlert\020\314\002\022\032\n\025DOTA_CM_QuickBuyAle"
-  "rt\020\315\002\022\033\n\026DOTA_CM_HeroStatueLike\020\316\002\022\032\n\025DO"
-  "TA_CM_ModifierAlert\020\317\002\022\037\n\032DOTA_CM_TeamSh"
-  "owcaseEditor\020\320\002\022\030\n\023DOTA_CM_HPManaAlert\020\321"
-  "\002\022\027\n\022DOTA_CM_GlyphAlert\020\322\002\022#\n\036DOTA_CM_Te"
-  "amShowcaseClientData\020\323\002\022\035\n\030DOTA_CM_PlayT"
-  "eamShowcase\020\324\002\022\034\n\027DOTA_CM_EventCNY2015Cm"
-  "d\020\325\002\022#\n\036DOTA_CM_FillEmptySlotsWithBots\020\326"
-  "\002\022\025\n\020DOTA_CM_DemoHero\020\327\002\022$\n\037DOTA_CM_Abil"
-  "ityLearnModeToggled\020\330\002\022\034\n\027DOTA_CM_Abilit"
-  "yStartUse\020\331\002\022\034\n\027DOTA_CM_ChallengeSelect\020"
-  "\332\002\022\034\n\027DOTA_CM_ChallengeReroll\020\333\002\022\030\n\023DOTA"
-  "_CM_ClickedBuff\020\334\002\022\026\n\021DOTA_CM_CoinWager\020"
-  "\335\002\022\032\n\025DOTA_CM_ExecuteOrders\020\336\002\022\024\n\017DOTA_C"
-  "M_XPAlert\020\337\002\022\033\n\026DOTA_CM_EventPointsTip\020\341"
-  "\002\022\027\n\022DOTA_CM_KillMyHero\020\343\002\022\030\n\023DOTA_CM_Qu"
-  "estStatus\020\344\002\022\035\n\030DOTA_CM_ToggleAutoattack"
-  "\020\345\002\022\033\n\026DOTA_CM_SpecialAbility\020\346\002\022\037\n\032DOTA"
-  "_CM_KillcamDamageTaken\020\347\002\022%\n DOTA_CM_Set"
-  "EnemyStartingPosition\020\350\002\022$\n\037DOTA_CM_SetD"
-  "esiredWardPlacement\020\351\002\022\025\n\020DOTA_CM_RollDi"
-  "ce\020\352\002\022\025\n\020DOTA_CM_FlipCoin\020\353\002\022#\n\036DOTA_CM_"
-  "RequestItemSuggestions\020\354\002\022\034\n\027DOTA_CM_Mak"
-  "eTeamCaptain\020\355\002\022\033\n\026DOTA_CM_CoinWagerToke"
-  "n\020\356\002\022\026\n\021DOTA_CM_RankWager\020\357\002\022!\n\034DOTA_CM_"
-  "DismissAllStatPopups\020\360\002\022&\n!DOTA_CM_HelpT"
-  "ipSystemStateChanged\020\361\002\022 \n\033DOTA_CM_Chann"
-  "elRequiresHalt\020\362\002\022!\n\034DOTA_CM_RequestBulk"
-  "CombatLog\020\363\002\022\'\n\"DOTA_CM_AbilityDraftRequ"
-  "estAbility\020\364\002\022\036\n\031DOTA_CM_GuideSelectOpti"
-  "on\020\365\002\022\032\n\025DOTA_CM_GuideSelected\020\366\002\022\031\n\024DOT"
-  "A_CM_DamageReport\020\367\002\022\031\n\024DOTA_CM_SalutePl"
-  "ayer\020\370\002\022\027\n\022DOTA_CM_SprayWheel\020\371\002\022\025\n\020DOTA"
-  "_CM_TipAlert\020\372\002\022\037\n\032DOTA_CM_EmptyTeleport"
-  "Alert\020\373\002\022\027\n\022DOTA_CM_RadarAlert\020\374\002\022\034\n\027DOT"
-  "A_CM_TalentTreeAlert\020\375\002\022 \n\033DOTA_CM_SetCa"
-  "vernMapVariant\020\376\002\022\033\n\026DOTA_CM_PauseGameOr"
-  "der\020\377\002\022\'\n\"DOTA_CM_VersusScene_PlayerBeha"
-  "vior\020\200\003\022\031\n\024DOTA_CM_PlayerBounty\020\201\003\022\037\n\032DO"
-  "TA_CM_PlayerBountyCancel\020\202\003\022\037\n\032DOTA_CM_E"
-  "mptyItemSlotAlert\020\204\003\022%\n DOTA_CM_AddOverw"
-  "atchReportMarker\020\205\003\022\034\n\027DOTA_CM_AghsStatu"
-  "sAlert\020\206\003\022\027\n\022DOTA_CM_PerfReport\020\207\003\022%\n DO"
-  "TA_CM_ContextualTips_Subscribe\020\211\003\022\030\n\023DOT"
-  "A_CM_ChatMessage\020\212\003\022*\n%DOTA_CM_AddCommun"
-  "icationsReportMarker\020\213\003\022)\n$DOTA_CM_AddCo"
-  "mmunicationsBlockMarker\020\214\003\022\035\n\030DOTA_CM_Ne"
-  "utralCampAlert\020\215\003\022\031\n\024DOTA_CM_DuelAccepte"
-  "d\020\216\003\022\036\n\031DOTA_CM_ChooseNeutralItem\020\217\003\022\034\n\027"
-  "DOTA_CM_PlayerDraftPick\020\240\006\022\037\n\032DOTA_CM_Pl"
-  "ayerDraftSuggest\020\241\006\022\"\n\035DOTA_CM_PlayerDra"
-  "ftPreferRole\020\242\006\022\"\n\035DOTA_CM_PlayerDraftPr"
-  "eferTeam\020\243\006\022\033\n\026DOTA_CM_ChatWheelAlert\020\244\006"
-  "\022\031\n\024DOTA_CM_AbilityAlert\020\245\006\022\035\n\030DOTA_CM_A"
-  "llyAbilityAlert\020\246\006\022\027\n\022DOTA_CM_GiftPlayer"
-  "\020\247\006\022\031\n\024DOTA_CM_GiftEveryone\020\250\006\022(\n#DOTA_C"
-  "M_SelectOverworldTokenRewards\020\251\006\022\027\n\022DOTA"
-  "_CM_FacetAlert\020\252\006\022\030\n\023DOTA_CM_InnateAlert"
-  "\020\253\006\022\036\n\031DOTA_CM_SelectOverworldID\020\254\006\022\036\n\031D"
-  "OTA_CM_RerollNeutralItem\020\255\006\022\030\n\023DOTA_CM_R"
-  "oshanTimer\020\256\006\022\"\n\035DOTA_CM_SuggestItemPref"
-  "erence\020\257\006\022\035\n\030DOTA_CM_CraftNeutralItem\020\260\006"
-  "\022!\n\034DOTA_CM_ChooseCraftedNeutral\020\261\006\022\027\n\022D"
-  "OTA_CM_TimerAlert\020\262\006\022\032\n\025DOTA_CM_Madstone"
-  "Alert\020\263\006\022&\n!DOTA_CM_UpdateAutoCourierSet"
-  "tings\020\264\006\022\037\n\032DOTA_CM_AutoCourierExecute\020\265"
-  "\006\022\033\n\026DOTA_CM_QuickBuyAction\020\266\006\022+\n&DOTA_C"
-  "M_InteractionChannelsRequireHalt\020\267\006\022\037\n\032D"
-  "OTA_CM_SuggestItemRefresh\020\270\006\022&\n!DOTA_CM_"
-  "SuggestItemVariantRequest\020\271\006\022%\n DOTA_CM_"
-  "SuggestItemVariantSelect\020\272\006\022.\n)DOTA_CM_M"
-  "onsterHunter_SelectInvestigation\020\273\006\022$\n\037D"
-  "OTA_CM_MonsterHunter_HuntAlert\020\274\006\022/\n*DOT"
-  "A_CM_AbilitySpecificChannelRequiresHalt\020"
-  "\275\006"
+  "\n\010negative\030\001 \001(\010\"1\n\035CDOTAClientMsg_Torme"
+  "ntorTimer\022\020\n\010negative\030\001 \001(\010\"!\n\037CDOTAClie"
+  "ntMsg_CraftNeutralItem\"s\n\'CDOTAClientMsg"
+  "_ChooseCraftedNeutralItem\022\032\n\022neutral_ite"
+  "m_index\030\001 \001(\005\022\021\n\titem_tier\030\002 \001(\005\022\031\n\021enha"
+  "ncement_index\030\003 \001(\005\"c\n\031CDOTAClientMsg_Ti"
+  "merAlert\022F\n\020timer_alert_type\030\001 \001(\0162\020.ETi"
+  "merAlertType:\032k_TimerAlertType_PowerRune"
+  "\";\n\034CDOTAClientMsg_MadstoneAlert\022\033\n\017targ"
+  "et_entindex\030\001 \001(\005:\002-1\"@\n(CDOTAClientMsg_"
+  "UpdateAutoCourierSettings\022\024\n\014auto_delive"
+  "r\030\001 \001(\010\"Y\n!CDOTAClientMsg_AutoCourierExe"
+  "cute\022\033\n\017target_entindex\030\001 \001(\005:\002-1\022\027\n\017is_"
+  "auto_deliver\030\002 \001(\010\"O\n0CDOTAClientMsg_Mon"
+  "sterHunter_SelectInvestigation\022\033\n\023invest"
+  "igation_index\030\001 \001(\r\"a\n&CDOTAClientMsg_Mo"
+  "nsterHunter_HuntAlert\022!\n\031investigation_s"
+  "tate_index\030\001 \001(\r\022\024\n\014ctrl_pressed\030\002 \001(\010*\251"
+  "\036\n\023EDotaClientMessages\022\024\n\017DOTA_CM_MapLin"
+  "e\020\255\002\022\030\n\023DOTA_CM_AspectRatio\020\256\002\022\024\n\017DOTA_C"
+  "M_MapPing\020\257\002\022\034\n\027DOTA_CM_UnitsAutoAttack\020"
+  "\260\002\022\031\n\024DOTA_CM_SearchString\020\263\002\022\022\n\rDOTA_CM"
+  "_Pause\020\264\002\022\031\n\024DOTA_CM_ShopViewMode\020\265\002\022\035\n\030"
+  "DOTA_CM_SetUnitShareFlag\020\266\002\022\030\n\023DOTA_CM_S"
+  "wapRequest\020\267\002\022\027\n\022DOTA_CM_SwapAccept\020\270\002\022\026"
+  "\n\021DOTA_CM_WorldLine\020\271\002\022\037\n\032DOTA_CM_Reques"
+  "tGraphUpdate\020\272\002\022\026\n\021DOTA_CM_ItemAlert\020\273\002\022"
+  "\026\n\021DOTA_CM_ChatWheel\020\274\002\022\032\n\025DOTA_CM_SendS"
+  "tatPopup\020\275\002\022\"\n\035DOTA_CM_BeginLastHitChall"
+  "enge\020\276\002\022\033\n\026DOTA_CM_UpdateQuickBuy\020\277\002\022\036\n\031"
+  "DOTA_CM_UpdateCoachListen\020\300\002\022\031\n\024DOTA_CM_"
+  "CoachHUDPing\020\301\002\022\027\n\022DOTA_CM_RecordVote\020\302\002"
+  "\022&\n!DOTA_CM_UnitsAutoAttackAfterSpell\020\303\002"
+  "\022\036\n\031DOTA_CM_WillPurchaseAlert\020\304\002\022\033\n\026DOTA"
+  "_CM_PlayerShowCase\020\305\002\022!\n\034DOTA_CM_Telepor"
+  "tRequiresHalt\020\306\002\022\035\n\030DOTA_CM_CameraZoomAm"
+  "ount\020\307\002\022%\n DOTA_CM_BroadcasterUsingCamer"
+  "man\020\310\002\0223\n.DOTA_CM_BroadcasterUsingAssist"
+  "edCameraOperator\020\311\002\022\033\n\026DOTA_CM_EnemyItem"
+  "Alert\020\312\002\022\032\n\025DOTA_CM_FreeInventory\020\313\002\022\036\n\031"
+  "DOTA_CM_BuyBackStateAlert\020\314\002\022\032\n\025DOTA_CM_"
+  "QuickBuyAlert\020\315\002\022\033\n\026DOTA_CM_HeroStatueLi"
+  "ke\020\316\002\022\032\n\025DOTA_CM_ModifierAlert\020\317\002\022\037\n\032DOT"
+  "A_CM_TeamShowcaseEditor\020\320\002\022\030\n\023DOTA_CM_HP"
+  "ManaAlert\020\321\002\022\027\n\022DOTA_CM_GlyphAlert\020\322\002\022#\n"
+  "\036DOTA_CM_TeamShowcaseClientData\020\323\002\022\035\n\030DO"
+  "TA_CM_PlayTeamShowcase\020\324\002\022\034\n\027DOTA_CM_Eve"
+  "ntCNY2015Cmd\020\325\002\022#\n\036DOTA_CM_FillEmptySlot"
+  "sWithBots\020\326\002\022\025\n\020DOTA_CM_DemoHero\020\327\002\022$\n\037D"
+  "OTA_CM_AbilityLearnModeToggled\020\330\002\022\034\n\027DOT"
+  "A_CM_AbilityStartUse\020\331\002\022\034\n\027DOTA_CM_Chall"
+  "engeSelect\020\332\002\022\034\n\027DOTA_CM_ChallengeReroll"
+  "\020\333\002\022\030\n\023DOTA_CM_ClickedBuff\020\334\002\022\026\n\021DOTA_CM"
+  "_CoinWager\020\335\002\022\032\n\025DOTA_CM_ExecuteOrders\020\336"
+  "\002\022\024\n\017DOTA_CM_XPAlert\020\337\002\022\033\n\026DOTA_CM_Event"
+  "PointsTip\020\341\002\022\027\n\022DOTA_CM_KillMyHero\020\343\002\022\030\n"
+  "\023DOTA_CM_QuestStatus\020\344\002\022\035\n\030DOTA_CM_Toggl"
+  "eAutoattack\020\345\002\022\033\n\026DOTA_CM_SpecialAbility"
+  "\020\346\002\022\037\n\032DOTA_CM_KillcamDamageTaken\020\347\002\022%\n "
+  "DOTA_CM_SetEnemyStartingPosition\020\350\002\022$\n\037D"
+  "OTA_CM_SetDesiredWardPlacement\020\351\002\022\025\n\020DOT"
+  "A_CM_RollDice\020\352\002\022\025\n\020DOTA_CM_FlipCoin\020\353\002\022"
+  "#\n\036DOTA_CM_RequestItemSuggestions\020\354\002\022\034\n\027"
+  "DOTA_CM_MakeTeamCaptain\020\355\002\022\033\n\026DOTA_CM_Co"
+  "inWagerToken\020\356\002\022\026\n\021DOTA_CM_RankWager\020\357\002\022"
+  "!\n\034DOTA_CM_DismissAllStatPopups\020\360\002\022&\n!DO"
+  "TA_CM_HelpTipSystemStateChanged\020\361\002\022 \n\033DO"
+  "TA_CM_ChannelRequiresHalt\020\362\002\022!\n\034DOTA_CM_"
+  "RequestBulkCombatLog\020\363\002\022\'\n\"DOTA_CM_Abili"
+  "tyDraftRequestAbility\020\364\002\022\036\n\031DOTA_CM_Guid"
+  "eSelectOption\020\365\002\022\032\n\025DOTA_CM_GuideSelecte"
+  "d\020\366\002\022\031\n\024DOTA_CM_DamageReport\020\367\002\022\031\n\024DOTA_"
+  "CM_SalutePlayer\020\370\002\022\027\n\022DOTA_CM_SprayWheel"
+  "\020\371\002\022\025\n\020DOTA_CM_TipAlert\020\372\002\022\037\n\032DOTA_CM_Em"
+  "ptyTeleportAlert\020\373\002\022\027\n\022DOTA_CM_RadarAler"
+  "t\020\374\002\022\034\n\027DOTA_CM_TalentTreeAlert\020\375\002\022 \n\033DO"
+  "TA_CM_SetCavernMapVariant\020\376\002\022\033\n\026DOTA_CM_"
+  "PauseGameOrder\020\377\002\022\'\n\"DOTA_CM_VersusScene"
+  "_PlayerBehavior\020\200\003\022\031\n\024DOTA_CM_PlayerBoun"
+  "ty\020\201\003\022\037\n\032DOTA_CM_PlayerBountyCancel\020\202\003\022\037"
+  "\n\032DOTA_CM_EmptyItemSlotAlert\020\204\003\022%\n DOTA_"
+  "CM_AddOverwatchReportMarker\020\205\003\022\034\n\027DOTA_C"
+  "M_AghsStatusAlert\020\206\003\022\027\n\022DOTA_CM_PerfRepo"
+  "rt\020\207\003\022%\n DOTA_CM_ContextualTips_Subscrib"
+  "e\020\211\003\022\030\n\023DOTA_CM_ChatMessage\020\212\003\022*\n%DOTA_C"
+  "M_AddCommunicationsReportMarker\020\213\003\022)\n$DO"
+  "TA_CM_AddCommunicationsBlockMarker\020\214\003\022\035\n"
+  "\030DOTA_CM_NeutralCampAlert\020\215\003\022\031\n\024DOTA_CM_"
+  "DuelAccepted\020\216\003\022\036\n\031DOTA_CM_ChooseNeutral"
+  "Item\020\217\003\022\034\n\027DOTA_CM_PlayerDraftPick\020\240\006\022\037\n"
+  "\032DOTA_CM_PlayerDraftSuggest\020\241\006\022\"\n\035DOTA_C"
+  "M_PlayerDraftPreferRole\020\242\006\022\"\n\035DOTA_CM_Pl"
+  "ayerDraftPreferTeam\020\243\006\022\033\n\026DOTA_CM_ChatWh"
+  "eelAlert\020\244\006\022\031\n\024DOTA_CM_AbilityAlert\020\245\006\022\035"
+  "\n\030DOTA_CM_AllyAbilityAlert\020\246\006\022\027\n\022DOTA_CM"
+  "_GiftPlayer\020\247\006\022\031\n\024DOTA_CM_GiftEveryone\020\250"
+  "\006\022(\n#DOTA_CM_SelectOverworldTokenRewards"
+  "\020\251\006\022\027\n\022DOTA_CM_FacetAlert\020\252\006\022\030\n\023DOTA_CM_"
+  "InnateAlert\020\253\006\022\036\n\031DOTA_CM_SelectOverworl"
+  "dID\020\254\006\022\036\n\031DOTA_CM_RerollNeutralItem\020\255\006\022\030"
+  "\n\023DOTA_CM_RoshanTimer\020\256\006\022\"\n\035DOTA_CM_Sugg"
+  "estItemPreference\020\257\006\022\035\n\030DOTA_CM_CraftNeu"
+  "tralItem\020\260\006\022!\n\034DOTA_CM_ChooseCraftedNeut"
+  "ral\020\261\006\022\027\n\022DOTA_CM_TimerAlert\020\262\006\022\032\n\025DOTA_"
+  "CM_MadstoneAlert\020\263\006\022&\n!DOTA_CM_UpdateAut"
+  "oCourierSettings\020\264\006\022\037\n\032DOTA_CM_AutoCouri"
+  "erExecute\020\265\006\022\033\n\026DOTA_CM_QuickBuyAction\020\266"
+  "\006\022+\n&DOTA_CM_InteractionChannelsRequireH"
+  "alt\020\267\006\022\037\n\032DOTA_CM_SuggestItemRefresh\020\270\006\022"
+  "&\n!DOTA_CM_SuggestItemVariantRequest\020\271\006\022"
+  "%\n DOTA_CM_SuggestItemVariantSelect\020\272\006\022."
+  "\n)DOTA_CM_MonsterHunter_SelectInvestigat"
+  "ion\020\273\006\022$\n\037DOTA_CM_MonsterHunter_HuntAler"
+  "t\020\274\006\022/\n*DOTA_CM_AbilitySpecificChannelRe"
+  "quiresHalt\020\275\006\022\033\n\026DOTA_CM_TormentorTimer\020"
+  "\276\006"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fclientmessages_2eproto_deps[3] = {
   &::descriptor_table_base_5fgcmessages_2eproto,
@@ -3541,9 +3567,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fclientmessag
 };
 static ::_pbi::once_flag descriptor_table_dota_5fclientmessages_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fclientmessages_2eproto = {
-    false, false, 15042, descriptor_table_protodef_dota_5fclientmessages_2eproto,
+    false, false, 15122, descriptor_table_protodef_dota_5fclientmessages_2eproto,
     "dota_clientmessages.proto",
-    &descriptor_table_dota_5fclientmessages_2eproto_once, descriptor_table_dota_5fclientmessages_2eproto_deps, 3, 115,
+    &descriptor_table_dota_5fclientmessages_2eproto_once, descriptor_table_dota_5fclientmessages_2eproto_deps, 3, 116,
     schemas, file_default_instances, TableStruct_dota_5fclientmessages_2eproto::offsets,
     file_level_metadata_dota_5fclientmessages_2eproto, file_level_enum_descriptors_dota_5fclientmessages_2eproto,
     file_level_service_descriptors_dota_5fclientmessages_2eproto,
@@ -3770,6 +3796,7 @@ bool EDotaClientMessages_IsValid(int value) {
     case 827:
     case 828:
     case 829:
+    case 830:
       return true;
     default:
       return false;
@@ -28394,6 +28421,197 @@ void CDOTAClientMsg_RoshanTimer::InternalSwap(CDOTAClientMsg_RoshanTimer* other)
 
 // ===================================================================
 
+class CDOTAClientMsg_TormentorTimer::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CDOTAClientMsg_TormentorTimer>()._impl_._has_bits_);
+  static void set_has_negative(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+};
+
+CDOTAClientMsg_TormentorTimer::CDOTAClientMsg_TormentorTimer(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CDOTAClientMsg_TormentorTimer)
+}
+CDOTAClientMsg_TormentorTimer::CDOTAClientMsg_TormentorTimer(const CDOTAClientMsg_TormentorTimer& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CDOTAClientMsg_TormentorTimer* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.negative_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.negative_ = from._impl_.negative_;
+  // @@protoc_insertion_point(copy_constructor:CDOTAClientMsg_TormentorTimer)
+}
+
+inline void CDOTAClientMsg_TormentorTimer::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.negative_){false}
+  };
+}
+
+CDOTAClientMsg_TormentorTimer::~CDOTAClientMsg_TormentorTimer() {
+  // @@protoc_insertion_point(destructor:CDOTAClientMsg_TormentorTimer)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CDOTAClientMsg_TormentorTimer::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CDOTAClientMsg_TormentorTimer::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CDOTAClientMsg_TormentorTimer::Clear() {
+// @@protoc_insertion_point(message_clear_start:CDOTAClientMsg_TormentorTimer)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.negative_ = false;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CDOTAClientMsg_TormentorTimer::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional bool negative = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_negative(&has_bits);
+          _impl_.negative_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CDOTAClientMsg_TormentorTimer::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CDOTAClientMsg_TormentorTimer)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional bool negative = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_negative(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CDOTAClientMsg_TormentorTimer)
+  return target;
+}
+
+size_t CDOTAClientMsg_TormentorTimer::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CDOTAClientMsg_TormentorTimer)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // optional bool negative = 1;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CDOTAClientMsg_TormentorTimer::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CDOTAClientMsg_TormentorTimer::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CDOTAClientMsg_TormentorTimer::GetClassData() const { return &_class_data_; }
+
+
+void CDOTAClientMsg_TormentorTimer::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CDOTAClientMsg_TormentorTimer*>(&to_msg);
+  auto& from = static_cast<const CDOTAClientMsg_TormentorTimer&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CDOTAClientMsg_TormentorTimer)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_negative()) {
+    _this->_internal_set_negative(from._internal_negative());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CDOTAClientMsg_TormentorTimer::CopyFrom(const CDOTAClientMsg_TormentorTimer& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CDOTAClientMsg_TormentorTimer)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CDOTAClientMsg_TormentorTimer::IsInitialized() const {
+  return true;
+}
+
+void CDOTAClientMsg_TormentorTimer::InternalSwap(CDOTAClientMsg_TormentorTimer* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  swap(_impl_.negative_, other->_impl_.negative_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CDOTAClientMsg_TormentorTimer::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_dota_5fclientmessages_2eproto_getter, &descriptor_table_dota_5fclientmessages_2eproto_once,
+      file_level_metadata_dota_5fclientmessages_2eproto[107]);
+}
+
+// ===================================================================
+
 class CDOTAClientMsg_CraftNeutralItem::_Internal {
  public:
 };
@@ -28429,7 +28647,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CDOTAClientMsg_CraftNeutralIte
 ::PROTOBUF_NAMESPACE_ID::Metadata CDOTAClientMsg_CraftNeutralItem::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fclientmessages_2eproto_getter, &descriptor_table_dota_5fclientmessages_2eproto_once,
-      file_level_metadata_dota_5fclientmessages_2eproto[107]);
+      file_level_metadata_dota_5fclientmessages_2eproto[108]);
 }
 
 // ===================================================================
@@ -28694,7 +28912,7 @@ void CDOTAClientMsg_ChooseCraftedNeutralItem::InternalSwap(CDOTAClientMsg_Choose
 ::PROTOBUF_NAMESPACE_ID::Metadata CDOTAClientMsg_ChooseCraftedNeutralItem::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fclientmessages_2eproto_getter, &descriptor_table_dota_5fclientmessages_2eproto_once,
-      file_level_metadata_dota_5fclientmessages_2eproto[108]);
+      file_level_metadata_dota_5fclientmessages_2eproto[109]);
 }
 
 // ===================================================================
@@ -28891,7 +29109,7 @@ void CDOTAClientMsg_TimerAlert::InternalSwap(CDOTAClientMsg_TimerAlert* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CDOTAClientMsg_TimerAlert::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fclientmessages_2eproto_getter, &descriptor_table_dota_5fclientmessages_2eproto_once,
-      file_level_metadata_dota_5fclientmessages_2eproto[109]);
+      file_level_metadata_dota_5fclientmessages_2eproto[110]);
 }
 
 // ===================================================================
@@ -29082,7 +29300,7 @@ void CDOTAClientMsg_MadstoneAlert::InternalSwap(CDOTAClientMsg_MadstoneAlert* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata CDOTAClientMsg_MadstoneAlert::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fclientmessages_2eproto_getter, &descriptor_table_dota_5fclientmessages_2eproto_once,
-      file_level_metadata_dota_5fclientmessages_2eproto[110]);
+      file_level_metadata_dota_5fclientmessages_2eproto[111]);
 }
 
 // ===================================================================
@@ -29273,7 +29491,7 @@ void CDOTAClientMsg_UpdateAutoCourierSettings::InternalSwap(CDOTAClientMsg_Updat
 ::PROTOBUF_NAMESPACE_ID::Metadata CDOTAClientMsg_UpdateAutoCourierSettings::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fclientmessages_2eproto_getter, &descriptor_table_dota_5fclientmessages_2eproto_once,
-      file_level_metadata_dota_5fclientmessages_2eproto[111]);
+      file_level_metadata_dota_5fclientmessages_2eproto[112]);
 }
 
 // ===================================================================
@@ -29505,7 +29723,7 @@ void CDOTAClientMsg_AutoCourierExecute::InternalSwap(CDOTAClientMsg_AutoCourierE
 ::PROTOBUF_NAMESPACE_ID::Metadata CDOTAClientMsg_AutoCourierExecute::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fclientmessages_2eproto_getter, &descriptor_table_dota_5fclientmessages_2eproto_once,
-      file_level_metadata_dota_5fclientmessages_2eproto[112]);
+      file_level_metadata_dota_5fclientmessages_2eproto[113]);
 }
 
 // ===================================================================
@@ -29696,7 +29914,7 @@ void CDOTAClientMsg_MonsterHunter_SelectInvestigation::InternalSwap(CDOTAClientM
 ::PROTOBUF_NAMESPACE_ID::Metadata CDOTAClientMsg_MonsterHunter_SelectInvestigation::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fclientmessages_2eproto_getter, &descriptor_table_dota_5fclientmessages_2eproto_once,
-      file_level_metadata_dota_5fclientmessages_2eproto[113]);
+      file_level_metadata_dota_5fclientmessages_2eproto[114]);
 }
 
 // ===================================================================
@@ -29933,7 +30151,7 @@ void CDOTAClientMsg_MonsterHunter_HuntAlert::InternalSwap(CDOTAClientMsg_Monster
 ::PROTOBUF_NAMESPACE_ID::Metadata CDOTAClientMsg_MonsterHunter_HuntAlert::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fclientmessages_2eproto_getter, &descriptor_table_dota_5fclientmessages_2eproto_once,
-      file_level_metadata_dota_5fclientmessages_2eproto[114]);
+      file_level_metadata_dota_5fclientmessages_2eproto[115]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -30365,6 +30583,10 @@ Arena::CreateMaybeMessage< ::CDOTAClientMsg_SelectOverworldID >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::CDOTAClientMsg_RoshanTimer*
 Arena::CreateMaybeMessage< ::CDOTAClientMsg_RoshanTimer >(Arena* arena) {
   return Arena::CreateMessageInternal< ::CDOTAClientMsg_RoshanTimer >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CDOTAClientMsg_TormentorTimer*
+Arena::CreateMaybeMessage< ::CDOTAClientMsg_TormentorTimer >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CDOTAClientMsg_TormentorTimer >(arena);
 }
 template<> PROTOBUF_NOINLINE ::CDOTAClientMsg_CraftNeutralItem*
 Arena::CreateMaybeMessage< ::CDOTAClientMsg_CraftNeutralItem >(Arena* arena) {

@@ -367,6 +367,9 @@ extern CDOTAClientMsg_TipAlertDefaultTypeInternal _CDOTAClientMsg_TipAlert_defau
 class CDOTAClientMsg_ToggleAutoattack;
 struct CDOTAClientMsg_ToggleAutoattackDefaultTypeInternal;
 extern CDOTAClientMsg_ToggleAutoattackDefaultTypeInternal _CDOTAClientMsg_ToggleAutoattack_default_instance_;
+class CDOTAClientMsg_TormentorTimer;
+struct CDOTAClientMsg_TormentorTimerDefaultTypeInternal;
+extern CDOTAClientMsg_TormentorTimerDefaultTypeInternal _CDOTAClientMsg_TormentorTimer_default_instance_;
 class CDOTAClientMsg_UnitsAutoAttackAfterSpell;
 struct CDOTAClientMsg_UnitsAutoAttackAfterSpellDefaultTypeInternal;
 extern CDOTAClientMsg_UnitsAutoAttackAfterSpellDefaultTypeInternal _CDOTAClientMsg_UnitsAutoAttackAfterSpell_default_instance_;
@@ -501,6 +504,7 @@ template<> ::CDOTAClientMsg_TeleportRequiresHalt* Arena::CreateMaybeMessage<::CD
 template<> ::CDOTAClientMsg_TimerAlert* Arena::CreateMaybeMessage<::CDOTAClientMsg_TimerAlert>(Arena*);
 template<> ::CDOTAClientMsg_TipAlert* Arena::CreateMaybeMessage<::CDOTAClientMsg_TipAlert>(Arena*);
 template<> ::CDOTAClientMsg_ToggleAutoattack* Arena::CreateMaybeMessage<::CDOTAClientMsg_ToggleAutoattack>(Arena*);
+template<> ::CDOTAClientMsg_TormentorTimer* Arena::CreateMaybeMessage<::CDOTAClientMsg_TormentorTimer>(Arena*);
 template<> ::CDOTAClientMsg_UnitsAutoAttackAfterSpell* Arena::CreateMaybeMessage<::CDOTAClientMsg_UnitsAutoAttackAfterSpell>(Arena*);
 template<> ::CDOTAClientMsg_UnitsAutoAttackMode* Arena::CreateMaybeMessage<::CDOTAClientMsg_UnitsAutoAttackMode>(Arena*);
 template<> ::CDOTAClientMsg_UpdateAutoCourierSettings* Arena::CreateMaybeMessage<::CDOTAClientMsg_UpdateAutoCourierSettings>(Arena*);
@@ -716,11 +720,12 @@ enum EDotaClientMessages : int {
   DOTA_CM_SuggestItemVariantSelect = 826,
   DOTA_CM_MonsterHunter_SelectInvestigation = 827,
   DOTA_CM_MonsterHunter_HuntAlert = 828,
-  DOTA_CM_AbilitySpecificChannelRequiresHalt = 829
+  DOTA_CM_AbilitySpecificChannelRequiresHalt = 829,
+  DOTA_CM_TormentorTimer = 830
 };
 bool EDotaClientMessages_IsValid(int value);
 constexpr EDotaClientMessages EDotaClientMessages_MIN = DOTA_CM_MapLine;
-constexpr EDotaClientMessages EDotaClientMessages_MAX = DOTA_CM_AbilitySpecificChannelRequiresHalt;
+constexpr EDotaClientMessages EDotaClientMessages_MAX = DOTA_CM_TormentorTimer;
 constexpr int EDotaClientMessages_ARRAYSIZE = EDotaClientMessages_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EDotaClientMessages_descriptor();
@@ -19898,6 +19903,166 @@ class CDOTAClientMsg_RoshanTimer final :
 };
 // -------------------------------------------------------------------
 
+class CDOTAClientMsg_TormentorTimer final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDOTAClientMsg_TormentorTimer) */ {
+ public:
+  inline CDOTAClientMsg_TormentorTimer() : CDOTAClientMsg_TormentorTimer(nullptr) {}
+  ~CDOTAClientMsg_TormentorTimer() override;
+  explicit PROTOBUF_CONSTEXPR CDOTAClientMsg_TormentorTimer(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDOTAClientMsg_TormentorTimer(const CDOTAClientMsg_TormentorTimer& from);
+  CDOTAClientMsg_TormentorTimer(CDOTAClientMsg_TormentorTimer&& from) noexcept
+    : CDOTAClientMsg_TormentorTimer() {
+    *this = ::std::move(from);
+  }
+
+  inline CDOTAClientMsg_TormentorTimer& operator=(const CDOTAClientMsg_TormentorTimer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDOTAClientMsg_TormentorTimer& operator=(CDOTAClientMsg_TormentorTimer&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDOTAClientMsg_TormentorTimer& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDOTAClientMsg_TormentorTimer* internal_default_instance() {
+    return reinterpret_cast<const CDOTAClientMsg_TormentorTimer*>(
+               &_CDOTAClientMsg_TormentorTimer_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    107;
+
+  friend void swap(CDOTAClientMsg_TormentorTimer& a, CDOTAClientMsg_TormentorTimer& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDOTAClientMsg_TormentorTimer* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDOTAClientMsg_TormentorTimer* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDOTAClientMsg_TormentorTimer* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDOTAClientMsg_TormentorTimer>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CDOTAClientMsg_TormentorTimer& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CDOTAClientMsg_TormentorTimer& from) {
+    CDOTAClientMsg_TormentorTimer::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CDOTAClientMsg_TormentorTimer* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDOTAClientMsg_TormentorTimer";
+  }
+  protected:
+  explicit CDOTAClientMsg_TormentorTimer(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNegativeFieldNumber = 1,
+  };
+  // optional bool negative = 1;
+  bool has_negative() const;
+  private:
+  bool _internal_has_negative() const;
+  public:
+  void clear_negative();
+  bool negative() const;
+  void set_negative(bool value);
+  private:
+  bool _internal_negative() const;
+  void _internal_set_negative(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_TormentorTimer)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    bool negative_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fclientmessages_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CDOTAClientMsg_CraftNeutralItem final :
     public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:CDOTAClientMsg_CraftNeutralItem) */ {
  public:
@@ -19952,7 +20117,7 @@ class CDOTAClientMsg_CraftNeutralItem final :
                &_CDOTAClientMsg_CraftNeutralItem_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    107;
+    108;
 
   friend void swap(CDOTAClientMsg_CraftNeutralItem& a, CDOTAClientMsg_CraftNeutralItem& b) {
     a.Swap(&b);
@@ -20078,7 +20243,7 @@ class CDOTAClientMsg_ChooseCraftedNeutralItem final :
                &_CDOTAClientMsg_ChooseCraftedNeutralItem_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    108;
+    109;
 
   friend void swap(CDOTAClientMsg_ChooseCraftedNeutralItem& a, CDOTAClientMsg_ChooseCraftedNeutralItem& b) {
     a.Swap(&b);
@@ -20268,7 +20433,7 @@ class CDOTAClientMsg_TimerAlert final :
                &_CDOTAClientMsg_TimerAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    109;
+    110;
 
   friend void swap(CDOTAClientMsg_TimerAlert& a, CDOTAClientMsg_TimerAlert& b) {
     a.Swap(&b);
@@ -20428,7 +20593,7 @@ class CDOTAClientMsg_MadstoneAlert final :
                &_CDOTAClientMsg_MadstoneAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    110;
+    111;
 
   friend void swap(CDOTAClientMsg_MadstoneAlert& a, CDOTAClientMsg_MadstoneAlert& b) {
     a.Swap(&b);
@@ -20588,7 +20753,7 @@ class CDOTAClientMsg_UpdateAutoCourierSettings final :
                &_CDOTAClientMsg_UpdateAutoCourierSettings_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    111;
+    112;
 
   friend void swap(CDOTAClientMsg_UpdateAutoCourierSettings& a, CDOTAClientMsg_UpdateAutoCourierSettings& b) {
     a.Swap(&b);
@@ -20748,7 +20913,7 @@ class CDOTAClientMsg_AutoCourierExecute final :
                &_CDOTAClientMsg_AutoCourierExecute_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    112;
+    113;
 
   friend void swap(CDOTAClientMsg_AutoCourierExecute& a, CDOTAClientMsg_AutoCourierExecute& b) {
     a.Swap(&b);
@@ -20923,7 +21088,7 @@ class CDOTAClientMsg_MonsterHunter_SelectInvestigation final :
                &_CDOTAClientMsg_MonsterHunter_SelectInvestigation_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    113;
+    114;
 
   friend void swap(CDOTAClientMsg_MonsterHunter_SelectInvestigation& a, CDOTAClientMsg_MonsterHunter_SelectInvestigation& b) {
     a.Swap(&b);
@@ -21083,7 +21248,7 @@ class CDOTAClientMsg_MonsterHunter_HuntAlert final :
                &_CDOTAClientMsg_MonsterHunter_HuntAlert_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    114;
+    115;
 
   friend void swap(CDOTAClientMsg_MonsterHunter_HuntAlert& a, CDOTAClientMsg_MonsterHunter_HuntAlert& b) {
     a.Swap(&b);
@@ -29073,6 +29238,38 @@ inline void CDOTAClientMsg_RoshanTimer::set_negative(bool value) {
 
 // -------------------------------------------------------------------
 
+// CDOTAClientMsg_TormentorTimer
+
+// optional bool negative = 1;
+inline bool CDOTAClientMsg_TormentorTimer::_internal_has_negative() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CDOTAClientMsg_TormentorTimer::has_negative() const {
+  return _internal_has_negative();
+}
+inline void CDOTAClientMsg_TormentorTimer::clear_negative() {
+  _impl_.negative_ = false;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline bool CDOTAClientMsg_TormentorTimer::_internal_negative() const {
+  return _impl_.negative_;
+}
+inline bool CDOTAClientMsg_TormentorTimer::negative() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_TormentorTimer.negative)
+  return _internal_negative();
+}
+inline void CDOTAClientMsg_TormentorTimer::_internal_set_negative(bool value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.negative_ = value;
+}
+inline void CDOTAClientMsg_TormentorTimer::set_negative(bool value) {
+  _internal_set_negative(value);
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_TormentorTimer.negative)
+}
+
+// -------------------------------------------------------------------
+
 // CDOTAClientMsg_CraftNeutralItem
 
 // -------------------------------------------------------------------
@@ -29415,6 +29612,8 @@ inline void CDOTAClientMsg_MonsterHunter_HuntAlert::set_ctrl_pressed(bool value)
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

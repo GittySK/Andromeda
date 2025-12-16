@@ -21017,6 +21017,7 @@ class CMsgDOTAMatch_Player final :
     kTeamSlotFieldNumber = 81,
     kSelectedFacetFieldNumber = 82,
     kItem10LvlFieldNumber = 84,
+    kDisableDurationFieldNumber = 85,
     kItem10FieldNumber = 83,
     kItem0FieldNumber = 4,
     kItem1FieldNumber = 5,
@@ -21919,6 +21920,19 @@ class CMsgDOTAMatch_Player final :
   void _internal_set_item_10_lvl(int32_t value);
   public:
 
+  // optional uint32 disable_duration = 85;
+  bool has_disable_duration() const;
+  private:
+  bool _internal_has_disable_duration() const;
+  public:
+  void clear_disable_duration();
+  uint32_t disable_duration() const;
+  void set_disable_duration(uint32_t value);
+  private:
+  uint32_t _internal_disable_duration() const;
+  void _internal_set_disable_duration(uint32_t value);
+  public:
+
   // optional int32 item_10 = 83 [default = -1];
   bool has_item_10() const;
   private:
@@ -22137,6 +22151,7 @@ class CMsgDOTAMatch_Player final :
     uint32_t team_slot_;
     uint32_t selected_facet_;
     int32_t item_10_lvl_;
+    uint32_t disable_duration_;
     int32_t item_10_;
     int32_t item_0_;
     int32_t item_1_;
@@ -63880,7 +63895,7 @@ inline void CMsgDOTAMatch_Player::set_hero_id(int32_t value) {
 
 // optional int32 item_0 = 4 [default = -1];
 inline bool CMsgDOTAMatch_Player::_internal_has_item_0() const {
-  bool value = (_impl_._has_bits_[1] & 0x20000000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x40000000u) != 0;
   return value;
 }
 inline bool CMsgDOTAMatch_Player::has_item_0() const {
@@ -63888,7 +63903,7 @@ inline bool CMsgDOTAMatch_Player::has_item_0() const {
 }
 inline void CMsgDOTAMatch_Player::clear_item_0() {
   _impl_.item_0_ = -1;
-  _impl_._has_bits_[1] &= ~0x20000000u;
+  _impl_._has_bits_[1] &= ~0x40000000u;
 }
 inline int32_t CMsgDOTAMatch_Player::_internal_item_0() const {
   return _impl_.item_0_;
@@ -63898,7 +63913,7 @@ inline int32_t CMsgDOTAMatch_Player::item_0() const {
   return _internal_item_0();
 }
 inline void CMsgDOTAMatch_Player::_internal_set_item_0(int32_t value) {
-  _impl_._has_bits_[1] |= 0x20000000u;
+  _impl_._has_bits_[1] |= 0x40000000u;
   _impl_.item_0_ = value;
 }
 inline void CMsgDOTAMatch_Player::set_item_0(int32_t value) {
@@ -63908,7 +63923,7 @@ inline void CMsgDOTAMatch_Player::set_item_0(int32_t value) {
 
 // optional int32 item_1 = 5 [default = -1];
 inline bool CMsgDOTAMatch_Player::_internal_has_item_1() const {
-  bool value = (_impl_._has_bits_[1] & 0x40000000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x80000000u) != 0;
   return value;
 }
 inline bool CMsgDOTAMatch_Player::has_item_1() const {
@@ -63916,7 +63931,7 @@ inline bool CMsgDOTAMatch_Player::has_item_1() const {
 }
 inline void CMsgDOTAMatch_Player::clear_item_1() {
   _impl_.item_1_ = -1;
-  _impl_._has_bits_[1] &= ~0x40000000u;
+  _impl_._has_bits_[1] &= ~0x80000000u;
 }
 inline int32_t CMsgDOTAMatch_Player::_internal_item_1() const {
   return _impl_.item_1_;
@@ -63926,7 +63941,7 @@ inline int32_t CMsgDOTAMatch_Player::item_1() const {
   return _internal_item_1();
 }
 inline void CMsgDOTAMatch_Player::_internal_set_item_1(int32_t value) {
-  _impl_._has_bits_[1] |= 0x40000000u;
+  _impl_._has_bits_[1] |= 0x80000000u;
   _impl_.item_1_ = value;
 }
 inline void CMsgDOTAMatch_Player::set_item_1(int32_t value) {
@@ -63936,7 +63951,7 @@ inline void CMsgDOTAMatch_Player::set_item_1(int32_t value) {
 
 // optional int32 item_2 = 6 [default = -1];
 inline bool CMsgDOTAMatch_Player::_internal_has_item_2() const {
-  bool value = (_impl_._has_bits_[1] & 0x80000000u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00000001u) != 0;
   return value;
 }
 inline bool CMsgDOTAMatch_Player::has_item_2() const {
@@ -63944,7 +63959,7 @@ inline bool CMsgDOTAMatch_Player::has_item_2() const {
 }
 inline void CMsgDOTAMatch_Player::clear_item_2() {
   _impl_.item_2_ = -1;
-  _impl_._has_bits_[1] &= ~0x80000000u;
+  _impl_._has_bits_[2] &= ~0x00000001u;
 }
 inline int32_t CMsgDOTAMatch_Player::_internal_item_2() const {
   return _impl_.item_2_;
@@ -63954,7 +63969,7 @@ inline int32_t CMsgDOTAMatch_Player::item_2() const {
   return _internal_item_2();
 }
 inline void CMsgDOTAMatch_Player::_internal_set_item_2(int32_t value) {
-  _impl_._has_bits_[1] |= 0x80000000u;
+  _impl_._has_bits_[2] |= 0x00000001u;
   _impl_.item_2_ = value;
 }
 inline void CMsgDOTAMatch_Player::set_item_2(int32_t value) {
@@ -63964,7 +63979,7 @@ inline void CMsgDOTAMatch_Player::set_item_2(int32_t value) {
 
 // optional int32 item_3 = 7 [default = -1];
 inline bool CMsgDOTAMatch_Player::_internal_has_item_3() const {
-  bool value = (_impl_._has_bits_[2] & 0x00000001u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00000002u) != 0;
   return value;
 }
 inline bool CMsgDOTAMatch_Player::has_item_3() const {
@@ -63972,7 +63987,7 @@ inline bool CMsgDOTAMatch_Player::has_item_3() const {
 }
 inline void CMsgDOTAMatch_Player::clear_item_3() {
   _impl_.item_3_ = -1;
-  _impl_._has_bits_[2] &= ~0x00000001u;
+  _impl_._has_bits_[2] &= ~0x00000002u;
 }
 inline int32_t CMsgDOTAMatch_Player::_internal_item_3() const {
   return _impl_.item_3_;
@@ -63982,7 +63997,7 @@ inline int32_t CMsgDOTAMatch_Player::item_3() const {
   return _internal_item_3();
 }
 inline void CMsgDOTAMatch_Player::_internal_set_item_3(int32_t value) {
-  _impl_._has_bits_[2] |= 0x00000001u;
+  _impl_._has_bits_[2] |= 0x00000002u;
   _impl_.item_3_ = value;
 }
 inline void CMsgDOTAMatch_Player::set_item_3(int32_t value) {
@@ -63992,7 +64007,7 @@ inline void CMsgDOTAMatch_Player::set_item_3(int32_t value) {
 
 // optional int32 item_4 = 8 [default = -1];
 inline bool CMsgDOTAMatch_Player::_internal_has_item_4() const {
-  bool value = (_impl_._has_bits_[2] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00000004u) != 0;
   return value;
 }
 inline bool CMsgDOTAMatch_Player::has_item_4() const {
@@ -64000,7 +64015,7 @@ inline bool CMsgDOTAMatch_Player::has_item_4() const {
 }
 inline void CMsgDOTAMatch_Player::clear_item_4() {
   _impl_.item_4_ = -1;
-  _impl_._has_bits_[2] &= ~0x00000002u;
+  _impl_._has_bits_[2] &= ~0x00000004u;
 }
 inline int32_t CMsgDOTAMatch_Player::_internal_item_4() const {
   return _impl_.item_4_;
@@ -64010,7 +64025,7 @@ inline int32_t CMsgDOTAMatch_Player::item_4() const {
   return _internal_item_4();
 }
 inline void CMsgDOTAMatch_Player::_internal_set_item_4(int32_t value) {
-  _impl_._has_bits_[2] |= 0x00000002u;
+  _impl_._has_bits_[2] |= 0x00000004u;
   _impl_.item_4_ = value;
 }
 inline void CMsgDOTAMatch_Player::set_item_4(int32_t value) {
@@ -64020,7 +64035,7 @@ inline void CMsgDOTAMatch_Player::set_item_4(int32_t value) {
 
 // optional int32 item_5 = 9 [default = -1];
 inline bool CMsgDOTAMatch_Player::_internal_has_item_5() const {
-  bool value = (_impl_._has_bits_[2] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00000008u) != 0;
   return value;
 }
 inline bool CMsgDOTAMatch_Player::has_item_5() const {
@@ -64028,7 +64043,7 @@ inline bool CMsgDOTAMatch_Player::has_item_5() const {
 }
 inline void CMsgDOTAMatch_Player::clear_item_5() {
   _impl_.item_5_ = -1;
-  _impl_._has_bits_[2] &= ~0x00000004u;
+  _impl_._has_bits_[2] &= ~0x00000008u;
 }
 inline int32_t CMsgDOTAMatch_Player::_internal_item_5() const {
   return _impl_.item_5_;
@@ -64038,7 +64053,7 @@ inline int32_t CMsgDOTAMatch_Player::item_5() const {
   return _internal_item_5();
 }
 inline void CMsgDOTAMatch_Player::_internal_set_item_5(int32_t value) {
-  _impl_._has_bits_[2] |= 0x00000004u;
+  _impl_._has_bits_[2] |= 0x00000008u;
   _impl_.item_5_ = value;
 }
 inline void CMsgDOTAMatch_Player::set_item_5(int32_t value) {
@@ -64048,7 +64063,7 @@ inline void CMsgDOTAMatch_Player::set_item_5(int32_t value) {
 
 // optional int32 item_6 = 59 [default = -1];
 inline bool CMsgDOTAMatch_Player::_internal_has_item_6() const {
-  bool value = (_impl_._has_bits_[2] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00000010u) != 0;
   return value;
 }
 inline bool CMsgDOTAMatch_Player::has_item_6() const {
@@ -64056,7 +64071,7 @@ inline bool CMsgDOTAMatch_Player::has_item_6() const {
 }
 inline void CMsgDOTAMatch_Player::clear_item_6() {
   _impl_.item_6_ = -1;
-  _impl_._has_bits_[2] &= ~0x00000008u;
+  _impl_._has_bits_[2] &= ~0x00000010u;
 }
 inline int32_t CMsgDOTAMatch_Player::_internal_item_6() const {
   return _impl_.item_6_;
@@ -64066,7 +64081,7 @@ inline int32_t CMsgDOTAMatch_Player::item_6() const {
   return _internal_item_6();
 }
 inline void CMsgDOTAMatch_Player::_internal_set_item_6(int32_t value) {
-  _impl_._has_bits_[2] |= 0x00000008u;
+  _impl_._has_bits_[2] |= 0x00000010u;
   _impl_.item_6_ = value;
 }
 inline void CMsgDOTAMatch_Player::set_item_6(int32_t value) {
@@ -64076,7 +64091,7 @@ inline void CMsgDOTAMatch_Player::set_item_6(int32_t value) {
 
 // optional int32 item_7 = 60 [default = -1];
 inline bool CMsgDOTAMatch_Player::_internal_has_item_7() const {
-  bool value = (_impl_._has_bits_[2] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00000020u) != 0;
   return value;
 }
 inline bool CMsgDOTAMatch_Player::has_item_7() const {
@@ -64084,7 +64099,7 @@ inline bool CMsgDOTAMatch_Player::has_item_7() const {
 }
 inline void CMsgDOTAMatch_Player::clear_item_7() {
   _impl_.item_7_ = -1;
-  _impl_._has_bits_[2] &= ~0x00000010u;
+  _impl_._has_bits_[2] &= ~0x00000020u;
 }
 inline int32_t CMsgDOTAMatch_Player::_internal_item_7() const {
   return _impl_.item_7_;
@@ -64094,7 +64109,7 @@ inline int32_t CMsgDOTAMatch_Player::item_7() const {
   return _internal_item_7();
 }
 inline void CMsgDOTAMatch_Player::_internal_set_item_7(int32_t value) {
-  _impl_._has_bits_[2] |= 0x00000010u;
+  _impl_._has_bits_[2] |= 0x00000020u;
   _impl_.item_7_ = value;
 }
 inline void CMsgDOTAMatch_Player::set_item_7(int32_t value) {
@@ -64104,7 +64119,7 @@ inline void CMsgDOTAMatch_Player::set_item_7(int32_t value) {
 
 // optional int32 item_8 = 61 [default = -1];
 inline bool CMsgDOTAMatch_Player::_internal_has_item_8() const {
-  bool value = (_impl_._has_bits_[2] & 0x00000020u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00000040u) != 0;
   return value;
 }
 inline bool CMsgDOTAMatch_Player::has_item_8() const {
@@ -64112,7 +64127,7 @@ inline bool CMsgDOTAMatch_Player::has_item_8() const {
 }
 inline void CMsgDOTAMatch_Player::clear_item_8() {
   _impl_.item_8_ = -1;
-  _impl_._has_bits_[2] &= ~0x00000020u;
+  _impl_._has_bits_[2] &= ~0x00000040u;
 }
 inline int32_t CMsgDOTAMatch_Player::_internal_item_8() const {
   return _impl_.item_8_;
@@ -64122,7 +64137,7 @@ inline int32_t CMsgDOTAMatch_Player::item_8() const {
   return _internal_item_8();
 }
 inline void CMsgDOTAMatch_Player::_internal_set_item_8(int32_t value) {
-  _impl_._has_bits_[2] |= 0x00000020u;
+  _impl_._has_bits_[2] |= 0x00000040u;
   _impl_.item_8_ = value;
 }
 inline void CMsgDOTAMatch_Player::set_item_8(int32_t value) {
@@ -64132,7 +64147,7 @@ inline void CMsgDOTAMatch_Player::set_item_8(int32_t value) {
 
 // optional int32 item_9 = 76 [default = -1];
 inline bool CMsgDOTAMatch_Player::_internal_has_item_9() const {
-  bool value = (_impl_._has_bits_[2] & 0x00000040u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00000080u) != 0;
   return value;
 }
 inline bool CMsgDOTAMatch_Player::has_item_9() const {
@@ -64140,7 +64155,7 @@ inline bool CMsgDOTAMatch_Player::has_item_9() const {
 }
 inline void CMsgDOTAMatch_Player::clear_item_9() {
   _impl_.item_9_ = -1;
-  _impl_._has_bits_[2] &= ~0x00000040u;
+  _impl_._has_bits_[2] &= ~0x00000080u;
 }
 inline int32_t CMsgDOTAMatch_Player::_internal_item_9() const {
   return _impl_.item_9_;
@@ -64150,7 +64165,7 @@ inline int32_t CMsgDOTAMatch_Player::item_9() const {
   return _internal_item_9();
 }
 inline void CMsgDOTAMatch_Player::_internal_set_item_9(int32_t value) {
-  _impl_._has_bits_[2] |= 0x00000040u;
+  _impl_._has_bits_[2] |= 0x00000080u;
   _impl_.item_9_ = value;
 }
 inline void CMsgDOTAMatch_Player::set_item_9(int32_t value) {
@@ -64160,7 +64175,7 @@ inline void CMsgDOTAMatch_Player::set_item_9(int32_t value) {
 
 // optional int32 item_10 = 83 [default = -1];
 inline bool CMsgDOTAMatch_Player::_internal_has_item_10() const {
-  bool value = (_impl_._has_bits_[1] & 0x10000000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x20000000u) != 0;
   return value;
 }
 inline bool CMsgDOTAMatch_Player::has_item_10() const {
@@ -64168,7 +64183,7 @@ inline bool CMsgDOTAMatch_Player::has_item_10() const {
 }
 inline void CMsgDOTAMatch_Player::clear_item_10() {
   _impl_.item_10_ = -1;
-  _impl_._has_bits_[1] &= ~0x10000000u;
+  _impl_._has_bits_[1] &= ~0x20000000u;
 }
 inline int32_t CMsgDOTAMatch_Player::_internal_item_10() const {
   return _impl_.item_10_;
@@ -64178,7 +64193,7 @@ inline int32_t CMsgDOTAMatch_Player::item_10() const {
   return _internal_item_10();
 }
 inline void CMsgDOTAMatch_Player::_internal_set_item_10(int32_t value) {
-  _impl_._has_bits_[1] |= 0x10000000u;
+  _impl_._has_bits_[1] |= 0x20000000u;
   _impl_.item_10_ = value;
 }
 inline void CMsgDOTAMatch_Player::set_item_10(int32_t value) {
@@ -64716,6 +64731,34 @@ inline void CMsgDOTAMatch_Player::_internal_set_hero_healing(uint32_t value) {
 inline void CMsgDOTAMatch_Player::set_hero_healing(uint32_t value) {
   _internal_set_hero_healing(value);
   // @@protoc_insertion_point(field_set:CMsgDOTAMatch.Player.hero_healing)
+}
+
+// optional uint32 disable_duration = 85;
+inline bool CMsgDOTAMatch_Player::_internal_has_disable_duration() const {
+  bool value = (_impl_._has_bits_[1] & 0x10000000u) != 0;
+  return value;
+}
+inline bool CMsgDOTAMatch_Player::has_disable_duration() const {
+  return _internal_has_disable_duration();
+}
+inline void CMsgDOTAMatch_Player::clear_disable_duration() {
+  _impl_.disable_duration_ = 0u;
+  _impl_._has_bits_[1] &= ~0x10000000u;
+}
+inline uint32_t CMsgDOTAMatch_Player::_internal_disable_duration() const {
+  return _impl_.disable_duration_;
+}
+inline uint32_t CMsgDOTAMatch_Player::disable_duration() const {
+  // @@protoc_insertion_point(field_get:CMsgDOTAMatch.Player.disable_duration)
+  return _internal_disable_duration();
+}
+inline void CMsgDOTAMatch_Player::_internal_set_disable_duration(uint32_t value) {
+  _impl_._has_bits_[1] |= 0x10000000u;
+  _impl_.disable_duration_ = value;
+}
+inline void CMsgDOTAMatch_Player::set_disable_duration(uint32_t value) {
+  _internal_set_disable_duration(value);
+  // @@protoc_insertion_point(field_set:CMsgDOTAMatch.Player.disable_duration)
 }
 
 // optional uint32 level = 27;

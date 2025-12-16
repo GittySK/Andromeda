@@ -414,6 +414,12 @@ extern CMsgServerToGCVictoryPredictions_PredictionItemDefaultTypeInternal _CMsgS
 class CMsgServerToGCVictoryPredictions_Record;
 struct CMsgServerToGCVictoryPredictions_RecordDefaultTypeInternal;
 extern CMsgServerToGCVictoryPredictions_RecordDefaultTypeInternal _CMsgServerToGCVictoryPredictions_Record_default_instance_;
+class CMsgServerToGCWarningInvalidBotAbilityUsage;
+struct CMsgServerToGCWarningInvalidBotAbilityUsageDefaultTypeInternal;
+extern CMsgServerToGCWarningInvalidBotAbilityUsageDefaultTypeInternal _CMsgServerToGCWarningInvalidBotAbilityUsage_default_instance_;
+class CMsgServerToGCWarningLowServerFramerate;
+struct CMsgServerToGCWarningLowServerFramerateDefaultTypeInternal;
+extern CMsgServerToGCWarningLowServerFramerateDefaultTypeInternal _CMsgServerToGCWarningLowServerFramerate_default_instance_;
 class CMsgSignOutAssassinMiniGameInfo;
 struct CMsgSignOutAssassinMiniGameInfoDefaultTypeInternal;
 extern CMsgSignOutAssassinMiniGameInfoDefaultTypeInternal _CMsgSignOutAssassinMiniGameInfo_default_instance_;
@@ -725,6 +731,8 @@ template<> ::CMsgServerToGCRerollPlayerChallenge* Arena::CreateMaybeMessage<::CM
 template<> ::CMsgServerToGCVictoryPredictions* Arena::CreateMaybeMessage<::CMsgServerToGCVictoryPredictions>(Arena*);
 template<> ::CMsgServerToGCVictoryPredictions_PredictionItem* Arena::CreateMaybeMessage<::CMsgServerToGCVictoryPredictions_PredictionItem>(Arena*);
 template<> ::CMsgServerToGCVictoryPredictions_Record* Arena::CreateMaybeMessage<::CMsgServerToGCVictoryPredictions_Record>(Arena*);
+template<> ::CMsgServerToGCWarningInvalidBotAbilityUsage* Arena::CreateMaybeMessage<::CMsgServerToGCWarningInvalidBotAbilityUsage>(Arena*);
+template<> ::CMsgServerToGCWarningLowServerFramerate* Arena::CreateMaybeMessage<::CMsgServerToGCWarningLowServerFramerate>(Arena*);
 template<> ::CMsgSignOutAssassinMiniGameInfo* Arena::CreateMaybeMessage<::CMsgSignOutAssassinMiniGameInfo>(Arena*);
 template<> ::CMsgSignOutBotInfo* Arena::CreateMaybeMessage<::CMsgSignOutBotInfo>(Arena*);
 template<> ::CMsgSignOutBounties* Arena::CreateMaybeMessage<::CMsgSignOutBounties>(Arena*);
@@ -5473,6 +5481,7 @@ class CMsgGameMatchSignOut_CTeam_CPlayer final :
     kPredictedRankFieldNumber = 81,
     kSelectedFacetFieldNumber = 82,
     kEnhancementLevelFieldNumber = 83,
+    kDisableDurationFieldNumber = 84,
     kCavernCrawlPreferredMapVariantFieldNumber = 56,
     kLaneOutcomesFieldNumber = 67,
   };
@@ -6470,6 +6479,19 @@ class CMsgGameMatchSignOut_CTeam_CPlayer final :
   void _internal_set_enhancement_level(uint32_t value);
   public:
 
+  // optional uint32 disable_duration = 84;
+  bool has_disable_duration() const;
+  private:
+  bool _internal_has_disable_duration() const;
+  public:
+  void clear_disable_duration();
+  uint32_t disable_duration() const;
+  void set_disable_duration(uint32_t value);
+  private:
+  uint32_t _internal_disable_duration() const;
+  void _internal_set_disable_duration(uint32_t value);
+  public:
+
   // optional uint32 cavern_crawl_preferred_map_variant = 56 [default = 255];
   bool has_cavern_crawl_preferred_map_variant() const;
   private:
@@ -6577,6 +6599,7 @@ class CMsgGameMatchSignOut_CTeam_CPlayer final :
     uint32_t predicted_rank_;
     uint32_t selected_facet_;
     uint32_t enhancement_level_;
+    uint32_t disable_duration_;
     uint32_t cavern_crawl_preferred_map_variant_;
     uint32_t lane_outcomes_;
   };
@@ -42745,6 +42768,431 @@ class CMsgSignOutMonsterHunter final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fgcmessages_5fserver_2eproto;
 };
+// -------------------------------------------------------------------
+
+class CMsgServerToGCWarningLowServerFramerate final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgServerToGCWarningLowServerFramerate) */ {
+ public:
+  inline CMsgServerToGCWarningLowServerFramerate() : CMsgServerToGCWarningLowServerFramerate(nullptr) {}
+  ~CMsgServerToGCWarningLowServerFramerate() override;
+  explicit PROTOBUF_CONSTEXPR CMsgServerToGCWarningLowServerFramerate(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgServerToGCWarningLowServerFramerate(const CMsgServerToGCWarningLowServerFramerate& from);
+  CMsgServerToGCWarningLowServerFramerate(CMsgServerToGCWarningLowServerFramerate&& from) noexcept
+    : CMsgServerToGCWarningLowServerFramerate() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgServerToGCWarningLowServerFramerate& operator=(const CMsgServerToGCWarningLowServerFramerate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgServerToGCWarningLowServerFramerate& operator=(CMsgServerToGCWarningLowServerFramerate&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgServerToGCWarningLowServerFramerate& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgServerToGCWarningLowServerFramerate* internal_default_instance() {
+    return reinterpret_cast<const CMsgServerToGCWarningLowServerFramerate*>(
+               &_CMsgServerToGCWarningLowServerFramerate_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    182;
+
+  friend void swap(CMsgServerToGCWarningLowServerFramerate& a, CMsgServerToGCWarningLowServerFramerate& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgServerToGCWarningLowServerFramerate* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgServerToGCWarningLowServerFramerate* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerToGCWarningLowServerFramerate* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgServerToGCWarningLowServerFramerate>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgServerToGCWarningLowServerFramerate& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgServerToGCWarningLowServerFramerate& from) {
+    CMsgServerToGCWarningLowServerFramerate::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgServerToGCWarningLowServerFramerate* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgServerToGCWarningLowServerFramerate";
+  }
+  protected:
+  explicit CMsgServerToGCWarningLowServerFramerate(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMatchIdFieldNumber = 1,
+    kCustomGameIdFieldNumber = 3,
+    kBotScriptIdRadiantFieldNumber = 4,
+    kBotScriptIdDireFieldNumber = 5,
+    kTicksPerIntervalAverageFieldNumber = 2,
+  };
+  // optional uint64 match_id = 1;
+  bool has_match_id() const;
+  private:
+  bool _internal_has_match_id() const;
+  public:
+  void clear_match_id();
+  uint64_t match_id() const;
+  void set_match_id(uint64_t value);
+  private:
+  uint64_t _internal_match_id() const;
+  void _internal_set_match_id(uint64_t value);
+  public:
+
+  // optional uint64 custom_game_id = 3;
+  bool has_custom_game_id() const;
+  private:
+  bool _internal_has_custom_game_id() const;
+  public:
+  void clear_custom_game_id();
+  uint64_t custom_game_id() const;
+  void set_custom_game_id(uint64_t value);
+  private:
+  uint64_t _internal_custom_game_id() const;
+  void _internal_set_custom_game_id(uint64_t value);
+  public:
+
+  // optional uint64 bot_script_id_radiant = 4;
+  bool has_bot_script_id_radiant() const;
+  private:
+  bool _internal_has_bot_script_id_radiant() const;
+  public:
+  void clear_bot_script_id_radiant();
+  uint64_t bot_script_id_radiant() const;
+  void set_bot_script_id_radiant(uint64_t value);
+  private:
+  uint64_t _internal_bot_script_id_radiant() const;
+  void _internal_set_bot_script_id_radiant(uint64_t value);
+  public:
+
+  // optional uint64 bot_script_id_dire = 5;
+  bool has_bot_script_id_dire() const;
+  private:
+  bool _internal_has_bot_script_id_dire() const;
+  public:
+  void clear_bot_script_id_dire();
+  uint64_t bot_script_id_dire() const;
+  void set_bot_script_id_dire(uint64_t value);
+  private:
+  uint64_t _internal_bot_script_id_dire() const;
+  void _internal_set_bot_script_id_dire(uint64_t value);
+  public:
+
+  // optional float ticks_per_interval_average = 2;
+  bool has_ticks_per_interval_average() const;
+  private:
+  bool _internal_has_ticks_per_interval_average() const;
+  public:
+  void clear_ticks_per_interval_average();
+  float ticks_per_interval_average() const;
+  void set_ticks_per_interval_average(float value);
+  private:
+  float _internal_ticks_per_interval_average() const;
+  void _internal_set_ticks_per_interval_average(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgServerToGCWarningLowServerFramerate)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint64_t match_id_;
+    uint64_t custom_game_id_;
+    uint64_t bot_script_id_radiant_;
+    uint64_t bot_script_id_dire_;
+    float ticks_per_interval_average_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fgcmessages_5fserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerToGCWarningInvalidBotAbilityUsage final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgServerToGCWarningInvalidBotAbilityUsage) */ {
+ public:
+  inline CMsgServerToGCWarningInvalidBotAbilityUsage() : CMsgServerToGCWarningInvalidBotAbilityUsage(nullptr) {}
+  ~CMsgServerToGCWarningInvalidBotAbilityUsage() override;
+  explicit PROTOBUF_CONSTEXPR CMsgServerToGCWarningInvalidBotAbilityUsage(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgServerToGCWarningInvalidBotAbilityUsage(const CMsgServerToGCWarningInvalidBotAbilityUsage& from);
+  CMsgServerToGCWarningInvalidBotAbilityUsage(CMsgServerToGCWarningInvalidBotAbilityUsage&& from) noexcept
+    : CMsgServerToGCWarningInvalidBotAbilityUsage() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgServerToGCWarningInvalidBotAbilityUsage& operator=(const CMsgServerToGCWarningInvalidBotAbilityUsage& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgServerToGCWarningInvalidBotAbilityUsage& operator=(CMsgServerToGCWarningInvalidBotAbilityUsage&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgServerToGCWarningInvalidBotAbilityUsage& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgServerToGCWarningInvalidBotAbilityUsage* internal_default_instance() {
+    return reinterpret_cast<const CMsgServerToGCWarningInvalidBotAbilityUsage*>(
+               &_CMsgServerToGCWarningInvalidBotAbilityUsage_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    183;
+
+  friend void swap(CMsgServerToGCWarningInvalidBotAbilityUsage& a, CMsgServerToGCWarningInvalidBotAbilityUsage& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgServerToGCWarningInvalidBotAbilityUsage* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgServerToGCWarningInvalidBotAbilityUsage* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerToGCWarningInvalidBotAbilityUsage* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgServerToGCWarningInvalidBotAbilityUsage>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgServerToGCWarningInvalidBotAbilityUsage& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgServerToGCWarningInvalidBotAbilityUsage& from) {
+    CMsgServerToGCWarningInvalidBotAbilityUsage::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgServerToGCWarningInvalidBotAbilityUsage* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgServerToGCWarningInvalidBotAbilityUsage";
+  }
+  protected:
+  explicit CMsgServerToGCWarningInvalidBotAbilityUsage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDescriptionFieldNumber = 1,
+    kUnitNameFieldNumber = 2,
+    kAbilityNameFieldNumber = 3,
+  };
+  // optional string description = 1;
+  bool has_description() const;
+  private:
+  bool _internal_has_description() const;
+  public:
+  void clear_description();
+  const std::string& description() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_description(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_description();
+  PROTOBUF_NODISCARD std::string* release_description();
+  void set_allocated_description(std::string* description);
+  private:
+  const std::string& _internal_description() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_description(const std::string& value);
+  std::string* _internal_mutable_description();
+  public:
+
+  // optional string unit_name = 2;
+  bool has_unit_name() const;
+  private:
+  bool _internal_has_unit_name() const;
+  public:
+  void clear_unit_name();
+  const std::string& unit_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_unit_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_unit_name();
+  PROTOBUF_NODISCARD std::string* release_unit_name();
+  void set_allocated_unit_name(std::string* unit_name);
+  private:
+  const std::string& _internal_unit_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_unit_name(const std::string& value);
+  std::string* _internal_mutable_unit_name();
+  public:
+
+  // optional string ability_name = 3;
+  bool has_ability_name() const;
+  private:
+  bool _internal_has_ability_name() const;
+  public:
+  void clear_ability_name();
+  const std::string& ability_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ability_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ability_name();
+  PROTOBUF_NODISCARD std::string* release_ability_name();
+  void set_allocated_ability_name(std::string* ability_name);
+  private:
+  const std::string& _internal_ability_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ability_name(const std::string& value);
+  std::string* _internal_mutable_ability_name();
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgServerToGCWarningInvalidBotAbilityUsage)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr unit_name_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ability_name_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fgcmessages_5fserver_2eproto;
+};
 // ===================================================================
 
 
@@ -47313,7 +47761,7 @@ inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_teleports_used(uint32_t valu
 
 // optional uint32 cavern_crawl_preferred_map_variant = 56 [default = 255];
 inline bool CMsgGameMatchSignOut_CTeam_CPlayer::_internal_has_cavern_crawl_preferred_map_variant() const {
-  bool value = (_impl_._has_bits_[1] & 0x20000000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x40000000u) != 0;
   return value;
 }
 inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_cavern_crawl_preferred_map_variant() const {
@@ -47321,7 +47769,7 @@ inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_cavern_crawl_preferred_map_v
 }
 inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_cavern_crawl_preferred_map_variant() {
   _impl_.cavern_crawl_preferred_map_variant_ = 255u;
-  _impl_._has_bits_[1] &= ~0x20000000u;
+  _impl_._has_bits_[1] &= ~0x40000000u;
 }
 inline uint32_t CMsgGameMatchSignOut_CTeam_CPlayer::_internal_cavern_crawl_preferred_map_variant() const {
   return _impl_.cavern_crawl_preferred_map_variant_;
@@ -47331,7 +47779,7 @@ inline uint32_t CMsgGameMatchSignOut_CTeam_CPlayer::cavern_crawl_preferred_map_v
   return _internal_cavern_crawl_preferred_map_variant();
 }
 inline void CMsgGameMatchSignOut_CTeam_CPlayer::_internal_set_cavern_crawl_preferred_map_variant(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x20000000u;
+  _impl_._has_bits_[1] |= 0x40000000u;
   _impl_.cavern_crawl_preferred_map_variant_ = value;
 }
 inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_cavern_crawl_preferred_map_variant(uint32_t value) {
@@ -47537,7 +47985,7 @@ inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_predicted_position(uint32_t 
 
 // optional uint32 lane_outcomes = 67 [default = 255];
 inline bool CMsgGameMatchSignOut_CTeam_CPlayer::_internal_has_lane_outcomes() const {
-  bool value = (_impl_._has_bits_[1] & 0x40000000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x80000000u) != 0;
   return value;
 }
 inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_lane_outcomes() const {
@@ -47545,7 +47993,7 @@ inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_lane_outcomes() const {
 }
 inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_lane_outcomes() {
   _impl_.lane_outcomes_ = 255u;
-  _impl_._has_bits_[1] &= ~0x40000000u;
+  _impl_._has_bits_[1] &= ~0x80000000u;
 }
 inline uint32_t CMsgGameMatchSignOut_CTeam_CPlayer::_internal_lane_outcomes() const {
   return _impl_.lane_outcomes_;
@@ -47555,7 +48003,7 @@ inline uint32_t CMsgGameMatchSignOut_CTeam_CPlayer::lane_outcomes() const {
   return _internal_lane_outcomes();
 }
 inline void CMsgGameMatchSignOut_CTeam_CPlayer::_internal_set_lane_outcomes(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x40000000u;
+  _impl_._has_bits_[1] |= 0x80000000u;
   _impl_.lane_outcomes_ = value;
 }
 inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_lane_outcomes(uint32_t value) {
@@ -48038,6 +48486,34 @@ inline void CMsgGameMatchSignOut_CTeam_CPlayer::_internal_set_enhancement_level(
 inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_enhancement_level(uint32_t value) {
   _internal_set_enhancement_level(value);
   // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.enhancement_level)
+}
+
+// optional uint32 disable_duration = 84;
+inline bool CMsgGameMatchSignOut_CTeam_CPlayer::_internal_has_disable_duration() const {
+  bool value = (_impl_._has_bits_[1] & 0x20000000u) != 0;
+  return value;
+}
+inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_disable_duration() const {
+  return _internal_has_disable_duration();
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_disable_duration() {
+  _impl_.disable_duration_ = 0u;
+  _impl_._has_bits_[1] &= ~0x20000000u;
+}
+inline uint32_t CMsgGameMatchSignOut_CTeam_CPlayer::_internal_disable_duration() const {
+  return _impl_.disable_duration_;
+}
+inline uint32_t CMsgGameMatchSignOut_CTeam_CPlayer::disable_duration() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.disable_duration)
+  return _internal_disable_duration();
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::_internal_set_disable_duration(uint32_t value) {
+  _impl_._has_bits_[1] |= 0x20000000u;
+  _impl_.disable_duration_ = value;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_disable_duration(uint32_t value) {
+  _internal_set_disable_duration(value);
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.disable_duration)
 }
 
 // -------------------------------------------------------------------
@@ -74406,9 +74882,365 @@ inline void CMsgSignOutMonsterHunter::set_event_id(::EEvent value) {
   // @@protoc_insertion_point(field_set:CMsgSignOutMonsterHunter.event_id)
 }
 
+// -------------------------------------------------------------------
+
+// CMsgServerToGCWarningLowServerFramerate
+
+// optional uint64 match_id = 1;
+inline bool CMsgServerToGCWarningLowServerFramerate::_internal_has_match_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgServerToGCWarningLowServerFramerate::has_match_id() const {
+  return _internal_has_match_id();
+}
+inline void CMsgServerToGCWarningLowServerFramerate::clear_match_id() {
+  _impl_.match_id_ = uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline uint64_t CMsgServerToGCWarningLowServerFramerate::_internal_match_id() const {
+  return _impl_.match_id_;
+}
+inline uint64_t CMsgServerToGCWarningLowServerFramerate::match_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCWarningLowServerFramerate.match_id)
+  return _internal_match_id();
+}
+inline void CMsgServerToGCWarningLowServerFramerate::_internal_set_match_id(uint64_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.match_id_ = value;
+}
+inline void CMsgServerToGCWarningLowServerFramerate::set_match_id(uint64_t value) {
+  _internal_set_match_id(value);
+  // @@protoc_insertion_point(field_set:CMsgServerToGCWarningLowServerFramerate.match_id)
+}
+
+// optional float ticks_per_interval_average = 2;
+inline bool CMsgServerToGCWarningLowServerFramerate::_internal_has_ticks_per_interval_average() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline bool CMsgServerToGCWarningLowServerFramerate::has_ticks_per_interval_average() const {
+  return _internal_has_ticks_per_interval_average();
+}
+inline void CMsgServerToGCWarningLowServerFramerate::clear_ticks_per_interval_average() {
+  _impl_.ticks_per_interval_average_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline float CMsgServerToGCWarningLowServerFramerate::_internal_ticks_per_interval_average() const {
+  return _impl_.ticks_per_interval_average_;
+}
+inline float CMsgServerToGCWarningLowServerFramerate::ticks_per_interval_average() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCWarningLowServerFramerate.ticks_per_interval_average)
+  return _internal_ticks_per_interval_average();
+}
+inline void CMsgServerToGCWarningLowServerFramerate::_internal_set_ticks_per_interval_average(float value) {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.ticks_per_interval_average_ = value;
+}
+inline void CMsgServerToGCWarningLowServerFramerate::set_ticks_per_interval_average(float value) {
+  _internal_set_ticks_per_interval_average(value);
+  // @@protoc_insertion_point(field_set:CMsgServerToGCWarningLowServerFramerate.ticks_per_interval_average)
+}
+
+// optional uint64 custom_game_id = 3;
+inline bool CMsgServerToGCWarningLowServerFramerate::_internal_has_custom_game_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgServerToGCWarningLowServerFramerate::has_custom_game_id() const {
+  return _internal_has_custom_game_id();
+}
+inline void CMsgServerToGCWarningLowServerFramerate::clear_custom_game_id() {
+  _impl_.custom_game_id_ = uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline uint64_t CMsgServerToGCWarningLowServerFramerate::_internal_custom_game_id() const {
+  return _impl_.custom_game_id_;
+}
+inline uint64_t CMsgServerToGCWarningLowServerFramerate::custom_game_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCWarningLowServerFramerate.custom_game_id)
+  return _internal_custom_game_id();
+}
+inline void CMsgServerToGCWarningLowServerFramerate::_internal_set_custom_game_id(uint64_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.custom_game_id_ = value;
+}
+inline void CMsgServerToGCWarningLowServerFramerate::set_custom_game_id(uint64_t value) {
+  _internal_set_custom_game_id(value);
+  // @@protoc_insertion_point(field_set:CMsgServerToGCWarningLowServerFramerate.custom_game_id)
+}
+
+// optional uint64 bot_script_id_radiant = 4;
+inline bool CMsgServerToGCWarningLowServerFramerate::_internal_has_bot_script_id_radiant() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CMsgServerToGCWarningLowServerFramerate::has_bot_script_id_radiant() const {
+  return _internal_has_bot_script_id_radiant();
+}
+inline void CMsgServerToGCWarningLowServerFramerate::clear_bot_script_id_radiant() {
+  _impl_.bot_script_id_radiant_ = uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline uint64_t CMsgServerToGCWarningLowServerFramerate::_internal_bot_script_id_radiant() const {
+  return _impl_.bot_script_id_radiant_;
+}
+inline uint64_t CMsgServerToGCWarningLowServerFramerate::bot_script_id_radiant() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCWarningLowServerFramerate.bot_script_id_radiant)
+  return _internal_bot_script_id_radiant();
+}
+inline void CMsgServerToGCWarningLowServerFramerate::_internal_set_bot_script_id_radiant(uint64_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.bot_script_id_radiant_ = value;
+}
+inline void CMsgServerToGCWarningLowServerFramerate::set_bot_script_id_radiant(uint64_t value) {
+  _internal_set_bot_script_id_radiant(value);
+  // @@protoc_insertion_point(field_set:CMsgServerToGCWarningLowServerFramerate.bot_script_id_radiant)
+}
+
+// optional uint64 bot_script_id_dire = 5;
+inline bool CMsgServerToGCWarningLowServerFramerate::_internal_has_bot_script_id_dire() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool CMsgServerToGCWarningLowServerFramerate::has_bot_script_id_dire() const {
+  return _internal_has_bot_script_id_dire();
+}
+inline void CMsgServerToGCWarningLowServerFramerate::clear_bot_script_id_dire() {
+  _impl_.bot_script_id_dire_ = uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline uint64_t CMsgServerToGCWarningLowServerFramerate::_internal_bot_script_id_dire() const {
+  return _impl_.bot_script_id_dire_;
+}
+inline uint64_t CMsgServerToGCWarningLowServerFramerate::bot_script_id_dire() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCWarningLowServerFramerate.bot_script_id_dire)
+  return _internal_bot_script_id_dire();
+}
+inline void CMsgServerToGCWarningLowServerFramerate::_internal_set_bot_script_id_dire(uint64_t value) {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.bot_script_id_dire_ = value;
+}
+inline void CMsgServerToGCWarningLowServerFramerate::set_bot_script_id_dire(uint64_t value) {
+  _internal_set_bot_script_id_dire(value);
+  // @@protoc_insertion_point(field_set:CMsgServerToGCWarningLowServerFramerate.bot_script_id_dire)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerToGCWarningInvalidBotAbilityUsage
+
+// optional string description = 1;
+inline bool CMsgServerToGCWarningInvalidBotAbilityUsage::_internal_has_description() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgServerToGCWarningInvalidBotAbilityUsage::has_description() const {
+  return _internal_has_description();
+}
+inline void CMsgServerToGCWarningInvalidBotAbilityUsage::clear_description() {
+  _impl_.description_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& CMsgServerToGCWarningInvalidBotAbilityUsage::description() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCWarningInvalidBotAbilityUsage.description)
+  return _internal_description();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CMsgServerToGCWarningInvalidBotAbilityUsage::set_description(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000001u;
+ _impl_.description_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:CMsgServerToGCWarningInvalidBotAbilityUsage.description)
+}
+inline std::string* CMsgServerToGCWarningInvalidBotAbilityUsage::mutable_description() {
+  std::string* _s = _internal_mutable_description();
+  // @@protoc_insertion_point(field_mutable:CMsgServerToGCWarningInvalidBotAbilityUsage.description)
+  return _s;
+}
+inline const std::string& CMsgServerToGCWarningInvalidBotAbilityUsage::_internal_description() const {
+  return _impl_.description_.Get();
+}
+inline void CMsgServerToGCWarningInvalidBotAbilityUsage::_internal_set_description(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.description_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CMsgServerToGCWarningInvalidBotAbilityUsage::_internal_mutable_description() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.description_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CMsgServerToGCWarningInvalidBotAbilityUsage::release_description() {
+  // @@protoc_insertion_point(field_release:CMsgServerToGCWarningInvalidBotAbilityUsage.description)
+  if (!_internal_has_description()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* p = _impl_.description_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.description_.IsDefault()) {
+    _impl_.description_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void CMsgServerToGCWarningInvalidBotAbilityUsage::set_allocated_description(std::string* description) {
+  if (description != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.description_.SetAllocated(description, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.description_.IsDefault()) {
+    _impl_.description_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:CMsgServerToGCWarningInvalidBotAbilityUsage.description)
+}
+
+// optional string unit_name = 2;
+inline bool CMsgServerToGCWarningInvalidBotAbilityUsage::_internal_has_unit_name() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgServerToGCWarningInvalidBotAbilityUsage::has_unit_name() const {
+  return _internal_has_unit_name();
+}
+inline void CMsgServerToGCWarningInvalidBotAbilityUsage::clear_unit_name() {
+  _impl_.unit_name_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& CMsgServerToGCWarningInvalidBotAbilityUsage::unit_name() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCWarningInvalidBotAbilityUsage.unit_name)
+  return _internal_unit_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CMsgServerToGCWarningInvalidBotAbilityUsage::set_unit_name(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000002u;
+ _impl_.unit_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:CMsgServerToGCWarningInvalidBotAbilityUsage.unit_name)
+}
+inline std::string* CMsgServerToGCWarningInvalidBotAbilityUsage::mutable_unit_name() {
+  std::string* _s = _internal_mutable_unit_name();
+  // @@protoc_insertion_point(field_mutable:CMsgServerToGCWarningInvalidBotAbilityUsage.unit_name)
+  return _s;
+}
+inline const std::string& CMsgServerToGCWarningInvalidBotAbilityUsage::_internal_unit_name() const {
+  return _impl_.unit_name_.Get();
+}
+inline void CMsgServerToGCWarningInvalidBotAbilityUsage::_internal_set_unit_name(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.unit_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CMsgServerToGCWarningInvalidBotAbilityUsage::_internal_mutable_unit_name() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.unit_name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CMsgServerToGCWarningInvalidBotAbilityUsage::release_unit_name() {
+  // @@protoc_insertion_point(field_release:CMsgServerToGCWarningInvalidBotAbilityUsage.unit_name)
+  if (!_internal_has_unit_name()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* p = _impl_.unit_name_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.unit_name_.IsDefault()) {
+    _impl_.unit_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void CMsgServerToGCWarningInvalidBotAbilityUsage::set_allocated_unit_name(std::string* unit_name) {
+  if (unit_name != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.unit_name_.SetAllocated(unit_name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.unit_name_.IsDefault()) {
+    _impl_.unit_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:CMsgServerToGCWarningInvalidBotAbilityUsage.unit_name)
+}
+
+// optional string ability_name = 3;
+inline bool CMsgServerToGCWarningInvalidBotAbilityUsage::_internal_has_ability_name() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CMsgServerToGCWarningInvalidBotAbilityUsage::has_ability_name() const {
+  return _internal_has_ability_name();
+}
+inline void CMsgServerToGCWarningInvalidBotAbilityUsage::clear_ability_name() {
+  _impl_.ability_name_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline const std::string& CMsgServerToGCWarningInvalidBotAbilityUsage::ability_name() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCWarningInvalidBotAbilityUsage.ability_name)
+  return _internal_ability_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CMsgServerToGCWarningInvalidBotAbilityUsage::set_ability_name(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000004u;
+ _impl_.ability_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:CMsgServerToGCWarningInvalidBotAbilityUsage.ability_name)
+}
+inline std::string* CMsgServerToGCWarningInvalidBotAbilityUsage::mutable_ability_name() {
+  std::string* _s = _internal_mutable_ability_name();
+  // @@protoc_insertion_point(field_mutable:CMsgServerToGCWarningInvalidBotAbilityUsage.ability_name)
+  return _s;
+}
+inline const std::string& CMsgServerToGCWarningInvalidBotAbilityUsage::_internal_ability_name() const {
+  return _impl_.ability_name_.Get();
+}
+inline void CMsgServerToGCWarningInvalidBotAbilityUsage::_internal_set_ability_name(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.ability_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CMsgServerToGCWarningInvalidBotAbilityUsage::_internal_mutable_ability_name() {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  return _impl_.ability_name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CMsgServerToGCWarningInvalidBotAbilityUsage::release_ability_name() {
+  // @@protoc_insertion_point(field_release:CMsgServerToGCWarningInvalidBotAbilityUsage.ability_name)
+  if (!_internal_has_ability_name()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  auto* p = _impl_.ability_name_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.ability_name_.IsDefault()) {
+    _impl_.ability_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void CMsgServerToGCWarningInvalidBotAbilityUsage::set_allocated_ability_name(std::string* ability_name) {
+  if (ability_name != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.ability_name_.SetAllocated(ability_name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.ability_name_.IsDefault()) {
+    _impl_.ability_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:CMsgServerToGCWarningInvalidBotAbilityUsage.ability_name)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

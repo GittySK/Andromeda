@@ -277,11 +277,15 @@ enum EEvent : int {
   EVENT_ID_MONSTER_HUNTER = 51,
   EVENT_ID_INTERNATIONAL_2025 = 52,
   EVENT_ID_FALL_2025 = 53,
-  EVENT_ID_WINTER_2025 = 55
+  EVENT_ID_WINTER_2025 = 55,
+  EVENT_ID_SPRING_2026 = 56,
+  EVENT_ID_SUMMER_2026 = 57,
+  EVENT_ID_FALL_2026 = 58,
+  EVENT_ID_WINTER_2026 = 59
 };
 bool EEvent_IsValid(int value);
 constexpr EEvent EEvent_MIN = EVENT_ID_NONE;
-constexpr EEvent EEvent_MAX = EVENT_ID_WINTER_2025;
+constexpr EEvent EEvent_MAX = EVENT_ID_WINTER_2026;
 constexpr int EEvent_ARRAYSIZE = EEvent_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EEvent_descriptor();

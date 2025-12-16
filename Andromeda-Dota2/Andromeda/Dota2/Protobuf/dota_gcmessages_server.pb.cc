@@ -427,6 +427,7 @@ PROTOBUF_CONSTEXPR CMsgGameMatchSignOut_CTeam_CPlayer::CMsgGameMatchSignOut_CTea
   , /*decltype(_impl_.predicted_rank_)*/0u
   , /*decltype(_impl_.selected_facet_)*/0u
   , /*decltype(_impl_.enhancement_level_)*/0u
+  , /*decltype(_impl_.disable_duration_)*/0u
   , /*decltype(_impl_.cavern_crawl_preferred_map_variant_)*/255u
   , /*decltype(_impl_.lane_outcomes_)*/255u} {}
 struct CMsgGameMatchSignOut_CTeam_CPlayerDefaultTypeInternal {
@@ -3271,7 +3272,41 @@ struct CMsgSignOutMonsterHunterDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgSignOutMonsterHunterDefaultTypeInternal _CMsgSignOutMonsterHunter_default_instance_;
-static ::_pb::Metadata file_level_metadata_dota_5fgcmessages_5fserver_2eproto[182];
+PROTOBUF_CONSTEXPR CMsgServerToGCWarningLowServerFramerate::CMsgServerToGCWarningLowServerFramerate(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.match_id_)*/uint64_t{0u}
+  , /*decltype(_impl_.custom_game_id_)*/uint64_t{0u}
+  , /*decltype(_impl_.bot_script_id_radiant_)*/uint64_t{0u}
+  , /*decltype(_impl_.bot_script_id_dire_)*/uint64_t{0u}
+  , /*decltype(_impl_.ticks_per_interval_average_)*/0} {}
+struct CMsgServerToGCWarningLowServerFramerateDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgServerToGCWarningLowServerFramerateDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgServerToGCWarningLowServerFramerateDefaultTypeInternal() {}
+  union {
+    CMsgServerToGCWarningLowServerFramerate _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgServerToGCWarningLowServerFramerateDefaultTypeInternal _CMsgServerToGCWarningLowServerFramerate_default_instance_;
+PROTOBUF_CONSTEXPR CMsgServerToGCWarningInvalidBotAbilityUsage::CMsgServerToGCWarningInvalidBotAbilityUsage(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.description_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.unit_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ability_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}} {}
+struct CMsgServerToGCWarningInvalidBotAbilityUsageDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgServerToGCWarningInvalidBotAbilityUsageDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgServerToGCWarningInvalidBotAbilityUsageDefaultTypeInternal() {}
+  union {
+    CMsgServerToGCWarningInvalidBotAbilityUsage _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgServerToGCWarningInvalidBotAbilityUsageDefaultTypeInternal _CMsgServerToGCWarningInvalidBotAbilityUsage_default_instance_;
+static ::_pb::Metadata file_level_metadata_dota_5fgcmessages_5fserver_2eproto[184];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_dota_5fgcmessages_5fserver_2eproto[6];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_dota_5fgcmessages_5fserver_2eproto = nullptr;
 
@@ -3642,6 +3677,7 @@ const uint32_t TableStruct_dota_5fgcmessages_5fserver_2eproto::offsets[] PROTOBU
   PROTOBUF_FIELD_OFFSET(::CMsgGameMatchSignOut_CTeam_CPlayer, _impl_.predicted_rank_),
   PROTOBUF_FIELD_OFFSET(::CMsgGameMatchSignOut_CTeam_CPlayer, _impl_.selected_facet_),
   PROTOBUF_FIELD_OFFSET(::CMsgGameMatchSignOut_CTeam_CPlayer, _impl_.enhancement_level_),
+  PROTOBUF_FIELD_OFFSET(::CMsgGameMatchSignOut_CTeam_CPlayer, _impl_.disable_duration_),
   1,
   2,
   ~0u,
@@ -3690,7 +3726,7 @@ const uint32_t TableStruct_dota_5fgcmessages_5fserver_2eproto::offsets[] PROTOBU
   37,
   38,
   39,
-  61,
+  62,
   40,
   41,
   42,
@@ -3698,7 +3734,7 @@ const uint32_t TableStruct_dota_5fgcmessages_5fserver_2eproto::offsets[] PROTOBU
   44,
   45,
   46,
-  62,
+  63,
   47,
   48,
   49,
@@ -3715,6 +3751,7 @@ const uint32_t TableStruct_dota_5fgcmessages_5fserver_2eproto::offsets[] PROTOBU
   58,
   59,
   60,
+  61,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::CMsgGameMatchSignOut_CTeam, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -6155,6 +6192,34 @@ const uint32_t TableStruct_dota_5fgcmessages_5fserver_2eproto::offsets[] PROTOBU
   PROTOBUF_FIELD_OFFSET(::CMsgSignOutMonsterHunter, _impl_.event_id_),
   ~0u,
   0,
+  PROTOBUF_FIELD_OFFSET(::CMsgServerToGCWarningLowServerFramerate, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgServerToGCWarningLowServerFramerate, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgServerToGCWarningLowServerFramerate, _impl_.match_id_),
+  PROTOBUF_FIELD_OFFSET(::CMsgServerToGCWarningLowServerFramerate, _impl_.ticks_per_interval_average_),
+  PROTOBUF_FIELD_OFFSET(::CMsgServerToGCWarningLowServerFramerate, _impl_.custom_game_id_),
+  PROTOBUF_FIELD_OFFSET(::CMsgServerToGCWarningLowServerFramerate, _impl_.bot_script_id_radiant_),
+  PROTOBUF_FIELD_OFFSET(::CMsgServerToGCWarningLowServerFramerate, _impl_.bot_script_id_dire_),
+  0,
+  4,
+  1,
+  2,
+  3,
+  PROTOBUF_FIELD_OFFSET(::CMsgServerToGCWarningInvalidBotAbilityUsage, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgServerToGCWarningInvalidBotAbilityUsage, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgServerToGCWarningInvalidBotAbilityUsage, _impl_.description_),
+  PROTOBUF_FIELD_OFFSET(::CMsgServerToGCWarningInvalidBotAbilityUsage, _impl_.unit_name_),
+  PROTOBUF_FIELD_OFFSET(::CMsgServerToGCWarningInvalidBotAbilityUsage, _impl_.ability_name_),
+  0,
+  1,
+  2,
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 10, -1, sizeof(::CMsgPoorNetworkConditions_Player)},
@@ -6176,169 +6241,171 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 258, -1, -1, sizeof(::CMsgSignOutGameplayStats)},
   { 265, 273, -1, sizeof(::CMsgGameMatchSignOut_CTeam_CPlayer_CCustomGameData)},
   { 275, 284, -1, sizeof(::CMsgGameMatchSignOut_CTeam_CPlayer_HeroDamageReceived)},
-  { 287, 366, -1, sizeof(::CMsgGameMatchSignOut_CTeam_CPlayer)},
-  { 439, -1, -1, sizeof(::CMsgGameMatchSignOut_CTeam)},
-  { 447, 455, -1, sizeof(::CMsgGameMatchSignOut_CAdditionalSignoutMsg)},
-  { 457, 468, -1, sizeof(::CMsgGameMatchSignOut_CSocialFeedMatchEvent)},
-  { 473, 480, -1, sizeof(::CMsgGameMatchSignOut_CCustomGameData)},
-  { 481, 494, -1, sizeof(::CMsgGameMatchSignOut_EventGameLeaderboardEntry)},
-  { 501, 515, -1, sizeof(::CMsgGameMatchSignOut_WardPlacement)},
-  { 523, 559, -1, sizeof(::CMsgGameMatchSignOut)},
-  { 589, 598, -1, sizeof(::CMsgSignOutDraftInfo)},
-  { 601, 611, -1, sizeof(::CMsgSignOutBotInfo)},
-  { 615, 624, -1, sizeof(::CMsgSignOutTextMuteInfo_TextMuteMessage)},
-  { 627, -1, -1, sizeof(::CMsgSignOutTextMuteInfo)},
-  { 634, 670, -1, sizeof(::CMsgSignOutPlayerStats)},
-  { 700, 708, -1, sizeof(::CMsgSignOutCommunicationSummary_PlayerCommunication_PingDetail)},
-  { 710, 734, -1, sizeof(::CMsgSignOutCommunicationSummary_PlayerCommunication)},
-  { 752, -1, -1, sizeof(::CMsgSignOutCommunicationSummary)},
-  { 759, 778, -1, sizeof(::CMsgGameMatchSignoutResponse_PlayerMetadata)},
-  { 791, 809, -1, sizeof(::CMsgGameMatchSignoutResponse)},
-  { 821, 831, -1, sizeof(::CMsgGameMatchSignOutPermissionRequest)},
-  { 835, 844, -1, sizeof(::CMsgGameMatchSignOutPermissionResponse)},
-  { 847, 858, -1, sizeof(::CMsgGameMatchSignOutEventGameData)},
-  { 863, 891, -1, sizeof(::CMsgGameMatchSignOutPerfData)},
-  { 913, -1, -1, sizeof(::CMsgGameMatchSignOutBanData)},
-  { 921, 929, -1, sizeof(::CMsgDOTALiveScoreboardUpdate_Team_Player_HeroAbility)},
-  { 931, 964, -1, sizeof(::CMsgDOTALiveScoreboardUpdate_Team_Player)},
-  { 991, 1003, -1, sizeof(::CMsgDOTALiveScoreboardUpdate_Team)},
-  { 1009, 1024, -1, sizeof(::CMsgDOTALiveScoreboardUpdate)},
-  { 1033, 1042, -1, sizeof(::CMsgServerToGCRequestBatchPlayerResources)},
-  { 1045, 1065, -1, sizeof(::CMsgServerToGCRequestBatchPlayerResourcesResponse_Result)},
-  { 1079, -1, -1, sizeof(::CMsgServerToGCRequestBatchPlayerResourcesResponse)},
-  { 1086, -1, -1, sizeof(::CMsgDOTAPlayerFailedToConnect)},
-  { 1094, 1107, -1, sizeof(::CMsgGCToRelayConnect)},
-  { 1114, 1121, -1, sizeof(::CMsgGCGCToLANServerRelayConnect)},
-  { 1122, 1129, -1, sizeof(::CMsgGCBanStatusRequest)},
-  { 1130, 1140, -1, sizeof(::CMsgGCBanStatusResponse)},
-  { 1144, 1162, -1, sizeof(::CMsgTournamentItemEvent)},
-  { 1174, 1182, -1, sizeof(::CMsgTournamentItemEventResponse)},
-  { 1184, 1191, -1, sizeof(::CMsgTeamFanfare)},
-  { 1192, 1200, -1, sizeof(::CMsgResponseTeamFanfare)},
-  { 1202, 1214, -1, sizeof(::CMsgDOTAAwardEventPoints_AwardPoints)},
-  { 1220, 1231, -1, sizeof(::CMsgDOTAAwardEventPoints)},
-  { 1236, 1244, -1, sizeof(::CMsgGCToServerPingRequest)},
-  { 1246, 1255, -1, sizeof(::CMsgGCToServerPingResponse)},
-  { 1258, 1270, -1, sizeof(::CMsgServerToGCMatchConnectionStats_Player)},
-  { 1276, 1287, -1, sizeof(::CMsgServerToGCMatchConnectionStats)},
-  { 1292, 1299, -1, sizeof(::CMsgServerGCUpdateSpectatorCount)},
-  { 1300, 1308, -1, sizeof(::CSerializedCombatLog_Dictionary_DictString)},
-  { 1310, -1, -1, sizeof(::CSerializedCombatLog_Dictionary)},
-  { 1317, 1326, -1, sizeof(::CSerializedCombatLog)},
-  { 1329, 1337, -1, sizeof(::CMsgServerToGCVictoryPredictions_PredictionItem)},
-  { 1339, 1348, -1, sizeof(::CMsgServerToGCVictoryPredictions_Record)},
-  { 1351, -1, -1, sizeof(::CMsgServerToGCVictoryPredictions)},
-  { 1358, -1, -1, sizeof(::CMsgServerToGCRequestStatus)},
-  { 1364, 1371, -1, sizeof(::CMsgServerToGCRequestStatus_Response)},
-  { 1372, 1380, -1, sizeof(::CMsgGCToServerEvaluateToxicChat)},
-  { 1382, 1393, -1, sizeof(::CMsgServerToGCEvaluateToxicChat)},
-  { 1398, 1409, -1, sizeof(::CMsgServerToGCEvaluateToxicChatResponse)},
-  { 1414, 1428, -1, sizeof(::CMsgSignOutAssassinMiniGameInfo)},
-  { 1436, 1445, -1, sizeof(::CMsgServerToGCKillSummaries_KillSummary)},
-  { 1448, 1456, -1, sizeof(::CMsgServerToGCKillSummaries)},
-  { 1458, 1466, -1, sizeof(::CMsgServerToGCLockCharmTrading)},
-  { 1468, 1479, -1, sizeof(::CMsgSignOutUpdatePlayerChallenge_Challenge)},
-  { 1484, 1495, -1, sizeof(::CMsgSignOutUpdatePlayerChallenge)},
-  { 1500, 1508, -1, sizeof(::CMsgServerToGCRerollPlayerChallenge)},
-  { 1510, 1519, -1, sizeof(::CMsgSpendWager_Player)},
-  { 1522, 1533, -1, sizeof(::CMsgSpendWager)},
-  { 1538, 1550, -1, sizeof(::CMsgSignOutXPCoins_Player)},
-  { 1556, 1566, -1, sizeof(::CMsgSignOutXPCoins)},
-  { 1570, 1579, -1, sizeof(::CMsgSignOutBounties_Bounty)},
-  { 1582, 1592, -1, sizeof(::CMsgSignOutBounties)},
-  { 1596, 1604, -1, sizeof(::CMsgSignOutCommunityGoalProgress_EventGoalIncrement)},
-  { 1606, 1614, -1, sizeof(::CMsgSignOutCommunityGoalProgress)},
-  { 1616, 1625, -1, sizeof(::CMsgServerToGCCloseCompendiumInGamePredictionVoting)},
-  { 1628, 1635, -1, sizeof(::CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse)},
-  { 1636, 1645, -1, sizeof(::CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult)},
-  { 1648, 1658, -1, sizeof(::CMsgServerToGCCompendiumInGamePredictionResults)},
-  { 1662, 1669, -1, sizeof(::CMsgServerToGCCompendiumChosenInGamePredictions_Prediction)},
-  { 1670, 1679, -1, sizeof(::CMsgServerToGCCompendiumChosenInGamePredictions)},
-  { 1682, 1689, -1, sizeof(::CMsgGCToGCCompendiumInGamePredictionResults)},
-  { 1690, 1702, -1, sizeof(::CMsgServerToGCMatchPlayerItemPurchaseHistory_ItemPurchase)},
-  { 1708, 1722, -1, sizeof(::CMsgServerToGCMatchPlayerItemPurchaseHistory_Player)},
-  { 1730, 1739, -1, sizeof(::CMsgServerToGCMatchPlayerItemPurchaseHistory)},
-  { 1742, 1753, -1, sizeof(::CMsgServerToGCMatchPlayerNeutralItemEquipHistory_ItemEquip)},
-  { 1758, 1769, -1, sizeof(::CMsgServerToGCMatchPlayerNeutralItemEquipHistory_Player)},
-  { 1774, 1782, -1, sizeof(::CMsgServerToGCMatchPlayerNeutralItemEquipHistory)},
-  { 1784, 1799, -1, sizeof(::CMsgServerToGCMatchStateHistory_PlayerState)},
-  { 1808, 1824, -1, sizeof(::CMsgServerToGCMatchStateHistory_TeamState)},
-  { 1834, 1843, -1, sizeof(::CMsgServerToGCMatchStateHistory_MatchState)},
-  { 1846, 1856, -1, sizeof(::CMsgServerToGCMatchStateHistory)},
-  { 1860, 1869, -1, sizeof(::CMsgMatchStateSteamMLEntry)},
-  { 1872, -1, -1, sizeof(::CMsgLaneSelectionSteamMLEntry)},
-  { 1880, 1892, -1, sizeof(::CMsgAbilitySelectionSteamMLEntry)},
-  { 1898, 1911, -1, sizeof(::CMsgItemPurchasePregameSteamMLEntry)},
-  { 1918, 1931, -1, sizeof(::CMsgItemPurchaseSteamMLEntry)},
-  { 1938, 1951, -1, sizeof(::CMsgItemPurchaseSequenceSteamMLEntry)},
-  { 1958, 1969, -1, sizeof(::CMsgServerToGCCavernCrawlIsHeroActive)},
-  { 1974, 1990, -1, sizeof(::CMsgServerToGCPlayerChallengeHistory_PlayerChallenge)},
-  { 2000, 2009, -1, sizeof(::CMsgServerToGCPlayerChallengeHistory)},
-  { 2012, 2020, -1, sizeof(::CMsgServerToGCCavernCrawlIsHeroActiveResponse_MapResults)},
-  { 2022, 2033, -1, sizeof(::CMsgServerToGCCavernCrawlIsHeroActiveResponse)},
-  { 2038, 2050, -1, sizeof(::CMsgNeutralItemStats_NeutralItem)},
-  { 2056, -1, -1, sizeof(::CMsgNeutralItemStats)},
-  { 2063, 2072, -1, sizeof(::CMsgGCToServerLobbyHeroBanRates_HeroBanEntry)},
-  { 2075, -1, -1, sizeof(::CMsgGCToServerLobbyHeroBanRates)},
-  { 2082, 2091, -1, sizeof(::CMsgSignOutGuildContractProgress_CompletedGuildEventContracts)},
-  { 2094, 2102, -1, sizeof(::CMsgSignOutGuildContractProgress_PlayerContract)},
-  { 2104, -1, -1, sizeof(::CMsgSignOutGuildContractProgress)},
-  { 2111, 2124, -1, sizeof(::CMsgSignOutGuildChallengeProgress_ChallengeProgress)},
-  { 2131, -1, -1, sizeof(::CMsgSignOutGuildChallengeProgress)},
-  { 2138, 2146, -1, sizeof(::CMsgSignOutMVPStats_Player_KillEaterEvent)},
-  { 2148, 2179, -1, sizeof(::CMsgSignOutMVPStats_Player)},
-  { 2204, 2215, -1, sizeof(::CMsgSignOutMVPStats)},
-  { 2220, -1, -1, sizeof(::CMsgServerToGCGetGuildContracts)},
-  { 2227, 2238, -1, sizeof(::CMsgServerToGCGetGuildContractsResponse_ContractDetails)},
-  { 2243, 2253, -1, sizeof(::CMsgServerToGCGetGuildContractsResponse_Player)},
-  { 2257, -1, -1, sizeof(::CMsgServerToGCGetGuildContractsResponse)},
-  { 2264, 2272, -1, sizeof(::CMsgMatchDiretideCandy_CandyDetails)},
-  { 2274, 2284, -1, sizeof(::CMsgMatchDiretideCandy_PlayerCandy)},
-  { 2288, 2296, -1, sizeof(::CMsgMatchDiretideCandy)},
-  { 2298, 2306, -1, sizeof(::CMsgGCToServerCheerData_CheerTypeCount)},
-  { 2308, -1, -1, sizeof(::CMsgGCToServerCheerData)},
-  { 2315, 2339, -1, sizeof(::CMsgCheerConfig)},
-  { 2357, 2364, -1, sizeof(::CMsgGCToServerCheerConfig)},
-  { 2365, 2372, -1, sizeof(::CMsgServerToGCGetCheerConfig)},
-  { 2373, 2380, -1, sizeof(::CMsgServerToGCGetCheerConfigResponse)},
-  { 2381, -1, -1, sizeof(::CMsgGCToServerCheerScalesOverride)},
-  { 2388, -1, -1, sizeof(::CMsgGCToServerGetCheerState)},
-  { 2394, 2404, -1, sizeof(::CMsgCheerTypeState)},
-  { 2408, 2417, -1, sizeof(::CMsgCheerState)},
-  { 2420, 2428, -1, sizeof(::CMsgServerToGCReportCheerState)},
-  { 2430, -1, -1, sizeof(::CMsgServerToGCGetStickerHeroes)},
-  { 2437, 2445, -1, sizeof(::CMsgServerToGCGetStickerHeroesResponse_Player)},
-  { 2447, -1, -1, sizeof(::CMsgServerToGCGetStickerHeroesResponse)},
-  { 2454, 2465, -1, sizeof(::CMsgSteamLearnMatchInfo)},
-  { 2470, 2482, -1, sizeof(::CMsgSteamLearnMatchInfoPlayer)},
-  { 2488, 2499, -1, sizeof(::CMsgSteamLearnMatchInfoTeam_Player)},
-  { 2504, 2513, -1, sizeof(::CMsgSteamLearnMatchInfoTeam)},
-  { 2516, -1, -1, sizeof(::CMsgSteamLearnMatchHeroesV3)},
-  { 2530, 2543, -1, sizeof(::CMsgSteamLearnMatchHeroV6)},
-  { 2550, 2568, -1, sizeof(::CMsgSteamLearnPlayerTimedStats_StatBucket)},
-  { 2580, -1, -1, sizeof(::CMsgSteamLearnPlayerTimedStats)},
-  { 2587, 2603, -1, sizeof(::CMsgSteamLearnMatchStateV5_PlayerState)},
-  { 2613, 2629, -1, sizeof(::CMsgSteamLearnMatchStateV5_TeamState)},
-  { 2639, 2648, -1, sizeof(::CMsgSteamLearnMatchStateV5)},
-  { 2651, 2659, -1, sizeof(::CMsgSteamLearnItemPurchaseV7)},
-  { 2661, 2670, -1, sizeof(::CMsgSteamLearnPreGameItemPurchases)},
-  { 2673, 2681, -1, sizeof(::CMsgSteamLearnPreGameItemPurchase)},
-  { 2683, 2694, -1, sizeof(::CMsgSteamLearnNeutralItemPurchaseV4)},
-  { 2699, 2709, -1, sizeof(::CMsgSteamLearnAbilitySkill)},
-  { 2713, 2721, -1, sizeof(::CMsgSteamLearnWardPlacement_Location)},
-  { 2723, 2732, -1, sizeof(::CMsgSteamLearnWardPlacement)},
-  { 2735, 2753, -1, sizeof(::CMsgSteamLearnPlayerMatchState)},
-  { 2765, 2772, -1, sizeof(::CMsgSignOutMuertaMinigame)},
-  { 2773, 2781, -1, sizeof(::CMsgSignOutMapStats_Player)},
-  { 2783, 2791, -1, sizeof(::CMsgSignOutMapStats)},
-  { 2793, 2802, -1, sizeof(::CMsgServerToGCNewBloomGift)},
-  { 2805, 2813, -1, sizeof(::CMsgServerToGCNewBloomGiftResponse)},
-  { 2815, 2824, -1, sizeof(::CMsgSignOutOverworld_Player)},
-  { 2827, 2835, -1, sizeof(::CMsgSignOutOverworld)},
-  { 2837, 2845, -1, sizeof(::CMsgSignOutCraftworks_Player)},
-  { 2847, 2855, -1, sizeof(::CMsgSignOutCraftworks)},
-  { 2857, 2866, -1, sizeof(::CMsgSignOutMonsterHunter_Player)},
-  { 2869, 2877, -1, sizeof(::CMsgSignOutMonsterHunter)},
+  { 287, 367, -1, sizeof(::CMsgGameMatchSignOut_CTeam_CPlayer)},
+  { 441, -1, -1, sizeof(::CMsgGameMatchSignOut_CTeam)},
+  { 449, 457, -1, sizeof(::CMsgGameMatchSignOut_CAdditionalSignoutMsg)},
+  { 459, 470, -1, sizeof(::CMsgGameMatchSignOut_CSocialFeedMatchEvent)},
+  { 475, 482, -1, sizeof(::CMsgGameMatchSignOut_CCustomGameData)},
+  { 483, 496, -1, sizeof(::CMsgGameMatchSignOut_EventGameLeaderboardEntry)},
+  { 503, 517, -1, sizeof(::CMsgGameMatchSignOut_WardPlacement)},
+  { 525, 561, -1, sizeof(::CMsgGameMatchSignOut)},
+  { 591, 600, -1, sizeof(::CMsgSignOutDraftInfo)},
+  { 603, 613, -1, sizeof(::CMsgSignOutBotInfo)},
+  { 617, 626, -1, sizeof(::CMsgSignOutTextMuteInfo_TextMuteMessage)},
+  { 629, -1, -1, sizeof(::CMsgSignOutTextMuteInfo)},
+  { 636, 672, -1, sizeof(::CMsgSignOutPlayerStats)},
+  { 702, 710, -1, sizeof(::CMsgSignOutCommunicationSummary_PlayerCommunication_PingDetail)},
+  { 712, 736, -1, sizeof(::CMsgSignOutCommunicationSummary_PlayerCommunication)},
+  { 754, -1, -1, sizeof(::CMsgSignOutCommunicationSummary)},
+  { 761, 780, -1, sizeof(::CMsgGameMatchSignoutResponse_PlayerMetadata)},
+  { 793, 811, -1, sizeof(::CMsgGameMatchSignoutResponse)},
+  { 823, 833, -1, sizeof(::CMsgGameMatchSignOutPermissionRequest)},
+  { 837, 846, -1, sizeof(::CMsgGameMatchSignOutPermissionResponse)},
+  { 849, 860, -1, sizeof(::CMsgGameMatchSignOutEventGameData)},
+  { 865, 893, -1, sizeof(::CMsgGameMatchSignOutPerfData)},
+  { 915, -1, -1, sizeof(::CMsgGameMatchSignOutBanData)},
+  { 923, 931, -1, sizeof(::CMsgDOTALiveScoreboardUpdate_Team_Player_HeroAbility)},
+  { 933, 966, -1, sizeof(::CMsgDOTALiveScoreboardUpdate_Team_Player)},
+  { 993, 1005, -1, sizeof(::CMsgDOTALiveScoreboardUpdate_Team)},
+  { 1011, 1026, -1, sizeof(::CMsgDOTALiveScoreboardUpdate)},
+  { 1035, 1044, -1, sizeof(::CMsgServerToGCRequestBatchPlayerResources)},
+  { 1047, 1067, -1, sizeof(::CMsgServerToGCRequestBatchPlayerResourcesResponse_Result)},
+  { 1081, -1, -1, sizeof(::CMsgServerToGCRequestBatchPlayerResourcesResponse)},
+  { 1088, -1, -1, sizeof(::CMsgDOTAPlayerFailedToConnect)},
+  { 1096, 1109, -1, sizeof(::CMsgGCToRelayConnect)},
+  { 1116, 1123, -1, sizeof(::CMsgGCGCToLANServerRelayConnect)},
+  { 1124, 1131, -1, sizeof(::CMsgGCBanStatusRequest)},
+  { 1132, 1142, -1, sizeof(::CMsgGCBanStatusResponse)},
+  { 1146, 1164, -1, sizeof(::CMsgTournamentItemEvent)},
+  { 1176, 1184, -1, sizeof(::CMsgTournamentItemEventResponse)},
+  { 1186, 1193, -1, sizeof(::CMsgTeamFanfare)},
+  { 1194, 1202, -1, sizeof(::CMsgResponseTeamFanfare)},
+  { 1204, 1216, -1, sizeof(::CMsgDOTAAwardEventPoints_AwardPoints)},
+  { 1222, 1233, -1, sizeof(::CMsgDOTAAwardEventPoints)},
+  { 1238, 1246, -1, sizeof(::CMsgGCToServerPingRequest)},
+  { 1248, 1257, -1, sizeof(::CMsgGCToServerPingResponse)},
+  { 1260, 1272, -1, sizeof(::CMsgServerToGCMatchConnectionStats_Player)},
+  { 1278, 1289, -1, sizeof(::CMsgServerToGCMatchConnectionStats)},
+  { 1294, 1301, -1, sizeof(::CMsgServerGCUpdateSpectatorCount)},
+  { 1302, 1310, -1, sizeof(::CSerializedCombatLog_Dictionary_DictString)},
+  { 1312, -1, -1, sizeof(::CSerializedCombatLog_Dictionary)},
+  { 1319, 1328, -1, sizeof(::CSerializedCombatLog)},
+  { 1331, 1339, -1, sizeof(::CMsgServerToGCVictoryPredictions_PredictionItem)},
+  { 1341, 1350, -1, sizeof(::CMsgServerToGCVictoryPredictions_Record)},
+  { 1353, -1, -1, sizeof(::CMsgServerToGCVictoryPredictions)},
+  { 1360, -1, -1, sizeof(::CMsgServerToGCRequestStatus)},
+  { 1366, 1373, -1, sizeof(::CMsgServerToGCRequestStatus_Response)},
+  { 1374, 1382, -1, sizeof(::CMsgGCToServerEvaluateToxicChat)},
+  { 1384, 1395, -1, sizeof(::CMsgServerToGCEvaluateToxicChat)},
+  { 1400, 1411, -1, sizeof(::CMsgServerToGCEvaluateToxicChatResponse)},
+  { 1416, 1430, -1, sizeof(::CMsgSignOutAssassinMiniGameInfo)},
+  { 1438, 1447, -1, sizeof(::CMsgServerToGCKillSummaries_KillSummary)},
+  { 1450, 1458, -1, sizeof(::CMsgServerToGCKillSummaries)},
+  { 1460, 1468, -1, sizeof(::CMsgServerToGCLockCharmTrading)},
+  { 1470, 1481, -1, sizeof(::CMsgSignOutUpdatePlayerChallenge_Challenge)},
+  { 1486, 1497, -1, sizeof(::CMsgSignOutUpdatePlayerChallenge)},
+  { 1502, 1510, -1, sizeof(::CMsgServerToGCRerollPlayerChallenge)},
+  { 1512, 1521, -1, sizeof(::CMsgSpendWager_Player)},
+  { 1524, 1535, -1, sizeof(::CMsgSpendWager)},
+  { 1540, 1552, -1, sizeof(::CMsgSignOutXPCoins_Player)},
+  { 1558, 1568, -1, sizeof(::CMsgSignOutXPCoins)},
+  { 1572, 1581, -1, sizeof(::CMsgSignOutBounties_Bounty)},
+  { 1584, 1594, -1, sizeof(::CMsgSignOutBounties)},
+  { 1598, 1606, -1, sizeof(::CMsgSignOutCommunityGoalProgress_EventGoalIncrement)},
+  { 1608, 1616, -1, sizeof(::CMsgSignOutCommunityGoalProgress)},
+  { 1618, 1627, -1, sizeof(::CMsgServerToGCCloseCompendiumInGamePredictionVoting)},
+  { 1630, 1637, -1, sizeof(::CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse)},
+  { 1638, 1647, -1, sizeof(::CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult)},
+  { 1650, 1660, -1, sizeof(::CMsgServerToGCCompendiumInGamePredictionResults)},
+  { 1664, 1671, -1, sizeof(::CMsgServerToGCCompendiumChosenInGamePredictions_Prediction)},
+  { 1672, 1681, -1, sizeof(::CMsgServerToGCCompendiumChosenInGamePredictions)},
+  { 1684, 1691, -1, sizeof(::CMsgGCToGCCompendiumInGamePredictionResults)},
+  { 1692, 1704, -1, sizeof(::CMsgServerToGCMatchPlayerItemPurchaseHistory_ItemPurchase)},
+  { 1710, 1724, -1, sizeof(::CMsgServerToGCMatchPlayerItemPurchaseHistory_Player)},
+  { 1732, 1741, -1, sizeof(::CMsgServerToGCMatchPlayerItemPurchaseHistory)},
+  { 1744, 1755, -1, sizeof(::CMsgServerToGCMatchPlayerNeutralItemEquipHistory_ItemEquip)},
+  { 1760, 1771, -1, sizeof(::CMsgServerToGCMatchPlayerNeutralItemEquipHistory_Player)},
+  { 1776, 1784, -1, sizeof(::CMsgServerToGCMatchPlayerNeutralItemEquipHistory)},
+  { 1786, 1801, -1, sizeof(::CMsgServerToGCMatchStateHistory_PlayerState)},
+  { 1810, 1826, -1, sizeof(::CMsgServerToGCMatchStateHistory_TeamState)},
+  { 1836, 1845, -1, sizeof(::CMsgServerToGCMatchStateHistory_MatchState)},
+  { 1848, 1858, -1, sizeof(::CMsgServerToGCMatchStateHistory)},
+  { 1862, 1871, -1, sizeof(::CMsgMatchStateSteamMLEntry)},
+  { 1874, -1, -1, sizeof(::CMsgLaneSelectionSteamMLEntry)},
+  { 1882, 1894, -1, sizeof(::CMsgAbilitySelectionSteamMLEntry)},
+  { 1900, 1913, -1, sizeof(::CMsgItemPurchasePregameSteamMLEntry)},
+  { 1920, 1933, -1, sizeof(::CMsgItemPurchaseSteamMLEntry)},
+  { 1940, 1953, -1, sizeof(::CMsgItemPurchaseSequenceSteamMLEntry)},
+  { 1960, 1971, -1, sizeof(::CMsgServerToGCCavernCrawlIsHeroActive)},
+  { 1976, 1992, -1, sizeof(::CMsgServerToGCPlayerChallengeHistory_PlayerChallenge)},
+  { 2002, 2011, -1, sizeof(::CMsgServerToGCPlayerChallengeHistory)},
+  { 2014, 2022, -1, sizeof(::CMsgServerToGCCavernCrawlIsHeroActiveResponse_MapResults)},
+  { 2024, 2035, -1, sizeof(::CMsgServerToGCCavernCrawlIsHeroActiveResponse)},
+  { 2040, 2052, -1, sizeof(::CMsgNeutralItemStats_NeutralItem)},
+  { 2058, -1, -1, sizeof(::CMsgNeutralItemStats)},
+  { 2065, 2074, -1, sizeof(::CMsgGCToServerLobbyHeroBanRates_HeroBanEntry)},
+  { 2077, -1, -1, sizeof(::CMsgGCToServerLobbyHeroBanRates)},
+  { 2084, 2093, -1, sizeof(::CMsgSignOutGuildContractProgress_CompletedGuildEventContracts)},
+  { 2096, 2104, -1, sizeof(::CMsgSignOutGuildContractProgress_PlayerContract)},
+  { 2106, -1, -1, sizeof(::CMsgSignOutGuildContractProgress)},
+  { 2113, 2126, -1, sizeof(::CMsgSignOutGuildChallengeProgress_ChallengeProgress)},
+  { 2133, -1, -1, sizeof(::CMsgSignOutGuildChallengeProgress)},
+  { 2140, 2148, -1, sizeof(::CMsgSignOutMVPStats_Player_KillEaterEvent)},
+  { 2150, 2181, -1, sizeof(::CMsgSignOutMVPStats_Player)},
+  { 2206, 2217, -1, sizeof(::CMsgSignOutMVPStats)},
+  { 2222, -1, -1, sizeof(::CMsgServerToGCGetGuildContracts)},
+  { 2229, 2240, -1, sizeof(::CMsgServerToGCGetGuildContractsResponse_ContractDetails)},
+  { 2245, 2255, -1, sizeof(::CMsgServerToGCGetGuildContractsResponse_Player)},
+  { 2259, -1, -1, sizeof(::CMsgServerToGCGetGuildContractsResponse)},
+  { 2266, 2274, -1, sizeof(::CMsgMatchDiretideCandy_CandyDetails)},
+  { 2276, 2286, -1, sizeof(::CMsgMatchDiretideCandy_PlayerCandy)},
+  { 2290, 2298, -1, sizeof(::CMsgMatchDiretideCandy)},
+  { 2300, 2308, -1, sizeof(::CMsgGCToServerCheerData_CheerTypeCount)},
+  { 2310, -1, -1, sizeof(::CMsgGCToServerCheerData)},
+  { 2317, 2341, -1, sizeof(::CMsgCheerConfig)},
+  { 2359, 2366, -1, sizeof(::CMsgGCToServerCheerConfig)},
+  { 2367, 2374, -1, sizeof(::CMsgServerToGCGetCheerConfig)},
+  { 2375, 2382, -1, sizeof(::CMsgServerToGCGetCheerConfigResponse)},
+  { 2383, -1, -1, sizeof(::CMsgGCToServerCheerScalesOverride)},
+  { 2390, -1, -1, sizeof(::CMsgGCToServerGetCheerState)},
+  { 2396, 2406, -1, sizeof(::CMsgCheerTypeState)},
+  { 2410, 2419, -1, sizeof(::CMsgCheerState)},
+  { 2422, 2430, -1, sizeof(::CMsgServerToGCReportCheerState)},
+  { 2432, -1, -1, sizeof(::CMsgServerToGCGetStickerHeroes)},
+  { 2439, 2447, -1, sizeof(::CMsgServerToGCGetStickerHeroesResponse_Player)},
+  { 2449, -1, -1, sizeof(::CMsgServerToGCGetStickerHeroesResponse)},
+  { 2456, 2467, -1, sizeof(::CMsgSteamLearnMatchInfo)},
+  { 2472, 2484, -1, sizeof(::CMsgSteamLearnMatchInfoPlayer)},
+  { 2490, 2501, -1, sizeof(::CMsgSteamLearnMatchInfoTeam_Player)},
+  { 2506, 2515, -1, sizeof(::CMsgSteamLearnMatchInfoTeam)},
+  { 2518, -1, -1, sizeof(::CMsgSteamLearnMatchHeroesV3)},
+  { 2532, 2545, -1, sizeof(::CMsgSteamLearnMatchHeroV6)},
+  { 2552, 2570, -1, sizeof(::CMsgSteamLearnPlayerTimedStats_StatBucket)},
+  { 2582, -1, -1, sizeof(::CMsgSteamLearnPlayerTimedStats)},
+  { 2589, 2605, -1, sizeof(::CMsgSteamLearnMatchStateV5_PlayerState)},
+  { 2615, 2631, -1, sizeof(::CMsgSteamLearnMatchStateV5_TeamState)},
+  { 2641, 2650, -1, sizeof(::CMsgSteamLearnMatchStateV5)},
+  { 2653, 2661, -1, sizeof(::CMsgSteamLearnItemPurchaseV7)},
+  { 2663, 2672, -1, sizeof(::CMsgSteamLearnPreGameItemPurchases)},
+  { 2675, 2683, -1, sizeof(::CMsgSteamLearnPreGameItemPurchase)},
+  { 2685, 2696, -1, sizeof(::CMsgSteamLearnNeutralItemPurchaseV4)},
+  { 2701, 2711, -1, sizeof(::CMsgSteamLearnAbilitySkill)},
+  { 2715, 2723, -1, sizeof(::CMsgSteamLearnWardPlacement_Location)},
+  { 2725, 2734, -1, sizeof(::CMsgSteamLearnWardPlacement)},
+  { 2737, 2755, -1, sizeof(::CMsgSteamLearnPlayerMatchState)},
+  { 2767, 2774, -1, sizeof(::CMsgSignOutMuertaMinigame)},
+  { 2775, 2783, -1, sizeof(::CMsgSignOutMapStats_Player)},
+  { 2785, 2793, -1, sizeof(::CMsgSignOutMapStats)},
+  { 2795, 2804, -1, sizeof(::CMsgServerToGCNewBloomGift)},
+  { 2807, 2815, -1, sizeof(::CMsgServerToGCNewBloomGiftResponse)},
+  { 2817, 2826, -1, sizeof(::CMsgSignOutOverworld_Player)},
+  { 2829, 2837, -1, sizeof(::CMsgSignOutOverworld)},
+  { 2839, 2847, -1, sizeof(::CMsgSignOutCraftworks_Player)},
+  { 2849, 2857, -1, sizeof(::CMsgSignOutCraftworks)},
+  { 2859, 2868, -1, sizeof(::CMsgSignOutMonsterHunter_Player)},
+  { 2871, 2879, -1, sizeof(::CMsgSignOutMonsterHunter)},
+  { 2881, 2892, -1, sizeof(::CMsgServerToGCWarningLowServerFramerate)},
+  { 2897, 2906, -1, sizeof(::CMsgServerToGCWarningInvalidBotAbilityUsage)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -6524,6 +6591,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::_CMsgSignOutCraftworks_default_instance_._instance,
   &::_CMsgSignOutMonsterHunter_Player_default_instance_._instance,
   &::_CMsgSignOutMonsterHunter_default_instance_._instance,
+  &::_CMsgServerToGCWarningLowServerFramerate_default_instance_._instance,
+  &::_CMsgServerToGCWarningInvalidBotAbilityUsage_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_dota_5fgcmessages_5fserver_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -6633,7 +6702,7 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fserver_2eproto[] PROTOB
   "_winning_team\030\001 \001(\010\022\027\n\017is_radiant_team\030\002"
   " \001(\010\022/\n\020timed_team_stats\030\003 \003(\0132\025.CMatchT"
   "eamTimedStats\0222\n\007players\030\004 \003(\0132!.CMsgSig"
-  "nOutGameplayStats.CPlayer\"\202\"\n\024CMsgGameMa"
+  "nOutGameplayStats.CPlayer\"\234\"\n\024CMsgGameMa"
   "tchSignOut\022\026\n\010match_id\030\001 \001(\004B\004\200\246\035\001\022\020\n\010du"
   "ration\030\002 \001(\r\022\025\n\rgood_guys_win\030\003 \001(\010\022\014\n\004d"
   "ate\030\004 \001(\007\022*\n\005teams\030\006 \003(\0132\033.CMsgGameMatch"
@@ -6664,10 +6733,10 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fserver_2eproto[] PROTOB
   "\0308 \001(\0162\r.DOTA_GC_TEAM:\026DOTA_GC_TEAM_GOOD"
   "_GUYS\022\'\n\037normalized_win_probability_diff"
   "\0309 \001(\002\022-\n\023match_tracked_stats\030: \003(\0132\020.CM"
-  "sgTrackedStat\032\353\023\n\005CTeam\0224\n\007players\030\001 \003(\013"
+  "sgTrackedStat\032\205\024\n\005CTeam\0224\n\007players\030\001 \003(\013"
   "2#.CMsgGameMatchSignOut.CTeam.CPlayer\022,\n"
   "\022team_tracked_stats\030\002 \003(\0132\020.CMsgTrackedS"
-  "tat\032\375\022\n\007CPlayer\022\020\n\010steam_id\030\001 \001(\006\022\017\n\007her"
+  "tat\032\227\023\n\007CPlayer\022\020\n\010steam_id\030\001 \001(\006\022\017\n\007her"
   "o_id\030\003 \001(\005\022\r\n\005items\030\004 \003(\005\022\033\n\023item_purcha"
   "se_times\030\? \003(\r\022\014\n\004gold\030\005 \001(\r\022\r\n\005kills\030\006 "
   "\001(\r\022\016\n\006deaths\030\007 \001(\r\022\017\n\007assists\030\010 \001(\r\022\025\n\r"
@@ -6720,634 +6789,642 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fserver_2eproto[] PROTOB
   "(\005\022.\n\024player_tracked_stats\030P \003(\0132\020.CMsgT"
   "rackedStat\022\026\n\016predicted_rank\030Q \001(\r\022\026\n\016se"
   "lected_facet\030R \001(\r\022\031\n\021enhancement_level\030"
-  "S \001(\r\0324\n\017CCustomGameData\022\021\n\tdota_team\030\001 "
-  "\001(\r\022\016\n\006winner\030\002 \001(\010\032\242\001\n\022HeroDamageReceiv"
-  "ed\022\025\n\rpre_reduction\030\001 \001(\r\022\026\n\016post_reduct"
-  "ion\030\002 \001(\r\022]\n\013damage_type\030\003 \001(\01622.CMsgGam"
-  "eMatchSignOut.CTeam.CPlayer.HeroDamageTy"
-  "pe:\024HERO_DAMAGE_PHYSICAL\"Y\n\016HeroDamageTy"
-  "pe\022\030\n\024HERO_DAMAGE_PHYSICAL\020\000\022\027\n\023HERO_DAM"
-  "AGE_MAGICAL\020\001\022\024\n\020HERO_DAMAGE_PURE\020\002\0325\n\025C"
-  "AdditionalSignoutMsg\022\n\n\002id\030\001 \001(\r\022\020\n\010cont"
-  "ents\030\002 \001(\014\032z\n\025CSocialFeedMatchEvent\022\022\n\na"
-  "ccount_id\030\001 \001(\r\022\021\n\ttimestamp\030\002 \001(\r\022\022\n\nev"
-  "ent_type\030\003 \001(\r\022\021\n\tgame_time\030\004 \001(\005\022\023\n\013rep"
-  "lay_time\030\005 \001(\r\032,\n\017CCustomGameData\022\031\n\021pub"
-  "lish_timestamp\030\001 \001(\r\032\255\001\n\031EventGameLeader"
-  "boardEntry\022\023\n\013name_suffix\030\001 \001(\t\022\r\n\005score"
-  "\030\002 \001(\005\022\024\n\014extra_data_1\030\003 \001(\r\022\024\n\014extra_da"
-  "ta_2\030\004 \001(\r\022\024\n\014extra_data_3\030\005 \001(\r\022\024\n\014extr"
-  "a_data_4\030\006 \001(\r\022\024\n\014extra_data_5\030\007 \001(\r\032\267\001\n"
-  "\rWardPlacement\022\025\n\tplayer_id\030\001 \001(\005:\002-1\022\017\n"
-  "\007team_id\030\002 \001(\r\022\023\n\013placed_time\030\003 \001(\r\022\026\n\016b"
-  "uilding_state\030\004 \001(\r\022\023\n\013creep_state\030\005 \001(\r"
-  "\022\024\n\014roshan_alive\030\006 \001(\010\022\022\n\nposition_x\030\007 \001"
-  "(\r\022\022\n\nposition_y\030\010 \001(\r\"\207\001\n\024CMsgSignOutDr"
-  "aftInfo\022\"\n\032radiant_captain_account_id\030\001 "
-  "\001(\r\022\037\n\027dire_captain_account_id\030\002 \001(\r\022*\n\n"
-  "picks_bans\030\003 \003(\0132\026.CMatchHeroSelectEvent"
-  "\"\326\001\n\022CMsgSignOutBotInfo\022\024\n\014allow_cheats\030"
-  "\001 \001(\010\022J\n\026bot_difficulty_radiant\030\002 \001(\0162\022."
-  "DOTABotDifficulty:\026BOT_DIFFICULTY_PASSIV"
-  "E\022\025\n\rcreated_lobby\030\003 \001(\010\022G\n\023bot_difficul"
-  "ty_dire\030\005 \001(\0162\022.DOTABotDifficulty:\026BOT_D"
-  "IFFICULTY_PASSIVE\"\262\001\n\027CMsgSignOutTextMut"
-  "eInfo\022D\n\022text_mute_messages\030\001 \003(\0132(.CMsg"
-  "SignOutTextMuteInfo.TextMuteMessage\032Q\n\017T"
-  "extMuteMessage\022\016\n\006region\030\001 \001(\r\022\030\n\020caused"
-  "_text_mute\030\002 \001(\010\022\024\n\014chat_message\030\003 \001(\t\"\372"
-  "\004\n\026CMsgSignOutPlayerStats\022\022\n\naccount_id\030"
-  "\001 \001(\005\022\020\n\010match_id\030\002 \001(\004\022\014\n\004rank\030\003 \001(\r\022\017\n"
-  "\007hero_id\030\004 \001(\005\022\020\n\010rampages\030\005 \001(\r\022\024\n\014trip"
-  "le_kills\030\006 \001(\r\022\033\n\023first_blood_claimed\030\007 "
-  "\001(\r\022\031\n\021first_blood_given\030\010 \001(\r\022\027\n\017courie"
-  "rs_killed\030\t \001(\r\022\030\n\020aegises_snatched\030\n \001("
-  "\r\022\025\n\rcheeses_eaten\030\013 \001(\r\022\026\n\016creeps_stack"
-  "ed\030\014 \001(\r\022\023\n\013fight_score\030\r \001(\002\022\022\n\nfarm_sc"
-  "ore\030\016 \001(\002\022\025\n\rsupport_score\030\017 \001(\002\022\022\n\npush"
-  "_score\030\020 \001(\002\022\r\n\005kills\030\021 \001(\r\022\016\n\006deaths\030\022 "
-  "\001(\r\022\017\n\007assists\030\023 \001(\r\022\021\n\tlast_hits\030\024 \001(\r\022"
-  "\016\n\006denies\030\025 \001(\r\022\013\n\003gpm\030\026 \001(\002\022\014\n\004xppm\030\027 \001"
-  "(\002\022\021\n\tnet_worth\030\030 \001(\002\022\016\n\006damage\030\031 \001(\002\022\r\n"
-  "\005heals\030\032 \001(\002\022\031\n\021rapiers_purchased\030\033 \001(\r\022"
-  "\035\n\025observer_wards_placed\030\034 \001(\r\022\027\n\017wards_"
-  "destroyed\030\035 \001(\r\022\022\n\nlobby_type\030\036 \001(\r\"\252\005\n\037"
-  "CMsgSignOutCommunicationSummary\022E\n\007playe"
-  "rs\030\001 \003(\01324.CMsgSignOutCommunicationSumma"
-  "ry.PlayerCommunication\032\277\004\n\023PlayerCommuni"
-  "cation\022\022\n\naccount_id\030\001 \001(\r\022\r\n\005pings\030\002 \001("
-  "\r\022\036\n\026max_pings_per_interval\030\003 \001(\r\022\026\n\016tea"
-  "mmate_pings\030\004 \001(\r\022\'\n\037max_teammate_pings_"
-  "per_interval\030\005 \001(\r\022\032\n\022team_chat_messages"
-  "\030\006 \001(\r\022\031\n\021all_chat_messages\030\007 \001(\r\022\033\n\023cha"
-  "t_wheel_messages\030\010 \001(\r\022\016\n\006pauses\030\t \001(\r\022\020"
-  "\n\010unpauses\030\n \001(\r\022\023\n\013lines_drawn\030\013 \001(\r\022\032\n"
-  "\022voice_chat_seconds\030\014 \001(\r\022\022\n\nchat_mutes\030"
-  "\r \001(\r\022\023\n\013voice_mutes\030\016 \001(\r\022U\n\014ping_detai"
-  "ls\030\017 \003(\0132\?.CMsgSignOutCommunicationSumma"
-  "ry.PlayerCommunication.PingDetail\022\031\n\021com"
-  "ms_blocks_solo\030\020 \001(\r\022\031\n\021comms_blocks_mas"
-  "s\030\021 \001(\r\022\020\n\010chat_log\030\022 \003(\t\0325\n\nPingDetail\022"
-  "\030\n\004type\030\001 \001(\r:\n4294967295\022\r\n\005count\030\002 \001(\r"
-  "\"\356\005\n\034CMsgGameMatchSignoutResponse\022\020\n\010mat"
-  "ch_id\030\001 \001(\004\022\023\n\013replay_salt\030\002 \001(\007\022\020\n\010leag"
-  "ueid\030\005 \001(\r\022\034\n\024metadata_private_key\030\007 \001(\007"
-  "\022%\n\rmatch_details\030\010 \001(\0132\016.CMsgDOTAMatch\022"
-  "F\n\020players_metadata\030\t \003(\0132,.CMsgGameMatc"
-  "hSignoutResponse.PlayerMetadata\022\033\n\010mvp_d"
-  "ata\030\n \001(\0132\t.CMvpData\022\026\n\016ow_private_key\030\013"
-  " \001(\006\022\017\n\007ow_salt\030\014 \001(\007\022\024\n\014ow_replay_id\030\r "
-  "\001(\004\0225\n\021overworld_rewards\030\016 \001(\0132\032.CMsgOve"
-  "rworldMatchRewards\022>\n\026monster_hunter_rew"
-  "ards\030\017 \001(\0132\036.CMsgMonsterHunterMatchRewar"
-  "ds\032\264\002\n\016PlayerMetadata\022\017\n\007hero_id\030\001 \001(\005\022\025"
-  "\n\ravg_kills_x16\030\002 \001(\r\022\026\n\016avg_deaths_x16\030"
-  "\003 \001(\r\022\027\n\017avg_assists_x16\030\004 \001(\r\022\023\n\013avg_gp"
-  "m_x16\030\005 \001(\r\022\023\n\013avg_xpm_x16\030\006 \001(\r\022\026\n\016best"
-  "_kills_x16\030\007 \001(\r\022\030\n\020best_assists_x16\030\010 \001"
-  "(\r\022\024\n\014best_gpm_x16\030\t \001(\r\022\024\n\014best_xpm_x16"
-  "\030\n \001(\r\022\022\n\nwin_streak\030\013 \001(\r\022\027\n\017best_win_s"
-  "treak\030\014 \001(\r\022\024\n\014games_played\030\r \001(\r\"\205\001\n%CM"
-  "sgGameMatchSignOutPermissionRequest\022\026\n\016s"
-  "erver_version\030\001 \001(\r\022\025\n\rlocal_attempt\030\002 \001"
-  "(\r\022\025\n\rtotal_attempt\030\003 \001(\r\022\026\n\016seconds_wai"
-  "ted\030\004 \001(\r\"\213\001\n&CMsgGameMatchSignOutPermis"
-  "sionResponse\022!\n\022permission_granted\030\001 \001(\010"
-  ":\005false\022\036\n\017abandon_signout\030\002 \001(\010:\005false\022"
-  "\036\n\023retry_delay_seconds\030\003 \001(\r:\0010\"\237\001\n!CMsg"
-  "GameMatchSignOutEventGameData\022(\n\010event_i"
-  "d\030\001 \001(\0162\007.EEvent:\rEVENT_ID_NONE\022\021\n\tgame_"
-  "name\030\002 \001(\t\022\020\n\010map_name\030\003 \001(\t\022\027\n\017event_ga"
-  "me_data\030\004 \001(\014\022\022\n\nstart_time\030\005 \001(\r\"\340\005\n\034CM"
-  "sgGameMatchSignOutPerfData\022\032\n\022average_fr"
-  "ame_time\030\001 \003(\002\022\026\n\016max_frame_time\030\002 \003(\002\022!"
-  "\n\031server_average_frame_time\030\003 \001(\002\022\035\n\025ser"
-  "ver_max_frame_time\030\004 \001(\002\022\034\n\024average_comp"
-  "ute_time\030\005 \003(\002\022\030\n\020max_compute_time\030\006 \003(\002"
-  "\022 \n\030average_client_tick_time\030\007 \003(\002\022\034\n\024ma"
-  "x_client_tick_time\030\010 \003(\002\022$\n\034average_clie"
-  "nt_simulate_time\030\t \003(\002\022 \n\030max_client_sim"
-  "ulate_time\030\n \003(\002\022\033\n\023average_output_time\030"
-  "\013 \003(\002\022\027\n\017max_output_time\030\014 \003(\002\0223\n+averag"
-  "e_wait_for_rendering_to_complete_time\030\r "
-  "\003(\002\022/\n\'max_wait_for_rendering_to_complet"
-  "e_time\030\016 \003(\002\022\031\n\021average_swap_time\030\017 \003(\002\022"
-  "\025\n\rmax_swap_time\030\020 \003(\002\022!\n\031average_frame_"
-  "update_time\030\021 \003(\002\022\035\n\025max_frame_update_ti"
-  "me\030\022 \003(\002\022\031\n\021average_idle_time\030\023 \003(\002\022\025\n\rm"
-  "ax_idle_time\030\024 \003(\002\022%\n\035average_input_proc"
-  "essing_time\030\025 \003(\002\022!\n\031max_input_processin"
-  "g_time\030\026 \003(\002\"H\n\033CMsgGameMatchSignOutBanD"
-  "ata\022\021\n\thero_bans\030\001 \003(\005\022\026\n\016hero_ban_votes"
-  "\030\002 \003(\005\"\320\n\n\034CMsgDOTALiveScoreboardUpdate\022"
-  "\025\n\rtournament_id\030\001 \001(\r\022\032\n\022tournament_gam"
-  "e_id\030\002 \001(\r\022\020\n\010duration\030\003 \001(\002\022\022\n\nhltv_del"
-  "ay\030\004 \001(\005\0225\n\tteam_good\030\005 \001(\0132\".CMsgDOTALi"
-  "veScoreboardUpdate.Team\0224\n\010team_bad\030\006 \001("
-  "\0132\".CMsgDOTALiveScoreboardUpdate.Team\022\034\n"
-  "\024roshan_respawn_timer\030\007 \001(\r\022\021\n\tleague_id"
-  "\030\010 \001(\r\022\020\n\010match_id\030\t \001(\004\032\246\010\n\004Team\022:\n\007pla"
-  "yers\030\001 \003(\0132).CMsgDOTALiveScoreboardUpdat"
-  "e.Team.Player\022\r\n\005score\030\002 \001(\r\022\023\n\013tower_st"
-  "ate\030\003 \001(\r\022\026\n\016barracks_state\030\004 \001(\r\022\022\n\nher"
-  "o_picks\030\005 \003(\005\022\021\n\thero_bans\030\006 \003(\005\032\376\006\n\006Pla"
-  "yer\022\023\n\013player_slot\030\001 \001(\r\022\023\n\013player_name\030"
-  "\002 \001(\t\022\021\n\thero_name\030\003 \001(\t\022\017\n\007hero_id\030\004 \001("
-  "\005\022\r\n\005kills\030\005 \001(\r\022\016\n\006deaths\030\006 \001(\r\022\017\n\007assi"
-  "sts\030\007 \001(\r\022\021\n\tlast_hits\030\010 \001(\r\022\016\n\006denies\030\t"
-  " \001(\r\022\014\n\004gold\030\n \001(\r\022\r\n\005level\030\013 \001(\r\022\024\n\014gol"
-  "d_per_min\030\014 \001(\002\022\022\n\nxp_per_min\030\r \001(\002\022s\n\016u"
-  "ltimate_state\030\016 \001(\0162;.CMsgDOTALiveScoreb"
-  "oardUpdate.Team.Player.DOTAUltimateState"
-  ":\036k_EDOTAUltimateStateNotLearned\022\031\n\021ulti"
-  "mate_cooldown\030\017 \001(\002\022\021\n\005item0\030\020 \001(\005:\002-1\022\021"
-  "\n\005item1\030\021 \001(\005:\002-1\022\021\n\005item2\030\022 \001(\005:\002-1\022\021\n\005"
-  "item3\030\023 \001(\005:\002-1\022\021\n\005item4\030\024 \001(\005:\002-1\022\021\n\005it"
-  "em5\030\025 \001(\005:\002-1\022\025\n\rrespawn_timer\030\026 \001(\r\022\022\n\n"
-  "account_id\030\027 \001(\r\022\022\n\nposition_x\030\030 \001(\002\022\022\n\n"
-  "position_y\030\031 \001(\002\022\021\n\tnet_worth\030\032 \001(\r\022H\n\ta"
-  "bilities\030\033 \003(\01325.CMsgDOTALiveScoreboardU"
-  "pdate.Team.Player.HeroAbility\032<\n\013HeroAbi"
-  "lity\022\026\n\nability_id\030\001 \001(\005:\002-1\022\025\n\rability_"
-  "level\030\002 \001(\r\"\233\001\n\021DOTAUltimateState\022\"\n\036k_E"
-  "DOTAUltimateStateNotLearned\020\000\022 \n\034k_EDOTA"
-  "UltimateStateCooldown\020\001\022!\n\035k_EDOTAUltima"
-  "teStateNeedsMana\020\002\022\035\n\031k_EDOTAUltimateSta"
-  "teReady\020\003\"p\n)CMsgServerToGCRequestBatchP"
-  "layerResources\022\027\n\013account_ids\030\001 \003(\rB\002\020\001\022"
-  "\026\n\nrank_types\030\004 \003(\rB\002\020\001\022\022\n\nlobby_type\030\005 "
-  "\001(\005\"\263\003\n1CMsgServerToGCRequestBatchPlayer"
-  "ResourcesResponse\022J\n\007results\030\006 \003(\01329.CMs"
-  "gServerToGCRequestBatchPlayerResourcesRe"
-  "sponse.Result\032\261\002\n\006Result\022\022\n\naccount_id\030\001"
-  " \001(\r\022\014\n\004rank\030\004 \001(\r\022\027\n\017rank_calibrated\030\005 "
-  "\001(\010\022\024\n\014low_priority\030\006 \001(\010\022\025\n\ris_new_play"
-  "er\030\007 \001(\010\022\027\n\017is_guide_player\030\010 \001(\010\022\022\n\ncom"
-  "m_level\030\t \001(\005\022\026\n\016behavior_level\030\n \001(\005\022\014\n"
-  "\004wins\030\013 \001(\005\022\016\n\006losses\030\014 \001(\005\022\026\n\016smurf_cat"
-  "egory\030\r \001(\005\022\022\n\ncomm_score\030\016 \001(\005\022\026\n\016behav"
-  "ior_score\030\017 \001(\005\022\030\n\020rank_uncertainty\030\020 \001("
-  "\005\"R\n\035CMsgDOTAPlayerFailedToConnect\022\026\n\016fa"
-  "iled_loaders\030\001 \003(\006\022\031\n\021abandoned_loaders\030"
-  "\002 \003(\006\"\333\001\n\024CMsgGCToRelayConnect\022\035\n\025source"
-  "_tv_public_addr\030\001 \001(\r\022\036\n\026source_tv_priva"
-  "te_addr\030\002 \001(\r\022\026\n\016source_tv_port\030\003 \001(\r\022\034\n"
-  "\024game_server_steam_id\030\004 \001(\004\022\024\n\014parent_co"
-  "unt\030\005 \001(\r\022\035\n\025tv_unique_secret_code\030\006 \001(\006"
-  "\022\031\n\021source_tv_steamid\030\007 \001(\006\"8\n\037CMsgGCGCT"
-  "oLANServerRelayConnect\022\025\n\rrelay_steamid\030"
-  "\001 \001(\006\",\n\026CMsgGCBanStatusRequest\022\022\n\naccou"
-  "nt_id\030\001 \001(\r\"t\n\027CMsgGCBanStatusResponse\022\016"
-  "\n\006result\030\001 \001(\r\022\024\n\014low_priority\030\002 \001(\010\022\030\n\020"
-  "text_chat_banned\030\003 \001(\010\022\031\n\021voice_chat_ban"
-  "ned\030\004 \001(\010\"\336\002\n\027CMsgTournamentItemEvent\022\031\n"
-  "\021killer_account_id\030\001 \001(\007\022\031\n\021victim_accou"
-  "nt_id\030\002 \001(\007\022:\n\nevent_type\030\003 \001(\0162\026.DOTA_T"
-  "ournamentEvents:\016TE_FIRST_BLOOD\022\020\n\010tv_de"
-  "lay\030\004 \001(\005\022\021\n\tdota_time\030\005 \001(\005\022\023\n\013replay_t"
-  "ime\030\006 \001(\002\022\021\n\tloot_list\030\007 \001(\t\022\022\n\nevent_te"
-  "am\030\010 \001(\r\022\030\n\020multi_kill_count\030\t \001(\r\022\024\n\014wi"
-  "nner_score\030\n \001(\r\022\023\n\013loser_score\030\013 \001(\r\022+\n"
-  "\014hero_statues\030\014 \003(\0132\025.CProtoItemHeroStat"
-  "ue\"v\n\037CMsgTournamentItemEventResponse\022:\n"
-  "\nevent_type\030\001 \001(\0162\026.DOTA_TournamentEvent"
-  "s:\016TE_FIRST_BLOOD\022\027\n\017viewers_granted\030\006 \001"
-  "(\r\"#\n\017CMsgTeamFanfare\022\020\n\010match_id\030\001 \001(\004\""
-  "L\n\027CMsgResponseTeamFanfare\022\030\n\020fanfare_go"
-  "odguys\030\001 \001(\r\022\027\n\017fanfare_badguys\030\002 \001(\r\"\371\002"
-  "\n\030CMsgDOTAAwardEventPoints\022;\n\014award_poin"
-  "ts\030\001 \003(\0132%.CMsgDOTAAwardEventPoints.Awar"
-  "dPoints\022\020\n\010match_id\030\002 \001(\004\022(\n\010event_id\030\004 "
-  "\001(\0162\007.EEvent:\rEVENT_ID_NONE\022\021\n\ttimestamp"
-  "\030\005 \001(\r\022\024\n\014audit_action\030\006 \001(\r\032\272\001\n\013AwardPo"
-  "ints\022\022\n\naccount_id\030\001 \001(\r\022\016\n\006points\030\002 \001(\005"
-  "\022\026\n\016premium_points\030\003 \001(\005\022\026\n\016trade_ban_ti"
-  "me\030\005 \001(\r\022/\n eligible_for_periodic_adjust"
-  "ment\030\006 \001(\010:\005false\022&\n\036point_cap_periodic_"
-  "resource_id\030\007 \001(\r\"E\n\031CMsgGCToServerPingR"
-  "equest\022\022\n\nrequest_id\030\001 \001(\006\022\024\n\014request_ti"
-  "me\030\002 \001(\004\"W\n\032CMsgGCToServerPingResponse\022\022"
-  "\n\nrequest_id\030\001 \001(\006\022\024\n\014request_time\030\002 \001(\004"
-  "\022\017\n\007cluster\030\003 \001(\r\"\260\002\n\"CMsgServerToGCMatc"
-  "hConnectionStats\022\020\n\010match_id\030\001 \001(\004\022\021\n\tre"
-  "gion_id\030\002 \001(\r\022\021\n\tleague_id\030\003 \001(\r\022;\n\007play"
-  "ers\030\004 \003(\0132*.CMsgServerToGCMatchConnectio"
-  "nStats.Player\022\022\n\ncluster_id\030\005 \001(\r\032\200\001\n\006Pl"
-  "ayer\022\022\n\naccount_id\030\001 \001(\r\022\n\n\002ip\030\002 \001(\007\022\023\n\013"
-  "avg_ping_ms\030\003 \001(\r\022\023\n\013packet_loss\030\005 \001(\002\022\026"
-  "\n\016ping_deviation\030\006 \001(\002\022\024\n\014full_resends\030\007"
-  " \001(\r\";\n CMsgServerGCUpdateSpectatorCount"
-  "\022\027\n\017spectator_count\030\001 \001(\r\"\374\001\n\024CSerialize"
-  "dCombatLog\022\017\n\007version\030\001 \001(\r\0224\n\ndictionar"
-  "y\030\002 \001(\0132 .CSerializedCombatLog.Dictionar"
-  "y\022(\n\007entries\030\003 \003(\0132\027.CMsgDOTACombatLogEn"
-  "try\032s\n\nDictionary\022<\n\007strings\030\001 \003(\0132+.CSe"
-  "rializedCombatLog.Dictionary.DictString\032"
-  "\'\n\nDictString\022\n\n\002id\030\001 \002(\r\022\r\n\005value\030\002 \002(\t"
-  "\"\216\002\n CMsgServerToGCVictoryPredictions\0229\n"
-  "\007records\030\001 \003(\0132(.CMsgServerToGCVictoryPr"
-  "edictions.Record\0323\n\016PredictionItem\022\017\n\007it"
-  "em_id\030\001 \001(\004\022\020\n\010item_def\030\002 \001(\r\032z\n\006Record\022"
-  "\022\n\naccount_id\030\001 \001(\r\022\020\n\010item_ids\030\005 \003(\004\022J\n"
-  "\020prediction_items\030\006 \003(\01320.CMsgServerToGC"
-  "VictoryPredictions.PredictionItem\"\035\n\033CMs"
-  "gServerToGCRequestStatus\"8\n$CMsgServerTo"
-  "GCRequestStatus_Response\022\020\n\010response\030\001 \001"
-  "(\r\"Y\n\037CMsgGCToServerEvaluateToxicChat\022\031\n"
-  "\021target_account_id\030\001 \001(\r\022\033\n\023reporter_acc"
-  "ount_id\030\002 \001(\r\"\214\001\n\037CMsgServerToGCEvaluate"
-  "ToxicChat\022\031\n\021target_account_id\030\001 \001(\r\022\033\n\023"
-  "reporter_account_id\030\002 \001(\r\022\020\n\010match_id\030\003 "
-  "\001(\006\022\021\n\ttimestamp\030\004 \003(\r\022\014\n\004line\030\005 \003(\t\"\243\001\n"
-  "\'CMsgServerToGCEvaluateToxicChatResponse"
-  "\022\031\n\021target_account_id\030\001 \001(\r\022\033\n\023reporter_"
-  "account_id\030\002 \001(\r\022\022\n\nban_reason\030\003 \001(\r\022\024\n\014"
-  "ban_duration\030\004 \001(\r\022\026\n\016toxicity_score\030\005 \001"
-  "(\002\"\352\001\n\037CMsgSignOutAssassinMiniGameInfo\022\027"
-  "\n\017winning_players\030\001 \003(\006\022\026\n\016losing_player"
-  "s\030\002 \003(\006\022\025\n\rarcana_owners\030\003 \003(\006\022\024\n\014assass"
-  "in_won\030\004 \001(\010\022\026\n\016target_hero_id\030\005 \001(\005\022\032\n\022"
-  "contract_completed\030\006 \001(\010\022\036\n\026contract_com"
-  "plete_time\030\007 \001(\002\022\025\n\rpa_is_radiant\030\010 \001(\010\""
-  "\305\001\n\033CMsgServerToGCKillSummaries\022\026\n\016ingam"
-  "eevent_id\030\001 \001(\r\022;\n\tsummaries\030\002 \003(\0132(.CMs"
-  "gServerToGCKillSummaries.KillSummary\032Q\n\013"
-  "KillSummary\022\026\n\016killer_hero_id\030\001 \001(\r\022\026\n\016v"
-  "ictim_hero_id\030\002 \001(\r\022\022\n\nkill_count\030\003 \001(\r\""
-  "E\n\036CMsgServerToGCLockCharmTrading\022\022\n\nacc"
-  "ount_id\030\001 \001(\r\022\017\n\007item_id\030\002 \001(\004\"\340\002\n CMsgS"
-  "ignOutUpdatePlayerChallenge\022\022\n\naccount_i"
-  "d\030\001 \001(\r\022>\n\tcompleted\030\002 \003(\0132+.CMsgSignOut"
-  "UpdatePlayerChallenge.Challenge\022=\n\010rerol"
-  "led\030\003 \003(\0132+.CMsgSignOutUpdatePlayerChall"
-  "enge.Challenge\022\020\n\010match_id\030\004 \001(\004\022\017\n\007hero"
-  "_id\030\005 \001(\005\032\205\001\n\tChallenge\022(\n\010event_id\030\001 \001("
-  "\0162\007.EEvent:\rEVENT_ID_NONE\022\017\n\007slot_id\030\002 \001"
-  "(\r\022\023\n\013sequence_id\030\003 \001(\r\022\020\n\010progress\030\004 \001("
-  "\r\022\026\n\016challenge_rank\030\005 \001(\r\"s\n#CMsgServerT"
-  "oGCRerollPlayerChallenge\022\022\n\naccount_id\030\001"
-  " \001(\r\0228\n\nreroll_msg\030\002 \001(\0132$.CMsgClientToG"
-  "CRerollPlayerChallenge\"\353\001\n\016CMsgSpendWage"
-  "r\022\'\n\007players\030\001 \003(\0132\026.CMsgSpendWager.Play"
+  "S \001(\r\022\030\n\020disable_duration\030T \001(\r\0324\n\017CCust"
+  "omGameData\022\021\n\tdota_team\030\001 \001(\r\022\016\n\006winner\030"
+  "\002 \001(\010\032\242\001\n\022HeroDamageReceived\022\025\n\rpre_redu"
+  "ction\030\001 \001(\r\022\026\n\016post_reduction\030\002 \001(\r\022]\n\013d"
+  "amage_type\030\003 \001(\01622.CMsgGameMatchSignOut."
+  "CTeam.CPlayer.HeroDamageType:\024HERO_DAMAG"
+  "E_PHYSICAL\"Y\n\016HeroDamageType\022\030\n\024HERO_DAM"
+  "AGE_PHYSICAL\020\000\022\027\n\023HERO_DAMAGE_MAGICAL\020\001\022"
+  "\024\n\020HERO_DAMAGE_PURE\020\002\0325\n\025CAdditionalSign"
+  "outMsg\022\n\n\002id\030\001 \001(\r\022\020\n\010contents\030\002 \001(\014\032z\n\025"
+  "CSocialFeedMatchEvent\022\022\n\naccount_id\030\001 \001("
+  "\r\022\021\n\ttimestamp\030\002 \001(\r\022\022\n\nevent_type\030\003 \001(\r"
+  "\022\021\n\tgame_time\030\004 \001(\005\022\023\n\013replay_time\030\005 \001(\r"
+  "\032,\n\017CCustomGameData\022\031\n\021publish_timestamp"
+  "\030\001 \001(\r\032\255\001\n\031EventGameLeaderboardEntry\022\023\n\013"
+  "name_suffix\030\001 \001(\t\022\r\n\005score\030\002 \001(\005\022\024\n\014extr"
+  "a_data_1\030\003 \001(\r\022\024\n\014extra_data_2\030\004 \001(\r\022\024\n\014"
+  "extra_data_3\030\005 \001(\r\022\024\n\014extra_data_4\030\006 \001(\r"
+  "\022\024\n\014extra_data_5\030\007 \001(\r\032\267\001\n\rWardPlacement"
+  "\022\025\n\tplayer_id\030\001 \001(\005:\002-1\022\017\n\007team_id\030\002 \001(\r"
+  "\022\023\n\013placed_time\030\003 \001(\r\022\026\n\016building_state\030"
+  "\004 \001(\r\022\023\n\013creep_state\030\005 \001(\r\022\024\n\014roshan_ali"
+  "ve\030\006 \001(\010\022\022\n\nposition_x\030\007 \001(\r\022\022\n\nposition"
+  "_y\030\010 \001(\r\"\207\001\n\024CMsgSignOutDraftInfo\022\"\n\032rad"
+  "iant_captain_account_id\030\001 \001(\r\022\037\n\027dire_ca"
+  "ptain_account_id\030\002 \001(\r\022*\n\npicks_bans\030\003 \003"
+  "(\0132\026.CMatchHeroSelectEvent\"\326\001\n\022CMsgSignO"
+  "utBotInfo\022\024\n\014allow_cheats\030\001 \001(\010\022J\n\026bot_d"
+  "ifficulty_radiant\030\002 \001(\0162\022.DOTABotDifficu"
+  "lty:\026BOT_DIFFICULTY_PASSIVE\022\025\n\rcreated_l"
+  "obby\030\003 \001(\010\022G\n\023bot_difficulty_dire\030\005 \001(\0162"
+  "\022.DOTABotDifficulty:\026BOT_DIFFICULTY_PASS"
+  "IVE\"\262\001\n\027CMsgSignOutTextMuteInfo\022D\n\022text_"
+  "mute_messages\030\001 \003(\0132(.CMsgSignOutTextMut"
+  "eInfo.TextMuteMessage\032Q\n\017TextMuteMessage"
+  "\022\016\n\006region\030\001 \001(\r\022\030\n\020caused_text_mute\030\002 \001"
+  "(\010\022\024\n\014chat_message\030\003 \001(\t\"\372\004\n\026CMsgSignOut"
+  "PlayerStats\022\022\n\naccount_id\030\001 \001(\005\022\020\n\010match"
+  "_id\030\002 \001(\004\022\014\n\004rank\030\003 \001(\r\022\017\n\007hero_id\030\004 \001(\005"
+  "\022\020\n\010rampages\030\005 \001(\r\022\024\n\014triple_kills\030\006 \001(\r"
+  "\022\033\n\023first_blood_claimed\030\007 \001(\r\022\031\n\021first_b"
+  "lood_given\030\010 \001(\r\022\027\n\017couriers_killed\030\t \001("
+  "\r\022\030\n\020aegises_snatched\030\n \001(\r\022\025\n\rcheeses_e"
+  "aten\030\013 \001(\r\022\026\n\016creeps_stacked\030\014 \001(\r\022\023\n\013fi"
+  "ght_score\030\r \001(\002\022\022\n\nfarm_score\030\016 \001(\002\022\025\n\rs"
+  "upport_score\030\017 \001(\002\022\022\n\npush_score\030\020 \001(\002\022\r"
+  "\n\005kills\030\021 \001(\r\022\016\n\006deaths\030\022 \001(\r\022\017\n\007assists"
+  "\030\023 \001(\r\022\021\n\tlast_hits\030\024 \001(\r\022\016\n\006denies\030\025 \001("
+  "\r\022\013\n\003gpm\030\026 \001(\002\022\014\n\004xppm\030\027 \001(\002\022\021\n\tnet_wort"
+  "h\030\030 \001(\002\022\016\n\006damage\030\031 \001(\002\022\r\n\005heals\030\032 \001(\002\022\031"
+  "\n\021rapiers_purchased\030\033 \001(\r\022\035\n\025observer_wa"
+  "rds_placed\030\034 \001(\r\022\027\n\017wards_destroyed\030\035 \001("
+  "\r\022\022\n\nlobby_type\030\036 \001(\r\"\252\005\n\037CMsgSignOutCom"
+  "municationSummary\022E\n\007players\030\001 \003(\01324.CMs"
+  "gSignOutCommunicationSummary.PlayerCommu"
+  "nication\032\277\004\n\023PlayerCommunication\022\022\n\nacco"
+  "unt_id\030\001 \001(\r\022\r\n\005pings\030\002 \001(\r\022\036\n\026max_pings"
+  "_per_interval\030\003 \001(\r\022\026\n\016teammate_pings\030\004 "
+  "\001(\r\022\'\n\037max_teammate_pings_per_interval\030\005"
+  " \001(\r\022\032\n\022team_chat_messages\030\006 \001(\r\022\031\n\021all_"
+  "chat_messages\030\007 \001(\r\022\033\n\023chat_wheel_messag"
+  "es\030\010 \001(\r\022\016\n\006pauses\030\t \001(\r\022\020\n\010unpauses\030\n \001"
+  "(\r\022\023\n\013lines_drawn\030\013 \001(\r\022\032\n\022voice_chat_se"
+  "conds\030\014 \001(\r\022\022\n\nchat_mutes\030\r \001(\r\022\023\n\013voice"
+  "_mutes\030\016 \001(\r\022U\n\014ping_details\030\017 \003(\0132\?.CMs"
+  "gSignOutCommunicationSummary.PlayerCommu"
+  "nication.PingDetail\022\031\n\021comms_blocks_solo"
+  "\030\020 \001(\r\022\031\n\021comms_blocks_mass\030\021 \001(\r\022\020\n\010cha"
+  "t_log\030\022 \003(\t\0325\n\nPingDetail\022\030\n\004type\030\001 \001(\r:"
+  "\n4294967295\022\r\n\005count\030\002 \001(\r\"\356\005\n\034CMsgGameM"
+  "atchSignoutResponse\022\020\n\010match_id\030\001 \001(\004\022\023\n"
+  "\013replay_salt\030\002 \001(\007\022\020\n\010leagueid\030\005 \001(\r\022\034\n\024"
+  "metadata_private_key\030\007 \001(\007\022%\n\rmatch_deta"
+  "ils\030\010 \001(\0132\016.CMsgDOTAMatch\022F\n\020players_met"
+  "adata\030\t \003(\0132,.CMsgGameMatchSignoutRespon"
+  "se.PlayerMetadata\022\033\n\010mvp_data\030\n \001(\0132\t.CM"
+  "vpData\022\026\n\016ow_private_key\030\013 \001(\006\022\017\n\007ow_sal"
+  "t\030\014 \001(\007\022\024\n\014ow_replay_id\030\r \001(\004\0225\n\021overwor"
+  "ld_rewards\030\016 \001(\0132\032.CMsgOverworldMatchRew"
+  "ards\022>\n\026monster_hunter_rewards\030\017 \001(\0132\036.C"
+  "MsgMonsterHunterMatchRewards\032\264\002\n\016PlayerM"
+  "etadata\022\017\n\007hero_id\030\001 \001(\005\022\025\n\ravg_kills_x1"
+  "6\030\002 \001(\r\022\026\n\016avg_deaths_x16\030\003 \001(\r\022\027\n\017avg_a"
+  "ssists_x16\030\004 \001(\r\022\023\n\013avg_gpm_x16\030\005 \001(\r\022\023\n"
+  "\013avg_xpm_x16\030\006 \001(\r\022\026\n\016best_kills_x16\030\007 \001"
+  "(\r\022\030\n\020best_assists_x16\030\010 \001(\r\022\024\n\014best_gpm"
+  "_x16\030\t \001(\r\022\024\n\014best_xpm_x16\030\n \001(\r\022\022\n\nwin_"
+  "streak\030\013 \001(\r\022\027\n\017best_win_streak\030\014 \001(\r\022\024\n"
+  "\014games_played\030\r \001(\r\"\205\001\n%CMsgGameMatchSig"
+  "nOutPermissionRequest\022\026\n\016server_version\030"
+  "\001 \001(\r\022\025\n\rlocal_attempt\030\002 \001(\r\022\025\n\rtotal_at"
+  "tempt\030\003 \001(\r\022\026\n\016seconds_waited\030\004 \001(\r\"\213\001\n&"
+  "CMsgGameMatchSignOutPermissionResponse\022!"
+  "\n\022permission_granted\030\001 \001(\010:\005false\022\036\n\017aba"
+  "ndon_signout\030\002 \001(\010:\005false\022\036\n\023retry_delay"
+  "_seconds\030\003 \001(\r:\0010\"\237\001\n!CMsgGameMatchSignO"
+  "utEventGameData\022(\n\010event_id\030\001 \001(\0162\007.EEve"
+  "nt:\rEVENT_ID_NONE\022\021\n\tgame_name\030\002 \001(\t\022\020\n\010"
+  "map_name\030\003 \001(\t\022\027\n\017event_game_data\030\004 \001(\014\022"
+  "\022\n\nstart_time\030\005 \001(\r\"\340\005\n\034CMsgGameMatchSig"
+  "nOutPerfData\022\032\n\022average_frame_time\030\001 \003(\002"
+  "\022\026\n\016max_frame_time\030\002 \003(\002\022!\n\031server_avera"
+  "ge_frame_time\030\003 \001(\002\022\035\n\025server_max_frame_"
+  "time\030\004 \001(\002\022\034\n\024average_compute_time\030\005 \003(\002"
+  "\022\030\n\020max_compute_time\030\006 \003(\002\022 \n\030average_cl"
+  "ient_tick_time\030\007 \003(\002\022\034\n\024max_client_tick_"
+  "time\030\010 \003(\002\022$\n\034average_client_simulate_ti"
+  "me\030\t \003(\002\022 \n\030max_client_simulate_time\030\n \003"
+  "(\002\022\033\n\023average_output_time\030\013 \003(\002\022\027\n\017max_o"
+  "utput_time\030\014 \003(\002\0223\n+average_wait_for_ren"
+  "dering_to_complete_time\030\r \003(\002\022/\n\'max_wai"
+  "t_for_rendering_to_complete_time\030\016 \003(\002\022\031"
+  "\n\021average_swap_time\030\017 \003(\002\022\025\n\rmax_swap_ti"
+  "me\030\020 \003(\002\022!\n\031average_frame_update_time\030\021 "
+  "\003(\002\022\035\n\025max_frame_update_time\030\022 \003(\002\022\031\n\021av"
+  "erage_idle_time\030\023 \003(\002\022\025\n\rmax_idle_time\030\024"
+  " \003(\002\022%\n\035average_input_processing_time\030\025 "
+  "\003(\002\022!\n\031max_input_processing_time\030\026 \003(\002\"H"
+  "\n\033CMsgGameMatchSignOutBanData\022\021\n\thero_ba"
+  "ns\030\001 \003(\005\022\026\n\016hero_ban_votes\030\002 \003(\005\"\320\n\n\034CMs"
+  "gDOTALiveScoreboardUpdate\022\025\n\rtournament_"
+  "id\030\001 \001(\r\022\032\n\022tournament_game_id\030\002 \001(\r\022\020\n\010"
+  "duration\030\003 \001(\002\022\022\n\nhltv_delay\030\004 \001(\005\0225\n\tte"
+  "am_good\030\005 \001(\0132\".CMsgDOTALiveScoreboardUp"
+  "date.Team\0224\n\010team_bad\030\006 \001(\0132\".CMsgDOTALi"
+  "veScoreboardUpdate.Team\022\034\n\024roshan_respaw"
+  "n_timer\030\007 \001(\r\022\021\n\tleague_id\030\010 \001(\r\022\020\n\010matc"
+  "h_id\030\t \001(\004\032\246\010\n\004Team\022:\n\007players\030\001 \003(\0132).C"
+  "MsgDOTALiveScoreboardUpdate.Team.Player\022"
+  "\r\n\005score\030\002 \001(\r\022\023\n\013tower_state\030\003 \001(\r\022\026\n\016b"
+  "arracks_state\030\004 \001(\r\022\022\n\nhero_picks\030\005 \003(\005\022"
+  "\021\n\thero_bans\030\006 \003(\005\032\376\006\n\006Player\022\023\n\013player_"
+  "slot\030\001 \001(\r\022\023\n\013player_name\030\002 \001(\t\022\021\n\thero_"
+  "name\030\003 \001(\t\022\017\n\007hero_id\030\004 \001(\005\022\r\n\005kills\030\005 \001"
+  "(\r\022\016\n\006deaths\030\006 \001(\r\022\017\n\007assists\030\007 \001(\r\022\021\n\tl"
+  "ast_hits\030\010 \001(\r\022\016\n\006denies\030\t \001(\r\022\014\n\004gold\030\n"
+  " \001(\r\022\r\n\005level\030\013 \001(\r\022\024\n\014gold_per_min\030\014 \001("
+  "\002\022\022\n\nxp_per_min\030\r \001(\002\022s\n\016ultimate_state\030"
+  "\016 \001(\0162;.CMsgDOTALiveScoreboardUpdate.Tea"
+  "m.Player.DOTAUltimateState:\036k_EDOTAUltim"
+  "ateStateNotLearned\022\031\n\021ultimate_cooldown\030"
+  "\017 \001(\002\022\021\n\005item0\030\020 \001(\005:\002-1\022\021\n\005item1\030\021 \001(\005:"
+  "\002-1\022\021\n\005item2\030\022 \001(\005:\002-1\022\021\n\005item3\030\023 \001(\005:\002-"
+  "1\022\021\n\005item4\030\024 \001(\005:\002-1\022\021\n\005item5\030\025 \001(\005:\002-1\022"
+  "\025\n\rrespawn_timer\030\026 \001(\r\022\022\n\naccount_id\030\027 \001"
+  "(\r\022\022\n\nposition_x\030\030 \001(\002\022\022\n\nposition_y\030\031 \001"
+  "(\002\022\021\n\tnet_worth\030\032 \001(\r\022H\n\tabilities\030\033 \003(\013"
+  "25.CMsgDOTALiveScoreboardUpdate.Team.Pla"
+  "yer.HeroAbility\032<\n\013HeroAbility\022\026\n\nabilit"
+  "y_id\030\001 \001(\005:\002-1\022\025\n\rability_level\030\002 \001(\r\"\233\001"
+  "\n\021DOTAUltimateState\022\"\n\036k_EDOTAUltimateSt"
+  "ateNotLearned\020\000\022 \n\034k_EDOTAUltimateStateC"
+  "ooldown\020\001\022!\n\035k_EDOTAUltimateStateNeedsMa"
+  "na\020\002\022\035\n\031k_EDOTAUltimateStateReady\020\003\"p\n)C"
+  "MsgServerToGCRequestBatchPlayerResources"
+  "\022\027\n\013account_ids\030\001 \003(\rB\002\020\001\022\026\n\nrank_types\030"
+  "\004 \003(\rB\002\020\001\022\022\n\nlobby_type\030\005 \001(\005\"\263\003\n1CMsgSe"
+  "rverToGCRequestBatchPlayerResourcesRespo"
+  "nse\022J\n\007results\030\006 \003(\01329.CMsgServerToGCReq"
+  "uestBatchPlayerResourcesResponse.Result\032"
+  "\261\002\n\006Result\022\022\n\naccount_id\030\001 \001(\r\022\014\n\004rank\030\004"
+  " \001(\r\022\027\n\017rank_calibrated\030\005 \001(\010\022\024\n\014low_pri"
+  "ority\030\006 \001(\010\022\025\n\ris_new_player\030\007 \001(\010\022\027\n\017is"
+  "_guide_player\030\010 \001(\010\022\022\n\ncomm_level\030\t \001(\005\022"
+  "\026\n\016behavior_level\030\n \001(\005\022\014\n\004wins\030\013 \001(\005\022\016\n"
+  "\006losses\030\014 \001(\005\022\026\n\016smurf_category\030\r \001(\005\022\022\n"
+  "\ncomm_score\030\016 \001(\005\022\026\n\016behavior_score\030\017 \001("
+  "\005\022\030\n\020rank_uncertainty\030\020 \001(\005\"R\n\035CMsgDOTAP"
+  "layerFailedToConnect\022\026\n\016failed_loaders\030\001"
+  " \003(\006\022\031\n\021abandoned_loaders\030\002 \003(\006\"\333\001\n\024CMsg"
+  "GCToRelayConnect\022\035\n\025source_tv_public_add"
+  "r\030\001 \001(\r\022\036\n\026source_tv_private_addr\030\002 \001(\r\022"
+  "\026\n\016source_tv_port\030\003 \001(\r\022\034\n\024game_server_s"
+  "team_id\030\004 \001(\004\022\024\n\014parent_count\030\005 \001(\r\022\035\n\025t"
+  "v_unique_secret_code\030\006 \001(\006\022\031\n\021source_tv_"
+  "steamid\030\007 \001(\006\"8\n\037CMsgGCGCToLANServerRela"
+  "yConnect\022\025\n\rrelay_steamid\030\001 \001(\006\",\n\026CMsgG"
+  "CBanStatusRequest\022\022\n\naccount_id\030\001 \001(\r\"t\n"
+  "\027CMsgGCBanStatusResponse\022\016\n\006result\030\001 \001(\r"
+  "\022\024\n\014low_priority\030\002 \001(\010\022\030\n\020text_chat_bann"
+  "ed\030\003 \001(\010\022\031\n\021voice_chat_banned\030\004 \001(\010\"\336\002\n\027"
+  "CMsgTournamentItemEvent\022\031\n\021killer_accoun"
+  "t_id\030\001 \001(\007\022\031\n\021victim_account_id\030\002 \001(\007\022:\n"
+  "\nevent_type\030\003 \001(\0162\026.DOTA_TournamentEvent"
+  "s:\016TE_FIRST_BLOOD\022\020\n\010tv_delay\030\004 \001(\005\022\021\n\td"
+  "ota_time\030\005 \001(\005\022\023\n\013replay_time\030\006 \001(\002\022\021\n\tl"
+  "oot_list\030\007 \001(\t\022\022\n\nevent_team\030\010 \001(\r\022\030\n\020mu"
+  "lti_kill_count\030\t \001(\r\022\024\n\014winner_score\030\n \001"
+  "(\r\022\023\n\013loser_score\030\013 \001(\r\022+\n\014hero_statues\030"
+  "\014 \003(\0132\025.CProtoItemHeroStatue\"v\n\037CMsgTour"
+  "namentItemEventResponse\022:\n\nevent_type\030\001 "
+  "\001(\0162\026.DOTA_TournamentEvents:\016TE_FIRST_BL"
+  "OOD\022\027\n\017viewers_granted\030\006 \001(\r\"#\n\017CMsgTeam"
+  "Fanfare\022\020\n\010match_id\030\001 \001(\004\"L\n\027CMsgRespons"
+  "eTeamFanfare\022\030\n\020fanfare_goodguys\030\001 \001(\r\022\027"
+  "\n\017fanfare_badguys\030\002 \001(\r\"\371\002\n\030CMsgDOTAAwar"
+  "dEventPoints\022;\n\014award_points\030\001 \003(\0132%.CMs"
+  "gDOTAAwardEventPoints.AwardPoints\022\020\n\010mat"
+  "ch_id\030\002 \001(\004\022(\n\010event_id\030\004 \001(\0162\007.EEvent:\r"
+  "EVENT_ID_NONE\022\021\n\ttimestamp\030\005 \001(\r\022\024\n\014audi"
+  "t_action\030\006 \001(\r\032\272\001\n\013AwardPoints\022\022\n\naccoun"
+  "t_id\030\001 \001(\r\022\016\n\006points\030\002 \001(\005\022\026\n\016premium_po"
+  "ints\030\003 \001(\005\022\026\n\016trade_ban_time\030\005 \001(\r\022/\n el"
+  "igible_for_periodic_adjustment\030\006 \001(\010:\005fa"
+  "lse\022&\n\036point_cap_periodic_resource_id\030\007 "
+  "\001(\r\"E\n\031CMsgGCToServerPingRequest\022\022\n\nrequ"
+  "est_id\030\001 \001(\006\022\024\n\014request_time\030\002 \001(\004\"W\n\032CM"
+  "sgGCToServerPingResponse\022\022\n\nrequest_id\030\001"
+  " \001(\006\022\024\n\014request_time\030\002 \001(\004\022\017\n\007cluster\030\003 "
+  "\001(\r\"\260\002\n\"CMsgServerToGCMatchConnectionSta"
+  "ts\022\020\n\010match_id\030\001 \001(\004\022\021\n\tregion_id\030\002 \001(\r\022"
+  "\021\n\tleague_id\030\003 \001(\r\022;\n\007players\030\004 \003(\0132*.CM"
+  "sgServerToGCMatchConnectionStats.Player\022"
+  "\022\n\ncluster_id\030\005 \001(\r\032\200\001\n\006Player\022\022\n\naccoun"
+  "t_id\030\001 \001(\r\022\n\n\002ip\030\002 \001(\007\022\023\n\013avg_ping_ms\030\003 "
+  "\001(\r\022\023\n\013packet_loss\030\005 \001(\002\022\026\n\016ping_deviati"
+  "on\030\006 \001(\002\022\024\n\014full_resends\030\007 \001(\r\";\n CMsgSe"
+  "rverGCUpdateSpectatorCount\022\027\n\017spectator_"
+  "count\030\001 \001(\r\"\374\001\n\024CSerializedCombatLog\022\017\n\007"
+  "version\030\001 \001(\r\0224\n\ndictionary\030\002 \001(\0132 .CSer"
+  "ializedCombatLog.Dictionary\022(\n\007entries\030\003"
+  " \003(\0132\027.CMsgDOTACombatLogEntry\032s\n\nDiction"
+  "ary\022<\n\007strings\030\001 \003(\0132+.CSerializedCombat"
+  "Log.Dictionary.DictString\032\'\n\nDictString\022"
+  "\n\n\002id\030\001 \002(\r\022\r\n\005value\030\002 \002(\t\"\216\002\n CMsgServe"
+  "rToGCVictoryPredictions\0229\n\007records\030\001 \003(\013"
+  "2(.CMsgServerToGCVictoryPredictions.Reco"
+  "rd\0323\n\016PredictionItem\022\017\n\007item_id\030\001 \001(\004\022\020\n"
+  "\010item_def\030\002 \001(\r\032z\n\006Record\022\022\n\naccount_id\030"
+  "\001 \001(\r\022\020\n\010item_ids\030\005 \003(\004\022J\n\020prediction_it"
+  "ems\030\006 \003(\01320.CMsgServerToGCVictoryPredict"
+  "ions.PredictionItem\"\035\n\033CMsgServerToGCReq"
+  "uestStatus\"8\n$CMsgServerToGCRequestStatu"
+  "s_Response\022\020\n\010response\030\001 \001(\r\"Y\n\037CMsgGCTo"
+  "ServerEvaluateToxicChat\022\031\n\021target_accoun"
+  "t_id\030\001 \001(\r\022\033\n\023reporter_account_id\030\002 \001(\r\""
+  "\214\001\n\037CMsgServerToGCEvaluateToxicChat\022\031\n\021t"
+  "arget_account_id\030\001 \001(\r\022\033\n\023reporter_accou"
+  "nt_id\030\002 \001(\r\022\020\n\010match_id\030\003 \001(\006\022\021\n\ttimesta"
+  "mp\030\004 \003(\r\022\014\n\004line\030\005 \003(\t\"\243\001\n\'CMsgServerToG"
+  "CEvaluateToxicChatResponse\022\031\n\021target_acc"
+  "ount_id\030\001 \001(\r\022\033\n\023reporter_account_id\030\002 \001"
+  "(\r\022\022\n\nban_reason\030\003 \001(\r\022\024\n\014ban_duration\030\004"
+  " \001(\r\022\026\n\016toxicity_score\030\005 \001(\002\"\352\001\n\037CMsgSig"
+  "nOutAssassinMiniGameInfo\022\027\n\017winning_play"
+  "ers\030\001 \003(\006\022\026\n\016losing_players\030\002 \003(\006\022\025\n\rarc"
+  "ana_owners\030\003 \003(\006\022\024\n\014assassin_won\030\004 \001(\010\022\026"
+  "\n\016target_hero_id\030\005 \001(\005\022\032\n\022contract_compl"
+  "eted\030\006 \001(\010\022\036\n\026contract_complete_time\030\007 \001"
+  "(\002\022\025\n\rpa_is_radiant\030\010 \001(\010\"\305\001\n\033CMsgServer"
+  "ToGCKillSummaries\022\026\n\016ingameevent_id\030\001 \001("
+  "\r\022;\n\tsummaries\030\002 \003(\0132(.CMsgServerToGCKil"
+  "lSummaries.KillSummary\032Q\n\013KillSummary\022\026\n"
+  "\016killer_hero_id\030\001 \001(\r\022\026\n\016victim_hero_id\030"
+  "\002 \001(\r\022\022\n\nkill_count\030\003 \001(\r\"E\n\036CMsgServerT"
+  "oGCLockCharmTrading\022\022\n\naccount_id\030\001 \001(\r\022"
+  "\017\n\007item_id\030\002 \001(\004\"\340\002\n CMsgSignOutUpdatePl"
+  "ayerChallenge\022\022\n\naccount_id\030\001 \001(\r\022>\n\tcom"
+  "pleted\030\002 \003(\0132+.CMsgSignOutUpdatePlayerCh"
+  "allenge.Challenge\022=\n\010rerolled\030\003 \003(\0132+.CM"
+  "sgSignOutUpdatePlayerChallenge.Challenge"
+  "\022\020\n\010match_id\030\004 \001(\004\022\017\n\007hero_id\030\005 \001(\005\032\205\001\n\t"
+  "Challenge\022(\n\010event_id\030\001 \001(\0162\007.EEvent:\rEV"
+  "ENT_ID_NONE\022\017\n\007slot_id\030\002 \001(\r\022\023\n\013sequence"
+  "_id\030\003 \001(\r\022\020\n\010progress\030\004 \001(\r\022\026\n\016challenge"
+  "_rank\030\005 \001(\r\"s\n#CMsgServerToGCRerollPlaye"
+  "rChallenge\022\022\n\naccount_id\030\001 \001(\r\0228\n\nreroll"
+  "_msg\030\002 \001(\0132$.CMsgClientToGCRerollPlayerC"
+  "hallenge\"\353\001\n\016CMsgSpendWager\022\'\n\007players\030\001"
+  " \003(\0132\026.CMsgSpendWager.Player\022(\n\010event_id"
+  "\030\002 \001(\0162\007.EEvent:\rEVENT_ID_NONE\022\021\n\ttimest"
+  "amp\030\003 \001(\r\022\020\n\010match_id\030\004 \001(\004\022\027\n\017server_st"
+  "eam_id\030\005 \001(\004\032H\n\006Player\022\022\n\naccount_id\030\001 \001"
+  "(\r\022\r\n\005wager\030\002 \001(\r\022\033\n\023wager_token_item_id"
+  "\030\003 \001(\004\"\236\002\n\022CMsgSignOutXPCoins\022+\n\007players"
+  "\030\001 \003(\0132\032.CMsgSignOutXPCoins.Player\022(\n\010ev"
+  "ent_id\030\002 \001(\0162\007.EEvent:\rEVENT_ID_NONE\022\020\n\010"
+  "match_id\030\003 \001(\004\022\021\n\ttimestamp\030\004 \001(\r\032\213\001\n\006Pl"
+  "ayer\022\022\n\naccount_id\030\001 \001(\r\022\021\n\txp_gained\030\002 "
+  "\001(\r\022\023\n\013coins_spent\030\003 \001(\r\022\033\n\023wager_token_"
+  "item_id\030\004 \001(\004\022\022\n\nrank_wager\030\005 \001(\r\022\024\n\014wag"
+  "er_streak\030\006 \001(\r\"\361\001\n\023CMsgSignOutBounties\022"
+  "-\n\010bounties\030\001 \003(\0132\033.CMsgSignOutBounties."
+  "Bounty\022(\n\010event_id\030\002 \001(\0162\007.EEvent:\rEVENT"
+  "_ID_NONE\022\020\n\010match_id\030\003 \001(\004\022\021\n\ttimestamp\030"
+  "\004 \001(\r\032\\\n\006Bounty\022\031\n\021issuer_account_id\030\001 \001"
+  "(\r\022\034\n\024completer_account_id\030\002 \001(\r\022\031\n\021targ"
+  "et_account_id\030\003 \001(\r\"\343\001\n CMsgSignOutCommu"
+  "nityGoalProgress\022(\n\010event_id\030\001 \001(\0162\007.EEv"
+  "ent:\rEVENT_ID_NONE\022N\n\020event_increments\030\002"
+  " \003(\01324.CMsgSignOutCommunityGoalProgress."
+  "EventGoalIncrement\032E\n\022EventGoalIncrement"
+  "\022\025\n\revent_goal_id\030\001 \001(\r\022\030\n\020increment_amo"
+  "unt\030\002 \001(\r\"n\n3CMsgServerToGCCloseCompendi"
+  "umInGamePredictionVoting\022\020\n\010match_id\030\001 \001"
+  "(\004\022\022\n\nhltv_delay\030\002 \001(\r\022\021\n\tleague_id\030\003 \001("
+  "\r\"M\n;CMsgServerToGCCloseCompendiumInGame"
+  "PredictionVotingResponse\022\016\n\006result\030\001 \001(\010"
+  "\"\251\002\n/CMsgServerToGCCompendiumInGamePredi"
+  "ctionResults\022\020\n\010match_id\030\001 \001(\004\022R\n\007result"
+  "s\030\002 \003(\0132A.CMsgServerToGCCompendiumInGame"
+  "PredictionResults.PredictionResult\022\021\n\tle"
+  "ague_id\030\003 \001(\r\022\026\n\016league_node_id\030\004 \001(\r\032e\n"
+  "\020PredictionResult\022\025\n\rprediction_id\030\001 \001(\r"
+  "\022\030\n\020prediction_value\030\002 \001(\r\022 \n\030prediction"
+  "_value_is_mask\030\003 \001(\010\"\324\001\n/CMsgServerToGCC"
+  "ompendiumChosenInGamePredictions\022\020\n\010matc"
+  "h_id\030\001 \001(\004\022W\n\022predictions_chosen\030\002 \003(\0132;"
+  ".CMsgServerToGCCompendiumChosenInGamePre"
+  "dictions.Prediction\022\021\n\tleague_id\030\003 \001(\r\032#"
+  "\n\nPrediction\022\025\n\rprediction_id\030\001 \001(\r\"p\n+C"
+  "MsgGCToGCCompendiumInGamePredictionResul"
+  "ts\022A\n\007results\030\001 \001(\01320.CMsgServerToGCComp"
+  "endiumInGamePredictionResults\"\210\004\n,CMsgSe"
+  "rverToGCMatchPlayerItemPurchaseHistory\022\020"
+  "\n\010match_id\030\001 \001(\004\022\013\n\003mmr\030\002 \001(\r\022E\n\007players"
+  "\030\003 \003(\01324.CMsgServerToGCMatchPlayerItemPu"
+  "rchaseHistory.Player\032\206\001\n\014ItemPurchase\022\020\n"
+  "\004item\030\001 \001(\005:\002-1\022\014\n\004gold\030\002 \001(\r\022\021\n\tnet_wor"
+  "th\030\003 \001(\r\022\021\n\tgame_time\030\004 \001(\r\022\027\n\017inventory"
+  "_items\030\005 \003(\005\022\027\n\017talents_skilled\030\007 \003(\010\032\350\001"
+  "\n\006Player\022\023\n\013player_slot\030\001 \001(\r\022\022\n\naccount"
+  "_id\030\002 \001(\r\022\017\n\007hero_id\030\003 \001(\005\022\027\n\017allied_her"
+  "o_ids\030\004 \003(\005\022\026\n\016enemy_hero_ids\030\005 \003(\005\022R\n\016i"
+  "tem_purchases\030\006 \003(\0132:.CMsgServerToGCMatc"
+  "hPlayerItemPurchaseHistory.ItemPurchase\022"
+  "\014\n\004lane\030\007 \001(\r\022\021\n\tis_winner\030\010 \001(\010\"\312\003\n0CMs"
+  "gServerToGCMatchPlayerNeutralItemEquipHi"
+  "story\022\020\n\010match_id\030\001 \001(\004\022I\n\007players\030\002 \003(\013"
+  "28.CMsgServerToGCMatchPlayerNeutralItemE"
+  "quipHistory.Player\032\203\001\n\tItemEquip\022\020\n\004item"
+  "\030\001 \001(\005:\002-1\022\021\n\tgame_time\030\002 \001(\r\022\027\n\017invento"
+  "ry_items\030\003 \003(\005\022\027\n\017talents_skilled\030\004 \003(\010\022"
+  "\037\n\027available_neutral_items\030\005 \003(\005\032\262\001\n\006Pla"
+  "yer\022\022\n\naccount_id\030\001 \001(\r\022\027\n\017allied_hero_i"
+  "ds\030\002 \003(\005\022\026\n\016enemy_hero_ids\030\003 \003(\005\022P\n\013item"
+  "_equips\030\004 \003(\0132;.CMsgServerToGCMatchPlaye"
+  "rNeutralItemEquipHistory.ItemEquip\022\021\n\tis"
+  "_winner\030\005 \001(\010\"\266\006\n\037CMsgServerToGCMatchSta"
+  "teHistory\022\020\n\010match_id\030\001 \001(\004\022\023\n\013radiant_w"
+  "on\030\002 \001(\010\022\013\n\003mmr\030\003 \001(\r\022A\n\014match_states\030\004 "
+  "\003(\0132+.CMsgServerToGCMatchStateHistory.Ma"
+  "tchState\032\264\001\n\013PlayerState\022\017\n\007hero_id\030\001 \001("
+  "\005\022\021\n\tnet_worth\030\002 \001(\r\022\r\n\005level\030\003 \001(\r\022\016\n\006d"
+  "eaths\030\004 \001(\r\022\024\n\014respawn_time\030\005 \001(\r\022\023\n\013has"
+  "_buyback\030\006 \001(\010\022\021\n\thas_aegis\030\007 \001(\010\022\022\n\nhas"
+  "_rapier\030\010 \001(\010\022\020\n\010distance\030\t \001(\r\032\277\002\n\tTeam"
+  "State\022\014\n\004team\030\001 \001(\r\022I\n\rplayer_states\030\002 \003"
+  "(\0132,.CMsgServerToGCMatchStateHistory.Pla"
+  "yerStateB\004\340\344\035\005\022\036\n\020tower_health_pct\030\003 \003(\r"
+  "B\004\340\344\035\013\022!\n\023barracks_health_pct\030\004 \003(\rB\004\340\344\035"
+  "\003\022\032\n\022ancient_health_pct\030\005 \001(\r\022\026\n\016glyph_c"
+  "ooldown\030\006 \001(\r\022\r\n\005kills\030\007 \001(\r\022\033\n\023creep_di"
+  "stance_safe\030\010 \001(\r\022\032\n\022creep_distance_mid\030"
+  "\t \001(\r\022\032\n\022creep_distance_off\030\n \001(\r\032\242\001\n\nMa"
+  "tchState\022\021\n\tgame_time\030\001 \001(\r\022A\n\rradiant_s"
+  "tate\030\002 \001(\0132*.CMsgServerToGCMatchStateHis"
+  "tory.TeamState\022>\n\ndire_state\030\003 \001(\0132*.CMs"
+  "gServerToGCMatchStateHistory.TeamState\"\200"
+  "\001\n\032CMsgMatchStateSteamMLEntry\022@\n\013match_s"
+  "tate\030\001 \001(\0132+.CMsgServerToGCMatchStateHis"
+  "tory.MatchState\022\013\n\003mmr\030\002 \001(\r\022\023\n\013radiant_"
+  "won\030\003 \001(\010\"L\n\035CMsgLaneSelectionSteamMLEnt"
+  "ry\022\026\n\010hero_ids\030\001 \003(\005B\004\340\344\035\n\022\023\n\005lanes\030\002 \003("
+  "\rB\004\340\344\035\006\"\243\001\n CMsgAbilitySelectionSteamMLE"
+  "ntry\022\013\n\003mmr\030\001 \001(\r\022\017\n\007hero_id\030\002 \001(\005\022\034\n\016en"
+  "emy_hero_ids\030\003 \003(\005B\004\340\344\035\004\022\014\n\004lane\030\004 \001(\r\022\027"
+  "\n\tabilities\030\005 \003(\005B\004\340\344\035\031\022\034\n\020selected_abil"
+  "ity\030\006 \001(\005:\002-1\"\264\001\n#CMsgItemPurchasePregam"
+  "eSteamMLEntry\022\013\n\003mmr\030\001 \001(\r\022\014\n\004lane\030\002 \001(\r"
+  "\022\017\n\007balance\030\003 \001(\002\022\017\n\007hero_id\030\004 \001(\005\022\035\n\017al"
+  "lied_hero_ids\030\005 \003(\005B\004\340\344\035\004\022\034\n\016enemy_hero_"
+  "ids\030\006 \003(\005B\004\340\344\035\005\022\023\n\005items\030\007 \003(\005B\004\340\344\035\t\"\301\001\n"
+  "\034CMsgItemPurchaseSteamMLEntry\022\013\n\003mmr\030\001 \001"
+  "(\r\022\014\n\004lane\030\002 \001(\r\022\017\n\007hero_id\030\003 \001(\005\022\035\n\017all"
+  "ied_hero_ids\030\004 \003(\005B\004\340\344\035\004\022\034\n\016enemy_hero_i"
+  "ds\030\005 \003(\005B\004\340\344\035\005\022\023\n\005items\030\006 \003(\005B\004\340\344\035\024\022#\n\025i"
+  "tems_to_be_purchased\030\007 \003(\005B\004\340\344\035\024\"\306\001\n$CMs"
+  "gItemPurchaseSequenceSteamMLEntry\022\013\n\003mmr"
+  "\030\001 \001(\r\022\014\n\004lane\030\002 \001(\r\022\017\n\007hero_id\030\003 \001(\005\022\035\n"
+  "\017allied_hero_ids\030\004 \003(\005B\004\340\344\035\004\022\034\n\016enemy_he"
+  "ro_ids\030\005 \003(\005B\004\340\344\035\005\022\023\n\005items\030\006 \003(\005B\004\340\344\035\024\022"
+  " \n\024item_to_be_purchased\030\007 \001(\005:\002-1\"\226\001\n%CM"
+  "sgServerToGCCavernCrawlIsHeroActive\022\020\n\010e"
+  "vent_id\030\001 \001(\r\022\022\n\naccount_id\030\002 \001(\r\022\"\n\025pre"
+  "ferred_map_variant\030\003 \001(\r:\003255\022\017\n\007hero_id"
+  "\030\004 \001(\005\022\022\n\nturbo_mode\030\005 \001(\010\"\334\003\n$CMsgServe"
+  "rToGCPlayerChallengeHistory\022\020\n\010match_id\030"
+  "\001 \001(\004\022\024\n\014average_rank\030\002 \001(\r\022P\n\021challenge"
+  "_records\030\003 \003(\01325.CMsgServerToGCPlayerCha"
+  "llengeHistory.PlayerChallenge\032\271\002\n\017Player"
+  "Challenge\022\022\n\naccount_id\030\001 \001(\r\022[\n\016challen"
+  "ge_type\030\002 \001(\0162\034.EPlayerChallengeHistoryT"
+  "ype:%k_EPlayerChallengeHistoryType_Inval"
+  "id\022\025\n\rchallenge_id1\030\003 \001(\r\022\025\n\rchallenge_i"
+  "d2\030\004 \001(\r\022\034\n\024progress_value_start\030\005 \001(\r\022\032"
+  "\n\022progress_value_end\030\006 \001(\r\022\020\n\010team_won\030\007"
+  " \001(\010\022\022\n\naudit_data\030\010 \001(\004\022\017\n\007hero_id\030\t \001("
+  "\005\022\026\n\016rank_completed\030\n \001(\r\"\270\002\n-CMsgServer"
+  "ToGCCavernCrawlIsHeroActiveResponse\022\016\n\006r"
+  "esult\030\001 \001(\010\022\030\n\013map_variant\030\005 \001(\r:\003255\022\032\n"
+  "\022potential_winnings\030\002 \001(\r\022N\n\013map_results"
+  "\030\003 \003(\01329.CMsgServerToGCCavernCrawlIsHero"
+  "ActiveResponse.MapResults\022%\n\035potential_p"
+  "lus_shard_winnings\030\004 \001(\r\032J\n\nMapResults\022\036"
+  "\n\021path_id_completed\030\001 \001(\r:\003255\022\034\n\017room_i"
+  "d_claimed\030\002 \001(\r:\003255\"\356\001\n\024CMsgNeutralItem"
+  "Stats\0228\n\rneutral_items\030\001 \003(\0132!.CMsgNeutr"
+  "alItemStats.NeutralItem\032\233\001\n\013NeutralItem\022"
+  "\023\n\007item_id\030\001 \001(\005:\002-1\022\024\n\014time_dropped\030\002 \001"
+  "(\r\022\014\n\004team\030\003 \001(\r\022\032\n\022time_last_equipped\030\004"
+  " \001(\r\022\034\n\024time_last_unequipped\030\005 \001(\r\022\031\n\021du"
+  "ration_equipped\030\006 \001(\r\"\252\001\n\037CMsgGCToServer"
+  "LobbyHeroBanRates\022\?\n\010ban_data\030\001 \003(\0132-.CM"
+  "sgGCToServerLobbyHeroBanRates.HeroBanEnt"
+  "ry\032F\n\014HeroBanEntry\022\017\n\007hero_id\030\001 \001(\005\022\021\n\tb"
+  "an_count\030\002 \001(\r\022\022\n\npick_count\030\003 \001(\r\"\311\002\n C"
+  "MsgSignOutGuildContractProgress\022J\n\020playe"
+  "r_contracts\030\001 \003(\01320.CMsgSignOutGuildCont"
+  "ractProgress.PlayerContract\032U\n\034Completed"
+  "GuildEventContracts\022\020\n\010guild_id\030\001 \001(\r\022\020\n"
+  "\010event_id\030\002 \001(\r\022\021\n\tcontracts\030\003 \003(\004\032\201\001\n\016P"
+  "layerContract\022\022\n\naccount_id\030\001 \001(\r\022[\n\023com"
+  "pleted_contracts\030\002 \003(\0132>.CMsgSignOutGuil"
+  "dContractProgress.CompletedGuildEventCon"
+  "tracts\"\315\002\n!CMsgSignOutGuildChallengeProg"
+  "ress\022Y\n\033guild_challenges_progresses\030\001 \003("
+  "\01324.CMsgSignOutGuildChallengeProgress.Ch"
+  "allengeProgress\032\314\001\n\021ChallengeProgress\022\020\n"
+  "\010guild_id\030\001 \001(\r\022\020\n\010event_id\030\002 \001(\r\022\035\n\025cha"
+  "llenge_instance_id\030\003 \001(\r\022$\n\034challenge_in"
+  "stance_timestamp\030\004 \001(\r\022\037\n\027challenge_peri"
+  "od_serial\030\005 \001(\r\022\020\n\010progress\030\006 \001(\r\022\033\n\023cha"
+  "llenge_parameter\030\007 \001(\r\"\204\006\n\023CMsgSignOutMV"
+  "PStats\022\020\n\010match_id\030\001 \001(\004\022\021\n\tgame_mode\030\002 "
+  "\001(\r\022\024\n\014winning_team\030\003 \001(\r\022\021\n\tgame_time\030\004"
+  " \001(\002\022,\n\007players\030\005 \003(\0132\033.CMsgSignOutMVPSt"
+  "ats.Player\032\360\004\n\006Player\022\017\n\007team_id\030\001 \001(\r\022\032"
+  "\n\022team_networth_rank\030\002 \001(\r\022\022\n\naccount_id"
+  "\030\003 \001(\r\022\023\n\013player_slot\030  \001(\r\022\014\n\004rank\030! \001("
+  "\r\022\017\n\007hero_id\030\004 \001(\005\022\014\n\004role\030\005 \001(\r\022\r\n\005kill"
+  "s\030\006 \001(\005\022\016\n\006deaths\030\007 \001(\005\022\017\n\007assists\030\010 \001(\005"
+  "\022\n\n\002xp\030\t \001(\005\022\021\n\tnet_worth\030\n \001(\005\022\032\n\022suppo"
+  "rt_gold_spent\030\014 \001(\005\022\024\n\014wards_placed\030\r \001("
+  "\005\022#\n\033wards_spotted_for_dewarding\030\016 \001(\005\022\025"
+  "\n\rcamps_stacked\030\017 \001(\005\022\021\n\tlast_hits\030\020 \001(\005"
+  "\022\016\n\006denies\030\021 \001(\005\022\027\n\017building_damage\030\023 \001("
+  "\005\022\024\n\014other_damage\030\024 \001(\005\022\024\n\014triple_kills\030"
+  "\032 \001(\005\022\020\n\010rampages\030\034 \001(\005\022\023\n\013first_blood\030\037"
+  " \001(\005\022E\n\021kill_eater_events\030\" \003(\0132*.CMsgSi"
+  "gnOutMVPStats.Player.KillEaterEvent\022\032\n\022h"
+  "ighest_killstreak\030# \001(\r\0324\n\016KillEaterEven"
+  "t\022\022\n\nevent_type\030\001 \002(\r\022\016\n\006amount\030\002 \002(\r\"6\n"
+  "\037CMsgServerToGCGetGuildContracts\022\023\n\013acco"
+  "unt_ids\030\001 \003(\r\"\260\003\n\'CMsgServerToGCGetGuild"
+  "ContractsResponse\022I\n\020player_contracts\030\001 "
+  "\003(\0132/.CMsgServerToGCGetGuildContractsRes"
+  "ponse.Player\032\221\001\n\017ContractDetails\022\023\n\013cont"
+  "ract_id\030\001 \001(\004\022\035\n\025challenge_instance_id\030\002"
+  " \001(\r\022\033\n\023challenge_parameter\030\003 \001(\r\022\026\n\016con"
+  "tract_stars\030\004 \001(\r\022\025\n\rcontract_slot\030\005 \001(\r"
+  "\032\245\001\n\006Player\022\022\n\naccount_id\030\001 \001(\r\022\020\n\010guild"
+  "_id\030\002 \001(\r\022(\n\010event_id\030\003 \001(\0162\007.EEvent:\rEV"
+  "ENT_ID_NONE\022K\n\tcontracts\030\004 \003(\01328.CMsgSer"
+  "verToGCGetGuildContractsResponse.Contrac"
+  "tDetails\"\316\002\n\026CMsgMatchDiretideCandy\022>\n\021p"
+  "layer_candy_data\030\001 \003(\0132#.CMsgMatchDireti"
+  "deCandy.PlayerCandy\022(\n\010event_id\030\002 \001(\0162\007."
+  "EEvent:\rEVENT_ID_NONE\032-\n\014CandyDetails\022\016\n"
+  "\006amount\030\001 \001(\r\022\r\n\005audit\030\002 \001(\r\032\232\001\n\013PlayerC"
+  "andy\022\022\n\naccount_id\030\001 \001(\r\022\024\n\014candy_amount"
+  "\030\003 \001(\r\022\"\n\032consumes_periodic_resource\030\004 \001"
+  "(\010\022=\n\017candy_breakdown\030\005 \003(\0132$.CMsgMatchD"
+  "iretideCandy.CandyDetails\"\222\001\n\027CMsgGCToSe"
+  "rverCheerData\022<\n\013cheer_types\030\001 \003(\0132\'.CMs"
+  "gGCToServerCheerData.CheerTypeCount\0329\n\016C"
+  "heerTypeCount\022\022\n\ncheer_type\030\001 \001(\r\022\023\n\013che"
+  "er_count\030\002 \001(\r\"\250\004\n\017CMsgCheerConfig\022\026\n\016ch"
+  "eers_enabled\030\001 \001(\010\022\032\n\022is_valid_league_id"
+  "\030\002 \001(\010\022\027\n\017window_duration\030\003 \001(\002\022\033\n\023windo"
+  "w_bucket_count\030\004 \001(\r\022\035\n\025crowd_level_push"
+  "_time\030\006 \001(\002\022\027\n\017crowd_level_low\030\n \001(\r\022\032\n\022"
+  "crowd_level_medium\030\013 \001(\r\022\030\n\020crowd_level_"
+  "high\030\014 \001(\r\022\031\n\021cheer_scale_start\030\r \001(\002\022\031\n"
+  "\021cheer_scale_speed\030\016 \001(\002\022\035\n\025cheer_scale_"
+  "push_mark\030\017 \001(\r\022\035\n\025cheer_scale_pull_mark"
+  "\030\020 \001(\r\022(\n cheer_scale_pct_of_max_cps_cla"
+  "mp\030\021 \001(\002\022\"\n\032cheer_scale_dampener_value\030\025"
+  " \001(\002\022&\n\036cheer_scale_dampener_lerp_time\030\026"
+  " \001(\r\022\033\n\023cheer_factor_bronze\030\022 \001(\002\022\033\n\023che"
+  "er_factor_silver\030\023 \001(\002\022\031\n\021cheer_factor_g"
+  "old\030\024 \001(\002\"C\n\031CMsgGCToServerCheerConfig\022&"
+  "\n\014cheer_config\030\001 \001(\0132\020.CMsgCheerConfig\"1"
+  "\n\034CMsgServerToGCGetCheerConfig\022\021\n\tleague"
+  "_id\030\001 \001(\r\"N\n$CMsgServerToGCGetCheerConfi"
+  "gResponse\022&\n\014cheer_config\030\002 \001(\0132\020.CMsgCh"
+  "eerConfig\"3\n!CMsgGCToServerCheerScalesOv"
+  "erride\022\016\n\006scales\030\001 \003(\002\"\035\n\033CMsgGCToServer"
+  "GetCheerState\"o\n\022CMsgCheerTypeState\022\024\n\014c"
+  "heer_counts\030\001 \003(\r\022\026\n\016max_per_second\030\002 \001("
+  "\002\022\023\n\013cheer_scale\030\003 \001(\002\022\026\n\016override_scale"
+  "\030\004 \001(\002\"q\n\016CMsgCheerState\022(\n\013cheer_types\030"
+  "\001 \003(\0132\023.CMsgCheerTypeState\022\033\n\023radiant_cr"
+  "owd_level\030\002 \001(\r\022\030\n\020dire_crowd_level\030\003 \001("
+  "\r\"n\n\036CMsgServerToGCReportCheerState\022&\n\014c"
+  "heer_config\030\001 \001(\0132\020.CMsgCheerConfig\022$\n\013c"
+  "heer_state\030\002 \001(\0132\017.CMsgCheerState\"5\n\036CMs"
+  "gServerToGCGetStickerHeroes\022\023\n\013account_i"
+  "ds\030\001 \003(\r\"\255\001\n&CMsgServerToGCGetStickerHer"
+  "oesResponse\022\?\n\007players\030\001 \003(\0132..CMsgServe"
+  "rToGCGetStickerHeroesResponse.Player\032B\n\006"
+  "Player\022\022\n\naccount_id\030\001 \001(\r\022$\n\010stickers\030\002"
+  " \001(\0132\022.CMsgStickerHeroes\"|\n\027CMsgSteamLea"
+  "rnMatchInfo\022\023\n\013average_mmr\030\001 \001(\r\022\023\n\013radi"
+  "ant_won\030\002 \001(\010\022\020\n\010duration\030\003 \001(\r\022\021\n\tgame_"
+  "mode\030\004 \001(\r\022\022\n\nlobby_type\030\005 \001(\r\"\223\001\n\035CMsgS"
+  "teamLearnMatchInfoPlayer\022\023\n\013average_mmr\030"
+  "\001 \001(\r\022\020\n\010team_won\030\002 \001(\010\022\020\n\010duration\030\003 \001("
+  "\r\022\021\n\tgame_mode\030\004 \001(\r\022\022\n\nlobby_type\030\005 \001(\r"
+  "\022\022\n\nplayer_mmr\030\006 \001(\r\"\334\002\n\033CMsgSteamLearnM"
+  "atchInfoTeam\022B\n\017radiant_players\030\001 \003(\0132#."
+  "CMsgSteamLearnMatchInfoTeam.PlayerB\004\360\344\035\005"
+  "\022\?\n\014dire_players\030\002 \003(\0132#.CMsgSteamLearnM"
+  "atchInfoTeam.PlayerB\004\360\344\035\005\022\030\n\020radiant_tea"
+  "m_won\030\003 \001(\010\032\235\001\n\006Player\022\024\n\014prematch_mmr\030\001"
+  " \001(\r\022!\n\031prematch_rank_uncertainty\030\002 \001(\r\022"
+  "\037\n\027prematch_behavior_score\030\003 \001(\r\022\033\n\023prem"
+  "atch_comm_score\030\004 \001(\r\022\034\n\024num_players_in_"
+  "party\030\005 \001(\r\"\223\002\n\033CMsgSteamLearnMatchHeroe"
+  "sV3\022\036\n\020radiant_hero_ids\030\001 \003(\005B\004\360\344\035\005\022\033\n\rd"
+  "ire_hero_ids\030\002 \003(\005B\004\360\344\035\005\022\033\n\rradiant_lane"
+  "s\030\003 \003(\rB\004\360\344\035\005\022\030\n\ndire_lanes\030\004 \003(\rB\004\360\344\035\005\022"
+  "!\n\023radiant_hero_facets\030\005 \003(\rB\004\360\344\035\005\022\036\n\020di"
+  "re_hero_facets\030\006 \003(\rB\004\360\344\035\005\022\037\n\021radiant_po"
+  "sitions\030\007 \003(\rB\004\360\344\035\005\022\034\n\016dire_positions\030\010 "
+  "\003(\rB\004\360\344\035\005\"\274\001\n\031CMsgSteamLearnMatchHeroV6\022"
+  "\017\n\007hero_id\030\001 \001(\005\022\r\n\005facet\030\002 \001(\r\022\026\n\016hero_"
+  "and_facet\030\003 \001(\r\022\014\n\004lane\030\004 \001(\r\022\020\n\010positio"
+  "n\030\005 \001(\r\022#\n\025allied_hero_and_facet\030\006 \003(\rB\004"
+  "\360\344\035\004\022\"\n\024enemy_hero_and_facet\030\007 \003(\rB\004\360\344\035\005"
+  "\"\354\002\n\036CMsgSteamLearnPlayerTimedStats\022F\n\014s"
+  "tat_buckets\030\001 \003(\0132*.CMsgSteamLearnPlayer"
+  "TimedStats.StatBucketB\004\360\344\035Z\032\201\002\n\nStatBuck"
+  "et\022\021\n\tgame_time\030\001 \001(\002\022\r\n\005kills\030\002 \001(\r\022\016\n\006"
+  "deaths\030\003 \001(\r\022\017\n\007assists\030\004 \001(\r\022\022\n\nexperie"
+  "nce\030\005 \001(\r\022\021\n\tlast_hits\030\006 \001(\r\022\016\n\006denies\030\007"
+  " \001(\r\022\021\n\tnet_worth\030\010 \001(\r\022\021\n\tidle_time\030\t \001"
+  "(\002\022\027\n\017commands_issued\030\n \001(\r\022\033\n\023sentry_wa"
+  "rds_placed\030\013 \001(\r\022\035\n\025observer_wards_place"
+  "d\030\014 \001(\r\"\260\005\n\032CMsgSteamLearnMatchStateV5\022\021"
+  "\n\tgame_time\030\001 \001(\002\022<\n\rradiant_state\030\002 \001(\013"
+  "2%.CMsgSteamLearnMatchStateV5.TeamState\022"
+  "9\n\ndire_state\030\003 \001(\0132%.CMsgSteamLearnMatc"
+  "hStateV5.TeamState\032\310\001\n\013PlayerState\022\017\n\007he"
+  "ro_id\030\001 \001(\005\022\021\n\tnet_worth\030\002 \001(\r\022\r\n\005level\030"
+  "\003 \001(\r\022\016\n\006deaths\030\004 \001(\r\022\024\n\014respawn_time\030\005 "
+  "\001(\r\022\023\n\013has_buyback\030\006 \001(\010\022\021\n\thas_aegis\030\007 "
+  "\001(\010\022\022\n\nhas_rapier\030\010 \001(\010\022\020\n\010distance\030\t \001("
+  "\r\022\022\n\nhero_facet\030\n \001(\r\032\272\002\n\tTeamState\022\014\n\004t"
+  "eam\030\001 \001(\r\022D\n\rplayer_states\030\002 \003(\0132\'.CMsgS"
+  "teamLearnMatchStateV5.PlayerStateB\004\360\344\035\005\022"
+  "\036\n\020tower_health_pct\030\003 \003(\rB\004\360\344\035\013\022!\n\023barra"
+  "cks_health_pct\030\004 \003(\rB\004\360\344\035\006\022\032\n\022ancient_he"
+  "alth_pct\030\005 \001(\r\022\026\n\016glyph_cooldown\030\006 \001(\r\022\r"
+  "\n\005kills\030\007 \001(\r\022\033\n\023creep_distance_safe\030\010 \001"
+  "(\r\022\032\n\022creep_distance_mid\030\t \001(\r\022\032\n\022creep_"
+  "distance_off\030\n \001(\r\"S\n\034CMsgSteamLearnItem"
+  "PurchaseV7\022\023\n\007item_id\030\001 \001(\005:\002-1\022\036\n\020purch"
+  "ase_history\030\002 \003(\005B\004\360\344\0352\"q\n\"CMsgSteamLear"
+  "nPreGameItemPurchases\022\026\n\010item_ids\030\001 \003(\005B"
+  "\004\360\344\035\n\022\027\n\017is_radiant_team\030\002 \001(\r\022\032\n\022is_usi"
+  "ng_dota_plus\030\003 \001(\010\"^\n!CMsgSteamLearnPreG"
+  "ameItemPurchase\022\036\n\020purchase_history\030\001 \003("
+  "\005B\004\360\344\035\n\022\031\n\007item_id\030\002 \001(\005:\002-1B\004\360\344\035\n\"\251\001\n#C"
+  "MsgSteamLearnNeutralItemPurchaseV4\022\014\n\004ti"
+  "er\030\001 \001(\r\022\035\n\017trinket_options\030\002 \003(\005B\004\360\344\035\004\022"
+  "!\n\023enhancement_options\030\003 \003(\005B\004\360\344\035\004\022\026\n\ntr"
+  "inket_id\030\004 \001(\005:\002-1\022\032\n\016enhancement_id\030\005 \001"
+  "(\005:\002-1\"\204\001\n\032CMsgSteamLearnAbilitySkill\022\026\n"
+  "\nability_id\030\001 \001(\005:\002-1\022\037\n\021skilled_abiliti"
+  "es\030\002 \003(\005B\004\360\344\035\036\022\021\n\tgame_time\030\003 \001(\002\022\032\n\022is_"
+  "using_dota_plus\030\004 \001(\010\"\317\001\n\033CMsgSteamLearn"
+  "WardPlacement\0227\n\010ward_loc\030\001 \001(\0132%.CMsgSt"
+  "eamLearnWardPlacement.Location\022G\n\022existi"
+  "ng_ward_locs\030\002 \003(\0132%.CMsgSteamLearnWardP"
+  "lacement.LocationB\004\360\344\035\006\022\014\n\004team\030\003 \001(\r\032 \n"
+  "\010Location\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"\233\002\n\036CMsg"
+  "SteamLearnPlayerMatchState\022\021\n\tnet_worth\030"
+  "\001 \001(\r\022\r\n\005level\030\002 \001(\r\022\016\n\006deaths\030\003 \001(\r\022\024\n\014"
+  "respawn_time\030\004 \001(\r\022\023\n\013has_buyback\030\005 \001(\010\022"
+  "\021\n\thas_aegis\030\006 \001(\010\022\022\n\nhas_rapier\030\007 \001(\010\022\026"
+  "\n\016team_net_worth\030\010 \001(\r\022\034\n\024enemy_team_net"
+  "_worth\030\t \001(\r\022\022\n\nteam_kills\030\n \001(\r\022\030\n\020enem"
+  "y_team_kills\030\013 \001(\r\022\021\n\tgame_time\030\014 \001(\002\"4\n"
+  "\031CMsgSignOutMuertaMinigame\022\027\n\017event_game"
+  "_data\030\001 \001(\014\"\275\001\n\023CMsgSignOutMapStats\022,\n\007p"
+  "layers\030\001 \003(\0132\033.CMsgSignOutMapStats.Playe"
+  "r\022+\n\014global_stats\030\002 \001(\0132\025.CMsgMapStatsSn"
+  "apshot\032K\n\006Player\022\022\n\naccount_id\030\001 \001(\r\022-\n\016"
+  "personal_stats\030\002 \001(\0132\025.CMsgMapStatsSnaps"
+  "hot\"e\n\032CMsgServerToGCNewBloomGift\022\020\n\010def"
+  "index\030\001 \001(\r\022\031\n\021gifter_account_id\030\002 \001(\r\022\032"
+  "\n\022target_account_ids\030\003 \003(\r\"\217\001\n\"CMsgServe"
+  "rToGCNewBloomGiftResponse\022K\n\006result\030\001 \001("
+  "\0162\031.ENewBloomGiftingResponse: kENewBloom"
+  "Gifting_UnknownFailure\022\034\n\024received_accou"
+  "nt_ids\030\002 \003(\r\"\302\001\n\024CMsgSignOutOverworld\022-\n"
+  "\007players\030\001 \003(\0132\034.CMsgSignOutOverworld.Pl"
+  "ayer\022(\n\010event_id\030\002 \001(\0162\007.EEvent:\rEVENT_I"
+  "D_NONE\032Q\n\006Player\022\022\n\naccount_id\030\001 \001(\r\022\024\n\014"
+  "overworld_id\030\002 \001(\r\022\035\n\025desired_token_rewa"
+  "rds\030\003 \003(\r\"\276\001\n\025CMsgSignOutCraftworks\022.\n\007p"
+  "layers\030\001 \003(\0132\035.CMsgSignOutCraftworks.Pla"
+  "yer\022(\n\010event_id\030\002 \001(\0162\007.EEvent:\rEVENT_ID"
+  "_NONE\032K\n\006Player\022\022\n\naccount_id\030\001 \001(\r\022-\n\nc"
+  "omponents\030\002 \001(\0132\031.CMsgCraftworksComponen"
+  "ts\"\240\002\n\030CMsgSignOutMonsterHunter\0221\n\007playe"
+  "rs\030\001 \003(\0132 .CMsgSignOutMonsterHunter.Play"
   "er\022(\n\010event_id\030\002 \001(\0162\007.EEvent:\rEVENT_ID_"
-  "NONE\022\021\n\ttimestamp\030\003 \001(\r\022\020\n\010match_id\030\004 \001("
-  "\004\022\027\n\017server_steam_id\030\005 \001(\004\032H\n\006Player\022\022\n\n"
-  "account_id\030\001 \001(\r\022\r\n\005wager\030\002 \001(\r\022\033\n\023wager"
-  "_token_item_id\030\003 \001(\004\"\236\002\n\022CMsgSignOutXPCo"
-  "ins\022+\n\007players\030\001 \003(\0132\032.CMsgSignOutXPCoin"
-  "s.Player\022(\n\010event_id\030\002 \001(\0162\007.EEvent:\rEVE"
-  "NT_ID_NONE\022\020\n\010match_id\030\003 \001(\004\022\021\n\ttimestam"
-  "p\030\004 \001(\r\032\213\001\n\006Player\022\022\n\naccount_id\030\001 \001(\r\022\021"
-  "\n\txp_gained\030\002 \001(\r\022\023\n\013coins_spent\030\003 \001(\r\022\033"
-  "\n\023wager_token_item_id\030\004 \001(\004\022\022\n\nrank_wage"
-  "r\030\005 \001(\r\022\024\n\014wager_streak\030\006 \001(\r\"\361\001\n\023CMsgSi"
-  "gnOutBounties\022-\n\010bounties\030\001 \003(\0132\033.CMsgSi"
-  "gnOutBounties.Bounty\022(\n\010event_id\030\002 \001(\0162\007"
-  ".EEvent:\rEVENT_ID_NONE\022\020\n\010match_id\030\003 \001(\004"
-  "\022\021\n\ttimestamp\030\004 \001(\r\032\\\n\006Bounty\022\031\n\021issuer_"
-  "account_id\030\001 \001(\r\022\034\n\024completer_account_id"
-  "\030\002 \001(\r\022\031\n\021target_account_id\030\003 \001(\r\"\343\001\n CM"
-  "sgSignOutCommunityGoalProgress\022(\n\010event_"
-  "id\030\001 \001(\0162\007.EEvent:\rEVENT_ID_NONE\022N\n\020even"
-  "t_increments\030\002 \003(\01324.CMsgSignOutCommunit"
-  "yGoalProgress.EventGoalIncrement\032E\n\022Even"
-  "tGoalIncrement\022\025\n\revent_goal_id\030\001 \001(\r\022\030\n"
-  "\020increment_amount\030\002 \001(\r\"n\n3CMsgServerToG"
-  "CCloseCompendiumInGamePredictionVoting\022\020"
-  "\n\010match_id\030\001 \001(\004\022\022\n\nhltv_delay\030\002 \001(\r\022\021\n\t"
-  "league_id\030\003 \001(\r\"M\n;CMsgServerToGCCloseCo"
-  "mpendiumInGamePredictionVotingResponse\022\016"
-  "\n\006result\030\001 \001(\010\"\251\002\n/CMsgServerToGCCompend"
-  "iumInGamePredictionResults\022\020\n\010match_id\030\001"
-  " \001(\004\022R\n\007results\030\002 \003(\0132A.CMsgServerToGCCo"
-  "mpendiumInGamePredictionResults.Predicti"
-  "onResult\022\021\n\tleague_id\030\003 \001(\r\022\026\n\016league_no"
-  "de_id\030\004 \001(\r\032e\n\020PredictionResult\022\025\n\rpredi"
-  "ction_id\030\001 \001(\r\022\030\n\020prediction_value\030\002 \001(\r"
-  "\022 \n\030prediction_value_is_mask\030\003 \001(\010\"\324\001\n/C"
-  "MsgServerToGCCompendiumChosenInGamePredi"
-  "ctions\022\020\n\010match_id\030\001 \001(\004\022W\n\022predictions_"
-  "chosen\030\002 \003(\0132;.CMsgServerToGCCompendiumC"
-  "hosenInGamePredictions.Prediction\022\021\n\tlea"
-  "gue_id\030\003 \001(\r\032#\n\nPrediction\022\025\n\rprediction"
-  "_id\030\001 \001(\r\"p\n+CMsgGCToGCCompendiumInGameP"
-  "redictionResults\022A\n\007results\030\001 \001(\01320.CMsg"
-  "ServerToGCCompendiumInGamePredictionResu"
-  "lts\"\210\004\n,CMsgServerToGCMatchPlayerItemPur"
-  "chaseHistory\022\020\n\010match_id\030\001 \001(\004\022\013\n\003mmr\030\002 "
-  "\001(\r\022E\n\007players\030\003 \003(\01324.CMsgServerToGCMat"
-  "chPlayerItemPurchaseHistory.Player\032\206\001\n\014I"
-  "temPurchase\022\020\n\004item\030\001 \001(\005:\002-1\022\014\n\004gold\030\002 "
-  "\001(\r\022\021\n\tnet_worth\030\003 \001(\r\022\021\n\tgame_time\030\004 \001("
-  "\r\022\027\n\017inventory_items\030\005 \003(\005\022\027\n\017talents_sk"
-  "illed\030\007 \003(\010\032\350\001\n\006Player\022\023\n\013player_slot\030\001 "
-  "\001(\r\022\022\n\naccount_id\030\002 \001(\r\022\017\n\007hero_id\030\003 \001(\005"
-  "\022\027\n\017allied_hero_ids\030\004 \003(\005\022\026\n\016enemy_hero_"
-  "ids\030\005 \003(\005\022R\n\016item_purchases\030\006 \003(\0132:.CMsg"
-  "ServerToGCMatchPlayerItemPurchaseHistory"
-  ".ItemPurchase\022\014\n\004lane\030\007 \001(\r\022\021\n\tis_winner"
-  "\030\010 \001(\010\"\312\003\n0CMsgServerToGCMatchPlayerNeut"
-  "ralItemEquipHistory\022\020\n\010match_id\030\001 \001(\004\022I\n"
-  "\007players\030\002 \003(\01328.CMsgServerToGCMatchPlay"
-  "erNeutralItemEquipHistory.Player\032\203\001\n\tIte"
-  "mEquip\022\020\n\004item\030\001 \001(\005:\002-1\022\021\n\tgame_time\030\002 "
-  "\001(\r\022\027\n\017inventory_items\030\003 \003(\005\022\027\n\017talents_"
-  "skilled\030\004 \003(\010\022\037\n\027available_neutral_items"
-  "\030\005 \003(\005\032\262\001\n\006Player\022\022\n\naccount_id\030\001 \001(\r\022\027\n"
-  "\017allied_hero_ids\030\002 \003(\005\022\026\n\016enemy_hero_ids"
-  "\030\003 \003(\005\022P\n\013item_equips\030\004 \003(\0132;.CMsgServer"
-  "ToGCMatchPlayerNeutralItemEquipHistory.I"
-  "temEquip\022\021\n\tis_winner\030\005 \001(\010\"\266\006\n\037CMsgServ"
-  "erToGCMatchStateHistory\022\020\n\010match_id\030\001 \001("
-  "\004\022\023\n\013radiant_won\030\002 \001(\010\022\013\n\003mmr\030\003 \001(\r\022A\n\014m"
-  "atch_states\030\004 \003(\0132+.CMsgServerToGCMatchS"
-  "tateHistory.MatchState\032\264\001\n\013PlayerState\022\017"
-  "\n\007hero_id\030\001 \001(\005\022\021\n\tnet_worth\030\002 \001(\r\022\r\n\005le"
-  "vel\030\003 \001(\r\022\016\n\006deaths\030\004 \001(\r\022\024\n\014respawn_tim"
-  "e\030\005 \001(\r\022\023\n\013has_buyback\030\006 \001(\010\022\021\n\thas_aegi"
-  "s\030\007 \001(\010\022\022\n\nhas_rapier\030\010 \001(\010\022\020\n\010distance\030"
-  "\t \001(\r\032\277\002\n\tTeamState\022\014\n\004team\030\001 \001(\r\022I\n\rpla"
-  "yer_states\030\002 \003(\0132,.CMsgServerToGCMatchSt"
-  "ateHistory.PlayerStateB\004\340\344\035\005\022\036\n\020tower_he"
-  "alth_pct\030\003 \003(\rB\004\340\344\035\013\022!\n\023barracks_health_"
-  "pct\030\004 \003(\rB\004\340\344\035\003\022\032\n\022ancient_health_pct\030\005 "
-  "\001(\r\022\026\n\016glyph_cooldown\030\006 \001(\r\022\r\n\005kills\030\007 \001"
-  "(\r\022\033\n\023creep_distance_safe\030\010 \001(\r\022\032\n\022creep"
-  "_distance_mid\030\t \001(\r\022\032\n\022creep_distance_of"
-  "f\030\n \001(\r\032\242\001\n\nMatchState\022\021\n\tgame_time\030\001 \001("
-  "\r\022A\n\rradiant_state\030\002 \001(\0132*.CMsgServerToG"
-  "CMatchStateHistory.TeamState\022>\n\ndire_sta"
-  "te\030\003 \001(\0132*.CMsgServerToGCMatchStateHisto"
-  "ry.TeamState\"\200\001\n\032CMsgMatchStateSteamMLEn"
-  "try\022@\n\013match_state\030\001 \001(\0132+.CMsgServerToG"
-  "CMatchStateHistory.MatchState\022\013\n\003mmr\030\002 \001"
-  "(\r\022\023\n\013radiant_won\030\003 \001(\010\"L\n\035CMsgLaneSelec"
-  "tionSteamMLEntry\022\026\n\010hero_ids\030\001 \003(\005B\004\340\344\035\n"
-  "\022\023\n\005lanes\030\002 \003(\rB\004\340\344\035\006\"\243\001\n CMsgAbilitySel"
-  "ectionSteamMLEntry\022\013\n\003mmr\030\001 \001(\r\022\017\n\007hero_"
-  "id\030\002 \001(\005\022\034\n\016enemy_hero_ids\030\003 \003(\005B\004\340\344\035\004\022\014"
-  "\n\004lane\030\004 \001(\r\022\027\n\tabilities\030\005 \003(\005B\004\340\344\035\031\022\034\n"
-  "\020selected_ability\030\006 \001(\005:\002-1\"\264\001\n#CMsgItem"
-  "PurchasePregameSteamMLEntry\022\013\n\003mmr\030\001 \001(\r"
-  "\022\014\n\004lane\030\002 \001(\r\022\017\n\007balance\030\003 \001(\002\022\017\n\007hero_"
-  "id\030\004 \001(\005\022\035\n\017allied_hero_ids\030\005 \003(\005B\004\340\344\035\004\022"
-  "\034\n\016enemy_hero_ids\030\006 \003(\005B\004\340\344\035\005\022\023\n\005items\030\007"
-  " \003(\005B\004\340\344\035\t\"\301\001\n\034CMsgItemPurchaseSteamMLEn"
-  "try\022\013\n\003mmr\030\001 \001(\r\022\014\n\004lane\030\002 \001(\r\022\017\n\007hero_i"
-  "d\030\003 \001(\005\022\035\n\017allied_hero_ids\030\004 \003(\005B\004\340\344\035\004\022\034"
-  "\n\016enemy_hero_ids\030\005 \003(\005B\004\340\344\035\005\022\023\n\005items\030\006 "
-  "\003(\005B\004\340\344\035\024\022#\n\025items_to_be_purchased\030\007 \003(\005"
-  "B\004\340\344\035\024\"\306\001\n$CMsgItemPurchaseSequenceSteam"
-  "MLEntry\022\013\n\003mmr\030\001 \001(\r\022\014\n\004lane\030\002 \001(\r\022\017\n\007he"
-  "ro_id\030\003 \001(\005\022\035\n\017allied_hero_ids\030\004 \003(\005B\004\340\344"
-  "\035\004\022\034\n\016enemy_hero_ids\030\005 \003(\005B\004\340\344\035\005\022\023\n\005item"
-  "s\030\006 \003(\005B\004\340\344\035\024\022 \n\024item_to_be_purchased\030\007 "
-  "\001(\005:\002-1\"\226\001\n%CMsgServerToGCCavernCrawlIsH"
-  "eroActive\022\020\n\010event_id\030\001 \001(\r\022\022\n\naccount_i"
-  "d\030\002 \001(\r\022\"\n\025preferred_map_variant\030\003 \001(\r:\003"
-  "255\022\017\n\007hero_id\030\004 \001(\005\022\022\n\nturbo_mode\030\005 \001(\010"
-  "\"\334\003\n$CMsgServerToGCPlayerChallengeHistor"
-  "y\022\020\n\010match_id\030\001 \001(\004\022\024\n\014average_rank\030\002 \001("
-  "\r\022P\n\021challenge_records\030\003 \003(\01325.CMsgServe"
-  "rToGCPlayerChallengeHistory.PlayerChalle"
-  "nge\032\271\002\n\017PlayerChallenge\022\022\n\naccount_id\030\001 "
-  "\001(\r\022[\n\016challenge_type\030\002 \001(\0162\034.EPlayerCha"
-  "llengeHistoryType:%k_EPlayerChallengeHis"
-  "toryType_Invalid\022\025\n\rchallenge_id1\030\003 \001(\r\022"
-  "\025\n\rchallenge_id2\030\004 \001(\r\022\034\n\024progress_value"
-  "_start\030\005 \001(\r\022\032\n\022progress_value_end\030\006 \001(\r"
-  "\022\020\n\010team_won\030\007 \001(\010\022\022\n\naudit_data\030\010 \001(\004\022\017"
-  "\n\007hero_id\030\t \001(\005\022\026\n\016rank_completed\030\n \001(\r\""
-  "\270\002\n-CMsgServerToGCCavernCrawlIsHeroActiv"
-  "eResponse\022\016\n\006result\030\001 \001(\010\022\030\n\013map_variant"
-  "\030\005 \001(\r:\003255\022\032\n\022potential_winnings\030\002 \001(\r\022"
-  "N\n\013map_results\030\003 \003(\01329.CMsgServerToGCCav"
-  "ernCrawlIsHeroActiveResponse.MapResults\022"
-  "%\n\035potential_plus_shard_winnings\030\004 \001(\r\032J"
-  "\n\nMapResults\022\036\n\021path_id_completed\030\001 \001(\r:"
-  "\003255\022\034\n\017room_id_claimed\030\002 \001(\r:\003255\"\356\001\n\024C"
-  "MsgNeutralItemStats\0228\n\rneutral_items\030\001 \003"
-  "(\0132!.CMsgNeutralItemStats.NeutralItem\032\233\001"
-  "\n\013NeutralItem\022\023\n\007item_id\030\001 \001(\005:\002-1\022\024\n\014ti"
-  "me_dropped\030\002 \001(\r\022\014\n\004team\030\003 \001(\r\022\032\n\022time_l"
-  "ast_equipped\030\004 \001(\r\022\034\n\024time_last_unequipp"
-  "ed\030\005 \001(\r\022\031\n\021duration_equipped\030\006 \001(\r\"\252\001\n\037"
-  "CMsgGCToServerLobbyHeroBanRates\022\?\n\010ban_d"
-  "ata\030\001 \003(\0132-.CMsgGCToServerLobbyHeroBanRa"
-  "tes.HeroBanEntry\032F\n\014HeroBanEntry\022\017\n\007hero"
-  "_id\030\001 \001(\005\022\021\n\tban_count\030\002 \001(\r\022\022\n\npick_cou"
-  "nt\030\003 \001(\r\"\311\002\n CMsgSignOutGuildContractPro"
-  "gress\022J\n\020player_contracts\030\001 \003(\01320.CMsgSi"
-  "gnOutGuildContractProgress.PlayerContrac"
-  "t\032U\n\034CompletedGuildEventContracts\022\020\n\010gui"
-  "ld_id\030\001 \001(\r\022\020\n\010event_id\030\002 \001(\r\022\021\n\tcontrac"
-  "ts\030\003 \003(\004\032\201\001\n\016PlayerContract\022\022\n\naccount_i"
-  "d\030\001 \001(\r\022[\n\023completed_contracts\030\002 \003(\0132>.C"
-  "MsgSignOutGuildContractProgress.Complete"
-  "dGuildEventContracts\"\315\002\n!CMsgSignOutGuil"
-  "dChallengeProgress\022Y\n\033guild_challenges_p"
-  "rogresses\030\001 \003(\01324.CMsgSignOutGuildChalle"
-  "ngeProgress.ChallengeProgress\032\314\001\n\021Challe"
-  "ngeProgress\022\020\n\010guild_id\030\001 \001(\r\022\020\n\010event_i"
-  "d\030\002 \001(\r\022\035\n\025challenge_instance_id\030\003 \001(\r\022$"
-  "\n\034challenge_instance_timestamp\030\004 \001(\r\022\037\n\027"
-  "challenge_period_serial\030\005 \001(\r\022\020\n\010progres"
-  "s\030\006 \001(\r\022\033\n\023challenge_parameter\030\007 \001(\r\"\204\006\n"
-  "\023CMsgSignOutMVPStats\022\020\n\010match_id\030\001 \001(\004\022\021"
-  "\n\tgame_mode\030\002 \001(\r\022\024\n\014winning_team\030\003 \001(\r\022"
-  "\021\n\tgame_time\030\004 \001(\002\022,\n\007players\030\005 \003(\0132\033.CM"
-  "sgSignOutMVPStats.Player\032\360\004\n\006Player\022\017\n\007t"
-  "eam_id\030\001 \001(\r\022\032\n\022team_networth_rank\030\002 \001(\r"
-  "\022\022\n\naccount_id\030\003 \001(\r\022\023\n\013player_slot\030  \001("
-  "\r\022\014\n\004rank\030! \001(\r\022\017\n\007hero_id\030\004 \001(\005\022\014\n\004role"
-  "\030\005 \001(\r\022\r\n\005kills\030\006 \001(\005\022\016\n\006deaths\030\007 \001(\005\022\017\n"
-  "\007assists\030\010 \001(\005\022\n\n\002xp\030\t \001(\005\022\021\n\tnet_worth\030"
-  "\n \001(\005\022\032\n\022support_gold_spent\030\014 \001(\005\022\024\n\014war"
-  "ds_placed\030\r \001(\005\022#\n\033wards_spotted_for_dew"
-  "arding\030\016 \001(\005\022\025\n\rcamps_stacked\030\017 \001(\005\022\021\n\tl"
-  "ast_hits\030\020 \001(\005\022\016\n\006denies\030\021 \001(\005\022\027\n\017buildi"
-  "ng_damage\030\023 \001(\005\022\024\n\014other_damage\030\024 \001(\005\022\024\n"
-  "\014triple_kills\030\032 \001(\005\022\020\n\010rampages\030\034 \001(\005\022\023\n"
-  "\013first_blood\030\037 \001(\005\022E\n\021kill_eater_events\030"
-  "\" \003(\0132*.CMsgSignOutMVPStats.Player.KillE"
-  "aterEvent\022\032\n\022highest_killstreak\030# \001(\r\0324\n"
-  "\016KillEaterEvent\022\022\n\nevent_type\030\001 \002(\r\022\016\n\006a"
-  "mount\030\002 \002(\r\"6\n\037CMsgServerToGCGetGuildCon"
-  "tracts\022\023\n\013account_ids\030\001 \003(\r\"\260\003\n\'CMsgServ"
-  "erToGCGetGuildContractsResponse\022I\n\020playe"
-  "r_contracts\030\001 \003(\0132/.CMsgServerToGCGetGui"
-  "ldContractsResponse.Player\032\221\001\n\017ContractD"
-  "etails\022\023\n\013contract_id\030\001 \001(\004\022\035\n\025challenge"
-  "_instance_id\030\002 \001(\r\022\033\n\023challenge_paramete"
-  "r\030\003 \001(\r\022\026\n\016contract_stars\030\004 \001(\r\022\025\n\rcontr"
-  "act_slot\030\005 \001(\r\032\245\001\n\006Player\022\022\n\naccount_id\030"
-  "\001 \001(\r\022\020\n\010guild_id\030\002 \001(\r\022(\n\010event_id\030\003 \001("
-  "\0162\007.EEvent:\rEVENT_ID_NONE\022K\n\tcontracts\030\004"
-  " \003(\01328.CMsgServerToGCGetGuildContractsRe"
-  "sponse.ContractDetails\"\316\002\n\026CMsgMatchDire"
-  "tideCandy\022>\n\021player_candy_data\030\001 \003(\0132#.C"
-  "MsgMatchDiretideCandy.PlayerCandy\022(\n\010eve"
-  "nt_id\030\002 \001(\0162\007.EEvent:\rEVENT_ID_NONE\032-\n\014C"
-  "andyDetails\022\016\n\006amount\030\001 \001(\r\022\r\n\005audit\030\002 \001"
-  "(\r\032\232\001\n\013PlayerCandy\022\022\n\naccount_id\030\001 \001(\r\022\024"
-  "\n\014candy_amount\030\003 \001(\r\022\"\n\032consumes_periodi"
-  "c_resource\030\004 \001(\010\022=\n\017candy_breakdown\030\005 \003("
-  "\0132$.CMsgMatchDiretideCandy.CandyDetails\""
-  "\222\001\n\027CMsgGCToServerCheerData\022<\n\013cheer_typ"
-  "es\030\001 \003(\0132\'.CMsgGCToServerCheerData.Cheer"
-  "TypeCount\0329\n\016CheerTypeCount\022\022\n\ncheer_typ"
-  "e\030\001 \001(\r\022\023\n\013cheer_count\030\002 \001(\r\"\250\004\n\017CMsgChe"
-  "erConfig\022\026\n\016cheers_enabled\030\001 \001(\010\022\032\n\022is_v"
-  "alid_league_id\030\002 \001(\010\022\027\n\017window_duration\030"
-  "\003 \001(\002\022\033\n\023window_bucket_count\030\004 \001(\r\022\035\n\025cr"
-  "owd_level_push_time\030\006 \001(\002\022\027\n\017crowd_level"
-  "_low\030\n \001(\r\022\032\n\022crowd_level_medium\030\013 \001(\r\022\030"
-  "\n\020crowd_level_high\030\014 \001(\r\022\031\n\021cheer_scale_"
-  "start\030\r \001(\002\022\031\n\021cheer_scale_speed\030\016 \001(\002\022\035"
-  "\n\025cheer_scale_push_mark\030\017 \001(\r\022\035\n\025cheer_s"
-  "cale_pull_mark\030\020 \001(\r\022(\n cheer_scale_pct_"
-  "of_max_cps_clamp\030\021 \001(\002\022\"\n\032cheer_scale_da"
-  "mpener_value\030\025 \001(\002\022&\n\036cheer_scale_dampen"
-  "er_lerp_time\030\026 \001(\r\022\033\n\023cheer_factor_bronz"
-  "e\030\022 \001(\002\022\033\n\023cheer_factor_silver\030\023 \001(\002\022\031\n\021"
-  "cheer_factor_gold\030\024 \001(\002\"C\n\031CMsgGCToServe"
-  "rCheerConfig\022&\n\014cheer_config\030\001 \001(\0132\020.CMs"
-  "gCheerConfig\"1\n\034CMsgServerToGCGetCheerCo"
-  "nfig\022\021\n\tleague_id\030\001 \001(\r\"N\n$CMsgServerToG"
-  "CGetCheerConfigResponse\022&\n\014cheer_config\030"
-  "\002 \001(\0132\020.CMsgCheerConfig\"3\n!CMsgGCToServe"
-  "rCheerScalesOverride\022\016\n\006scales\030\001 \003(\002\"\035\n\033"
-  "CMsgGCToServerGetCheerState\"o\n\022CMsgCheer"
-  "TypeState\022\024\n\014cheer_counts\030\001 \003(\r\022\026\n\016max_p"
-  "er_second\030\002 \001(\002\022\023\n\013cheer_scale\030\003 \001(\002\022\026\n\016"
-  "override_scale\030\004 \001(\002\"q\n\016CMsgCheerState\022("
-  "\n\013cheer_types\030\001 \003(\0132\023.CMsgCheerTypeState"
-  "\022\033\n\023radiant_crowd_level\030\002 \001(\r\022\030\n\020dire_cr"
-  "owd_level\030\003 \001(\r\"n\n\036CMsgServerToGCReportC"
-  "heerState\022&\n\014cheer_config\030\001 \001(\0132\020.CMsgCh"
-  "eerConfig\022$\n\013cheer_state\030\002 \001(\0132\017.CMsgChe"
-  "erState\"5\n\036CMsgServerToGCGetStickerHeroe"
-  "s\022\023\n\013account_ids\030\001 \003(\r\"\255\001\n&CMsgServerToG"
-  "CGetStickerHeroesResponse\022\?\n\007players\030\001 \003"
-  "(\0132..CMsgServerToGCGetStickerHeroesRespo"
-  "nse.Player\032B\n\006Player\022\022\n\naccount_id\030\001 \001(\r"
-  "\022$\n\010stickers\030\002 \001(\0132\022.CMsgStickerHeroes\"|"
-  "\n\027CMsgSteamLearnMatchInfo\022\023\n\013average_mmr"
-  "\030\001 \001(\r\022\023\n\013radiant_won\030\002 \001(\010\022\020\n\010duration\030"
-  "\003 \001(\r\022\021\n\tgame_mode\030\004 \001(\r\022\022\n\nlobby_type\030\005"
-  " \001(\r\"\223\001\n\035CMsgSteamLearnMatchInfoPlayer\022\023"
-  "\n\013average_mmr\030\001 \001(\r\022\020\n\010team_won\030\002 \001(\010\022\020\n"
-  "\010duration\030\003 \001(\r\022\021\n\tgame_mode\030\004 \001(\r\022\022\n\nlo"
-  "bby_type\030\005 \001(\r\022\022\n\nplayer_mmr\030\006 \001(\r\"\334\002\n\033C"
-  "MsgSteamLearnMatchInfoTeam\022B\n\017radiant_pl"
-  "ayers\030\001 \003(\0132#.CMsgSteamLearnMatchInfoTea"
-  "m.PlayerB\004\360\344\035\005\022\?\n\014dire_players\030\002 \003(\0132#.C"
-  "MsgSteamLearnMatchInfoTeam.PlayerB\004\360\344\035\005\022"
-  "\030\n\020radiant_team_won\030\003 \001(\010\032\235\001\n\006Player\022\024\n\014"
-  "prematch_mmr\030\001 \001(\r\022!\n\031prematch_rank_unce"
-  "rtainty\030\002 \001(\r\022\037\n\027prematch_behavior_score"
-  "\030\003 \001(\r\022\033\n\023prematch_comm_score\030\004 \001(\r\022\034\n\024n"
-  "um_players_in_party\030\005 \001(\r\"\223\002\n\033CMsgSteamL"
-  "earnMatchHeroesV3\022\036\n\020radiant_hero_ids\030\001 "
-  "\003(\005B\004\360\344\035\005\022\033\n\rdire_hero_ids\030\002 \003(\005B\004\360\344\035\005\022\033"
-  "\n\rradiant_lanes\030\003 \003(\rB\004\360\344\035\005\022\030\n\ndire_lane"
-  "s\030\004 \003(\rB\004\360\344\035\005\022!\n\023radiant_hero_facets\030\005 \003"
-  "(\rB\004\360\344\035\005\022\036\n\020dire_hero_facets\030\006 \003(\rB\004\360\344\035\005"
-  "\022\037\n\021radiant_positions\030\007 \003(\rB\004\360\344\035\005\022\034\n\016dir"
-  "e_positions\030\010 \003(\rB\004\360\344\035\005\"\274\001\n\031CMsgSteamLea"
-  "rnMatchHeroV6\022\017\n\007hero_id\030\001 \001(\005\022\r\n\005facet\030"
-  "\002 \001(\r\022\026\n\016hero_and_facet\030\003 \001(\r\022\014\n\004lane\030\004 "
-  "\001(\r\022\020\n\010position\030\005 \001(\r\022#\n\025allied_hero_and"
-  "_facet\030\006 \003(\rB\004\360\344\035\004\022\"\n\024enemy_hero_and_fac"
-  "et\030\007 \003(\rB\004\360\344\035\005\"\354\002\n\036CMsgSteamLearnPlayerT"
-  "imedStats\022F\n\014stat_buckets\030\001 \003(\0132*.CMsgSt"
-  "eamLearnPlayerTimedStats.StatBucketB\004\360\344\035"
-  "Z\032\201\002\n\nStatBucket\022\021\n\tgame_time\030\001 \001(\002\022\r\n\005k"
-  "ills\030\002 \001(\r\022\016\n\006deaths\030\003 \001(\r\022\017\n\007assists\030\004 "
-  "\001(\r\022\022\n\nexperience\030\005 \001(\r\022\021\n\tlast_hits\030\006 \001"
-  "(\r\022\016\n\006denies\030\007 \001(\r\022\021\n\tnet_worth\030\010 \001(\r\022\021\n"
-  "\tidle_time\030\t \001(\002\022\027\n\017commands_issued\030\n \001("
-  "\r\022\033\n\023sentry_wards_placed\030\013 \001(\r\022\035\n\025observ"
-  "er_wards_placed\030\014 \001(\r\"\260\005\n\032CMsgSteamLearn"
-  "MatchStateV5\022\021\n\tgame_time\030\001 \001(\002\022<\n\rradia"
-  "nt_state\030\002 \001(\0132%.CMsgSteamLearnMatchStat"
-  "eV5.TeamState\0229\n\ndire_state\030\003 \001(\0132%.CMsg"
-  "SteamLearnMatchStateV5.TeamState\032\310\001\n\013Pla"
-  "yerState\022\017\n\007hero_id\030\001 \001(\005\022\021\n\tnet_worth\030\002"
-  " \001(\r\022\r\n\005level\030\003 \001(\r\022\016\n\006deaths\030\004 \001(\r\022\024\n\014r"
-  "espawn_time\030\005 \001(\r\022\023\n\013has_buyback\030\006 \001(\010\022\021"
-  "\n\thas_aegis\030\007 \001(\010\022\022\n\nhas_rapier\030\010 \001(\010\022\020\n"
-  "\010distance\030\t \001(\r\022\022\n\nhero_facet\030\n \001(\r\032\272\002\n\t"
-  "TeamState\022\014\n\004team\030\001 \001(\r\022D\n\rplayer_states"
-  "\030\002 \003(\0132\'.CMsgSteamLearnMatchStateV5.Play"
-  "erStateB\004\360\344\035\005\022\036\n\020tower_health_pct\030\003 \003(\rB"
-  "\004\360\344\035\013\022!\n\023barracks_health_pct\030\004 \003(\rB\004\360\344\035\006"
-  "\022\032\n\022ancient_health_pct\030\005 \001(\r\022\026\n\016glyph_co"
-  "oldown\030\006 \001(\r\022\r\n\005kills\030\007 \001(\r\022\033\n\023creep_dis"
-  "tance_safe\030\010 \001(\r\022\032\n\022creep_distance_mid\030\t"
-  " \001(\r\022\032\n\022creep_distance_off\030\n \001(\r\"S\n\034CMsg"
-  "SteamLearnItemPurchaseV7\022\023\n\007item_id\030\001 \001("
-  "\005:\002-1\022\036\n\020purchase_history\030\002 \003(\005B\004\360\344\0352\"q\n"
-  "\"CMsgSteamLearnPreGameItemPurchases\022\026\n\010i"
-  "tem_ids\030\001 \003(\005B\004\360\344\035\n\022\027\n\017is_radiant_team\030\002"
-  " \001(\r\022\032\n\022is_using_dota_plus\030\003 \001(\010\"^\n!CMsg"
-  "SteamLearnPreGameItemPurchase\022\036\n\020purchas"
-  "e_history\030\001 \003(\005B\004\360\344\035\n\022\031\n\007item_id\030\002 \001(\005:\002"
-  "-1B\004\360\344\035\n\"\251\001\n#CMsgSteamLearnNeutralItemPu"
-  "rchaseV4\022\014\n\004tier\030\001 \001(\r\022\035\n\017trinket_option"
-  "s\030\002 \003(\005B\004\360\344\035\004\022!\n\023enhancement_options\030\003 \003"
-  "(\005B\004\360\344\035\004\022\026\n\ntrinket_id\030\004 \001(\005:\002-1\022\032\n\016enha"
-  "ncement_id\030\005 \001(\005:\002-1\"\204\001\n\032CMsgSteamLearnA"
-  "bilitySkill\022\026\n\nability_id\030\001 \001(\005:\002-1\022\037\n\021s"
-  "killed_abilities\030\002 \003(\005B\004\360\344\035\036\022\021\n\tgame_tim"
-  "e\030\003 \001(\002\022\032\n\022is_using_dota_plus\030\004 \001(\010\"\317\001\n\033"
-  "CMsgSteamLearnWardPlacement\0227\n\010ward_loc\030"
-  "\001 \001(\0132%.CMsgSteamLearnWardPlacement.Loca"
-  "tion\022G\n\022existing_ward_locs\030\002 \003(\0132%.CMsgS"
-  "teamLearnWardPlacement.LocationB\004\360\344\035\006\022\014\n"
-  "\004team\030\003 \001(\r\032 \n\010Location\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030"
-  "\002 \001(\002\"\233\002\n\036CMsgSteamLearnPlayerMatchState"
-  "\022\021\n\tnet_worth\030\001 \001(\r\022\r\n\005level\030\002 \001(\r\022\016\n\006de"
-  "aths\030\003 \001(\r\022\024\n\014respawn_time\030\004 \001(\r\022\023\n\013has_"
-  "buyback\030\005 \001(\010\022\021\n\thas_aegis\030\006 \001(\010\022\022\n\nhas_"
-  "rapier\030\007 \001(\010\022\026\n\016team_net_worth\030\010 \001(\r\022\034\n\024"
-  "enemy_team_net_worth\030\t \001(\r\022\022\n\nteam_kills"
-  "\030\n \001(\r\022\030\n\020enemy_team_kills\030\013 \001(\r\022\021\n\tgame"
-  "_time\030\014 \001(\002\"4\n\031CMsgSignOutMuertaMinigame"
-  "\022\027\n\017event_game_data\030\001 \001(\014\"\275\001\n\023CMsgSignOu"
-  "tMapStats\022,\n\007players\030\001 \003(\0132\033.CMsgSignOut"
-  "MapStats.Player\022+\n\014global_stats\030\002 \001(\0132\025."
-  "CMsgMapStatsSnapshot\032K\n\006Player\022\022\n\naccoun"
-  "t_id\030\001 \001(\r\022-\n\016personal_stats\030\002 \001(\0132\025.CMs"
-  "gMapStatsSnapshot\"e\n\032CMsgServerToGCNewBl"
-  "oomGift\022\020\n\010defindex\030\001 \001(\r\022\031\n\021gifter_acco"
-  "unt_id\030\002 \001(\r\022\032\n\022target_account_ids\030\003 \003(\r"
-  "\"\217\001\n\"CMsgServerToGCNewBloomGiftResponse\022"
-  "K\n\006result\030\001 \001(\0162\031.ENewBloomGiftingRespon"
-  "se: kENewBloomGifting_UnknownFailure\022\034\n\024"
-  "received_account_ids\030\002 \003(\r\"\302\001\n\024CMsgSignO"
-  "utOverworld\022-\n\007players\030\001 \003(\0132\034.CMsgSignO"
-  "utOverworld.Player\022(\n\010event_id\030\002 \001(\0162\007.E"
-  "Event:\rEVENT_ID_NONE\032Q\n\006Player\022\022\n\naccoun"
-  "t_id\030\001 \001(\r\022\024\n\014overworld_id\030\002 \001(\r\022\035\n\025desi"
-  "red_token_rewards\030\003 \003(\r\"\276\001\n\025CMsgSignOutC"
-  "raftworks\022.\n\007players\030\001 \003(\0132\035.CMsgSignOut"
-  "Craftworks.Player\022(\n\010event_id\030\002 \001(\0162\007.EE"
-  "vent:\rEVENT_ID_NONE\032K\n\006Player\022\022\n\naccount"
-  "_id\030\001 \001(\r\022-\n\ncomponents\030\002 \001(\0132\031.CMsgCraf"
-  "tworksComponents\"\240\002\n\030CMsgSignOutMonsterH"
-  "unter\0221\n\007players\030\001 \003(\0132 .CMsgSignOutMons"
-  "terHunter.Player\022(\n\010event_id\030\002 \001(\0162\007.EEv"
-  "ent:\rEVENT_ID_NONE\032\246\001\n\006Player\022\022\n\naccount"
-  "_id\030\001 \001(\r\022J\n\030investigation_game_state\030\002 "
-  "\001(\0132(.CMsgMonsterHunterInvestigationGame"
-  "State\022<\n\021codex_update_data\030\003 \001(\0132!.CMsgM"
-  "onsterHunterCodexUpdateData*\306\001\n\032EPoorNet"
-  "workConditionsType\022!\n\035k_EPoorNetworkCond"
-  "itions_None\020\000\022$\n k_EPoorNetworkCondition"
-  "s_Unknown\020\001\022+\n\'k_EPoorNetworkConditions_"
-  "MassDisconnect\020\002\0222\n.k_EPoorNetworkCondit"
-  "ions_ExcessBadQosIntervals\020\003"
+  "NONE\032\246\001\n\006Player\022\022\n\naccount_id\030\001 \001(\r\022J\n\030i"
+  "nvestigation_game_state\030\002 \001(\0132(.CMsgMons"
+  "terHunterInvestigationGameState\022<\n\021codex"
+  "_update_data\030\003 \001(\0132!.CMsgMonsterHunterCo"
+  "dexUpdateData\"\262\001\n\'CMsgServerToGCWarningL"
+  "owServerFramerate\022\020\n\010match_id\030\001 \001(\004\022\"\n\032t"
+  "icks_per_interval_average\030\002 \001(\002\022\026\n\016custo"
+  "m_game_id\030\003 \001(\004\022\035\n\025bot_script_id_radiant"
+  "\030\004 \001(\004\022\032\n\022bot_script_id_dire\030\005 \001(\004\"k\n+CM"
+  "sgServerToGCWarningInvalidBotAbilityUsag"
+  "e\022\023\n\013description\030\001 \001(\t\022\021\n\tunit_name\030\002 \001("
+  "\t\022\024\n\014ability_name\030\003 \001(\t*\306\001\n\032EPoorNetwork"
+  "ConditionsType\022!\n\035k_EPoorNetworkConditio"
+  "ns_None\020\000\022$\n k_EPoorNetworkConditions_Un"
+  "known\020\001\022+\n\'k_EPoorNetworkConditions_Mass"
+  "Disconnect\020\002\0222\n.k_EPoorNetworkConditions"
+  "_ExcessBadQosIntervals\020\003"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5fserver_2eproto_deps[14] = {
   &::descriptor_table_base_5fgcmessages_2eproto,
@@ -7367,9 +7444,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5
 };
 static ::_pbi::once_flag descriptor_table_dota_5fgcmessages_5fserver_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fgcmessages_5fserver_2eproto = {
-    false, false, 32828, descriptor_table_protodef_dota_5fgcmessages_5fserver_2eproto,
+    false, false, 33144, descriptor_table_protodef_dota_5fgcmessages_5fserver_2eproto,
     "dota_gcmessages_server.proto",
-    &descriptor_table_dota_5fgcmessages_5fserver_2eproto_once, descriptor_table_dota_5fgcmessages_5fserver_2eproto_deps, 14, 182,
+    &descriptor_table_dota_5fgcmessages_5fserver_2eproto_once, descriptor_table_dota_5fgcmessages_5fserver_2eproto_deps, 14, 184,
     schemas, file_default_instances, TableStruct_dota_5fgcmessages_5fserver_2eproto::offsets,
     file_level_metadata_dota_5fgcmessages_5fserver_2eproto, file_level_enum_descriptors_dota_5fgcmessages_5fserver_2eproto,
     file_level_service_descriptors_dota_5fgcmessages_5fserver_2eproto,
@@ -13731,7 +13808,7 @@ class CMsgGameMatchSignOut_CTeam_CPlayer::_Internal {
     (*has_bits)[1] |= 128u;
   }
   static void set_has_cavern_crawl_preferred_map_variant(HasBits* has_bits) {
-    (*has_bits)[1] |= 536870912u;
+    (*has_bits)[1] |= 1073741824u;
   }
   static void set_has_bounty_runes(HasBits* has_bits) {
     (*has_bits)[1] |= 256u;
@@ -13755,7 +13832,7 @@ class CMsgGameMatchSignOut_CTeam_CPlayer::_Internal {
     (*has_bits)[1] |= 16384u;
   }
   static void set_has_lane_outcomes(HasBits* has_bits) {
-    (*has_bits)[1] |= 1073741824u;
+    (*has_bits)[1] |= 2147483648u;
   }
   static void set_has_friendly_t1_destroyed_time(HasBits* has_bits) {
     (*has_bits)[1] |= 32768u;
@@ -13798,6 +13875,9 @@ class CMsgGameMatchSignOut_CTeam_CPlayer::_Internal {
   }
   static void set_has_enhancement_level(HasBits* has_bits) {
     (*has_bits)[1] |= 268435456u;
+  }
+  static void set_has_disable_duration(HasBits* has_bits) {
+    (*has_bits)[1] |= 536870912u;
   }
 };
 
@@ -13900,6 +13980,7 @@ CMsgGameMatchSignOut_CTeam_CPlayer::CMsgGameMatchSignOut_CTeam_CPlayer(const CMs
     , decltype(_impl_.predicted_rank_){}
     , decltype(_impl_.selected_facet_){}
     , decltype(_impl_.enhancement_level_){}
+    , decltype(_impl_.disable_duration_){}
     , decltype(_impl_.cavern_crawl_preferred_map_variant_){}
     , decltype(_impl_.lane_outcomes_){}};
 
@@ -13991,6 +14072,7 @@ inline void CMsgGameMatchSignOut_CTeam_CPlayer::SharedCtor(
     , decltype(_impl_.predicted_rank_){0u}
     , decltype(_impl_.selected_facet_){0u}
     , decltype(_impl_.enhancement_level_){0u}
+    , decltype(_impl_.disable_duration_){0u}
     , decltype(_impl_.cavern_crawl_preferred_map_variant_){255u}
     , decltype(_impl_.lane_outcomes_){255u}
   };
@@ -14081,10 +14163,10 @@ void CMsgGameMatchSignOut_CTeam_CPlayer::Clear() {
         reinterpret_cast<char*>(&_impl_.team_slot_) -
         reinterpret_cast<char*>(&_impl_.enemy_t1_destroyed_time_)) + sizeof(_impl_.team_slot_));
   }
-  if (cached_has_bits & 0x7f000000u) {
+  if (cached_has_bits & 0xff000000u) {
     ::memset(&_impl_.time_purchased_shard_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.enhancement_level_) -
-        reinterpret_cast<char*>(&_impl_.time_purchased_shard_)) + sizeof(_impl_.enhancement_level_));
+        reinterpret_cast<char*>(&_impl_.disable_duration_) -
+        reinterpret_cast<char*>(&_impl_.time_purchased_shard_)) + sizeof(_impl_.disable_duration_));
     _impl_.cavern_crawl_preferred_map_variant_ = 255u;
     _impl_.lane_outcomes_ = 255u;
   }
@@ -14810,6 +14892,15 @@ const char* CMsgGameMatchSignOut_CTeam_CPlayer::_InternalParse(const char* ptr, 
         } else
           goto handle_unusual;
         continue;
+      // optional uint32 disable_duration = 84;
+      case 84:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 160)) {
+          _Internal::set_has_disable_duration(&_impl_._has_bits_);
+          _impl_.disable_duration_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -15129,7 +15220,7 @@ uint8_t* CMsgGameMatchSignOut_CTeam_CPlayer::_InternalSerialize(
   }
 
   // optional uint32 cavern_crawl_preferred_map_variant = 56 [default = 255];
-  if (cached_has_bits & 0x20000000u) {
+  if (cached_has_bits & 0x40000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(56, this->_internal_cavern_crawl_preferred_map_variant(), target);
   }
@@ -15191,7 +15282,7 @@ uint8_t* CMsgGameMatchSignOut_CTeam_CPlayer::_InternalSerialize(
   }
 
   // optional uint32 lane_outcomes = 67 [default = 255];
-  if (cached_has_bits & 0x40000000u) {
+  if (cached_has_bits & 0x80000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(67, this->_internal_lane_outcomes(), target);
   }
@@ -15293,6 +15384,12 @@ uint8_t* CMsgGameMatchSignOut_CTeam_CPlayer::_InternalSerialize(
   if (cached_has_bits & 0x10000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(83, this->_internal_enhancement_level(), target);
+  }
+
+  // optional uint32 disable_duration = 84;
+  if (cached_has_bits & 0x20000000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(84, this->_internal_disable_duration(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15762,7 +15859,7 @@ size_t CMsgGameMatchSignOut_CTeam_CPlayer::ByteSizeLong() const {
     }
 
   }
-  if (cached_has_bits & 0x7f000000u) {
+  if (cached_has_bits & 0xff000000u) {
     // optional uint32 time_purchased_shard = 77;
     if (cached_has_bits & 0x01000000u) {
       total_size += 2 +
@@ -15798,15 +15895,22 @@ size_t CMsgGameMatchSignOut_CTeam_CPlayer::ByteSizeLong() const {
           this->_internal_enhancement_level());
     }
 
-    // optional uint32 cavern_crawl_preferred_map_variant = 56 [default = 255];
+    // optional uint32 disable_duration = 84;
     if (cached_has_bits & 0x20000000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_disable_duration());
+    }
+
+    // optional uint32 cavern_crawl_preferred_map_variant = 56 [default = 255];
+    if (cached_has_bits & 0x40000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_cavern_crawl_preferred_map_variant());
     }
 
     // optional uint32 lane_outcomes = 67 [default = 255];
-    if (cached_has_bits & 0x40000000u) {
+    if (cached_has_bits & 0x80000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_lane_outcomes());
@@ -16033,7 +16137,7 @@ void CMsgGameMatchSignOut_CTeam_CPlayer::MergeImpl(::PROTOBUF_NAMESPACE_ID::Mess
     }
     _this->_impl_._has_bits_[1] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x7f000000u) {
+  if (cached_has_bits & 0xff000000u) {
     if (cached_has_bits & 0x01000000u) {
       _this->_impl_.time_purchased_shard_ = from._impl_.time_purchased_shard_;
     }
@@ -16050,9 +16154,12 @@ void CMsgGameMatchSignOut_CTeam_CPlayer::MergeImpl(::PROTOBUF_NAMESPACE_ID::Mess
       _this->_impl_.enhancement_level_ = from._impl_.enhancement_level_;
     }
     if (cached_has_bits & 0x20000000u) {
-      _this->_impl_.cavern_crawl_preferred_map_variant_ = from._impl_.cavern_crawl_preferred_map_variant_;
+      _this->_impl_.disable_duration_ = from._impl_.disable_duration_;
     }
     if (cached_has_bits & 0x40000000u) {
+      _this->_impl_.cavern_crawl_preferred_map_variant_ = from._impl_.cavern_crawl_preferred_map_variant_;
+    }
+    if (cached_has_bits & 0x80000000u) {
       _this->_impl_.lane_outcomes_ = from._impl_.lane_outcomes_;
     }
     _this->_impl_._has_bits_[1] |= cached_has_bits;
@@ -16087,8 +16194,8 @@ void CMsgGameMatchSignOut_CTeam_CPlayer::InternalSwap(CMsgGameMatchSignOut_CTeam
   _impl_.ability_draft_abilities_.InternalSwap(&other->_impl_.ability_draft_abilities_);
   _impl_.player_tracked_stats_.InternalSwap(&other->_impl_.player_tracked_stats_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CMsgGameMatchSignOut_CTeam_CPlayer, _impl_.enhancement_level_)
-      + sizeof(CMsgGameMatchSignOut_CTeam_CPlayer::_impl_.enhancement_level_)
+      PROTOBUF_FIELD_OFFSET(CMsgGameMatchSignOut_CTeam_CPlayer, _impl_.disable_duration_)
+      + sizeof(CMsgGameMatchSignOut_CTeam_CPlayer::_impl_.disable_duration_)
       - PROTOBUF_FIELD_OFFSET(CMsgGameMatchSignOut_CTeam_CPlayer, _impl_.custom_game_data_)>(
           reinterpret_cast<char*>(&_impl_.custom_game_data_),
           reinterpret_cast<char*>(&other->_impl_.custom_game_data_));
@@ -67464,6 +67571,668 @@ void CMsgSignOutMonsterHunter::InternalSwap(CMsgSignOutMonsterHunter* other) {
       file_level_metadata_dota_5fgcmessages_5fserver_2eproto[181]);
 }
 
+// ===================================================================
+
+class CMsgServerToGCWarningLowServerFramerate::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgServerToGCWarningLowServerFramerate>()._impl_._has_bits_);
+  static void set_has_match_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_ticks_per_interval_average(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
+  static void set_has_custom_game_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_bot_script_id_radiant(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_bot_script_id_dire(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+};
+
+CMsgServerToGCWarningLowServerFramerate::CMsgServerToGCWarningLowServerFramerate(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgServerToGCWarningLowServerFramerate)
+}
+CMsgServerToGCWarningLowServerFramerate::CMsgServerToGCWarningLowServerFramerate(const CMsgServerToGCWarningLowServerFramerate& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgServerToGCWarningLowServerFramerate* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.match_id_){}
+    , decltype(_impl_.custom_game_id_){}
+    , decltype(_impl_.bot_script_id_radiant_){}
+    , decltype(_impl_.bot_script_id_dire_){}
+    , decltype(_impl_.ticks_per_interval_average_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.match_id_, &from._impl_.match_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.ticks_per_interval_average_) -
+    reinterpret_cast<char*>(&_impl_.match_id_)) + sizeof(_impl_.ticks_per_interval_average_));
+  // @@protoc_insertion_point(copy_constructor:CMsgServerToGCWarningLowServerFramerate)
+}
+
+inline void CMsgServerToGCWarningLowServerFramerate::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.match_id_){uint64_t{0u}}
+    , decltype(_impl_.custom_game_id_){uint64_t{0u}}
+    , decltype(_impl_.bot_script_id_radiant_){uint64_t{0u}}
+    , decltype(_impl_.bot_script_id_dire_){uint64_t{0u}}
+    , decltype(_impl_.ticks_per_interval_average_){0}
+  };
+}
+
+CMsgServerToGCWarningLowServerFramerate::~CMsgServerToGCWarningLowServerFramerate() {
+  // @@protoc_insertion_point(destructor:CMsgServerToGCWarningLowServerFramerate)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgServerToGCWarningLowServerFramerate::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CMsgServerToGCWarningLowServerFramerate::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgServerToGCWarningLowServerFramerate::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgServerToGCWarningLowServerFramerate)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
+    ::memset(&_impl_.match_id_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.ticks_per_interval_average_) -
+        reinterpret_cast<char*>(&_impl_.match_id_)) + sizeof(_impl_.ticks_per_interval_average_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgServerToGCWarningLowServerFramerate::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional uint64 match_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_match_id(&has_bits);
+          _impl_.match_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional float ticks_per_interval_average = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
+          _Internal::set_has_ticks_per_interval_average(&has_bits);
+          _impl_.ticks_per_interval_average_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint64 custom_game_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _Internal::set_has_custom_game_id(&has_bits);
+          _impl_.custom_game_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint64 bot_script_id_radiant = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _Internal::set_has_bot_script_id_radiant(&has_bits);
+          _impl_.bot_script_id_radiant_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint64 bot_script_id_dire = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _Internal::set_has_bot_script_id_dire(&has_bits);
+          _impl_.bot_script_id_dire_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgServerToGCWarningLowServerFramerate::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgServerToGCWarningLowServerFramerate)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional uint64 match_id = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_match_id(), target);
+  }
+
+  // optional float ticks_per_interval_average = 2;
+  if (cached_has_bits & 0x00000010u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_ticks_per_interval_average(), target);
+  }
+
+  // optional uint64 custom_game_id = 3;
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(3, this->_internal_custom_game_id(), target);
+  }
+
+  // optional uint64 bot_script_id_radiant = 4;
+  if (cached_has_bits & 0x00000004u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(4, this->_internal_bot_script_id_radiant(), target);
+  }
+
+  // optional uint64 bot_script_id_dire = 5;
+  if (cached_has_bits & 0x00000008u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal_bot_script_id_dire(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgServerToGCWarningLowServerFramerate)
+  return target;
+}
+
+size_t CMsgServerToGCWarningLowServerFramerate::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgServerToGCWarningLowServerFramerate)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
+    // optional uint64 match_id = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_match_id());
+    }
+
+    // optional uint64 custom_game_id = 3;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_custom_game_id());
+    }
+
+    // optional uint64 bot_script_id_radiant = 4;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_bot_script_id_radiant());
+    }
+
+    // optional uint64 bot_script_id_dire = 5;
+    if (cached_has_bits & 0x00000008u) {
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_bot_script_id_dire());
+    }
+
+    // optional float ticks_per_interval_average = 2;
+    if (cached_has_bits & 0x00000010u) {
+      total_size += 1 + 4;
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgServerToGCWarningLowServerFramerate::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgServerToGCWarningLowServerFramerate::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgServerToGCWarningLowServerFramerate::GetClassData() const { return &_class_data_; }
+
+
+void CMsgServerToGCWarningLowServerFramerate::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgServerToGCWarningLowServerFramerate*>(&to_msg);
+  auto& from = static_cast<const CMsgServerToGCWarningLowServerFramerate&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgServerToGCWarningLowServerFramerate)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.match_id_ = from._impl_.match_id_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.custom_game_id_ = from._impl_.custom_game_id_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.bot_script_id_radiant_ = from._impl_.bot_script_id_radiant_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.bot_script_id_dire_ = from._impl_.bot_script_id_dire_;
+    }
+    if (cached_has_bits & 0x00000010u) {
+      _this->_impl_.ticks_per_interval_average_ = from._impl_.ticks_per_interval_average_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgServerToGCWarningLowServerFramerate::CopyFrom(const CMsgServerToGCWarningLowServerFramerate& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgServerToGCWarningLowServerFramerate)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgServerToGCWarningLowServerFramerate::IsInitialized() const {
+  return true;
+}
+
+void CMsgServerToGCWarningLowServerFramerate::InternalSwap(CMsgServerToGCWarningLowServerFramerate* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CMsgServerToGCWarningLowServerFramerate, _impl_.ticks_per_interval_average_)
+      + sizeof(CMsgServerToGCWarningLowServerFramerate::_impl_.ticks_per_interval_average_)
+      - PROTOBUF_FIELD_OFFSET(CMsgServerToGCWarningLowServerFramerate, _impl_.match_id_)>(
+          reinterpret_cast<char*>(&_impl_.match_id_),
+          reinterpret_cast<char*>(&other->_impl_.match_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgServerToGCWarningLowServerFramerate::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_dota_5fgcmessages_5fserver_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fserver_2eproto_once,
+      file_level_metadata_dota_5fgcmessages_5fserver_2eproto[182]);
+}
+
+// ===================================================================
+
+class CMsgServerToGCWarningInvalidBotAbilityUsage::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgServerToGCWarningInvalidBotAbilityUsage>()._impl_._has_bits_);
+  static void set_has_description(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_unit_name(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_ability_name(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+};
+
+CMsgServerToGCWarningInvalidBotAbilityUsage::CMsgServerToGCWarningInvalidBotAbilityUsage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgServerToGCWarningInvalidBotAbilityUsage)
+}
+CMsgServerToGCWarningInvalidBotAbilityUsage::CMsgServerToGCWarningInvalidBotAbilityUsage(const CMsgServerToGCWarningInvalidBotAbilityUsage& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgServerToGCWarningInvalidBotAbilityUsage* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.description_){}
+    , decltype(_impl_.unit_name_){}
+    , decltype(_impl_.ability_name_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.description_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.description_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_description()) {
+    _this->_impl_.description_.Set(from._internal_description(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.unit_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.unit_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_unit_name()) {
+    _this->_impl_.unit_name_.Set(from._internal_unit_name(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.ability_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ability_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_ability_name()) {
+    _this->_impl_.ability_name_.Set(from._internal_ability_name(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:CMsgServerToGCWarningInvalidBotAbilityUsage)
+}
+
+inline void CMsgServerToGCWarningInvalidBotAbilityUsage::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.description_){}
+    , decltype(_impl_.unit_name_){}
+    , decltype(_impl_.ability_name_){}
+  };
+  _impl_.description_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.description_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.unit_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.unit_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ability_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ability_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+CMsgServerToGCWarningInvalidBotAbilityUsage::~CMsgServerToGCWarningInvalidBotAbilityUsage() {
+  // @@protoc_insertion_point(destructor:CMsgServerToGCWarningInvalidBotAbilityUsage)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgServerToGCWarningInvalidBotAbilityUsage::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.description_.Destroy();
+  _impl_.unit_name_.Destroy();
+  _impl_.ability_name_.Destroy();
+}
+
+void CMsgServerToGCWarningInvalidBotAbilityUsage::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgServerToGCWarningInvalidBotAbilityUsage::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgServerToGCWarningInvalidBotAbilityUsage)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _impl_.description_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _impl_.unit_name_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _impl_.ability_name_.ClearNonDefaultToEmpty();
+    }
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgServerToGCWarningInvalidBotAbilityUsage::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional string description = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_description();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CMsgServerToGCWarningInvalidBotAbilityUsage.description");
+          #endif  // !NDEBUG
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string unit_name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_unit_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CMsgServerToGCWarningInvalidBotAbilityUsage.unit_name");
+          #endif  // !NDEBUG
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string ability_name = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_ability_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CMsgServerToGCWarningInvalidBotAbilityUsage.ability_name");
+          #endif  // !NDEBUG
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgServerToGCWarningInvalidBotAbilityUsage::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgServerToGCWarningInvalidBotAbilityUsage)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional string description = 1;
+  if (cached_has_bits & 0x00000001u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CMsgServerToGCWarningInvalidBotAbilityUsage.description");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_description(), target);
+  }
+
+  // optional string unit_name = 2;
+  if (cached_has_bits & 0x00000002u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_unit_name().data(), static_cast<int>(this->_internal_unit_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CMsgServerToGCWarningInvalidBotAbilityUsage.unit_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_unit_name(), target);
+  }
+
+  // optional string ability_name = 3;
+  if (cached_has_bits & 0x00000004u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_ability_name().data(), static_cast<int>(this->_internal_ability_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CMsgServerToGCWarningInvalidBotAbilityUsage.ability_name");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_ability_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgServerToGCWarningInvalidBotAbilityUsage)
+  return target;
+}
+
+size_t CMsgServerToGCWarningInvalidBotAbilityUsage::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgServerToGCWarningInvalidBotAbilityUsage)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    // optional string description = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_description());
+    }
+
+    // optional string unit_name = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_unit_name());
+    }
+
+    // optional string ability_name = 3;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_ability_name());
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgServerToGCWarningInvalidBotAbilityUsage::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgServerToGCWarningInvalidBotAbilityUsage::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgServerToGCWarningInvalidBotAbilityUsage::GetClassData() const { return &_class_data_; }
+
+
+void CMsgServerToGCWarningInvalidBotAbilityUsage::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgServerToGCWarningInvalidBotAbilityUsage*>(&to_msg);
+  auto& from = static_cast<const CMsgServerToGCWarningInvalidBotAbilityUsage&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgServerToGCWarningInvalidBotAbilityUsage)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_description(from._internal_description());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_unit_name(from._internal_unit_name());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_internal_set_ability_name(from._internal_ability_name());
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgServerToGCWarningInvalidBotAbilityUsage::CopyFrom(const CMsgServerToGCWarningInvalidBotAbilityUsage& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgServerToGCWarningInvalidBotAbilityUsage)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgServerToGCWarningInvalidBotAbilityUsage::IsInitialized() const {
+  return true;
+}
+
+void CMsgServerToGCWarningInvalidBotAbilityUsage::InternalSwap(CMsgServerToGCWarningInvalidBotAbilityUsage* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.description_, lhs_arena,
+      &other->_impl_.description_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.unit_name_, lhs_arena,
+      &other->_impl_.unit_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ability_name_, lhs_arena,
+      &other->_impl_.ability_name_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgServerToGCWarningInvalidBotAbilityUsage::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_dota_5fgcmessages_5fserver_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fserver_2eproto_once,
+      file_level_metadata_dota_5fgcmessages_5fserver_2eproto[183]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::CMsgPoorNetworkConditions_Player*
@@ -68193,6 +68962,14 @@ Arena::CreateMaybeMessage< ::CMsgSignOutMonsterHunter_Player >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::CMsgSignOutMonsterHunter*
 Arena::CreateMaybeMessage< ::CMsgSignOutMonsterHunter >(Arena* arena) {
   return Arena::CreateMessageInternal< ::CMsgSignOutMonsterHunter >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgServerToGCWarningLowServerFramerate*
+Arena::CreateMaybeMessage< ::CMsgServerToGCWarningLowServerFramerate >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgServerToGCWarningLowServerFramerate >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgServerToGCWarningInvalidBotAbilityUsage*
+Arena::CreateMaybeMessage< ::CMsgServerToGCWarningInvalidBotAbilityUsage >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgServerToGCWarningInvalidBotAbilityUsage >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

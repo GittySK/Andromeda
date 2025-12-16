@@ -18,8 +18,8 @@
 namespace GeneratorOffset
 {
 	constexpr auto GetNumSchema = 0x74;
-	constexpr auto GetClassContainer = 0x580; // 49 8D 9F ? ? ? ? 48 8B CB E8 ? ? ? ? 48 8B 43 ? 48 8B CB 48 89 43 ? E8 ? ? ? ? 48 83 C3 ? 48 83 EF
-	constexpr auto GetEnumContainer = 0x1E10;
+	constexpr auto GetClassContainer = 0x5C0; // 49 8D 9F ? ? ? ? 48 8B CB E8 ? ? ? ? 48 8B 43 ? 48 8B CB 48 89 43 ? E8 ? ? ? ? 48 83 C3 ? 48 83 EF
+	constexpr auto GetEnumContainer = 0x1E30;
 }
 
 #pragma endregion

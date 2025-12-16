@@ -55,6 +55,7 @@ PROTOBUF_CONSTEXPR CDOTAModifierBuffTableEntry::CDOTAModifierBuffTableEntry(
   , /*decltype(_impl_.bonus_all_stats_)*/0
   , /*decltype(_impl_.bonus_health_)*/0
   , /*decltype(_impl_.bonus_mana_)*/0
+  , /*decltype(_impl_.move_slow_)*/0
   , /*decltype(_impl_.entry_type_)*/1
   , /*decltype(_impl_.parent_)*/16777215u
   , /*decltype(_impl_.duration_)*/-1
@@ -137,17 +138,18 @@ const uint32_t TableStruct_dota_5fmodifiers_2eproto::offsets[] PROTOBUF_SECTION_
   PROTOBUF_FIELD_OFFSET(::CDOTAModifierBuffTableEntry, _impl_.bonus_mana_),
   PROTOBUF_FIELD_OFFSET(::CDOTAModifierBuffTableEntry, _impl_.custom_entity_),
   PROTOBUF_FIELD_OFFSET(::CDOTAModifierBuffTableEntry, _impl_.aura_within_range_),
-  31,
+  PROTOBUF_FIELD_OFFSET(::CDOTAModifierBuffTableEntry, _impl_.move_slow_),
   32,
+  33,
   9,
   10,
   11,
   12,
   13,
   14,
-  33,
   34,
   35,
+  36,
   15,
   16,
   22,
@@ -164,18 +166,19 @@ const uint32_t TableStruct_dota_5fmodifiers_2eproto::offsets[] PROTOBUF_SECTION_
   20,
   21,
   26,
-  36,
+  37,
   4,
   24,
   5,
   6,
   27,
-  37,
+  38,
   28,
   29,
   30,
-  38,
+  39,
   25,
+  31,
   PROTOBUF_FIELD_OFFSET(::CDOTALuaModifierEntry, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CDOTALuaModifierEntry, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -188,8 +191,8 @@ const uint32_t TableStruct_dota_5fmodifiers_2eproto::offsets[] PROTOBUF_SECTION_
   0,
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 45, -1, sizeof(::CDOTAModifierBuffTableEntry)},
-  { 84, 92, -1, sizeof(::CDOTALuaModifierEntry)},
+  { 0, 46, -1, sizeof(::CDOTAModifierBuffTableEntry)},
+  { 86, 94, -1, sizeof(::CDOTALuaModifierEntry)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -199,7 +202,7 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_dota_5fmodifiers_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\024dota_modifiers.proto\032\026networkbasetypes"
-  ".proto\"\322\007\n\033CDOTAModifierBuffTableEntry\022N"
+  ".proto\"\345\007\n\033CDOTAModifierBuffTableEntry\022N"
   "\n\nentry_type\030\001 \002(\0162\031.DOTA_MODIFIER_ENTRY"
   "_TYPE:\037DOTA_MODIFIER_ENTRY_TYPE_ACTIVE\022\030"
   "\n\006parent\030\002 \002(\r:\01016777215\022\r\n\005index\030\003 \002(\005\022"
@@ -223,19 +226,19 @@ const char descriptor_table_protodef_dota_5fmodifiers_2eproto[] PROTOBUF_SECTION
   "wner\030\" \001(\r:\01016777215\022\027\n\017bonus_all_stats\030"
   "# \001(\005\022\024\n\014bonus_health\030$ \001(\005\022\022\n\nbonus_man"
   "a\030% \001(\005\022\037\n\rcustom_entity\030& \001(\r:\01016777215"
-  "\022\031\n\021aura_within_range\030\' \001(\010\"I\n\025CDOTALuaM"
-  "odifierEntry\022\025\n\rmodifier_type\030\001 \002(\005\022\031\n\021m"
-  "odifier_filename\030\002 \002(\t*e\n\030DOTA_MODIFIER_"
-  "ENTRY_TYPE\022#\n\037DOTA_MODIFIER_ENTRY_TYPE_A"
-  "CTIVE\020\001\022$\n DOTA_MODIFIER_ENTRY_TYPE_REMO"
-  "VED\020\002"
+  "\022\031\n\021aura_within_range\030\' \001(\010\022\021\n\tmove_slow"
+  "\030( \001(\002\"I\n\025CDOTALuaModifierEntry\022\025\n\rmodif"
+  "ier_type\030\001 \002(\005\022\031\n\021modifier_filename\030\002 \002("
+  "\t*e\n\030DOTA_MODIFIER_ENTRY_TYPE\022#\n\037DOTA_MO"
+  "DIFIER_ENTRY_TYPE_ACTIVE\020\001\022$\n DOTA_MODIF"
+  "IER_ENTRY_TYPE_REMOVED\020\002"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fmodifiers_2eproto_deps[1] = {
   &::descriptor_table_networkbasetypes_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_dota_5fmodifiers_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fmodifiers_2eproto = {
-    false, false, 1205, descriptor_table_protodef_dota_5fmodifiers_2eproto,
+    false, false, 1224, descriptor_table_protodef_dota_5fmodifiers_2eproto,
     "dota_modifiers.proto",
     &descriptor_table_dota_5fmodifiers_2eproto_once, descriptor_table_dota_5fmodifiers_2eproto_deps, 1, 2,
     schemas, file_default_instances, TableStruct_dota_5fmodifiers_2eproto::offsets,
@@ -269,10 +272,10 @@ class CDOTAModifierBuffTableEntry::_Internal {
  public:
   using HasBits = decltype(std::declval<CDOTAModifierBuffTableEntry>()._impl_._has_bits_);
   static void set_has_entry_type(HasBits* has_bits) {
-    (*has_bits)[0] |= 2147483648u;
+    (*has_bits)[1] |= 1u;
   }
   static void set_has_parent(HasBits* has_bits) {
-    (*has_bits)[1] |= 1u;
+    (*has_bits)[1] |= 2u;
   }
   static void set_has_index(HasBits* has_bits) {
     (*has_bits)[0] |= 512u;
@@ -293,13 +296,13 @@ class CDOTAModifierBuffTableEntry::_Internal {
     (*has_bits)[0] |= 16384u;
   }
   static void set_has_duration(HasBits* has_bits) {
-    (*has_bits)[1] |= 2u;
-  }
-  static void set_has_caster(HasBits* has_bits) {
     (*has_bits)[1] |= 4u;
   }
-  static void set_has_ability(HasBits* has_bits) {
+  static void set_has_caster(HasBits* has_bits) {
     (*has_bits)[1] |= 8u;
+  }
+  static void set_has_ability(HasBits* has_bits) {
+    (*has_bits)[1] |= 16u;
   }
   static void set_has_armor(HasBits* has_bits) {
     (*has_bits)[0] |= 32768u;
@@ -352,7 +355,7 @@ class CDOTAModifierBuffTableEntry::_Internal {
     (*has_bits)[0] |= 67108864u;
   }
   static void set_has_dd_ability_id(HasBits* has_bits) {
-    (*has_bits)[1] |= 16u;
+    (*has_bits)[1] |= 32u;
   }
   static void set_has_illusion_label(HasBits* has_bits) {
     (*has_bits)[0] |= 16u;
@@ -370,7 +373,7 @@ class CDOTAModifierBuffTableEntry::_Internal {
     (*has_bits)[0] |= 134217728u;
   }
   static void set_has_aura_owner(HasBits* has_bits) {
-    (*has_bits)[1] |= 32u;
+    (*has_bits)[1] |= 64u;
   }
   static void set_has_bonus_all_stats(HasBits* has_bits) {
     (*has_bits)[0] |= 268435456u;
@@ -382,14 +385,17 @@ class CDOTAModifierBuffTableEntry::_Internal {
     (*has_bits)[0] |= 1073741824u;
   }
   static void set_has_custom_entity(HasBits* has_bits) {
-    (*has_bits)[1] |= 64u;
+    (*has_bits)[1] |= 128u;
   }
   static void set_has_aura_within_range(HasBits* has_bits) {
     (*has_bits)[0] |= 33554432u;
   }
+  static void set_has_move_slow(HasBits* has_bits) {
+    (*has_bits)[0] |= 2147483648u;
+  }
   static bool MissingRequiredFields(const HasBits& has_bits) {
-    return (((has_bits[0] & 0x80000600) ^ 0x80000600)
-       | ((has_bits[1] & 0x00000001) ^ 0x00000001)) != 0;
+    return (((has_bits[0] & 0x00000600) ^ 0x00000600)
+       | ((has_bits[1] & 0x00000003) ^ 0x00000003)) != 0;
   }
 };
 
@@ -452,6 +458,7 @@ CDOTAModifierBuffTableEntry::CDOTAModifierBuffTableEntry(const CDOTAModifierBuff
     , decltype(_impl_.bonus_all_stats_){}
     , decltype(_impl_.bonus_health_){}
     , decltype(_impl_.bonus_mana_){}
+    , decltype(_impl_.move_slow_){}
     , decltype(_impl_.entry_type_){}
     , decltype(_impl_.parent_){}
     , decltype(_impl_.duration_){}
@@ -568,6 +575,7 @@ inline void CDOTAModifierBuffTableEntry::SharedCtor(
     , decltype(_impl_.bonus_all_stats_){0}
     , decltype(_impl_.bonus_health_){0}
     , decltype(_impl_.bonus_mana_){0}
+    , decltype(_impl_.move_slow_){0}
     , decltype(_impl_.entry_type_){1}
     , decltype(_impl_.parent_){16777215u}
     , decltype(_impl_.duration_){-1}
@@ -683,12 +691,12 @@ void CDOTAModifierBuffTableEntry::Clear() {
   }
   if (cached_has_bits & 0xff000000u) {
     ::memset(&_impl_.active_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.bonus_mana_) -
-        reinterpret_cast<char*>(&_impl_.active_)) + sizeof(_impl_.bonus_mana_));
-    _impl_.entry_type_ = 1;
+        reinterpret_cast<char*>(&_impl_.move_slow_) -
+        reinterpret_cast<char*>(&_impl_.active_)) + sizeof(_impl_.move_slow_));
   }
   cached_has_bits = _impl_._has_bits_[1];
-  if (cached_has_bits & 0x0000007fu) {
+  if (cached_has_bits & 0x000000ffu) {
+    _impl_.entry_type_ = 1;
     _impl_.parent_ = 16777215u;
     _impl_.duration_ = -1;
     _impl_.caster_ = 16777215u;
@@ -1081,6 +1089,15 @@ const char* CDOTAModifierBuffTableEntry::_InternalParse(const char* ptr, ::_pbi:
         } else
           goto handle_unusual;
         continue;
+      // optional float move_slow = 40;
+      case 40:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 69)) {
+          _Internal::set_has_move_slow(&_impl_._has_bits_);
+          _impl_.move_slow_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -1110,17 +1127,16 @@ uint8_t* CDOTAModifierBuffTableEntry::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[1];
   // required .DOTA_MODIFIER_ENTRY_TYPE entry_type = 1 [default = DOTA_MODIFIER_ENTRY_TYPE_ACTIVE];
-  if (cached_has_bits & 0x80000000u) {
+  if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_entry_type(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[1];
   // required uint32 parent = 2 [default = 16777215];
-  if (cached_has_bits & 0x00000001u) {
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_parent(), target);
   }
@@ -1164,19 +1180,19 @@ uint8_t* CDOTAModifierBuffTableEntry::_InternalSerialize(
 
   cached_has_bits = _impl_._has_bits_[1];
   // optional float duration = 9 [default = -1];
-  if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteFloatToArray(9, this->_internal_duration(), target);
   }
 
   // optional uint32 caster = 10 [default = 16777215];
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(10, this->_internal_caster(), target);
   }
 
   // optional uint32 ability = 11 [default = 16777215];
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(11, this->_internal_ability(), target);
   }
@@ -1298,7 +1314,7 @@ uint8_t* CDOTAModifierBuffTableEntry::_InternalSerialize(
 
   cached_has_bits = _impl_._has_bits_[1];
   // optional int32 dd_ability_id = 28 [default = -1];
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(28, this->_internal_dd_ability_id(), target);
   }
@@ -1348,7 +1364,7 @@ uint8_t* CDOTAModifierBuffTableEntry::_InternalSerialize(
 
   cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 aura_owner = 34 [default = 16777215];
-  if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x00000040u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(34, this->_internal_aura_owner(), target);
   }
@@ -1374,7 +1390,7 @@ uint8_t* CDOTAModifierBuffTableEntry::_InternalSerialize(
 
   cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 custom_entity = 38 [default = 16777215];
-  if (cached_has_bits & 0x00000040u) {
+  if (cached_has_bits & 0x00000080u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(38, this->_internal_custom_entity(), target);
   }
@@ -1384,6 +1400,12 @@ uint8_t* CDOTAModifierBuffTableEntry::_InternalSerialize(
   if (cached_has_bits & 0x02000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(39, this->_internal_aura_within_range(), target);
+  }
+
+  // optional float move_slow = 40;
+  if (cached_has_bits & 0x80000000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(40, this->_internal_move_slow(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1425,8 +1447,8 @@ size_t CDOTAModifierBuffTableEntry::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:CDOTAModifierBuffTableEntry)
   size_t total_size = 0;
 
-  if ((((_impl_._has_bits_[0] & 0x80000600) ^ 0x80000600)
-       | ((_impl_._has_bits_[1] & 0x00000001) ^ 0x00000001)) == 0) {  // All required fields are present.
+  if ((((_impl_._has_bits_[0] & 0x00000600) ^ 0x00000600)
+       | ((_impl_._has_bits_[1] & 0x00000003) ^ 0x00000003)) == 0) {  // All required fields are present.
     // required int32 index = 3;
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_index());
 
@@ -1590,7 +1612,7 @@ size_t CDOTAModifierBuffTableEntry::ByteSizeLong() const {
     }
 
   }
-  if (cached_has_bits & 0x7f000000u) {
+  if (cached_has_bits & 0xff000000u) {
     // optional bool active = 30;
     if (cached_has_bits & 0x01000000u) {
       total_size += 2 + 1;
@@ -1636,40 +1658,45 @@ size_t CDOTAModifierBuffTableEntry::ByteSizeLong() const {
           this->_internal_bonus_mana());
     }
 
+    // optional float move_slow = 40;
+    if (cached_has_bits & 0x80000000u) {
+      total_size += 2 + 4;
+    }
+
   }
   cached_has_bits = _impl_._has_bits_[1];
-  if (cached_has_bits & 0x0000007eu) {
+  if (cached_has_bits & 0x000000fcu) {
     // optional float duration = 9 [default = -1];
-    if (cached_has_bits & 0x00000002u) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += 1 + 4;
     }
 
     // optional uint32 caster = 10 [default = 16777215];
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_caster());
     }
 
     // optional uint32 ability = 11 [default = 16777215];
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_ability());
     }
 
     // optional int32 dd_ability_id = 28 [default = -1];
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000020u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::Int32Size(
           this->_internal_dd_ability_id());
     }
 
     // optional uint32 aura_owner = 34 [default = 16777215];
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000040u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_aura_owner());
     }
 
     // optional uint32 custom_entity = 38 [default = 16777215];
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000080u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_custom_entity());
@@ -1800,31 +1827,34 @@ void CDOTAModifierBuffTableEntry::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to
       _this->_impl_.bonus_mana_ = from._impl_.bonus_mana_;
     }
     if (cached_has_bits & 0x80000000u) {
-      _this->_impl_.entry_type_ = from._impl_.entry_type_;
+      _this->_impl_.move_slow_ = from._impl_.move_slow_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   cached_has_bits = from._impl_._has_bits_[1];
-  if (cached_has_bits & 0x0000007fu) {
+  if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      _this->_impl_.parent_ = from._impl_.parent_;
+      _this->_impl_.entry_type_ = from._impl_.entry_type_;
     }
     if (cached_has_bits & 0x00000002u) {
-      _this->_impl_.duration_ = from._impl_.duration_;
+      _this->_impl_.parent_ = from._impl_.parent_;
     }
     if (cached_has_bits & 0x00000004u) {
-      _this->_impl_.caster_ = from._impl_.caster_;
+      _this->_impl_.duration_ = from._impl_.duration_;
     }
     if (cached_has_bits & 0x00000008u) {
-      _this->_impl_.ability_ = from._impl_.ability_;
+      _this->_impl_.caster_ = from._impl_.caster_;
     }
     if (cached_has_bits & 0x00000010u) {
-      _this->_impl_.dd_ability_id_ = from._impl_.dd_ability_id_;
+      _this->_impl_.ability_ = from._impl_.ability_;
     }
     if (cached_has_bits & 0x00000020u) {
-      _this->_impl_.aura_owner_ = from._impl_.aura_owner_;
+      _this->_impl_.dd_ability_id_ = from._impl_.dd_ability_id_;
     }
     if (cached_has_bits & 0x00000040u) {
+      _this->_impl_.aura_owner_ = from._impl_.aura_owner_;
+    }
+    if (cached_has_bits & 0x00000080u) {
       _this->_impl_.custom_entity_ = from._impl_.custom_entity_;
     }
     _this->_impl_._has_bits_[1] |= cached_has_bits;
@@ -1880,8 +1910,8 @@ void CDOTAModifierBuffTableEntry::InternalSwap(CDOTAModifierBuffTableEntry* othe
       &other->_impl_.lua_name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CDOTAModifierBuffTableEntry, _impl_.bonus_mana_)
-      + sizeof(CDOTAModifierBuffTableEntry::_impl_.bonus_mana_)
+      PROTOBUF_FIELD_OFFSET(CDOTAModifierBuffTableEntry, _impl_.move_slow_)
+      + sizeof(CDOTAModifierBuffTableEntry::_impl_.move_slow_)
       - PROTOBUF_FIELD_OFFSET(CDOTAModifierBuffTableEntry, _impl_.v_start_)>(
           reinterpret_cast<char*>(&_impl_.v_start_),
           reinterpret_cast<char*>(&other->_impl_.v_start_));

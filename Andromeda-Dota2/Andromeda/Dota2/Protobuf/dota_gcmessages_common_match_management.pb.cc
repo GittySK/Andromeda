@@ -757,14 +757,14 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fmatch_5fmanage
   "ue_time\030\001 \001(\r\022\032\n\022maximum_queue_time\030\002 \001("
   "\r\022d\n\027behavior_score_variance\030\003 \001(\0162\034.EMa"
   "tchBehaviorScoreVariance:%k_EMatchBehavi"
-  "orScoreVariance_Invalid\"\333n\n\010CMvpData\022 \n\004"
+  "orScoreVariance_Invalid\"\317o\n\010CMvpData\022 \n\004"
   "mvps\030\001 \003(\0132\022.CMvpData.MvpDatum\022&\n\nevent_"
-  "mvps\030\002 \003(\0132\022.CMvpData.MvpDatum\032\204n\n\010MvpDa"
+  "mvps\030\002 \003(\0132\022.CMvpData.MvpDatum\032\370n\n\010MvpDa"
   "tum\022\023\n\013player_slot\030\001 \001(\r\0221\n\taccolades\030\002 "
-  "\003(\0132\036.CMvpData.MvpDatum.MvpAccolade\032\257m\n\013"
+  "\003(\0132\036.CMvpData.MvpDatum.MvpAccolade\032\243n\n\013"
   "MvpAccolade\022C\n\004type\030\001 \001(\0162..CMvpData.Mvp"
   "Datum.MvpAccolade.MvpAccoladeType:\005kills"
-  "\022\024\n\014detail_value\030\002 \001(\002\"\304l\n\017MvpAccoladeTy"
+  "\022\024\n\014detail_value\030\002 \001(\002\"\270m\n\017MvpAccoladeTy"
   "pe\022\t\n\005kills\020\001\022\n\n\006deaths\020\002\022\013\n\007assists\020\003\022\r"
   "\n\tnet_worth\020\005\022\016\n\nitem_value\020\006\022\026\n\022support"
   "_gold_spent\020\007\022\020\n\014wards_placed\020\010\022\013\n\007dewar"
@@ -1111,46 +1111,49 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fmatch_5fmanage
   "aling\020\234\002\0222\n-kKillEaterEventType_Kez_Kill"
   "sDuringFalconRush\020\235\002\0221\n,kKillEaterEventT"
   "ype_Seasonal_PartyHatsStolen\020\236\002\022,\n\'kKill"
-  "EaterEventType_Seasonal_TallestHat\020\237\002*\253\001"
-  "\n\016ELaneSelection\022\035\n\031k_ELaneSelection_SAF"
-  "ELANE\020\000\022\034\n\030k_ELaneSelection_OFFLANE\020\001\022\034\n"
-  "\030k_ELaneSelection_MIDLANE\020\002\022\034\n\030k_ELaneSe"
-  "lection_SUPPORT\020\003\022 \n\034k_ELaneSelection_HA"
-  "RDSUPPORT\020\004*\333\002\n\023ELaneSelectionFlags\022\"\n\036k"
-  "_ELaneSelectionFlags_SAFELANE\020\001\022!\n\035k_ELa"
-  "neSelectionFlags_OFFLANE\020\002\022!\n\035k_ELaneSel"
-  "ectionFlags_MIDLANE\020\004\022!\n\035k_ELaneSelectio"
-  "nFlags_SUPPORT\020\010\022%\n!k_ELaneSelectionFlag"
-  "s_HARDSUPPORT\020\020\022\"\n\036k_ELaneSelectionFlagG"
-  "roup_None\020\000\022\"\n\036k_ELaneSelectionFlagGroup"
-  "_CORE\020\007\022%\n!k_ELaneSelectionFlagGroup_SUP"
-  "PORT\020\030\022!\n\035k_ELaneSelectionFlagGroup_ALL\020"
-  "\037*i\n\026EPartyMatchmakingFlags\022!\n\035k_EPartyM"
-  "atchmakingFlags_None\020\000\022,\n(k_EPartyMatchm"
-  "akingFlags_LargeRankSpread\020\001*\334\002\n\024EHighPr"
-  "iorityMMState\022\035\n\031k_EHighPriorityMM_Unkno"
-  "wn\020\000\022#\n\037k_EHighPriorityMM_MissingMMData\020"
-  "\001\022%\n!k_EHighPriorityMM_ResourceMissing\020\002"
-  "\022&\n\"k_EHighPriorityMM_ManuallyDisabled\020\003"
-  "\022!\n\035k_EHighPriorityMM_Min_Enabled\020@\022&\n\"k"
-  "_EHighPriorityMM_AllRolesSelected\020A\022#\n\037k"
-  "_EHighPriorityMM_UsingResource\020B\022\037\n\033k_EH"
-  "ighPriorityMM_FiveStack\020C\022 \n\034k_EHighPrio"
-  "rityMM_HighDemand\020D*u\n\021EReadyCheckStatus"
-  "\022\037\n\033k_EReadyCheckStatus_Unknown\020\000\022 \n\034k_E"
-  "ReadyCheckStatus_NotReady\020\001\022\035\n\031k_EReadyC"
-  "heckStatus_Ready\020\002*\366\001\n\030EReadyCheckReques"
-  "tResult\022&\n\"k_EReadyCheckRequestResult_Su"
-  "ccess\020\000\0220\n,k_EReadyCheckRequestResult_Al"
-  "readyInProgress\020\001\022)\n%k_EReadyCheckReques"
-  "tResult_NotInParty\020\002\022(\n$k_EReadyCheckReq"
-  "uestResult_SendError\020\003\022+\n\'k_EReadyCheckR"
-  "equestResult_UnknownError\020\004*\301\001\n\033EMatchBe"
-  "haviorScoreVariance\022)\n%k_EMatchBehaviorS"
-  "coreVariance_Invalid\020\000\022%\n!k_EMatchBehavi"
-  "orScoreVariance_Low\020\001\022(\n$k_EMatchBehavio"
-  "rScoreVariance_Medium\020\002\022&\n\"k_EMatchBehav"
-  "iorScoreVariance_High\020\003"
+  "EaterEventType_Seasonal_TallestHat\020\237\002\0221\n"
+  ",kKillEaterEventType_Largo_MultiHeroFrog"
+  "stomp\020\240\002\022\?\n:kKillEaterEventType_Largo_Am"
+  "phibianRhapsodyKillsAndAssists\020\241\002*\253\001\n\016EL"
+  "aneSelection\022\035\n\031k_ELaneSelection_SAFELAN"
+  "E\020\000\022\034\n\030k_ELaneSelection_OFFLANE\020\001\022\034\n\030k_E"
+  "LaneSelection_MIDLANE\020\002\022\034\n\030k_ELaneSelect"
+  "ion_SUPPORT\020\003\022 \n\034k_ELaneSelection_HARDSU"
+  "PPORT\020\004*\333\002\n\023ELaneSelectionFlags\022\"\n\036k_ELa"
+  "neSelectionFlags_SAFELANE\020\001\022!\n\035k_ELaneSe"
+  "lectionFlags_OFFLANE\020\002\022!\n\035k_ELaneSelecti"
+  "onFlags_MIDLANE\020\004\022!\n\035k_ELaneSelectionFla"
+  "gs_SUPPORT\020\010\022%\n!k_ELaneSelectionFlags_HA"
+  "RDSUPPORT\020\020\022\"\n\036k_ELaneSelectionFlagGroup"
+  "_None\020\000\022\"\n\036k_ELaneSelectionFlagGroup_COR"
+  "E\020\007\022%\n!k_ELaneSelectionFlagGroup_SUPPORT"
+  "\020\030\022!\n\035k_ELaneSelectionFlagGroup_ALL\020\037*i\n"
+  "\026EPartyMatchmakingFlags\022!\n\035k_EPartyMatch"
+  "makingFlags_None\020\000\022,\n(k_EPartyMatchmakin"
+  "gFlags_LargeRankSpread\020\001*\334\002\n\024EHighPriori"
+  "tyMMState\022\035\n\031k_EHighPriorityMM_Unknown\020\000"
+  "\022#\n\037k_EHighPriorityMM_MissingMMData\020\001\022%\n"
+  "!k_EHighPriorityMM_ResourceMissing\020\002\022&\n\""
+  "k_EHighPriorityMM_ManuallyDisabled\020\003\022!\n\035"
+  "k_EHighPriorityMM_Min_Enabled\020@\022&\n\"k_EHi"
+  "ghPriorityMM_AllRolesSelected\020A\022#\n\037k_EHi"
+  "ghPriorityMM_UsingResource\020B\022\037\n\033k_EHighP"
+  "riorityMM_FiveStack\020C\022 \n\034k_EHighPriority"
+  "MM_HighDemand\020D*u\n\021EReadyCheckStatus\022\037\n\033"
+  "k_EReadyCheckStatus_Unknown\020\000\022 \n\034k_ERead"
+  "yCheckStatus_NotReady\020\001\022\035\n\031k_EReadyCheck"
+  "Status_Ready\020\002*\366\001\n\030EReadyCheckRequestRes"
+  "ult\022&\n\"k_EReadyCheckRequestResult_Succes"
+  "s\020\000\0220\n,k_EReadyCheckRequestResult_Alread"
+  "yInProgress\020\001\022)\n%k_EReadyCheckRequestRes"
+  "ult_NotInParty\020\002\022(\n$k_EReadyCheckRequest"
+  "Result_SendError\020\003\022+\n\'k_EReadyCheckReque"
+  "stResult_UnknownError\020\004*\301\001\n\033EMatchBehavi"
+  "orScoreVariance\022)\n%k_EMatchBehaviorScore"
+  "Variance_Invalid\020\000\022%\n!k_EMatchBehaviorSc"
+  "oreVariance_Low\020\001\022(\n$k_EMatchBehaviorSco"
+  "reVariance_Medium\020\002\022&\n\"k_EMatchBehaviorS"
+  "coreVariance_High\020\003"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto_deps[3] = {
   &::descriptor_table_dota_5fshared_5fenums_2eproto,
@@ -1159,7 +1162,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5
 };
 static ::_pbi::once_flag descriptor_table_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto = {
-    false, false, 19503, descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto,
+    false, false, 19619, descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto,
     "dota_gcmessages_common_match_management.proto",
     &descriptor_table_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto_once, descriptor_table_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto_deps, 3, 15,
     schemas, file_default_instances, TableStruct_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto::offsets,
@@ -1482,6 +1485,8 @@ bool CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType_IsValid(int value) {
     case 285:
     case 286:
     case 287:
+    case 288:
+    case 289:
       return true;
     default:
       return false;
@@ -1770,6 +1775,8 @@ constexpr CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType CMvpData_MvpDatum_MvpAcc
 constexpr CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType CMvpData_MvpDatum_MvpAccolade::kKillEaterEventType_Kez_KillsDuringFalconRush;
 constexpr CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType CMvpData_MvpDatum_MvpAccolade::kKillEaterEventType_Seasonal_PartyHatsStolen;
 constexpr CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType CMvpData_MvpDatum_MvpAccolade::kKillEaterEventType_Seasonal_TallestHat;
+constexpr CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType CMvpData_MvpDatum_MvpAccolade::kKillEaterEventType_Largo_MultiHeroFrogstomp;
+constexpr CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType CMvpData_MvpDatum_MvpAccolade::kKillEaterEventType_Largo_AmphibianRhapsodyKillsAndAssists;
 constexpr CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType CMvpData_MvpDatum_MvpAccolade::MvpAccoladeType_MIN;
 constexpr CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType CMvpData_MvpDatum_MvpAccolade::MvpAccoladeType_MAX;
 constexpr int CMvpData_MvpDatum_MvpAccolade::MvpAccoladeType_ARRAYSIZE;

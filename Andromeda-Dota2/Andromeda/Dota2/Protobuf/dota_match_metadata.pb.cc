@@ -620,7 +620,8 @@ PROTOBUF_CONSTEXPR CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.hero_id_)*/0
   , /*decltype(_impl_.elapsed_duration_)*/0
-  , /*decltype(_impl_.is_hidden_)*/false} {}
+  , /*decltype(_impl_.is_hidden_)*/false
+  , /*decltype(_impl_.instance_count_)*/0} {}
 struct CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTargetDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTargetDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -1364,9 +1365,11 @@ const uint32_t TableStruct_dota_5fmatch_5fmetadata_2eproto::offsets[] PROTOBUF_S
   PROTOBUF_FIELD_OFFSET(::CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget, _impl_.hero_id_),
   PROTOBUF_FIELD_OFFSET(::CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget, _impl_.elapsed_duration_),
   PROTOBUF_FIELD_OFFSET(::CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget, _impl_.is_hidden_),
+  PROTOBUF_FIELD_OFFSET(::CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget, _impl_.instance_count_),
   0,
   1,
   2,
+  3,
   PROTOBUF_FIELD_OFFSET(::CDOTAMatchPrivateMetadata_Team_Player_BuffRecord, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CDOTAMatchPrivateMetadata_Team_Player_BuffRecord, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1522,14 +1525,14 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 554, 562, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Player_CombatSegment_HealingByAbility_ByHeroTarget)},
   { 564, 573, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Player_CombatSegment_HealingByAbility)},
   { 576, 585, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Player_CombatSegment)},
-  { 588, 597, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget)},
-  { 600, 609, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Player_BuffRecord)},
-  { 612, 626, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Player_GoldReceived)},
-  { 634, 647, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Player_XPReceived)},
-  { 654, 674, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Player)},
-  { 688, 698, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Building)},
-  { 702, 711, -1, sizeof(::CDOTAMatchPrivateMetadata_Team)},
-  { 714, -1, -1, sizeof(::CDOTAMatchPrivateMetadata)},
+  { 588, 598, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget)},
+  { 602, 611, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Player_BuffRecord)},
+  { 614, 628, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Player_GoldReceived)},
+  { 636, 649, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Player_XPReceived)},
+  { 656, 676, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Player)},
+  { 690, 700, -1, sizeof(::CDOTAMatchPrivateMetadata_Team_Building)},
+  { 704, 713, -1, sizeof(::CDOTAMatchPrivateMetadata_Team)},
+  { 716, -1, -1, sizeof(::CDOTAMatchPrivateMetadata)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1747,16 +1750,16 @@ const char descriptor_table_protodef_dota_5fmatch_5fmetadata_2eproto[] PROTOBUF_
   "lot\030\003 \001(\r\032{\n\003Tip\022\032\n\022source_player_slot\030\001"
   " \001(\r\022\032\n\022target_player_slot\030\002 \001(\r\022\022\n\ntip_"
   "amount\030\003 \001(\r\022(\n\010event_id\030\004 \001(\0162\007.EEvent:"
-  "\rEVENT_ID_NONE\"\321\021\n\031CDOTAMatchPrivateMeta"
+  "\rEVENT_ID_NONE\"\351\021\n\031CDOTAMatchPrivateMeta"
   "data\022.\n\005teams\030\001 \003(\0132\037.CDOTAMatchPrivateM"
   "etadata.Team\022\035\n\025graph_win_probability\030\002 "
   "\003(\002\022;\n\014string_names\030\003 \003(\0132%.CDOTAMatchPr"
   "ivateMetadata.StringName\032&\n\nStringName\022\n"
-  "\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\032\377\017\n\004Team\022\021\n\tdot"
+  "\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\032\227\020\n\004Team\022\021\n\tdot"
   "a_team\030\001 \001(\r\0227\n\007players\030\002 \003(\0132&.CDOTAMat"
   "chPrivateMetadata.Team.Player\022;\n\tbuildin"
   "gs\030\003 \003(\0132(.CDOTAMatchPrivateMetadata.Tea"
-  "m.Building\032\206\016\n\006Player\022\023\n\013player_slot\030\002 \001"
+  "m.Building\032\236\016\n\006Player\022\023\n\013player_slot\030\002 \001"
   "(\r\022\027\n\017position_stream\030\003 \001(\014\022M\n\017combat_se"
   "gments\030\004 \003(\01324.CDOTAMatchPrivateMetadata"
   ".Team.Player.CombatSegment\022\031\n\021damage_uni"
@@ -1787,26 +1790,27 @@ const char descriptor_table_protodef_dota_5fmatch_5fmetadata_2eproto[] PROTOBUF_
   "\n\017by_hero_targets\030\002 \003(\0132R.CDOTAMatchPriv"
   "ateMetadata.Team.Player.CombatSegment.He"
   "alingByAbility.ByHeroTarget\0320\n\014ByHeroTar"
-  "get\022\017\n\007hero_id\030\001 \001(\005\022\017\n\007healing\030\002 \001(\r\032\354\001"
+  "get\022\017\n\007hero_id\030\001 \001(\005\022\017\n\007healing\030\002 \001(\r\032\204\002"
   "\n\nBuffRecord\022\033\n\017buff_ability_id\030\001 \001(\005:\002-"
   "1\022\032\n\022buff_modifier_name\030\003 \001(\t\022W\n\017by_hero"
   "_targets\030\002 \003(\0132>.CDOTAMatchPrivateMetada"
-  "ta.Team.Player.BuffRecord.ByHeroTarget\032L"
+  "ta.Team.Player.BuffRecord.ByHeroTarget\032d"
   "\n\014ByHeroTarget\022\017\n\007hero_id\030\001 \001(\005\022\030\n\020elaps"
-  "ed_duration\030\002 \001(\002\022\021\n\tis_hidden\030\003 \001(\010\032\230\001\n"
-  "\014GoldReceived\022\r\n\005creep\030\001 \001(\r\022\016\n\006heroes\030\002"
-  " \001(\r\022\024\n\014bounty_runes\030\003 \001(\r\022\017\n\007passive\030\004 "
-  "\001(\r\022\021\n\tbuildings\030\005 \001(\r\022\021\n\tabilities\030\006 \001("
-  "\r\022\r\n\005wards\030\007 \001(\r\022\r\n\005other\030\010 \001(\r\032\211\001\n\nXPRe"
-  "ceived\022\r\n\005creep\030\001 \001(\r\022\016\n\006heroes\030\002 \001(\r\022\016\n"
-  "\006roshan\030\003 \001(\r\022\031\n\021tome_of_knowledge\030\004 \001(\r"
-  "\022\017\n\007outpost\030\005 \001(\r\022\r\n\005other\030\006 \001(\r\022\021\n\tabil"
-  "ities\030\007 \001(\r\032e\n\010Building\022\021\n\tunit_name\030\001 \001"
-  "(\t\022\030\n\020position_quant_x\030\002 \001(\r\022\030\n\020position"
-  "_quant_y\030\003 \001(\r\022\022\n\ndeath_time\030\004 \001(\002*y\n\035EP"
-  "layerInventorySnapshotFlags\022,\n(EPlayerIn"
-  "ventorySnapshotFlags_HasScepter\020\001\022*\n&EPl"
-  "ayerInventorySnapshotFlags_HasShard\020\002"
+  "ed_duration\030\002 \001(\002\022\021\n\tis_hidden\030\003 \001(\010\022\026\n\016"
+  "instance_count\030\004 \001(\005\032\230\001\n\014GoldReceived\022\r\n"
+  "\005creep\030\001 \001(\r\022\016\n\006heroes\030\002 \001(\r\022\024\n\014bounty_r"
+  "unes\030\003 \001(\r\022\017\n\007passive\030\004 \001(\r\022\021\n\tbuildings"
+  "\030\005 \001(\r\022\021\n\tabilities\030\006 \001(\r\022\r\n\005wards\030\007 \001(\r"
+  "\022\r\n\005other\030\010 \001(\r\032\211\001\n\nXPReceived\022\r\n\005creep\030"
+  "\001 \001(\r\022\016\n\006heroes\030\002 \001(\r\022\016\n\006roshan\030\003 \001(\r\022\031\n"
+  "\021tome_of_knowledge\030\004 \001(\r\022\017\n\007outpost\030\005 \001("
+  "\r\022\r\n\005other\030\006 \001(\r\022\021\n\tabilities\030\007 \001(\r\032e\n\010B"
+  "uilding\022\021\n\tunit_name\030\001 \001(\t\022\030\n\020position_q"
+  "uant_x\030\002 \001(\r\022\030\n\020position_quant_y\030\003 \001(\r\022\022"
+  "\n\ndeath_time\030\004 \001(\002*y\n\035EPlayerInventorySn"
+  "apshotFlags\022,\n(EPlayerInventorySnapshotF"
+  "lags_HasScepter\020\001\022*\n&EPlayerInventorySna"
+  "pshotFlags_HasShard\020\002"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fmatch_5fmetadata_2eproto_deps[10] = {
   &::descriptor_table_base_5fgcmessages_2eproto,
@@ -1822,7 +1826,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fmatch_5fmeta
 };
 static ::_pbi::once_flag descriptor_table_dota_5fmatch_5fmetadata_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fmatch_5fmetadata_2eproto = {
-    false, false, 9317, descriptor_table_protodef_dota_5fmatch_5fmetadata_2eproto,
+    false, false, 9341, descriptor_table_protodef_dota_5fmatch_5fmetadata_2eproto,
     "dota_match_metadata.proto",
     &descriptor_table_dota_5fmatch_5fmetadata_2eproto_once, descriptor_table_dota_5fmatch_5fmetadata_2eproto_deps, 10, 38,
     schemas, file_default_instances, TableStruct_dota_5fmatch_5fmetadata_2eproto::offsets,
@@ -13708,6 +13712,9 @@ class CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::_Internal {
   static void set_has_is_hidden(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
   }
+  static void set_has_instance_count(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
 };
 
 CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -13724,12 +13731,13 @@ CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::CDOTAMatchPrivate
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.hero_id_){}
     , decltype(_impl_.elapsed_duration_){}
-    , decltype(_impl_.is_hidden_){}};
+    , decltype(_impl_.is_hidden_){}
+    , decltype(_impl_.instance_count_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_impl_.hero_id_, &from._impl_.hero_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.is_hidden_) -
-    reinterpret_cast<char*>(&_impl_.hero_id_)) + sizeof(_impl_.is_hidden_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.instance_count_) -
+    reinterpret_cast<char*>(&_impl_.hero_id_)) + sizeof(_impl_.instance_count_));
   // @@protoc_insertion_point(copy_constructor:CDOTAMatchPrivateMetadata.Team.Player.BuffRecord.ByHeroTarget)
 }
 
@@ -13743,6 +13751,7 @@ inline void CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::Share
     , decltype(_impl_.hero_id_){0}
     , decltype(_impl_.elapsed_duration_){0}
     , decltype(_impl_.is_hidden_){false}
+    , decltype(_impl_.instance_count_){0}
   };
 }
 
@@ -13770,10 +13779,10 @@ void CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
+  if (cached_has_bits & 0x0000000fu) {
     ::memset(&_impl_.hero_id_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.is_hidden_) -
-        reinterpret_cast<char*>(&_impl_.hero_id_)) + sizeof(_impl_.is_hidden_));
+        reinterpret_cast<char*>(&_impl_.instance_count_) -
+        reinterpret_cast<char*>(&_impl_.hero_id_)) + sizeof(_impl_.instance_count_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -13809,6 +13818,15 @@ const char* CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::_Inte
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_is_hidden(&has_bits);
           _impl_.is_hidden_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional int32 instance_count = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _Internal::set_has_instance_count(&has_bits);
+          _impl_.instance_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -13862,6 +13880,12 @@ uint8_t* CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::_Interna
     target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_is_hidden(), target);
   }
 
+  // optional int32 instance_count = 4;
+  if (cached_has_bits & 0x00000008u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_instance_count(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -13879,7 +13903,7 @@ size_t CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::ByteSizeLo
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
+  if (cached_has_bits & 0x0000000fu) {
     // optional int32 hero_id = 1;
     if (cached_has_bits & 0x00000001u) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_hero_id());
@@ -13893,6 +13917,11 @@ size_t CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::ByteSizeLo
     // optional bool is_hidden = 3;
     if (cached_has_bits & 0x00000004u) {
       total_size += 1 + 1;
+    }
+
+    // optional int32 instance_count = 4;
+    if (cached_has_bits & 0x00000008u) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_instance_count());
     }
 
   }
@@ -13915,7 +13944,7 @@ void CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::MergeImpl(::
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
+  if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
       _this->_impl_.hero_id_ = from._impl_.hero_id_;
     }
@@ -13924,6 +13953,9 @@ void CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::MergeImpl(::
     }
     if (cached_has_bits & 0x00000004u) {
       _this->_impl_.is_hidden_ = from._impl_.is_hidden_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.instance_count_ = from._impl_.instance_count_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
@@ -13946,8 +13978,8 @@ void CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::InternalSwap
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget, _impl_.is_hidden_)
-      + sizeof(CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::_impl_.is_hidden_)
+      PROTOBUF_FIELD_OFFSET(CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget, _impl_.instance_count_)
+      + sizeof(CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget::_impl_.instance_count_)
       - PROTOBUF_FIELD_OFFSET(CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget, _impl_.hero_id_)>(
           reinterpret_cast<char*>(&_impl_.hero_id_),
           reinterpret_cast<char*>(&other->_impl_.hero_id_));

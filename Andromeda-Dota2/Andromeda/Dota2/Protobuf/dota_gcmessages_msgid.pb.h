@@ -1039,11 +1039,17 @@ enum EDOTAGCMsg : int {
   k_EMsgClientToGCGetEventRanking = 9107,
   k_EMsgClientToGCGetEventRankingResponse = 9108,
   k_EMsgClientToGCGetEventCoupon = 9109,
-  k_EMsgClientToGCGetEventCouponResponse = 9110
+  k_EMsgClientToGCGetEventCouponResponse = 9110,
+  k_EMsgClientToGCConvertEventPoints = 9111,
+  k_EMsgClientToGCConvertEventPointsResponse = 9112,
+  k_EMsgServerToGCWarningLowServerFramerate = 9113,
+  k_EMsgServerToGCWarningInvalidBotAbilityUsage = 9114,
+  k_EMsgClientToGCInviteToDemoMode = 9115,
+  k_EMsgGCToClientInviteToDemoMode = 9116
 };
 bool EDOTAGCMsg_IsValid(int value);
 constexpr EDOTAGCMsg EDOTAGCMsg_MIN = k_EMsgGCDOTABase;
-constexpr EDOTAGCMsg EDOTAGCMsg_MAX = k_EMsgClientToGCGetEventCouponResponse;
+constexpr EDOTAGCMsg EDOTAGCMsg_MAX = k_EMsgGCToClientInviteToDemoMode;
 constexpr int EDOTAGCMsg_ARRAYSIZE = EDOTAGCMsg_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EDOTAGCMsg_descriptor();
