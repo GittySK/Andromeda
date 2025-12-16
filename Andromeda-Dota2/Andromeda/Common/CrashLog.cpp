@@ -60,28 +60,6 @@ auto WINAPI CCrashLog::VectoredExceptionHandler( PEXCEPTION_POINTERS pExceptionI
     }
 #endif
 
-    if ( ExceptionCode == STATUS_ACCESS_VIOLATION )
-    {
-        auto hProcess = OpenProcess( PROCESS_QUERY_INFORMATION | PROCESS_VM_READ , false , GetCurrentProcessId() );
-
-        if ( hProcess )
-        {
-            char RaxModuleName[MAX_PATH] = { 0 };
-            
-            if ( GetMappedFileNameA( hProcess , (PVOID)pExceptionInfo->ContextRecord->Rcx , RaxModuleName , MAX_PATH ) > 0 )
-            {
-                if ( strstr( RaxModuleName , XorStr( "DiscordHook64.dll" ) ) != nullptr )
-                {
-                    CloseHandle( hProcess );
-
-                    return EXCEPTION_CONTINUE_SEARCH;
-                }
-            }
-
-            CloseHandle( hProcess );
-        }
-    }
-
     std::string CrashModuleName;
     std::string ModuleName;
 
